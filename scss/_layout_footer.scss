@@ -1,0 +1,171 @@
+@import '_rwd_setting';
+footer{
+    background-color: #fefefe;
+    padding: 60px 0;
+    .container{
+       @include rwdSize-min($pad){
+         display: flex;
+         justify-content: center;
+      }
+    }
+    .logo{
+       @include rwdSize-max($pad){
+          width: 30%;
+          margin: auto;
+          max-width: 110px;
+       }
+       @include rwdSize-min($pad){
+         float: left;
+         width: 100px;
+       }
+    }
+    #footer_information{
+      width: 280px;
+      margin: 30px auto;
+      text-align: center;
+      @include rwdSize-min($pad){
+         display: flex;
+         align-items: flex-end;
+         justify-content: space-between;
+         width: 400px;
+         padding: 10px 0;
+         text-align: left;
+         margin: 0 40px;
+      }
+    }
+    #company_list{
+       ul{
+         li{
+            font-size: 16px;
+            margin: 18px 0;
+            color: $main-color-text;
+            a{
+               color: $main-color-text;
+            }
+         }
+       }
+       .company_name{
+         font-weight: bold;
+         margin: 0 0 20px 0;
+         font-size: 20px;
+       }
+    }
+    #social_contact_us{
+       display: flex;
+       justify-content: center;
+       ul{
+           li{
+            float: left;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            text-align: center;
+           }
+       }
+   }
+   #fast_link_popBox{
+      position: fixed;
+      right: -50px;
+      bottom: 80px;
+      transition: right .5s ease;
+      &.show{
+         right: 10px;
+      }
+      &.active{
+         #go_top{
+            bottom: -50px;
+         }
+         #fast_link_popList{
+            li{
+               &.pop_fb{
+                  bottom: 95px;
+               }
+               &.pop_line{
+                  bottom: 50px;
+               }
+               &.pop_ig{
+                  bottom: 5px;
+               }
+            }
+         }
+      }
+      #fast_link_pop{
+         position: relative;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 40px;
+         height: 40px;
+         right: 0px;
+         border-radius: 20px;
+         background-color: $main-color;
+         box-shadow: 0 3px 4px rgba(#333,.5);
+         transition: background-color .2s ease;
+         cursor: pointer;
+         z-index: 3;
+         &:hover{
+            background-color: darken($sec-color,10%);
+         }
+         > img{
+            width: 70%;
+            transform: rotate(0);
+            transition: transform .2s ease;
+            &:hover{
+               transform: rotate(180deg);
+            }
+         }
+      }
+      #fast_link_popList{
+         position: relative;
+         li{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 3px 4px rgba(#333,.5);
+            bottom: -40px;
+            transition: bottom .2s ease;
+         }
+      }
+      #go_top{
+         position: absolute;
+         width: 40px;
+         height: 40px;
+         bottom: 0px;
+         border-radius: 20px;
+         border: 2px solid #ccc;
+         cursor: pointer;
+         background-color: rgba(#fff,.8);
+         box-shadow: 0 5px 4px rgba(#333,.5);
+         z-index: 2;
+         transition: bottom .2s ease;
+         &:active{
+            background-color: rgba(#999,.8);
+         }
+         &::before{
+            position: absolute;
+            content: "";
+            width: 14px;
+            height: 14px;
+            top: 10px;
+            left: 10px;
+            border-top: 2px solid #ccc;
+            border-left: 2px solid #ccc;
+            transform: rotate(45deg);
+         }
+         &::after{
+            position: absolute;
+            content: "";
+            width: 2px;
+            height: 16px;
+            background-color: #ccc;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+         }
+      }
+   }
+}

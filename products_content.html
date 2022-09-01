@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>製床所御品 - 好眠商品</title>
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/layout.css">
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <div class="banner" id="products_banner">
+                <div class="logo"><img src="images/straight_logo.png" alt="logo"></div>
+                <div class="slogan_text">隨心搭配，打造專屬風格</div>
+            </div>
+            <section id="products_page" class="product_content_style container">
+                <nav id="breadcrumb_nav"></nav>
+                <div id="products_box" class="clearfix">
+                    <div id="product_mainPhoto" class="grid-col-mb-12 grid-col-m-5">
+                        <div id="product_photo"></div>
+                    </div>
+                    <div id="product_information" class="grid-col-mb-12 grid-col-m-7">
+                        <div id="sizeBox">
+                            <div id="item_name"></div>
+                            <div id="hot_tips">
+                                <p>可輸入文字簡單說明床的特色。</p>
+                                <ul>
+                                    <li>特色1</li>
+                                    <li>特色2</li>
+                                    <li>特色3</li>
+                                </ul>                                
+                            </div>
+                            <ul id="size_information">
+                                <li class="size_ss active">
+                                    <div>
+                                        <div class="size_infor_name">
+                                            <span class="size_name">3呎</span>
+                                            <span class="size_cm">91×188 公分</span>
+                                        </div>
+                                        <div class="size_price"><div>建議售價</div>$<span id="price_ss" class="show_price"></span></div>
+                                    </div>
+                                </li>
+                                <li class="size_s">
+                                    <div>
+                                        <div class="size_infor_name">
+                                            <span class="size_name">3.5呎</span>
+                                            <span class="size_cm">106×188 公分</span>
+                                        </div>
+                                        <div class="size_price"><div>建議售價</div>$<span id="price_s" class="show_price"></span></div>
+                                    </div>
+                                </li>
+                                <li class="size_m">
+                                    <div>
+                                        <div class="size_infor_name">
+                                            <span class="size_name">5呎</span>
+                                            <span class="size_cm">152×188 公分</span>
+                                        </div>
+                                        <div class="size_price"><div>建議售價</div>$<span id="price_m" class="show_price"></span></divid=>
+                                    </div>
+                                </li>
+                                <li class="size_l">
+                                    <div>
+                                        <div class="size_infor_name">
+                                            <span class="size_name">6呎</span>
+                                            <span class="size_cm">182×188 公分</span>
+                                        </div>
+                                        <div class="size_price"><div>建議售價</div>$<span id="price_l" class="show_price"></span></div>
+                                    </div>
+                                </li>
+                                <li class="size_xl">
+                                    <div>
+                                        <div class="size_infor_name">
+                                            <span class="size_name">7呎</span>
+                                            <span class="size_cm">182×212 公分</span>
+                                        </div>
+                                        <div class="size_price"><div>建議售價</div>$<span id="price_xl" class="show_price"></span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div id="mobile_show_price">
+                                <div>建議售價</div>$&nbsp;<span class="show_price"> - </span>&nbsp;元
+                            </div>
+                        </div>
+                        <div id="contact_with_box">
+                            <a href="#" id="contact_withLINE" class="contact_now_btn"><span class="icon_img"><img src="images/icon/line_icon.png" alt=""></span> 洽詢客服</a>
+                            <a href="TEL:04-23201861" id="contact_withTEL" class="contact_now_btn"><span class="icon_img"><img src="images/icon/phone_icon.png" alt=""></span> 來電洽詢</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="item_content">
+                </div>
+            </section>
+        </main>
+        <footer></footer>
+    </body>
+    <script>
+        let this_page = 'products_page';
+    </script>
+    <script type="module" src="js/js_template.js"></script>
+    <script type="module" src="js/template/breadcrumb_module.js"></script>
+    <script>
+        const product_url = location.href;
+        let getPriceArray = [];
+        if(product_url.indexOf('?') != -1){
+            const getPropsItem = product_url.split('?')[1];
+            const product_id = getPropsItem.split('&')[1]
+            fetch(`json/products/${product_id}.json`)
+            .then(res => {
+                return res.json()
+            })
+            .then(itemData =>{
+                document.getElementById('item_name').innerHTML = itemData.name; // 置入名稱
+                document.getElementById('product_photo').innerHTML = `<img src="${itemData.itemImg}" alt="${itemData.name}">`;
+
+                let price_s1 = itemData.price_s1.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+                let price_s2 = itemData.price_s2.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+                let price_s3 = itemData.price_s3.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+                let price_s4 = itemData.price_s4.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+                let price_s5 = itemData.price_s5.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+
+                getPriceArray.push(price_s1,price_s2,price_s3,price_s4,price_s5);
+
+                document.getElementById('price_ss').innerHTML = getPriceArray[0];
+                document.getElementById('price_s').innerHTML = getPriceArray[1];
+                document.getElementById('price_m').innerHTML = getPriceArray[2];
+                document.getElementById('price_l').innerHTML = getPriceArray[3];
+                document.getElementById('price_xl').innerHTML = getPriceArray[4];
+
+                $('#mobile_show_price > .show_price').html(getPriceArray[0])
+
+                let itemContent = ``;
+                itemData.content.forEach(itemImg => {
+                    itemContent += `<img src="images/products/${itemImg}">`                    
+                });
+                document.getElementById('item_content').innerHTML = itemContent; // 置入圖片
+                
+                setTimeout(function(){
+                    $('#breadcrumb_nav ol').append(`<li>${itemData.name}</li>`)
+                },100)
+            })
+        }
+        $('#size_information > li').on('click',function(){
+            $(this).addClass('active').siblings('.active').removeClass('active');
+            let getPrice = '';
+            if($(this).hasClass('size_ss')){
+                getPrice = getPriceArray[0];
+            }else if($(this).hasClass('size_s')){
+                getPrice = getPriceArray[1];
+            }else if($(this).hasClass('size_m')){
+                getPrice = getPriceArray[2]
+            }else if($(this).hasClass('size_l')){
+                getPrice = getPriceArray[3]
+            }else{
+                getPrice = getPriceArray[4]
+            }
+            $('#mobile_show_price > .show_price').html(getPrice);
+        })
+    </script>
+    
+
+</html>
