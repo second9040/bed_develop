@@ -5,6 +5,6 @@
     "price_s3": "25900",
     "price_s4": "26900",
     "price_s5": "27900",
-    "itemImg": "images/bed_example.jpg",
+    "itemImg": "https://source.unsplash.com/random/200x200?sig=1",
     "content": ["product_01.jpg","product_02.jpg"]
 }

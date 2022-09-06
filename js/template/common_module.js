@@ -18,7 +18,7 @@ export function headerTemp(){
                                     <ul class="secList_box">
                                     ${list.lists.map((sec_list) => {
                                         return `
-                                                <li><a href="${list.link}?product_id=${sec_list.listMainId}">${sec_list.listName}</a></li>
+                                                <li><a href="${sec_list.listLink}">${sec_list.listName}</a></li>
                                                 `
                                             }).join('')}
                                             
@@ -42,9 +42,6 @@ export function headerTemp(){
     $('#nav_hamberger ,.blackBoard').on('click',function(){
         $('.ham_bar, header nav, .blackBoard').toggleClass('active');
     })
-    $('.second_lists').on('click', function(){
-        $(this).toggleClass('active')
-    })
 }
 // 頁尾
 export function footerTemp(){
@@ -63,52 +60,20 @@ export function footerTemp(){
             </div>
             <div id="social_contact_us">
                 <ul class="clearfix">
-                    <li><a href="https://www.facebook.com/wonderfulMattres" target="_blank"><img src="images/icon/fb_icon.png" title="製床所 FB" alt="製床所 FB"></a></li>
-                    <li><a href="#"><img src="images/icon/line_icon.png" title="製床所 line" alt="製床所 line"></a></li>
-                    <li><a href="#"><img src="images/icon/ig_icon.png" title="製床所 ig" alt="製床所 ig"></a></li>
+                    <li><div><img src="images/icon/fb_icon.png" title="製床所 FB" alt="製床所 FB"></div></li>
+                    <li><div><img src="images/icon/line_icon.png" title="製床所 line" alt="製床所 line"></div></li>
+                    <li><div><img src="images/icon/ig_icon.png" title="製床所 ig" alt="製床所 ig"></div></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div id="fast_link_popBox">
-        <ul id="fast_link_popList">
-            <li class="pop_fb"><a href="https://www.facebook.com/wonderfulMattres" target="_blank"><img src="images/icon/fb_icon_circle.png" title="製床所 FB" alt="製床所 FB"></a></li>
-            <li class="pop_line"><a href="#"><img src="images/icon/line_icon_circle.png" title="製床所 line" alt="製床所 line"></a></li>
-            <li class="pop_ig"><a href="#"><img src="images/icon/ig_icon_circle.png" title="製床所 ig" alt="製床所 ig"></a></li>
-        </ul>
-        <div id="fast_link_pop"><img src="images/icon/settings.png"></div>
-        <div id="go_top"></div>
-    </div>
-
     `;
     document.querySelector('footer').innerHTML = footer_temp;
-
-    // go top icon
-    $('#go_top').on('click',function(){
-        $('html, body').animate({
-            scrollTop: 0
-        },1500)
-    })
-    // fast link pops
-    $('#fast_link_pop').on('click', function(){
-        $('#fast_link_popBox').toggleClass('active')
-    })
 }
 // 監聽螢幕尺寸
 $(window).resize(function(){
     if($(window).width() > 768){
-        $('.ham_bar, header nav, .blackBoard, .second_lists').removeClass('active');
+        $('.ham_bar, header nav, .blackBoard').removeClass('active');
     }
 })
-
-// go top icon show / hide
-$(document).ready(function(){
-    $(window).scroll( function(){
-        let scrollY = window.scrollY;
-        if(scrollY > 300){
-            $('#fast_link_popBox').addClass('show')
-        }else{
-            $('#fast_link_popBox').removeClass('show active')
-        }
-    })
-})
+// 右下角浮動icon
