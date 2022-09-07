@@ -6,5 +6,5 @@
     "price_s4": "26900",
     "price_s5": "27900",
     "itemImg": "https://source.unsplash.com/random/200x200?sig=1",
-    "content": ["product_01.jpg","product_02.jpg"]
+    "content": ["wave/section1.jpg", "wave/section2.png", "wave/section3.png", "wave/section4.png"]
 }
