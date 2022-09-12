@@ -72,19 +72,64 @@
                       <img src="images/products/wave/section1.jpg" alt="">
                     </div>
                     <div id="section2">
-                      <img class="divBaseImg" src="images/products/wave/section2.png" alt="" style="opacity: 50%;">
+                      <img class="divBaseImg" src="images/products/wave/section2.png" alt="">
                       <div class="position-absolute section_container">
                         <div class="imgField">
                           <img src="images/products/wave/section2_circle.png" alt="">
                         </div>
-                        <div class="textField"></div>
+                        <div class="textField">
+                          <div class="title">
+                            <div>高碳</div>
+                            <div>鋼硬彈簧</div>
+                          </div>
+                          <div class="desc">
+                            <div>擁有高支撐力</div>
+                            <div>波浪般服貼腰際</div>
+                            <div>享受扎實睡感</div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div id="section3">
-                      <img src="images/products/wave/section3.png" alt="" style="opacity: 0;">
+                      <img src="images/products/wave/section3.png" alt="">
+                      <div class="position-absolute section_container">
+                        <div class="textField">
+                          <div class="title">
+                            <div>蘆薈進口</div>
+                            <div>棉質表布</div>
+                          </div>
+                          <div class="desc">
+                            <div>蘆薈透氣表布</div>
+                            <div>良好手感 增加舒適度</div>
+                            <div>提供放鬆睡眠</div>
+                          </div>
+                        </div>
+                        <div class="imgField">
+                          <img src="images/products/wave/section3_circle.png" alt="">
+                        </div>
+                      </div>
                     </div>
                     <div id="section4">
-                      <img src="images/products/wave/section4.png" alt="" style="opacity: 0;">
+                      <img src="images/products/wave/section4.png" alt="">
+                      <div class="position-absolute section_container">
+                        <div class="imgField">
+                          <img src="images/products/wave/section4_circle.png" alt="">
+                        </div>
+                        <div class="textField">
+                          <div class="title">
+                            <div>100%</div>
+                            <div>純天然乳膠</div>
+                          </div>
+                          <div class="desc">
+                            <div>極致Q彈 防瞞抗菌</div>
+                            <div>高耐受度</div>
+                            <div>不易塌陷</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <img src="images/products/wave/section5.png" alt="">
                     </div>
                 </div>
             </section>
@@ -120,9 +165,10 @@
 
 </html>
 <style>
-#section2 {
+#section2,
+#section3,
+#section4 {
   position: relative;
-  border: solid ; 
 }
 
 .divBaseImg {
@@ -143,6 +189,85 @@
 .section_container .imgField,
 .section_container .textField {
   width: 50%;
+  color: #414E5A;
+  text-align: center;
+}
+
+.section_container .textField .title {
+  font-size: 8vw;
+  font-weight: initial;
+  letter-spacing: 5px;
+}
+#section4 .section_container .textField .title {
+  font-size: 7.5vw;
+}
+.section_container .textField .title:after {
+  width: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.section_container .textField .title div {
+  margin: 5px;
+}
+.section_container .textField .desc {
+  color: #536271;
+  font-size: 4vw;
+  margin-top: 15px;
+}
+.section_container .textField .desc div {
+  margin: 10px;
+}
+@media (min-width: 480px) {
+  .section_container .textField .title {
+    font-size: 9vw;
+  }
+  #section4 .section_container .textField .title  {
+    font-size: 8.5vw;
+  }
+  .section_container .textField .desc {
+    font-size: 4.5vw;
+  }
+}
+@media (min-width: 576px) {
+  .section_container .textField .title {
+    font-size: 3.5rem;
+  }
+  #section4 .section_container .textField .title {
+    font-size: 3rem;
+  }
+  .section_container .textField .desc {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .section_container .textField .title div {
+    margin: 10px;
+  }
+  .section_container .textField .desc {
+    padding: 10px;
+    font-size: 1.8rem;
+  }
+  .section_container .textField .title:after {
+    width: 50px;
+    height: 5px;
+    bottom: -10px;
+    border-radius: 10px;
+  }
+}
+@media (min-width: 992px) {
+  .section_container .textField .title,
+  #section4 .section_container .textField .title {
+    font-size: 4rem;
+  }
+  .section_container .textField .title div {
+    margin: 15px;
+  }
+  .section_container .textField .desc {
+    font-size: 2rem;
+  }
+  .section_container .textField .desc div {
+    margin: 20px;
+  }
 }
 
 /* .section_container .imgField img {
