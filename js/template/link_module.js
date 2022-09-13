@@ -1,7 +1,7 @@
 const nav_lists = [
     {
         link: 'about.html',
-        name: '製床所時光屋',
+        name: '製床所時光機',
         show: 'block',
         lists: '',
     },
@@ -12,27 +12,27 @@ const nav_lists = [
         lists: '',
     },
     {
-        link: '#',
+        link: 'limited.html',
         name: '限時優惠',
         show: 'block',
         lists: '',
     },
     {
-        link: '',
+        link: 'products.html',
         name: '好眠商品',
         show: 'block',
         lists: [
             {
-                listLink: 'products.html',
                 listName: '床墊',
+                listMainId: 0,
             },
             {
-                listLink: 'products.html',
                 listName: '床架/床頭櫃',
+                listMainId: 1,
             },
             {
-                listLink: 'products.html',
                 listName: '衣櫃',
+                listMainId: 2,
             },
         ]
     },
@@ -53,6 +53,9 @@ switch(this_page){
         break;
     case 'customize_page':
         page_id = 2;
+        break;
+    case 'limited_page':
+        page_id = 3;
         break;
     case 'products_page':
         page_id = 4;

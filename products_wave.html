@@ -12,10 +12,10 @@
     <body>
         <header></header>
         <main>
-            <div class="banner" id="products_banner">
+            <!-- <div class="banner" id="products_banner">
                 <div class="logo"><img src="images/straight_logo.png" alt="logo"></div>
                 <div class="slogan_text">隨心搭配，打造專屬風格</div>
-            </div>
+            </div> -->
             <section id="products_page" class="container">
                 <nav id="breadcrumb_nav"></nav>
                 <div id="products_box" class="clearfix">
@@ -66,6 +66,8 @@
                         </div>
                     </div>
                 </div>
+            </section>
+            <section id="imageDiv" class="container-100">
                 <div id="item_content">
                     <!-- <img src="images/products/product_01.jpg"> -->
                     <div>
@@ -132,7 +134,7 @@
                       <img src="images/products/wave/section5.png" alt="">
                     </div>
                 </div>
-            </section>
+              </section>
         </main>
         <footer></footer>
     </body>
@@ -165,6 +167,10 @@
 
 </html>
 <style>
+section#products_page {
+  background-color: initial !important;
+}
+
 #section2,
 #section3,
 #section4 {
@@ -268,9 +274,9 @@
   .section_container .textField .desc div {
     margin: 20px;
   }
+  section#products_page #products_box #product_mainPhoto {
+    padding: 0px 10px 10px 0;
+  }
 }
 
-/* .section_container .imgField img {
-  width: 100%;
-} */
 </style>
