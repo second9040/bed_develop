@@ -70,7 +70,13 @@
             <section id="imageDiv" class="container-100">
                 <div id="item_content">
                     <div id="section1">
-                      <img class="divBaseImg" src="images/products/honor/section1.png" alt="">
+                      <img class="divBaseImg" src="images/products/honor/section1.jpg" alt="">
+                      <div class="divImgElement">
+                        <img src="images/products/honor/section1-element1.png" alt="">
+                      </div>
+                    </div>
+                    <div id="section2">
+                      <img class="divBaseImg" src="images/products/honor/section2.jpg" alt="">
                       <div class="position-absolute section_container">
                         <div class="textField position-absolute">
                           <div class="title">
@@ -88,42 +94,23 @@
                         </div>
                       </div>
                     </div>
-                    <div id="section2">
-                      <img class="divBaseImg" src="images/products/honor/section2.png" alt="">
-                      <div class="position-absolute section_container">
-                        <div class="textField">
-                          <div class="title">
-                          </div>
-                          <div class="desc">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                     <div id="section3">
                       <img src="images/products/honor/section3.png" alt="">
-                      <div class="position-absolute section_container">
-                        <div class="textField">
-                          <div class="title">
-                          </div>
-                          <div class="desc">
-                          </div>
-                        </div>
-                        <div class="imgField">
-                        </div>
+                      <div class="divImgElement">
+                        <img src="images/products/honor/section3-element1.png" alt="">
                       </div>
                     </div>
                     <div id="section4">
                       <img src="images/products/honor/section4.png" alt="">
-                      <div class="position-absolute section_container">
-                        <div class="imgField">
-                        </div>
-                        <div class="textField">
-                          <div class="title">
-                          </div>
-                          <div class="desc">
-                          </div>
-                        </div>
+                      <div class="divImgElement">
+                        <img src="images/products/honor/section4-element1.png" alt="">
                       </div>
+                    </div>
+                    <div id="section5">
+                      <img class="divBaseImg" src="images/products/honor/section5.png" alt="">
+                    </div>
+                    <div id="section6">
+                      <img class="divBaseImg" src="images/products/honor/section6.png" alt="">
                     </div>
                 </div>
               </section>
@@ -163,7 +150,14 @@ div#item_content {
   min-width: 320px;
   max-width: 1920px;
   overflow: scroll;
+  background-color: #FEDE98;
 }
+
+div#item_content img {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 section#products_page {
   background-color: initial !important;
 }
@@ -185,11 +179,20 @@ section#products_page {
   bottom: 0;
   left: 0;
 }
+.section_container .textField {
+  max-width: 1200px;
+}
 
 .section_container .textField .title {
   width: 100%;
+  font-size: 7vw;
   text-align: end;
+  margin: 10px 0;
+  padding: 0;
+  font-weight: initial;
+  letter-spacing: 10px;
 }
+
 .section_container .textField .title div {
   margin: 5px;
 }
@@ -204,38 +207,37 @@ section .title .line::after {
   content: '';
   position: absolute;
   background-color: #ab764e;
-  top: 1.8vw;
   height: 2px;
   width: 7vw;
-  left: -9vw;
+  left: -10vw;
+  top: 50%;
+  transform: translateY(-50%);
 }
-
-.section_container .textField .title {
-  font-size: 3.5vw;
-  width: 100%;
-  text-align: end;
-  padding: 0;
-  font-weight: initial;
-  letter-spacing: 10px;
-  transform: scale(0.75);
+section .divImgElement {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 70vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 .section_container .textField .desc {
-  margin-top: -10px;
-  padding-left: 15vw;
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 5px;
-  transform: scale(0.65);
+  background: #FEDE98b3;
+  padding: 15px 0;
+  width: 100%;
+  text-align: center;
 }
 .section_container .textField .desc div {
-  margin: 2px;
+  margin: 10px 0;
 }
 
-#section1 .section_container .textField {
+#section2 .section_container .textField {
   color: #ab764e;
-  right: -30px;
-  bottom: -10px;
   width: 100%;
-  height: 24vw;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -243,50 +245,26 @@ section .title .line::after {
 }
 
 @media (min-width: 480px) {
-  section .title .line::after {
-    height: 2px;
-    width: 7vw;
-    left: -9vw;
-    top: 2.2vw;
-  }
-  #section1 .section_container .textField {
-    height: 24vw;
-    right: 5vw;
-    bottom: 0;
-  }
   .section_container .textField .title {
-    font-size: 16px;
-    transform: initial;
+    font-size: 36px;
   }
   .section_container .textField .desc {
-    transform: initial;
-  }
-  .section_container .textField .desc div {
-    margin: 5px;
+    background: none;
+    font-size: 3vw;
+    text-align: right;
+    margin: -10px 2.5vw;
+    padding: 0;
   }
 }
 @media (min-width: 576px) {
-  .section_container .textField .desc div {
-    margin: 10px;
-  }
-  .section_container .textField .title {
-    font-size: 3.8vw;
-  }
   .section_container .textField .desc {
-    font-size: 1.8vw;
+    font-size: 18px;
+    margin-top: 0;
   }
 }
 @media (min-width: 768px) {
-  section .title .line::after {
-    height: 3px;
-    width: 10vw;
-    left: -12vw;
-  }
-  .section_container .textField .title {
-    font-size: 4.5vw;
-  }
-  .section_container .textField .desc {
-    font-size: 2.2vw;
+  .section_container .textField .title div {
+    margin: 15px 1.8vw;
   }
 }
 @media (min-width: 992px) {
@@ -294,6 +272,25 @@ section .title .line::after {
     width: 7vw;
     left: -9vw;
   }
+}
+
+@media (min-width: 1200px) {
+  .section_container .textField {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .section_container .textField .title div {
+    margin-right: 25px;
+  }
+  .section_container .textField .desc {
+    margin-right: 30px;
+  }
+}
+
+#section3 .divImgElement {
+  width: 100vw;
+  height: auto;
+  max-width: 1000px;
 }
 
 </style>
