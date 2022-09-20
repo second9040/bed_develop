@@ -38,10 +38,18 @@ function productList_temp(getData){
                 </div>
             `            
         } else if (index === 1) { // 尊爵
-            console.log('?????')
             list_template += `
                 <div class="products_box_item grid-col-mb-12 grid-col-m-4">
                     <a href="products_honor.html">
+                        <span class="product_img"><img src="https://source.unsplash.com/random/200x200?sig=1"></span>
+                        <span class="product_name">${item.product_name}</span>
+                    </a>
+                </div>
+            `            
+        } else if (index === 2) { // 尊爵
+            list_template += `
+                <div class="products_box_item grid-col-mb-12 grid-col-m-4">
+                    <a href="products_cloud.html">
                         <span class="product_img"><img src="https://source.unsplash.com/random/200x200?sig=1"></span>
                         <span class="product_name">${item.product_name}</span>
                     </a>
