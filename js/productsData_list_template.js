@@ -74,7 +74,7 @@ function limitedList_temp(getData){
     getData.forEach( item => {
         list_template += `
         <div class="products_box_item grid-col-mb-12 grid-col-m-4">
-            <a href="products_content.html?product_id=${main_product_id}&${item.product_link}">
+            <a href="${item.product_link}">
                 <span class="product_img"><img src="https://source.unsplash.com/random/200x200?sig=1"></span>
                 <span class="product_name">${item.product_name}</span>
             </a>

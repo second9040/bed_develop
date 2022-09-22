@@ -76,7 +76,8 @@ export function footerTemp(){
             <li class="pop_line"><a href="#"><img src="images/icon/line_icon_circle.png" title="製床所 line" alt="製床所 line"></a></li>
             <li class="pop_ig"><a href="#"><img src="images/icon/ig_icon_circle.png" title="製床所 ig" alt="製床所 ig"></a></li>
         </ul>
-        <div id="fast_link_pop"><img src="images/icon/settings.png"></div>
+        <div id="fast_link_pop" class="click_me"><img src="images/icon/click_me.png"></div>
+        <div id="fast_link_pop" class="click_me_text"><img src="images/icon/click_me_text.png"></div>
         <div id="go_top"></div>
     </div>
 

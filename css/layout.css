@@ -12,6 +12,7 @@ input:focus, textarea:focus {
 
 html, body {
   font-family: arial, "microsoft jhenghei";
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -714,45 +715,59 @@ footer #fast_link_popBox {
   transition: right 0.5s ease;
 }
 footer #fast_link_popBox.show {
+  z-index: 3;
   right: 10px;
 }
 footer #fast_link_popBox.active #go_top {
   bottom: -50px;
 }
 footer #fast_link_popBox.active #fast_link_popList li.pop_fb {
+  opacity: 1;
   bottom: 95px;
 }
 footer #fast_link_popBox.active #fast_link_popList li.pop_line {
+  opacity: 1;
   bottom: 50px;
 }
 footer #fast_link_popBox.active #fast_link_popList li.pop_ig {
+  opacity: 1;
   bottom: 5px;
 }
+footer #fast_link_popBox.active #go_top {
+  opacity: 1;
+}
+
 footer #fast_link_popBox #fast_link_pop {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
+  top: 3px;
   right: 0px;
   border-radius: 20px;
-  background-color: #2f5575;
-  box-shadow: 0 3px 4px rgba(51, 51, 51, 0.5);
+  /* background-color: #fff; */
+  /* box-shadow: 0 3px 4px rgba(51, 51, 51, 0.5); */
   transition: background-color 0.2s ease;
   cursor: pointer;
   z-index: 3;
 }
+footer #fast_link_popBox #fast_link_pop.click_me_text {
+  position: absolute;
+  left: -60px;
+  top: -20px;
+}
 footer #fast_link_popBox #fast_link_pop:hover {
-  background-color: #6ba1c5;
+  background-color: #fff;
 }
 footer #fast_link_popBox #fast_link_pop > img {
-  width: 70%;
+  width: 140%;
   transform: rotate(0);
   transition: transform 0.2s ease;
 }
-footer #fast_link_popBox #fast_link_pop > img:hover {
-  transform: rotate(180deg);
+footer #fast_link_popBox #fast_link_pop.click_me > img:hover {
+  transform: rotate(360deg);
 }
 footer #fast_link_popBox #fast_link_popList {
   position: relative;
@@ -763,22 +778,33 @@ footer #fast_link_popBox #fast_link_popList li {
   height: 40px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 3px 4px rgba(51, 51, 51, 0.5);
-  bottom: -40px;
+  /* box-shadow: 0 3px 4px rgba(51, 51, 51, 0.5); */
+  bottom: -45px;
   transition: bottom 0.2s ease;
 }
+footer #fast_link_popBox #fast_link_popList li.pop_fb {
+  opacity: 0;
+}
+footer #fast_link_popBox #fast_link_popList li.pop_line {
+  opacity: 0;
+}
+footer #fast_link_popBox #fast_link_popList li.pop_ig {
+  opacity: 0;
+}
+
 footer #fast_link_popBox #go_top {
   position: absolute;
   width: 40px;
   height: 40px;
   bottom: 0px;
   border-radius: 20px;
-  border: 2px solid #ccc;
+  border: 2px solid #666;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 5px 4px rgba(51, 51, 51, 0.5);
   z-index: 2;
   transition: bottom 0.2s ease;
+  opacity: 0;
 }
 footer #fast_link_popBox #go_top:active {
   background-color: rgba(153, 153, 153, 0.8);
@@ -790,8 +816,8 @@ footer #fast_link_popBox #go_top::before {
   height: 14px;
   top: 10px;
   left: 10px;
-  border-top: 2px solid #ccc;
-  border-left: 2px solid #ccc;
+  border-top: 2px solid #666;
+  border-left: 2px solid #666;
   transform: rotate(45deg);
 }
 footer #fast_link_popBox #go_top::after {
@@ -799,7 +825,7 @@ footer #fast_link_popBox #go_top::after {
   content: "";
   width: 2px;
   height: 16px;
-  background-color: #ccc;
+  background-color: #666;
   top: 0;
   bottom: 0;
   left: 0;
