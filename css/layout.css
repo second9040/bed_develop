@@ -747,17 +747,24 @@ footer #fast_link_popBox #fast_link_pop {
   top: 3px;
   right: 0px;
   border-radius: 20px;
-  /* background-color: #fff; */
+  background-color: transparent;
   /* box-shadow: 0 3px 4px rgba(51, 51, 51, 0.5); */
-  transition: background-color 0.2s ease;
+  /* transition: background-color 0.2s ease; */
   cursor: pointer;
   z-index: 3;
 }
 footer #fast_link_popBox #fast_link_pop.click_me_text {
   position: absolute;
-  left: -60px;
   top: -20px;
+  /* right: -50px; */
+  right: 65px;
+  opacity: 0;
+  transition: all 0.5s ease;
 }
+footer #fast_link_popBox.show #fast_link_pop.click_me_text {
+  right: 65px;
+  opacity: 1;
+  }
 footer #fast_link_popBox #fast_link_pop:hover {
   background-color: #fff;
 }
