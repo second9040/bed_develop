@@ -108,11 +108,56 @@
                     </div>
                     <div id="section5">
                       <img class="divBaseImg" src="images/products/honor/section5.png" alt="">
+                      <div class="position-absolute section_container">
+                        <div class="textField position-absolute">
+                          <div class="title">
+                            <div>
+                              <span class="line"></span>
+                              <span>厚度加倍</span>
+                          </div>
+                          </div>
+                          <div class="desc">
+                            <div>一般床墊主襯（純天然乳膠或矽膠）都是採用1英吋</div>
+                            <div>也就是2.54cm的厚度，尊爵採用的是加倍厚的乳膠/矽膠</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <div id="section6">
                       <img class="divBaseImg" src="images/products/honor/section6.png" alt="">
+                      <div class="besSizeContainer">
+                        <div class="besSizeDiv">
+                          <img class="bedSize1" src="images/products/honor/bedSize1.png" alt="">
+                          <div class="textField">
+                            <div class="line1">3.5呎</div>
+                            <div class="line2">單人加大</div>
+                          </div>
+                        </div>
+                        <div class="besSizeDiv">
+                            <img class="bedSize2" src="images/products/honor/bedSize2.png" alt="">
+                            <div class="textField">
+                              <div class="line1">5呎</div>
+                              <div class="line2">標準雙人</div>
+                            </div>
+                        </div>
+                        <div class="besSizeDiv">
+                          <img class="bedSize3" src="images/products/honor/bedSize3.png" alt="">
+                          <div class="textField">
+                            <div class="line1">6呎</div>
+                            <div class="line2">雙人加大</div>
+                          </div>
+                        </div>
+                        <div class="besSizeDiv">
+                            <img class="bedSize4" src="images/products/honor/bedSize4.png" alt="">
+                            <div class="textField">
+                              <div class="line1">7呎</div>
+                              <div class="line2">雙人特大</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                </div>
+                  </div>
               </section>
         </main>
         <footer></footer>
@@ -165,7 +210,9 @@ section#products_page {
 #section1,
 #section2,
 #section3,
-#section4 {
+#section4,
+#section5,
+#section6 {
   position: relative;
 }
 
@@ -193,6 +240,10 @@ section#products_page {
   letter-spacing: 10px;
 }
 
+#section5 .section_container .textField .title {
+  text-align: left;
+  padding-left: 17vw;
+}
 .section_container .textField .title div {
   margin: 5px;
 }
@@ -231,11 +282,16 @@ section .divImgElement {
   width: 100%;
   text-align: center;
 }
-.section_container .textField .desc div {
-  margin: 10px 0;
+#section5 .section_container .textField .desc {
+  padding: 15px;
 }
 
-#section2 .section_container .textField {
+.section_container .textField .desc div {
+  line-height: 30px;
+}
+
+#section2 .section_container .textField,
+#section5 .section_container .textField {
   color: #ab764e;
   width: 100%;
   display: flex;
@@ -243,7 +299,81 @@ section .divImgElement {
   align-items: flex-end;
   flex-direction: column;
 }
+#section5 .section_container .textField {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 
+#section6 {
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+#section6 .besSizeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  max-width: 1000px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#section6 .besSizeDiv {
+  margin: 1.25%;
+  text-align: center;
+}
+#section6 .besSizeDiv img {
+  margin: 0 auto 10px;
+  max-height: 80px;
+}
+#section6 .besSizeDiv img.bedSize1 {
+  width: 13vw;
+  min-width: 45px;
+  max-width: 130px;
+}
+#section6 .besSizeDiv img.bedSize2 {
+  width: 15vw;
+  min-width: 50px;
+  max-width: 135px;
+}
+#section6 .besSizeDiv img.bedSize3 {
+  width: 17vw;
+  min-width: 55px;
+  max-width: 145px;
+}
+#section6 .besSizeDiv img.bedSize4 {
+  width: 20vw;
+  min-width: 60px;
+  max-width: 155px;
+}
+#section6 .besSizeDiv .textField {
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  background-color: #604b3b;
+  border-radius: 50%;
+  padding: 20px 10px;
+  transform: scale(0.8);
+  position: relative;
+  width: 65px;
+  height: 65px;
+  margin: 0 auto;
+}
+#section6 .besSizeDiv .textField div {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#section6 .besSizeDiv .textField div.line1 {
+  top: 15px;
+}
+#section6 .besSizeDiv .textField div.line2 {
+  bottom: 15px;
+}
 @media (min-width: 480px) {
   .section_container .textField .title {
     font-size: 36px;
@@ -254,6 +384,28 @@ section .divImgElement {
     text-align: right;
     margin: -10px 2.5vw;
     padding: 0;
+  }
+  #section5 .section_container .textField {
+    margin-top: -15px;
+  }
+  #section5 .section_container .textField .desc {
+    text-align: left;
+    padding: 15px 200px 15px 5vw;
+  }
+
+  #section6 .besSizeDiv {
+    width: 25%;
+  }
+  #section6 .besSizeDiv .textField {
+    font-size: 16px;
+    width: 85px;
+    height: 85px;
+  }
+  #section6 .besSizeDiv .textField div.line1 {
+    top: 20px;
+  }
+  #section6 .besSizeDiv .textField div.line2 {
+    bottom: 20px;
   }
 }
 @media (min-width: 576px) {
@@ -272,6 +424,9 @@ section .divImgElement {
     width: 7vw;
     left: -9vw;
   }
+  section #section5 .title .line::after {
+    left: -11vw;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -284,6 +439,12 @@ section .divImgElement {
   }
   .section_container .textField .desc {
     margin-right: 30px;
+  }
+  section #section5 .title .line::after {
+    left: -145px
+  }
+  #section6 .besSizeContainer {
+    top: 40px;
   }
 }
 
