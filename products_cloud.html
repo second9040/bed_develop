@@ -111,6 +111,40 @@
                         </div>
                       </div>
                     </div>
+                    <div id="section5">
+                      <img src="images/products/cloud/section5.png" alt="">
+                      <div class="besSizeContainer">
+                        <div class="besSizeDiv">
+                          <img class="bedSize1" src="images/products/cloud/bedSize1.png?1" alt="">
+                          <div class="textField">
+                            <div class="line1">106x188x25cm</div>
+                            <div class="line2">單人加大</div>
+                          </div>
+                        </div>
+                        <div class="besSizeDiv">
+                            <img class="bedSize2" src="images/products/cloud/bedSize2.png?1" alt="">
+                            <div class="textField">
+                              <div class="line1">152x188x25cm</div>
+                              <div class="line2">標準雙人</div>
+                            </div>
+                        </div>
+                        <div class="besSizeDiv">
+                          <img class="bedSize3" src="images/products/cloud/bedSize3.png?1" alt="">
+                          <div class="textField">
+                            <div class="line1">182x188x25cm</div>
+                            <div class="line2">雙人加大</div>
+                          </div>
+                        </div>
+                        <div class="besSizeDiv">
+                            <img class="bedSize4" src="images/products/cloud/bedSize4.png?1" alt="">
+                            <div class="textField">
+                              <div class="line1">182x212x25cm</div>
+                              <div class="line2">雙人特大</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
               </section>
         </main>
@@ -164,7 +198,8 @@ section#products_page {
 #section1,
 #section2,
 #section3,
-#section4 {
+#section4,
+#section5 {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
@@ -234,6 +269,80 @@ section .divImgElement {
   border-bottom: solid 2px #fff;
 }
 
+#section5 {
+  margin-top: 0px;
+}
+
+#section5 .besSizeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  max-width: 1000px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#section5 .besSizeDiv {
+  /* margin: 1.25%; */
+  text-align: center;
+  width: 25%;
+}
+#section5 .besSizeDiv img {
+  margin: 0 auto 10px;
+  max-height: 80px;
+}
+#section5 .besSizeDiv img.bedSize1 {
+  width: 13vw;
+  min-width: 35px;
+  max-width: 130px;
+}
+#section5 .besSizeDiv img.bedSize2 {
+  width: 15vw;
+  min-width: 50px;
+  max-width: 135px;
+}
+#section5 .besSizeDiv img.bedSize3 {
+  width: 17vw;
+  min-width: 55px;
+  max-width: 145px;
+  margin-top: -5px;
+}
+#section5 .besSizeDiv img.bedSize4 {
+  width: 20vw;
+  min-width: 60px;
+  max-width: 155px;
+  margin-top: -4px;
+}
+#section5 .besSizeDiv .textField {
+  color: #fff;
+  font-size: 12px;
+  transform: scale(0.6);
+  position: relative;
+  margin: 0 auto;
+  letter-spacing: 2px;
+  width: 60px;
+  height: 60px;
+  margin-top: -10px;
+}
+#section5 .besSizeDiv .textField div.line1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#section5 .besSizeDiv .textField div.line2 {
+  position: absolute;
+  bottom: 0;
+  width: 85px;
+  margin: 10px auto;
+  padding: 5px 10px;
+  border-bottom: solid 2px #fff;
+  left: 50%;
+  transform: translateX(-50%);
+}
 @media (min-width: 380px) {
   .section_container .textField {
     transform: initial;
@@ -241,6 +350,10 @@ section .divImgElement {
   }
   .section_container .textField img {
     width: 60px;
+  }
+  #section5 .besSizeDiv .textField {
+    margin-top: 0;
+    transform: scale(0.8);
   }
 }
 @media (min-width: 480px) {
@@ -253,6 +366,22 @@ section .divImgElement {
   }
   #section3 .section_container .textField {
     left: 10vw;
+  }
+
+  #section5 .besSizeDiv {
+    width: 25%;
+  }
+  #section5 .besSizeDiv .textField {
+    width: 125px;
+    height: 80px;
+    transform: initial;
+    margin-top: 15px;
+  }
+  #section5 .besSizeDiv .textField div.line1 {
+  }
+  #section5 .besSizeDiv .textField div.line2 {
+    width: 76px;
+    bottom: 20px;
   }
 }
 @media (min-width: 576px) {
@@ -282,6 +411,14 @@ section .divImgElement {
   .section_container .textField .desc div {
     margin: 10px 3px;
   }
+  #section5 .besSizeDiv .textField {
+    margin-top: 25px;
+    font-size: 16px;
+  }
+  #section5 .besSizeDiv .textField div.line2 {
+    bottom: 0;
+    width: 100px;
+  }
 }
 @media (min-width: 992px) {
 }
@@ -296,6 +433,9 @@ section .divImgElement {
   }
   #section3 .section_container .textField {
     left: 120px;
+  }
+  #section5 .besSizeContainer {
+    top: 40px;
   }
 }
 </style>
