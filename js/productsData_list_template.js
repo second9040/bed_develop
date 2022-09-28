@@ -32,7 +32,7 @@ function productList_temp(getData){
             list_template += `
                 <div class="products_box_item grid-col-mb-12 grid-col-m-4">
                     <a href="products_wave.html">
-                        <span class="product_img"><img src="https://source.unsplash.com/random/200x200?sig=1"></span>
+                        <span class="product_img"><img src="images/limited/limited_item_01.jpg"></span>
                         <span class="product_name">${item.product_name}</span>
                     </a>
                 </div>
@@ -41,7 +41,7 @@ function productList_temp(getData){
             list_template += `
                 <div class="products_box_item grid-col-mb-12 grid-col-m-4">
                     <a href="products_honor.html">
-                        <span class="product_img"><img src="https://source.unsplash.com/random/200x200?sig=1"></span>
+                        <span class="product_img"><img src="images/limited/limited_item_02.jpg"></span>
                         <span class="product_name">${item.product_name}</span>
                     </a>
                 </div>
@@ -71,11 +71,11 @@ function productList_temp(getData){
 
 function limitedList_temp(getData){
     let list_template= ``;
-    getData.forEach( item => {
+    getData.forEach( (item, index) => {
         list_template += `
         <div class="products_box_item grid-col-mb-12 grid-col-m-4">
             <a href="${item.product_link}">
-                <span class="product_img"><img src="https://source.unsplash.com/random/200x200?sig=1"></span>
+                <span class="product_img"><img src="./images/limited/limited_item_0${index+1}.jpg"></span>
                 <span class="product_name">${item.product_name}</span>
             </a>
         </div>
