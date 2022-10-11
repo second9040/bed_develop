@@ -1449,7 +1449,12 @@ section#feature .scrollBox .scrollItem .listItem.active {
   opacity: 1;
 }
 section#feature .scrollBox .scrollItem .listItem.active div {
-  transform: scale(1);
+  transform: scale(0.85);
+}
+section#feature .scrollBox .scrollItem .listItem.active div img {
+  max-height: 300px;
+  width: auto;
+  margin: 0 auto;
 }
 section#feature .scrollBox .scrollItem .listItem.active div.feature_title {
   font-weight: bold;
@@ -1643,13 +1648,13 @@ section#newsBox .title_left {
 @media (min-width: 992px) {
   section#newsBox .title_left {
     width: 320px;
-    margin: 205px 0 0 -7px;
+    margin: 185px 0 0 -7px;
     padding: 0;
   }
 }
 @media (min-width: 1200px) {
   section#newsBox .title_left {
-    margin: 240px 0 0 15px;
+    margin: 215px 0 0 15px;
     padding: 0;
   }
 }
@@ -1954,12 +1959,12 @@ section#customize_page #customizeBox .customize_text1 {
   position: absolute;
   color: #fff;
   background-color: rgba(105, 120, 99, 0.8);
-  width: calc(100% - 20px);
+  width: 100%;
   top: 0.5%;
   padding: 10px;
   font-size: 14.5px;
   box-shadow: 0 4px 4px rgba(51, 51, 51, 0.8);
-  transform: scale(.65);
+  transform: scale(.95);
 }
 @media (max-width: 413px) {
   section#customize_page #customizeBox .customize_text1 {
@@ -1976,10 +1981,9 @@ section#customize_page #customizeBox .customize_text1 {
 }
 @media (min-width: 414px) {
   section#customize_page #customizeBox .customize_text1 {
-    width: 360px;
+    width: 400px;
     top: 13vw;
-    transform: scale(.85);
-    left: 5%;
+    left: 2.5%;
   }
 }
 @media (min-width: 576px) {
@@ -1997,7 +2001,6 @@ section#customize_page #customizeBox .customize_text1 {
 }
 @media (min-width: 992px) {
   section#customize_page #customizeBox .customize_text1 {
-    width: 380px;
     font-size: 18px;
   }
 }
@@ -2149,11 +2152,19 @@ section#products_page #products_box .products_box_item a {
   padding: 10px;
   background-color: #efefef;
   transition: background-color 0.2s ease;
+  max-width: 400px;
+  margin: 0 auto;
+}
+section#products_page #products_box .products_box_item a .product_img img {
+  max-width: 375px;
+  margin: 0 auto;
 }
 section#products_page #products_box .products_box_item a span.product_name {
   display: block;
   padding: 10px 0;
   color: #333;
+  text-align: center;
+  font-size: 24px;
 }
 section#products_page #products_box .products_box_item a:hover {
   background-color: #d6d6d6;

@@ -30,7 +30,7 @@ function productList_temp(getData){
         console.log(index)
         if (index === 0) { // 波浪
             list_template += `
-                <div class="products_box_item grid-col-mb-12 grid-col-m-4">
+                <div class="products_box_item">
                     <a href="products_wave.html">
                         <span class="product_img"><img src="images/limited/limited_item_01.jpg"></span>
                         <span class="product_name">${item.product_name}</span>
@@ -39,7 +39,7 @@ function productList_temp(getData){
             `            
         } else if (index === 1) { // 尊爵
             list_template += `
-                <div class="products_box_item grid-col-mb-12 grid-col-m-4">
+                <div class="products_box_item">
                     <a href="products_honor.html">
                         <span class="product_img"><img src="images/limited/limited_item_02.jpg"></span>
                         <span class="product_name">${item.product_name}</span>
@@ -48,7 +48,7 @@ function productList_temp(getData){
             `            
         } else if (index === 2) { // 尊爵
             list_template += `
-                <div class="products_box_item grid-col-mb-12 grid-col-m-4">
+                <div class="products_box_item">
                     <a href="products_cloud.html">
                         <span class="product_img"><img src="https://source.unsplash.com/random/200x200?sig=1"></span>
                         <span class="product_name">${item.product_name}</span>
@@ -57,7 +57,7 @@ function productList_temp(getData){
             `            
         } else {
             list_template += `
-                <div class="products_box_item grid-col-mb-12 grid-col-m-4">
+                <div class="products_box_item">
                     <a href="products_content.html?product_id=${main_product_id}&${item.product_link}">
                         <span class="product_img"><img src="https://source.unsplash.com/random/200x200?sig=1"></span>
                         <span class="product_name">${item.product_name}</span>
@@ -73,7 +73,7 @@ function limitedList_temp(getData){
     let list_template= ``;
     getData.forEach( (item, index) => {
         list_template += `
-        <div class="products_box_item grid-col-mb-12 grid-col-m-4">
+        <div class="products_box_item">
             <a href="${item.product_link}">
                 <span class="product_img"><img src="./images/limited/limited_item_0${index+1}.jpg"></span>
                 <span class="product_name">${item.product_name}</span>
