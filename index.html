@@ -79,26 +79,32 @@
                     <div class="title">限時優惠 / <span class="text_en">Limited</span></div>
                 </div>
                 <div id="newsContent" class="content_right">
-                    <ul class="clearfix">
-                        <li class="box_left">
-                            <a href="/limited.html">
-                                <span class="news_img"><img src="images/limited_item_01.jpg"></span>
-                                <span class="news_title">優惠一的標題</span>
-                            </a>
-                        </li>
-                        <li class="box_left">
-                            <a href="/limited.html">
-                                <span class="news_img"><img src="images/limited_item_02.jpg"></span>
-                                <span class="news_title">優惠二的標題</span>
-                            </a>
-                        </li>
-                        <li class="box_left">
-                            <a href="/limited.html">
-                                <span class="news_img"><img src="https://source.unsplash.com/random/200x200?sig=3"></span>
-                                <span class="news_title">優惠三的標題</span>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="ulContainer">
+                        <ul class="clearfix">
+                            <li class="box_left">
+                                <a href="/limited.html">
+                                    <span class="news_img"><img src="images/limited_item_rect_01.jpg"></span>
+                                    <!-- <span class="news_title">優惠一的標題</span> -->
+                                </a>
+                            </li>
+                            <li class="box_left">
+                                <a href="/limited.html">
+                                    <span class="news_img"><img src="images/limited_item_rect_02.jpg"></span>
+                                    <!-- <span class="news_title">優惠二的標題</span> -->
+                                </a>
+                            </li>
+                            <li class="box_left">
+                                <a href="/limited.html">
+                                    <span class="news_img"><img src="images/limited_item_rect_03.jpg"></span>
+                                    <!-- <span class="news_title">優惠三的標題</span> -->
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn_left">
+                    </div>
+                    <div class="btn_right">
+                    </div>
                 </div>
             </section>
             <section id="products">
@@ -154,6 +160,28 @@
         hot_product();
         limit_product();
     })
+    $('#newsContent .btn_left').on('click', function(event){
+        clickLeft();
+    });
+    $('#newsContent .btn_right').on('click', function(event){
+        clickRight();
+    });
+
+    function clickLeft(){
+        let _left = $('#newsContent .ulContainer ul').offset().left;
+        console.log($('#newsContent .ulContainer ul').offset().left)
+        if (_left > 0) {
+            $('#newsContent .ulContainer ul').offset({left: _left - 200})
+        }
+    }
+    function clickRight(){
+        let _left = $('#newsContent .ulContainer ul').offset().left;
+        console.log($('#newsContent .ulContainer ul').offset().left)
+
+        if (_left < 500) {
+            $('#newsContent .ulContainer ul').offset({left: _left + 200})
+        }
+    }
     function hot_product(){
         let list_temp = '';
         const hot_arrays = [
