@@ -27,7 +27,6 @@ if(main_product_url.indexOf('?') != -1){
 function productList_temp(getData){
     let list_template = ``;
     getData.forEach( (item, index) => {
-        console.log(index)
         if (index === 0) { // 波浪
             list_template += `
                 <div class="products_box_item">
