@@ -73,7 +73,7 @@ function limitedList_temp(getData){
     getData.forEach( (item, index) => {
         list_template += `
         <div class="products_box_item">
-            <a href="${item.product_link}">
+            <a href="javascript: void(0);">
                 <span class="product_img"><img src="./images/limited/limited_item_0${index+1}.jpg"></span>
                 <span class="product_name">${item.product_name}</span>
             </a>
