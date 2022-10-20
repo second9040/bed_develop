@@ -26,45 +26,18 @@ if(main_product_url.indexOf('?') != -1){
 
 function productList_temp(getData){
     let list_template = ``;
+    let count = 1;
     getData.forEach( (item, index) => {
-        if (index === 0) { // 波浪
+        if (item.main_product_id === main_product_id) {
             list_template += `
                 <div class="products_box_item">
-                    <a href="products_wave.html">
-                        <span class="product_img"><img src="images/limited/limited_item_01.jpg"></span>
+                    <a href="${item.product_link}">
+                        <span class="product_img"><img src="images/limited/limited_item_0${count++}.jpg"></span>
                         <span class="product_name">${item.product_name}</span>
                     </a>
-                </div>
-            `            
-        } else if (index === 1) { // 尊爵
-            list_template += `
-                <div class="products_box_item">
-                    <a href="products_honor.html">
-                        <span class="product_img"><img src="images/limited/limited_item_02.jpg"></span>
-                        <span class="product_name">${item.product_name}</span>
-                    </a>
-                </div>
-            `            
-        } else if (index === 2) { // 尊爵
-            list_template += `
-                <div class="products_box_item">
-                    <a href="products_cloud.html">
-                        <span class="product_img"><img src="https://source.unsplash.com/random/200x200?sig=1"></span>
-                        <span class="product_name">${item.product_name}</span>
-                    </a>
-                </div>
-            `            
-        } else {
-            list_template += `
-                <div class="products_box_item">
-                    <a href="products_content.html?product_id=${main_product_id}&${item.product_link}">
-                        <span class="product_img"><img src="https://source.unsplash.com/random/200x200?sig=1"></span>
-                        <span class="product_name">${item.product_name}</span>
-                    </a>
-                </div>
-            `
+                </div>`;
         }
-    });
+    })
     $('#products_box').html(list_template)
 }
 
