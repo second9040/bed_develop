@@ -20,10 +20,28 @@
                 <div class="container">
                     <nav id="breadcrumb_nav"></nav>
                     <div id="products_box" class="all_products">
-                        <div class="products_box_item grid-col-mb-12 grid-col-m-4"><a href="#">商品</a></div>
-                        <div class="products_box_item grid-col-mb-12 grid-col-m-4"><a href="#">商品</a></div>
-                        <div class="products_box_item grid-col-mb-12 grid-col-m-4"><a href="#">商品</a></div>
+                        <!-- <div class="products_box_item grid-col-mb-12 grid-col-m-4"><a href="#">商品</a></div> -->
+                        <!-- <div class="products_box_item grid-col-m-4">
+                            <img src="/images/products/bed/bed_1.png" alt="">
+                        </div>
+                        <div class="products_box_item grid-col-m-4">
+                            <img src="/images/products/bed/bed_2.png" alt="">
+                        </div>
+                        <div class="products_box_item grid-col-m-4">
+                            <img src="/images/products/bed/bed_3.png" alt="">
+                        </div> -->
                     </div>
+                    <!-- <div id="products_box" class="all_products line2">
+                        <div class="products_box_item grid-col-m-4">
+                            <img src="/images/products/bed/bed_4.png" alt="">
+                        </div>
+                        <div class="products_box_item grid-col-m-4">
+                            <img src="/images/products/bed/bed_5.png" alt="">
+                        </div>
+                        <div class="products_box_item grid-col-m-4">
+                            <img src="/images/products/bed/bed_6.png" alt="">
+                        </div>
+                    </div> -->
                 </div>
             </section>
         </main>
@@ -34,6 +52,28 @@
     </script>
     <script type="module" src="js/js_template.js"></script>
     <script type="module" src="js/template/breadcrumb_module.js"></script>
-    <script type="module" src="js/productsData_list_template.js"></script>
+    <script type="module" src="js/productsData_list_template.js?8"></script>
     <!-- <script type="module" src="js/template/productsData_module.js"></script> -->
 </html>
+<style>
+    .products_box_line {
+        border-bottom: none !important;
+        display: flex;
+        align-items: center;
+    }
+    @media (max-width: 768px) {
+        .products_box_line {
+            display: initial;
+        }
+    }
+    .products_box_line.line2 {
+        padding-bottom: 5% !important;
+    }
+    .products_box_line .products_box_item a {
+        background-color: transparent !important;
+    }
+
+    .products_box_line .products_box_item a:hover {
+        background-color: #d6d6d64d !important;
+    }
+</style>

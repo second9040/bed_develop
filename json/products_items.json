@@ -1,49 +1,64 @@
 [
     {
-        "product_name": "波浪 plus 舒眠床墊",
-        "product_link": "products_wave.html",
-        "main_product_id": "0"
+        "product_link": "products_wave.html?product_id=0",
+        "main_product_id": "0",
+        "category": "bed"
     },
     {
-        "product_name": "尊爵-舒眠床墊",
-        "product_link": "products_honor.html",
-        "main_product_id": "0"
+        "product_link": "products_honor.html?product_id=0",
+        "main_product_id": "0",
+        "category": "bed"
     },
     {
-        "product_name": "QQ 雲朵床墊",
-        "product_link": "products_cloud.html",
-        "main_product_id": "0"
+        "product_link": "products_cloud.html?product_id=0",
+        "main_product_id": "0",
+        "category": "bed"
     },
     {
-        "product_name": "商業用床墊",
-        "product_link": "p0_commercial_bed.html",
-        "main_product_id": "0"
+        "product_link": "p0_commercial_bed.html?product_id=0",
+        "main_product_id": "0",
+        "category": "bed"
+    },
+    {
+        "product_link": "p0_commercial_bed.html?product_id=0",
+        "main_product_id": "0",
+        "category": "bed"
+    },
+    {
+        "product_link": "p0_commercial_bed.html?product_id=0",
+        "main_product_id": "0",
+        "category": "bed"
     },
 
     {
         "product_name": "普通封邊式底座",
-        "product_link": "p1_0_normal.html",
-        "main_product_id": "1"
+        "product_link": "p1_0_normal.html?product_id=1",
+        "main_product_id": "1",
+        "category": "bed"
     },
     {
         "product_name": "木心板抽式底座",
-        "product_link": "p1_1_drawer.html",
-        "main_product_id": "1"
+        "product_link": "p1_1_drawer.html?product_id=1",
+        "main_product_id": "1",
+        "category": "bed"
     },
 
     {
         "product_name": "波浪 plus 舒眠床墊",
-        "product_link": "products_wave.html",
-        "main_product_id": "2"
+        "product_link": "products_wave.html?product_id=2",
+        "main_product_id": "2",
+        "category": "bed"
     },
     {
         "product_name": "尊爵-舒眠床墊",
-        "product_link": "products_honor.html",
-        "main_product_id": "2"
+        "product_link": "products_honor.html?product_id=2",
+        "main_product_id": "2",
+        "category": "bed"
     },
     {
         "product_name": "QQ 雲朵床墊",
-        "product_link": "products_cloud.html",
-        "main_product_id": "2"
+        "product_link": "products_cloud.html?product_id=2",
+        "main_product_id": "2",
+        "category": "bed"
     }
 ]

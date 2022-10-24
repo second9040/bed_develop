@@ -2243,6 +2243,7 @@ section#products_page nav#breadcrumb_nav ol li:nth-last-of-type(1)::after {
 section#products_page #products_box {
   border-bottom: 1px solid #ccc;
   margin-bottom: 20px;
+  padding: 20px;
 }
 section#products_page #products_box .products_box_item {
   padding: 10px;
@@ -2252,11 +2253,11 @@ section#products_page #products_box .products_box_item a {
   padding: 10px;
   background-color: #efefef;
   transition: background-color 0.2s ease;
-  max-width: 400px;
+  max-width: 440px;
   margin: 0 auto;
 }
 section#products_page #products_box .products_box_item a .product_img img {
-  max-width: 375px;
+  max-width: 400px;
   margin: 0 auto;
 }
 section#products_page #products_box .products_box_item a span.product_name {
