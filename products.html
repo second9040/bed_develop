@@ -19,29 +19,13 @@
             <section id="products_page" class="clearfix">
                 <div class="container">
                     <nav id="breadcrumb_nav"></nav>
-                    <div id="products_box" class="all_products">
-                        <!-- <div class="products_box_item grid-col-mb-12 grid-col-m-4"><a href="#">商品</a></div> -->
-                        <!-- <div class="products_box_item grid-col-m-4">
-                            <img src="/images/products/bed/bed_1.png" alt="">
-                        </div>
-                        <div class="products_box_item grid-col-m-4">
-                            <img src="/images/products/bed/bed_2.png" alt="">
-                        </div>
-                        <div class="products_box_item grid-col-m-4">
-                            <img src="/images/products/bed/bed_3.png" alt="">
-                        </div> -->
+                    <div class="categoryLine">
+                        <div class="itemCircle bed">床墊</div>
+                        <div class="itemCircle bedsideTable">床架<br>床頭櫃</div>
+                        <div class="itemCircle wardrobe">衣櫃</div>
                     </div>
-                    <!-- <div id="products_box" class="all_products line2">
-                        <div class="products_box_item grid-col-m-4">
-                            <img src="/images/products/bed/bed_4.png" alt="">
-                        </div>
-                        <div class="products_box_item grid-col-m-4">
-                            <img src="/images/products/bed/bed_5.png" alt="">
-                        </div>
-                        <div class="products_box_item grid-col-m-4">
-                            <img src="/images/products/bed/bed_6.png" alt="">
-                        </div>
-                    </div> -->
+                    <div id="products_box" class="all_products">
+                    </div>
                 </div>
             </section>
         </main>
@@ -52,7 +36,7 @@
     </script>
     <script type="module" src="js/js_template.js"></script>
     <script type="module" src="js/template/breadcrumb_module.js"></script>
-    <script type="module" src="js/productsData_list_template.js?8"></script>
+    <script type="module" src="js/productsData_list_template.js?22102601"></script>
     <!-- <script type="module" src="js/template/productsData_module.js"></script> -->
 </html>
 <style>
@@ -69,11 +53,74 @@
     .products_box_line.line2 {
         padding-bottom: 5% !important;
     }
-    .products_box_line .products_box_item a {
-        background-color: transparent !important;
+
+    .categoryLine {
+        display: flex;
+        justify-content: center;
+    }
+    .categoryLine .itemCircle {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        font-size: 16px;
+        line-height: 20px;
+        opacity: 0.6;
+        cursor: pointer;
+    }
+    @media (min-width: 380px) {
+        .categoryLine .itemCircle {
+            width: 80px;
+            height: 80px;
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+    @media (min-width: 480px) {
+        .categoryLine .itemCircle {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    .categoryLine .itemCircle:hover {
+        opacity: 0.8;
+        background-color: #fff;
+    }
+    
+    .categoryLine .itemCircle.bed {
+        background: url('./images/products/bed/bed_3.png');
+        background-color: #fff;
+        background-size: cover;
+    }
+    .categoryLine .itemCircle.bedsideTable {
+        background: url('./images/products/category_bedsideTable.png');
+        text-align: center;
+        background-size: cover;
+    }
+    .categoryLine .itemCircle.wardrobe {
+        background: url('./images/products/category_wardrobe.png');
+        background-size: cover;
     }
 
-    .products_box_line .products_box_item a:hover {
-        background-color: #d6d6d64d !important;
-    }
+
 </style>
+<script>
+    const main_product_url = location.href;
+    let main_product_id = 0;
+    if(main_product_url.indexOf('?') != -1){
+        main_product_id = main_product_url.split('id=')[1]
+    }
+
+    let product_category = ['bed', 'bedsideTable', 'wardrobe'];
+    for(let i = 0; i < product_category.length; i++) {
+        $(`.itemCircle.${product_category[i]}`).on('click', function(event){
+            window.location.href = `/products.html?product_id=${i}`;
+        });
+        if (i === Number(main_product_id)) {
+            $(`.itemCircle.${product_category[i]}`).css('opacity', 0.8);
+        }
+    }
+</script>

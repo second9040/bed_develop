@@ -1,30 +1,36 @@
 [
     {
+        "product_name": "波浪 plus 舒眠床墊",
         "product_link": "products_wave.html?product_id=0",
         "main_product_id": "0",
         "category": "bed"
     },
     {
+        "product_name": "尊爵-舒眠床墊",
         "product_link": "products_honor.html?product_id=0",
         "main_product_id": "0",
         "category": "bed"
     },
     {
+        "product_name": "QQ 雲朵床墊",
         "product_link": "products_cloud.html?product_id=0",
         "main_product_id": "0",
         "category": "bed"
     },
     {
+        "product_name": "商業用床墊",
         "product_link": "p0_commercial_bed.html?product_id=0",
         "main_product_id": "0",
         "category": "bed"
     },
     {
-        "product_link": "p0_commercial_bed.html?product_id=0",
+        "product_name": "商業用訂製床墊",
+        "product_link": "p0_commercial_customize_bed.html?product_id=0",
         "main_product_id": "0",
         "category": "bed"
     },
     {
+        "product_name": "商品名稱",
         "product_link": "p0_commercial_bed.html?product_id=0",
         "main_product_id": "0",
         "category": "bed"

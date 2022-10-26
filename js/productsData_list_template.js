@@ -1,6 +1,6 @@
 export function getProductData(){
     // 好眠商品資料獲取
-    fetch('json/products_items.json?2')
+    fetch('json/products_items.json?22102601')
     .then(res => {
         return res.json();
     })
@@ -29,7 +29,6 @@ function productList_temp(getData){
     let count = 1;
     getData.forEach( (item, index) => {
         if (item.main_product_id === main_product_id) {
-            console.log(item)
             if (count % 3 === 1) {
                 list_template += `<div class="products_box_line line${(count/3 + 1).toFixed(0)}">`
             }
@@ -37,6 +36,7 @@ function productList_temp(getData){
                 <div class="products_box_item">
                     <a href="${item.product_link}">
                         <span class="product_img"><img src="images/products/${item.category}/${item.category}_${count++}.png"></span>
+                        <div style="text-align: center; margin-top: 15px; color: #666; font-size: 18px;">${item.product_name}</div>
                     </a>
                 </div>`;
             if (count % 3 === 1) {
