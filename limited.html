@@ -16,11 +16,11 @@
                 <div class="logo"><img src="images/banner/bed_knowledge_text.png" alt="製床所御品"></div>
                 <div class="slogan_text">看過路過不要錯過</div>
             </div>
-            <section id="products_page">
+            <section id="limited_products_page" class="limited_products_page">
                 <div id="products_box" class="limited_products container clearfix">
                     <div class="products_box_item"><a href="#">商品</a></div>
                     <div class="products_box_item"><a href="#">商品</a></div>
-                    <div class="products_box_item"><a href="#">商品ssssss</a></div>
+                    <div class="products_box_item"><a href="#">商品</a></div>
                 </div>
             </section>
         </main>
@@ -32,3 +32,104 @@
     <script type="module" src="js/js_template.js"></script>
     <script type="module" src="js/productsData_list_template.js"></script>
 </html>
+<style>
+/* 改 layout.css 很容易改到產品頁的樣式造成跑版 故改在單獨頁面下 */
+#limited_products_page {
+  padding: 25px 0;
+  background-color: #90b8d3;
+}
+section#limited_products_page #products_box .products_box_item a {
+  display: block;
+  padding: 10px;
+  background-color: #2f5575;
+  transition: background-color 0.2s ease;
+  margin: 15px 25px 30px;
+  border-radius: 20px;
+  cursor: default;
+}
+
+@media (min-width: 768px) {
+    section#limited_products_page #products_box .products_box_item a {
+        margin: 25px auto 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    section#limited_products_page #products_box .products_box_item a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+section#limited_products_page #products_box .products_box_item a .textContainer {
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+}
+@media (min-width: 992px) {
+    section#limited_products_page #products_box .products_box_item a .textContainer {
+        max-width: 400px;
+        padding: 40px 25px;
+        text-align: left;
+    }
+}
+section#limited_products_page #products_box .products_box_item a .textContainer .product_title {
+  font-size: 24px;
+  margin: 5px 0;
+  letter-spacing: 5px;
+}
+@media (min-width: 768px) {
+    section#limited_products_page #products_box .products_box_item a .textContainer .product_title {
+        font-size: 32px;
+        margin: 10px 0;
+    }
+}
+section#limited_products_page #products_box .products_box_item a .textContainer .updateDate {
+  margin: 10px 0;
+}
+
+section#limited_products_page #products_box .products_box_item a .textContainer .breakLine {
+  width: 25px;
+  height: 1px;
+  background-color: #fff;
+  margin: 10px auto;
+}
+@media (min-width: 992px) {
+    section#limited_products_page #products_box .products_box_item a .textContainer .breakLine {
+        margin: 10px 0;
+    }
+}
+section#limited_products_page #products_box .products_box_item a .textContainer .product_desc {
+    line-height: 28px;
+    margin: 5px 0;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+@media (min-width: 448px) {
+section#limited_products_page #products_box .products_box_item a .textContainer .product_desc {
+    line-height: 36px;
+    margin: 10px 0;
+    letter-spacing: 2px;
+  }
+}
+
+section#limited_products_page #products_box .products_box_item a .product_img img {
+  margin: 0 auto;
+  padding: 15px;
+}
+section#limited_products_page #products_box .products_box_item a span.product_name {
+  display: block;
+  padding: 10px 0;
+  color: #333;
+  text-align: center;
+  font-size: 24px;
+}
+section#limited_products_page #products_box .products_box_item a:hover {
+  /* background-color: #d6d6d6; */
+  opacity: 0.75;
+}
+</style>

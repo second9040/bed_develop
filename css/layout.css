@@ -766,7 +766,7 @@ footer #fast_link_popBox.show #fast_link_pop.click_me_text {
   opacity: 1;
   }
 footer #fast_link_popBox #fast_link_pop:hover {
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 footer #fast_link_popBox #fast_link_pop > img {
   width: 140%;

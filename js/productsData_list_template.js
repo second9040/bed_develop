@@ -53,8 +53,14 @@ function limitedList_temp(getData){
         list_template += `
         <div class="products_box_item">
             <a href="javascript: void(0);">
-                <span class="product_img"><img src="./images/limited/limited_item_0${index+1}.jpg"></span>
-                <span class="product_name">${item.product_name}</span>
+                <div class="textContainer">
+                    <div class="product_title">${item.titleLine1}</div>
+                    <div class="product_title">${item.titleLine2}</div>
+                    <div class="updateDate">${item.date}</div>
+                    <div class="breakLine"></div>
+                    <div class="product_desc">${item.desc}</div>
+                </div>
+                <span class="product_img"><img src="./images/limited/limited_item_0${index+1}.jpg?1"></span>
             </a>
         </div>
         `
