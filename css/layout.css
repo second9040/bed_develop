@@ -2241,9 +2241,10 @@ section#products_page nav#breadcrumb_nav ol li:nth-last-of-type(1)::after {
   display: none;
 }
 section#products_page #products_box {
-  border-bottom: 1px solid #ccc;
+  /* border-bottom: 1px solid #ccc; */
   margin-bottom: 20px;
   padding: 20px;
+  position: relative;
 }
 section#products_page #products_box .products_box_item {
   padding: 10px;
@@ -2290,7 +2291,6 @@ section#products_page #products_box #product_mainPhoto #product_photo {
 }
 section#products_page #products_box #product_information {
   padding: 10px;
-  border: 1px solid #bbb;
 }
 section#products_page #products_box #product_information #contact_with_box {
   display: flex;
@@ -2328,12 +2328,60 @@ section#products_page #products_box #product_information #contact_with_box .cont
   width: 50px;
 }
 section#products_page #products_box #product_information #sizeBox {
-  color: #604a3a;
+  color: #323232;
+  text-align: center;
 }
+
 section#products_page #products_box #product_information #sizeBox #item_name {
-  font-weight: bold;
-  font-size: 26px;
+  font-size: 40px;
+  letter-spacing: 2px;
 }
+section#products_page #products_box #product_information #sizeBox #descText {
+  font-size: 20px;
+}
+section#products_page #products_box #product_information #sizeBox #sizeList {
+  padding: 5px;
+  font-size: 16px;
+  margin: 25px 15px;
+}
+
+section#products_page #products_box #product_information #sizeBox #btnLine {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+section#products_page #products_box #product_information #sizeBox #btnLine i {
+  margin-right: 10px;
+}
+section#products_page #products_box #product_information #sizeBox #btnLine .collect {
+  margin: 0 10px;
+  padding: 5px 20px;
+  background-color: #666666;
+  border-radius: 5px;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+section#products_page #products_box #product_information #sizeBox #btnLine .inquire {
+  margin: 0 10px;
+  padding: 5px 20px;
+  background-color: #3cb549;
+  border-radius: 5px;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
+
+section#products_page #products_box #product_information #sizeBox #btnLine .inquire img {
+  width: 25px;
+  margin: 0 5px 0 -5px;
+}
+
 section#products_page #products_box #product_information #sizeBox #hot_tips {
   border: 1px solid #ccc;
   padding: 10px;
