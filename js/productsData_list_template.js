@@ -80,6 +80,9 @@ function limitedList_temp(getData){
                 $('.videoBox').width(boxWidth);
             }
         }
+        if (list_template === '') {
+            getProductData();
+        }
     }, 500)
 }
 getProductData();
