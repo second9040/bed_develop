@@ -256,7 +256,11 @@ section#products_page {
   background-repeat: repeat-x;
   background-position: bottom;
 }
-
+@media (min-width: 991px) {
+  #products_box.p0_3 {
+    padding-top: 60px !important;
+  }
+}
 @media (max-width: 1199px) {
   #products_box.p0_3 {
     background-image: none;
@@ -304,7 +308,6 @@ img.swiper-slide {
   }
   .swiper {
     width: auto;
-    border: none;
   }
   img.swiper-slide {
     height: 80px;

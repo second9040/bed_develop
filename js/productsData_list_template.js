@@ -46,10 +46,10 @@ function productList_temp(getData){
     })
     $('#products_box').html(list_template)
 }
-
 function limitedList_temp(getData){
     let list_template= ``;
     getData.forEach( (item, index) => {
+        let showType = item.videoId ? '<div class="videoBox"><iframe src="https://www.youtube.com/embed/XzyQ-Z7leL8" frameborder="0" allowFullScreen="true"></iframe></div>' : `<img src="./images/limited/limited_item_0${index+1}.jpg?1">`;
         list_template += `
         <div class="products_box_item">
             <a href="javascript: void(0);">
@@ -60,11 +60,26 @@ function limitedList_temp(getData){
                     <div class="breakLine"></div>
                     <div class="product_desc">${item.desc}</div>
                 </div>
-                <span class="product_img"><img src="./images/limited/limited_item_0${index+1}.jpg?1"></span>
+                <span class="product_img">${showType}</span>
             </a>
         </div>
         `
     });
-    $('.limited_products').html(list_template)
+    $('.limited_products').html(list_template);
+    setTimeout(() => {
+        if ($('.videoBox')) {
+            if ($('.product_img img')) {
+                // 有圖片，iframe 使用圖片寬度
+                let _width = $('.product_img img').width();
+                console.log(_width)
+                $('.videoBox').width(_width);
+            } else {
+                // 沒有圖片，iframe 寬度用扣的
+                let boxWidth = $('.products_box_item').width();
+                let textContainerWidth = $('.textContainer').width();
+                $('.videoBox').width(boxWidth);
+            }
+        }
+    }, 500)
 }
 getProductData();
