@@ -1,3 +1,4 @@
+let _limitedData = null;
 export function getProductData(){
     // 好眠商品資料獲取
     fetch('json/products_items.json?22102601')
@@ -13,9 +14,10 @@ export function getProductData(){
     .then(res => {
         return res.json();
     })
-    .then(limitedData => 
+    .then(limitedData => {
+        _limitedData = limitedData;
         limitedList_temp(limitedData)
-    );
+    });
     
 };
 const main_product_url = location.href;
@@ -49,7 +51,7 @@ function productList_temp(getData){
 function limitedList_temp(getData){
     let list_template= ``;
     getData.forEach( (item, index) => {
-        let showType = item.videoId ? '<div class="videoBox"><iframe src="https://www.youtube.com/embed/XzyQ-Z7leL8" frameborder="0" allowFullScreen="true"></iframe></div>' : `<img src="./images/limited/limited_item_0${index+1}.jpg?1">`;
+        let showType = item.videoId ? '<div class="videoBox"><iframe src="https://www.youtube.com/embed/XzyQ-Z7leL8" frameborder="0" allowFullScreen="true"></iframe></div>' : `<img src="./images/limited/limited_item_0${index < 4 ? index+1 : 1}.jpg?${index+1}">`; // 05 不知為什麼跑不出來
         list_template += `
         <div class="products_box_item">
             <a href="javascript: void(0);">
@@ -67,11 +69,10 @@ function limitedList_temp(getData){
     });
     $('.limited_products').html(list_template);
     setTimeout(() => {
+        let _width = $('.product_img img').width();
         if ($('.videoBox')) {
             if ($('.product_img img')) {
                 // 有圖片，iframe 使用圖片寬度
-                let _width = $('.product_img img').width();
-                console.log(_width)
                 $('.videoBox').width(_width);
             } else {
                 // 沒有圖片，iframe 寬度用扣的
@@ -80,8 +81,8 @@ function limitedList_temp(getData){
                 $('.videoBox').width(boxWidth);
             }
         }
-        if (list_template === '') {
-            getProductData();
+        if (!_width) {
+            limitedList_temp(_limitedData);
         }
     }, 500)
 }

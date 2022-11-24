@@ -8,6 +8,16 @@
     <script src="js/jquery-2.2.4.min.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/layout.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- swiper -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.cjs.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.esm.browser.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.esm.browser.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.esm.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.cjs.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.min.js"></script>
 </head>
 <body>
     <header></header>
@@ -78,32 +88,21 @@
                 <div class="title_left">
                     <div class="title">限時優惠 / <span class="text_en">Limited</span></div>
                 </div>
-                <div id="newsContent" class="content_right">
-                    <div class="ulContainer">
-                        <ul class="clearfix">
-                            <li class="box_left">
-                                <a href="/limited.html">
-                                    <span class="news_img"><img src="images/limited_item_rect_01.jpg"></span>
-                                    <!-- <span class="news_title">優惠一的標題</span> -->
-                                </a>
-                            </li>
-                            <li class="box_left">
-                                <a href="/limited.html">
-                                    <span class="news_img"><img src="images/limited_item_rect_02.jpg"></span>
-                                    <!-- <span class="news_title">優惠二的標題</span> -->
-                                </a>
-                            </li>
-                            <li class="box_left">
-                                <a href="/limited.html">
-                                    <span class="news_img"><img src="images/limited_item_rect_03.jpg"></span>
-                                    <!-- <span class="news_title">優惠三的標題</span> -->
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="btn_left">
-                    </div>
-                    <div class="btn_right">
+                <div class="limitedSwiperContainer">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <img class="swiper-slide" src="images/limited_item_rect_01.jpg" alt="">
+                            <img class="swiper-slide" src="images/limited_item_rect_03.jpg" alt="">
+                            <img class="swiper-slide" src="images/limited_item_rect_02.jpg" alt="">
+                        </div>
+                        <!-- <div class="swiper-pagination"></div> -->
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev">
+                        </div>
+                        <div class="swiper-button-next">
+                            <!-- <i class="fa-solid fa-angle-right"></i> -->
+                        </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -241,4 +240,139 @@
         }
     }
 </script>
+<script>
+    let mySwiper = new Swiper('.swiper', {
+        direction: 'horizontal', // 垂直切換選項
+        loop: true, // 迴圈模式選項
+        spaceBetween:  $('body').width() > 991 ? 25 : 50,
+        slidesPerView: $('body').width() > 991 ? 2 : 1,
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 2000,
+        },
+        // 如果需要分頁器
+        // pagination: {
+        //     el: '.swiper-pagination',
+        // },
+    })
+</script>
 </html>
+
+<style>
+.limitedSwiperContainer {
+  position: relative;
+  width: auto;
+  background-color: #fff;
+  margin: 0 auto 0;
+}
+.limitedSwiperContainer::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -50px;
+    background-color: #fff;
+    transform: skewX(-10deg);
+}
+.swiper {
+  /* position: absolute; */
+  padding: 30px;
+  overflow: hidden;
+  margin: 0 auto;
+  /* max-height: 400px; */
+  /* height: 400px; */
+}
+.swiper-wrapper {
+  /* max-width: 300px; */
+  bottom: 0px;
+  padding: 0 10px;
+}
+img.swiper-slide {
+}
+@media (min-width: 768px) {
+  .swiper {
+    width: 50vw;
+  }
+}
+
+@media (min-width: 991px) {
+  .limitedSwiperContainer {
+      margin-left: 420px;
+  }
+  .swiper {
+    width: auto;
+  }
+  .swiper-wrapper {
+    max-width: 360px;
+  }
+}
+@media (min-width: 1200px) {
+  .limitedSwiperContainer {
+
+  }
+  .swiper {
+    border: none;
+  }
+  .swiper-wrapper {
+    max-width: 360px;
+  }
+}
+/*  蓋掉原生的按鈕樣式 */
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after,
+.swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after {
+  content: none;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #2f5575;
+  padding: 10px 2px;
+  font-size: 45px;
+}
+
+.swiper-button-prev {
+  left: 8px;
+}
+.swiper-button-next {
+  right: 8px;
+}
+.swiper-button-prev::before,
+.swiper-button-next::before {
+    background: #2f5575;
+    transform: rotate(-45deg);
+    top: 0px;
+    position: absolute;
+    display: block;
+    content: "";
+    width: 30px;
+    height: 4px;
+    right: -4px;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    background: #2f5575;
+    transform: rotate(45deg);
+    top: 20px;
+    position: absolute;
+    display: block;
+    content: "";
+    width: 30px;
+    height: 4px;
+    left: 0px;
+}
+.swiper-button-next::before {
+    transform: rotate(45deg);
+}
+
+.swiper-button-next::after {
+    transform: rotate(-45deg);
+}
+
+</style>
