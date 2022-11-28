@@ -11,13 +11,11 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- swiper -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.cjs.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.esm.browser.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.esm.browser.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.esm.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.cjs.min.js"></script>
-    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.css" rel="stylesheet">
-    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/6.4.1/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.css">  
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">    
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.js"> </script>  
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js.map"> </script>
 </head>
 <body>
     <header></header>
@@ -206,7 +204,7 @@
             },
         ];
         for( let i = 0; i < 5; i++){
-            list_temp = `<a href="#"><span class="product_img"><img src="https://source.unsplash.com/random/200x200?sig=${hot_arrays[i].img}"></span><span class="product_name">${hot_arrays[i].name}</span></a>`;
+            list_temp = `<a href="#"><span class="product_img"><img src="https://picsum.photos/200/200/?random=${i}"></span><span class="product_name">${hot_arrays[i].name}</span></a>`;
             $('#hot_products li > div').eq(i).html(list_temp)
         }
     }
@@ -235,7 +233,7 @@
             },
         ];
         for( let i = 0; i < 5; i++){
-            list_temp = `<a href="#"><span class="product_img"><img src="https://source.unsplash.com/random/200x200?sig=${limit_arrays[i].img}"></span><span class="product_name">${limit_arrays[i].name}</span></a>`;
+            list_temp = `<a href="#"><span class="product_img"><img src="https://picsum.photos/200/200/?random=${i}"></span><span class="product_name">${limit_arrays[i].name}</span></a>`;
             $('#limit_products li > div').eq(i).html(list_temp)
         }
     }
@@ -244,7 +242,7 @@
     let mySwiper = new Swiper('.swiper', {
         direction: 'horizontal', // 垂直切換選項
         loop: true, // 迴圈模式選項
-        spaceBetween:  $('body').width() > 991 ? 25 : 50,
+        spaceBetween:  $('body').width() > 991 ? 45 : 25,
         slidesPerView: $('body').width() > 991 ? 2 : 1,
         // Navigation arrows
         navigation: {
@@ -259,6 +257,9 @@
         //     el: '.swiper-pagination',
         // },
     })
+    setTimeout(() => {
+        $('#customized').height($('.limitedSwiperContainer').height() - 50);
+    }, 100);
 </script>
 </html>
 
@@ -281,12 +282,9 @@
     transform: skewX(-10deg);
 }
 .swiper {
-  /* position: absolute; */
-  padding: 30px;
+  padding: 30px 50px;
   overflow: hidden;
   margin: 0 auto;
-  /* max-height: 400px; */
-  /* height: 400px; */
 }
 .swiper-wrapper {
   /* max-width: 300px; */
@@ -303,13 +301,18 @@ img.swiper-slide {
 
 @media (min-width: 991px) {
   .limitedSwiperContainer {
-      margin-left: 420px;
+      margin-left: 480px;
+      width: calc(100% - 480px);
+      padding-right: 15px;
   }
   .swiper {
-    width: auto;
+    width: 95%;
+    max-width: 1600px;
   }
   .swiper-wrapper {
     max-width: 360px;
+    display: flex;
+    align-items: center;
   }
 }
 @media (min-width: 1200px) {
@@ -335,43 +338,49 @@ img.swiper-slide {
   color: #2f5575;
   padding: 10px 2px;
   font-size: 45px;
+  background: #fff;
+  height: 100%;
+  width: 60px;
+  top: 0;
 }
 
 .swiper-button-prev {
-  left: 8px;
+  left: 0px;
 }
 .swiper-button-next {
-  right: 8px;
+  right: -10px;
 }
 .swiper-button-prev::before,
 .swiper-button-next::before {
     background: #2f5575;
     transform: rotate(-45deg);
-    top: 0px;
+    top: 50%;
     position: absolute;
     display: block;
     content: "";
     width: 30px;
     height: 4px;
-    right: -4px;
+    right: 20px;
 }
 .swiper-button-prev::after,
 .swiper-button-next::after {
     background: #2f5575;
     transform: rotate(45deg);
-    top: 20px;
+    top: calc(50% + 20px);
     position: absolute;
     display: block;
     content: "";
     width: 30px;
     height: 4px;
-    left: 0px;
+    left: 10px;
 }
 .swiper-button-next::before {
+    right: 10px;
     transform: rotate(45deg);
 }
 
 .swiper-button-next::after {
+    left: 20px;
     transform: rotate(-45deg);
 }
 

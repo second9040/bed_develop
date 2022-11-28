@@ -1493,6 +1493,7 @@ section#customized {
   background-color: #90b8d3;
   padding: 20px 10px;
   position: relative;
+  display: flex;
 }
 section#customized .title_left {
   width: 250px;
@@ -1669,7 +1670,7 @@ section#newsBox .title_left {
 }
 @media (min-width: 992px) {
   section#newsBox .title_left {
-    width: 320px;
+    width: 400px;
     padding: 0;
     position: absolute;
     top: 50%;
