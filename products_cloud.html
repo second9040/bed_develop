@@ -8,6 +8,7 @@
         <script src="js/jquery-2.2.4.min.js"></script>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/layout.css">
+        <link rel="icon" type="image/png" href="images/favicon.png">
         <!-- fontawesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- swiper -->
@@ -35,8 +36,9 @@
                         <div id="item_name"></div>
                         <div id="descText">
                           <span>床墊尺寸</span>
-                          <select id="sizeList"></select>
+                          <select id="sizeList" onchange="getPrice()"></select>
                         </div>
+                        <div id="priceLine"></div>
                         <div id="btnLine">
                           <div class="collect">
                             <i class="fas fa-heart"></i>
@@ -170,6 +172,7 @@
     <script type="module" src="js/template/breadcrumb_module.js"></script>
     <script>
         const product_url = location.href;
+        let sizeList = null
         fetch(`json/products/item3.json?1`)
         .then(res => {
             return res.json()
@@ -178,9 +181,11 @@
             console.log(itemData)
             document.getElementById('item_name').innerHTML = itemData.name; // 置入名稱
             document.getElementById('product_mainPhoto').innerHTML = `<img src="${itemData.itemImg}" alt="${itemData.name}">`;
+            sizeList = itemData.sizeList;
             for (let i = 0; i < itemData.sizeList.length; i++) {
-              document.getElementById('sizeList').innerHTML += `<option>${itemData.sizeList[i]}</option>`;
+              document.getElementById('sizeList').innerHTML += `<option>${itemData.sizeList[i].text}</option>`;
             }
+            getPrice(0);
 
             setTimeout(function(){
                 $('#breadcrumb_nav ol').append(`<li>${itemData.name}</li>`)
@@ -190,6 +195,11 @@
             // document.getElementById('section2').style.height = document.querySelector('#section2 .divBaseImg').clientHeight + 'px';
 
         })
+
+        function getPrice() {
+          let selectedIndex = document.getElementById('sizeList').selectedIndex;
+          document.getElementById('priceLine').innerHTML = `<span>NT$${sizeList[selectedIndex].price}</span>`;
+        }
     </script>
     <script>
       let mySwiper = new Swiper('.swiper', {

@@ -57,7 +57,6 @@ function limitedList_temp(getData){
             <a href="javascript: void(0);">
                 <div class="textContainer">
                     <div class="product_title">${item.titleLine1}</div>
-                    <div class="product_title">${item.titleLine2}</div>
                     <div class="updateDate">${item.date}</div>
                     <div class="breakLine"></div>
                     <div class="product_desc">${item.desc}</div>

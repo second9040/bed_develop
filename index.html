@@ -8,6 +8,8 @@
     <script src="js/jquery-2.2.4.min.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- swiper -->
@@ -84,7 +86,7 @@
             <section id="customized"></section>
             <section id="newsBox" class="clearfix">
                 <div class="title_left">
-                    <div class="title">限時優惠 / <span class="text_en">Limited</span></div>
+                    <div class="title">限時優惠 / <span class="text_en">News</span></div>
                 </div>
                 <div class="limitedSwiperContainer">
                     <div class="swiper">
@@ -122,7 +124,7 @@
                             <div class="btn_right"></div>
                         </div>
                     </div> -->
-                    <div class="title">限時商品</div>
+                    <div class="title">好眠商品/Product</div>
                     <div class="scrollBox">
                         <div class="scrollBox_order">
                             <ul id="limit_products" class="scrollItem">
@@ -258,7 +260,9 @@
         // },
     })
     setTimeout(() => {
-        $('#customized').height($('.limitedSwiperContainer').height() - 50);
+        if ($('body').width > 1200 && $('.limitedSwiperContainer').height() - $('#customized').height() > 30) {
+            $('#customized').height($('.limitedSwiperContainer').height() - 30);
+        }
     }, 100);
 </script>
 </html>
