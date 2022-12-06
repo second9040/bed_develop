@@ -2076,6 +2076,7 @@ section#customize_page #customizeBox .customize_text1 {
     left: 0;
     right: 0;
     margin: auto;
+    transform: scale(.7);
   }
 }
 @media (min-width: 365px) {
@@ -2087,8 +2088,9 @@ section#customize_page #customizeBox .customize_text1 {
 @media (min-width: 414px) {
   section#customize_page #customizeBox .customize_text1 {
     width: 400px;
-    top: 13vw;
+    top: 10vw;
     left: 2.5%;
+    transform: scale(.85);
   }
 }
 @media (min-width: 576px) {
@@ -2247,7 +2249,7 @@ section#products_page nav#breadcrumb_nav ol li:nth-last-of-type(1)::after {
 }
 section#products_page #products_box {
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 20px 0;
   position: relative;
 }
 section#products_page #products_box .products_box_item {
@@ -2295,8 +2297,14 @@ section#products_page #products_box #product_mainPhoto #product_photo {
   }
 }
 section#products_page #products_box #product_information {
-  padding: 10px;
+  padding: 10px 20px;
 }
+@media (min-width: 576px) {
+  section#products_page #products_box #product_information {
+    padding: 10px 0;
+  }
+}
+
 section#products_page #products_box #product_information #contact_with_box {
   display: flex;
   justify-content: center;
@@ -2333,17 +2341,31 @@ section#products_page #products_box #product_information #contact_with_box .cont
   width: 50px;
 }
 section#products_page #products_box #product_information #sizeBox {
-  color: #323232;
-  text-align: center;
+  color: #777;
 }
 
 section#products_page #products_box #product_information #sizeBox #item_name {
   font-size: 40px;
   letter-spacing: 2px;
+  text-align: center;
+}
+@media (min-width: 576px) {
+  section#products_page #products_box #product_information #sizeBox #item_name {
+    text-align: left;
+  }
 }
 section#products_page #products_box #product_information #sizeBox #descText {
-  font-size: 20px;
+  font-size: 16px;
+  margin: 10px 0;
 }
+@media (min-width: 576px) {
+  section#products_page #products_box #product_information #sizeBox #descText {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 section#products_page #products_box #product_information #sizeBox #sizeList {
   padding: 5px;
   font-size: 16px;
@@ -2351,23 +2373,33 @@ section#products_page #products_box #product_information #sizeBox #sizeList {
 }
 
 section#products_page #products_box #product_information #sizeBox #priceLine {
-    padding: 5px;
-    font-size: 20px;
+  padding: 5px 0;
+  font-size: 20px;
+  margin: 15px 10px 0px;
+}
+@media (min-width: 576px) {
+  section#products_page #products_box #product_information #sizeBox #priceLine {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     margin-top: -10px;
-    margin-bottom: 15px;
-
+  }
 }
 section#products_page #products_box #product_information #sizeBox #btnLine {
-  display: flex;
-  justify-content: center;
   color: #fff;
+}
+@media (min-width: 576px) {
+  section#products_page #products_box #product_information #sizeBox #btnLine {
+    margin-left: 10px;
+  }
 }
 section#products_page #products_box #product_information #sizeBox #btnLine i {
   margin-right: 10px;
 }
 section#products_page #products_box #product_information #sizeBox #btnLine .collect {
-  margin: 0 10px;
-  padding: 5px 20px;
+  margin: 10px auto;
+  /* margin-bottom: 10px; */
+  padding: 8px 20px;
   background-color: #666666;
   border-radius: 5px;
   width: 130px;
@@ -2378,7 +2410,7 @@ section#products_page #products_box #product_information #sizeBox #btnLine .coll
 }
 
 section#products_page #products_box #product_information #sizeBox #btnLine .inquire {
-  margin: 0 10px;
+  margin: 10px auto;
   padding: 5px 20px;
   background-color: #3cb549;
   border-radius: 5px;
@@ -2388,7 +2420,11 @@ section#products_page #products_box #product_information #sizeBox #btnLine .inqu
   cursor: pointer;
   justify-content: center;
 }
-
+@media (min-width: 576px) {
+  section#products_page #products_box #product_information #sizeBox #btnLine .collect,
+  section#products_page #products_box #product_information #sizeBox #btnLine .inquire {
+  }
+}
 section#products_page #products_box #product_information #sizeBox #btnLine .inquire img {
   width: 25px;
   margin: 0 5px 0 -5px;
