@@ -7,7 +7,7 @@
     <title>製床所御品 - 首頁</title>
     <script src="js/jquery-2.2.4.min.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/layout.css?2022121904">
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- fontawesome -->
@@ -264,6 +264,14 @@
             $('#customized').height($('.limitedSwiperContainer').height() - 30);
         }
     }, 100);
+
+    $('.swiper-slide').on('click', () => {
+        window.location.href = '/limited.html';
+    })
+    $('#limit_products .listItem').on('click', () => {
+        window.location.href = '/products.html?product_id=0';
+    })
+    
 </script>
 </html>
 

@@ -46,10 +46,10 @@
                         </div>
                         <div class="rightDiv grid-col-m-3">
                           <div id="btnLine">
-                            <div class="collect">
+                            <!-- <div class="collect">
                               <i class="fas fa-heart"></i>
                               <span>收藏</span>
-                            </div>
+                            </div> -->
                             <div class="inquire">
                               <img src="images/icon/line_icon_circle.png" alt="">
                               <span>洽詢</span>
@@ -60,7 +60,7 @@
                       <!-- <div id="swiperLine">
                           <div class="swiper-container">
                               <div class="swiper-wrapper">
-                                  <img class="swiper-slide" src="images/products/wave/product1.png" alt="">
+                                  <img class="swiper-slide" src="images/products/wave/product1.png?1" alt="">
                                   <img class="swiper-slide" src="images/products/wave/section4_circle.png" alt="">
                               </div>
                               <div class="swiper-pagination"></div>
@@ -72,7 +72,7 @@
                       <div class="swiperContainer">
                         <div class="swiper">
                             <div class="swiper-wrapper">
-                                <img class="swiper-slide" src="images/products/wave/product1.png" alt="">
+                                <img class="swiper-slide" src="images/products/wave/product1.png?1" alt="">
                                 <img class="swiper-slide" src="images/products/wave/section4_circle.png" alt="">
                                 <img class="swiper-slide" src="images/products/wave/section4_circle.png" alt="">
                                 <img class="swiper-slide" src="images/products/wave/section4_circle.png" alt="">
@@ -315,8 +315,10 @@ section#products_page {
     padding-bottom: 30px;
   }
   #products_image_box .realImg {
-    width: 100%;
+    width: 80%;
     left: initial;
+    left: 50%;
+    transform: translateX(-50%);
   }
   #products_image_box .bg {
     background-size: 25vw;
@@ -413,8 +415,10 @@ section#products_page #products_box #product_information {
 }
 @media (min-width: 576px) {
   .rightDiv {
-    display: block;
-    float: left
+    display: flex;
+    align-items: flex-end;
+    float: left;
+    height: 100px;
   }
 }
 .rightDivForSwiper {
