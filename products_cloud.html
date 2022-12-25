@@ -60,7 +60,7 @@
                       <!-- <div id="swiperLine">
                           <div class="swiper-container">
                               <div class="swiper-wrapper">
-                                  <img class="swiper-slide" src="images/products/wave/product1.png?1" alt="">
+                                  <img class="swiper-slide" src="images/products/wave/product1.png" alt="">
                                   <img class="swiper-slide" src="images/products/wave/section4_circle.png" alt="">
                               </div>
                               <div class="swiper-pagination"></div>
@@ -218,7 +218,8 @@
         function getPrice(index) {
           $('.sizeItem').removeClass('selectedItem');
           $(`.item${index}`).addClass('selectedItem');
-          document.getElementById('priceLine').innerHTML = `<div class="sizeDesc">${sizeList[index].sizeDesc}</div><div class="price">NT$${sizeList[index].price}</div>`;
+          document.getElementById('priceLine').innerHTML = `<div class="sizeDesc">${sizeList[index].sizeDesc}</div>`;
+          // document.getElementById('priceLine').innerHTML = `<div class="sizeDesc">${sizeList[index].sizeDesc}</div><div class="price">NT$${sizeList[index].price}</div>`;
         }
     </script>
     <script>
@@ -315,10 +316,8 @@ section#products_page {
     padding-bottom: 30px;
   }
   #products_image_box .realImg {
-    width: 80%;
+    width: 100%;
     left: initial;
-    left: 50%;
-    transform: translateX(-50%);
   }
   #products_image_box .bg {
     background-size: 25vw;

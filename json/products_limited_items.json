@@ -2,6 +2,14 @@
     {
         "product_name": "我是內文1",
         "product_link": "#",
+        "titleLine1": "『製床所御品』新春限定，超值買一送一優惠!", 
+        "titleLine2": "",
+        "date": "111/12/25",
+        "desc": "全館任買乳膠or矽膠床墊，即享超值好禮三選一。<br>小朋友才做選擇，滿額通通可以帶回家，新春新氣象，床墊換新趁現在!"
+    },
+    {
+        "product_name": "我是內文1",
+        "product_link": "#",
         "titleLine1": "雙十一+1元多一件", 
         "titleLine2": "",
         "date": "111/11/02",

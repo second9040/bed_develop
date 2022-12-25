@@ -7,7 +7,7 @@
     <title>製床所御品 - 首頁</title>
     <script src="js/jquery-2.2.4.min.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/layout.css?2022121904">
+    <link rel="stylesheet" href="css/layout.css?1225">
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- fontawesome -->
@@ -91,9 +91,10 @@
                 <div class="limitedSwiperContainer">
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            <img class="swiper-slide" src="images/limited_item_rect_01.jpg" alt="">
-                            <img class="swiper-slide" src="images/limited_item_rect_03.jpg" alt="">
-                            <img class="swiper-slide" src="images/limited_item_rect_02.jpg" alt="">
+                            <img class="swiper-slide" src="images/limited_item_rect_01.jpg?1225" alt="">
+                            <img class="swiper-slide" src="images/limited_item_rect_02.jpg?1225" alt="">
+                            <img class="swiper-slide" src="images/limited_item_rect_03.jpg?1225" alt="">
+                            <img class="swiper-slide" src="images/limited_item_rect_04.jpg?1225" alt="">
                         </div>
                         <!-- <div class="swiper-pagination"></div> -->
                         <!-- If we need navigation buttons -->
@@ -214,28 +215,28 @@
         let list_temp = '';
         const limit_arrays = [
             {
-                img: '15',
-                name: '商品名稱1'
+                img: './images/products/bed/bed_1.png',
+                name: '波浪 plus 舒眠床墊'
             },
             {
-                img: '16',
-                name: '商品名稱2'
+                img: './images/products/bed/bed_2.png',
+                name: '尊爵-舒眠床墊'
             },
             {
-                img: '17',
-                name: '商品名稱3'
+                img: './images/products/bed/bed_3.png',
+                name: 'QQ 雲朵床墊'
             },
             {
-                img: '18',
-                name: '商品名稱4'
+                img: './images/products/bed/bed_4.png',
+                name: '商業用床墊'
             },
             {
-                img: '19',
-                name: '商品名稱5'
+                img: './images/products/bed/bed_5.png',
+                name: '商業用訂製床墊'
             },
         ];
         for( let i = 0; i < 5; i++){
-            list_temp = `<a href="#"><span class="product_img"><img src="https://picsum.photos/200/200/?random=${i}"></span><span class="product_name">${limit_arrays[i].name}</span></a>`;
+            list_temp = `<a href="#"><span class="product_img abc123"><img src="${limit_arrays[i].img}"></span><span class="product_name">${limit_arrays[i].name}</span></a>`;
             $('#limit_products li > div').eq(i).html(list_temp)
         }
     }
@@ -264,14 +265,6 @@
             $('#customized').height($('.limitedSwiperContainer').height() - 30);
         }
     }, 100);
-
-    $('.swiper-slide').on('click', () => {
-        window.location.href = '/limited.html';
-    })
-    $('#limit_products .listItem').on('click', () => {
-        window.location.href = '/products.html?product_id=0';
-    })
-    
 </script>
 </html>
 

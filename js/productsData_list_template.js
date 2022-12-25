@@ -10,7 +10,7 @@ export function getProductData(){
     );
 
     // 限時商品資料獲取
-    fetch('json/products_limited_items.json')
+    fetch('json/products_limited_items.json?1225')
     .then(res => {
         return res.json();
     })
@@ -51,7 +51,7 @@ function productList_temp(getData){
 function limitedList_temp(getData){
     let list_template= ``;
     getData.forEach( (item, index) => {
-        let showType = item.videoId ? '<div class="videoBox"><iframe src="https://www.youtube.com/embed/XzyQ-Z7leL8" frameborder="0" allowFullScreen="true"></iframe></div>' : `<img src="./images/limited/limited_item_0${index < 4 ? index+1 : 1}.jpg?${index+1}">`; // 05 不知為什麼跑不出來
+        let showType = item.videoId ? '<div class="videoBox"><iframe src="https://www.youtube.com/embed/XzyQ-Z7leL8" frameborder="0" allowFullScreen="true"></iframe></div>' : `<img src="./images/limited/limited_item_0${index+1}.jpg?1225">`;
         list_template += `
         <div class="products_box_item">
             <a href="javascript: void(0);">

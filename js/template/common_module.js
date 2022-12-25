@@ -56,7 +56,7 @@ export function footerTemp(){
                 <ul>
                     <li class="company_name">製床所御品</li>
                     <li>台中市北區忠明路234號</li>
-                    <li>E-mail&nbsp;:&nbsp;<a href="mailto:">xxx@gmail.com</a></li>
+                    <li>E-mail&nbsp;:&nbsp;<a href="mailto:">jerry113520@gmail.com</a></li>
                     <li>連絡電話&nbsp;:&nbsp;<a href="TEL:04-23201861">04-23201861</a></li>
                     <li>FB粉絲頁&nbsp;:&nbsp;<a href="https://www.facebook.com/wonderfulMattres" target="_blank">04-23201861</a></li>
                 </ul>
