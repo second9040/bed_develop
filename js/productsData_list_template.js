@@ -10,7 +10,7 @@ export function getProductData(){
     );
 
     // 限時商品資料獲取
-    fetch('json/products_limited_items.json?1225')
+    fetch('json/products_limited_items.json?1227')
     .then(res => {
         return res.json();
     })
@@ -53,7 +53,7 @@ function limitedList_temp(getData){
     getData.forEach( (item, index) => {
         let showType = item.videoId ? '<div class="videoBox"><iframe src="https://www.youtube.com/embed/XzyQ-Z7leL8" frameborder="0" allowFullScreen="true"></iframe></div>' : `<img src="./images/limited/limited_item_0${index+1}.jpg?1225">`;
         list_template += `
-        <div class="products_box_item">
+        <div class="products_box_item abc" id="anchor${index+1}">
             <a href="javascript: void(0);">
                 <div class="textContainer">
                     <div class="product_title">${item.titleLine1}</div>

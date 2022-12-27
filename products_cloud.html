@@ -72,7 +72,7 @@
                       <div class="swiperContainer">
                         <div class="swiper">
                             <div class="swiper-wrapper">
-                                <img class="swiper-slide" src="images/products/wave/product1.png?1" alt="">
+                                <img class="swiper-slide" src="images/products/bed/bed_3.png" alt="">
                                 <img class="swiper-slide" src="images/products/wave/section4_circle.png" alt="">
                                 <img class="swiper-slide" src="images/products/wave/section4_circle.png" alt="">
                                 <img class="swiper-slide" src="images/products/wave/section4_circle.png" alt="">
@@ -177,7 +177,7 @@
     <script>
         let this_page = 'products_page';
     </script>
-    <script type="module" src="js/js_template.js"></script>
+    <script type="module" src="js/js_template.js?1225"></script>
     <script type="module" src="js/template/breadcrumb_module.js"></script>
     <script>
         const product_url = location.href;
@@ -297,7 +297,6 @@ section#products_page {
   z-index: 2;
   width: 85%;
   left: 7.5%;
-  max-height: 500px;
 }
 
 #products_image_box .bg {
@@ -316,8 +315,12 @@ section#products_page {
     padding-bottom: 30px;
   }
   #products_image_box .realImg {
-    width: 100%;
-    left: initial;
+    width: auto;
+    max-width: 70%;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 540px;
   }
   #products_image_box .bg {
     background-size: 25vw;

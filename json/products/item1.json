@@ -5,6 +5,28 @@
     "price_s3": "25900",
     "price_s4": "26900",
     "price_s5": "27900",
-    "itemImg": "images/products/wave/product1.png",
-    "content": ["product_01.jpg","product_02.jpg"]
+    "itemImg": "images/products/bed/bed_1.png",
+    "content": ["product_01.jpg","product_02.jpg"],
+    "sizeList": [
+        {
+            "sizeText": "3.5呎",
+            "sizeDesc": "5*6.2尺 / 152x188公分",
+            "price": "4,500~5,800"
+        },
+        {
+            "sizeText": "5呎",
+            "sizeDesc": "5*6.2尺 / 152x188公分",
+            "price": "4,600~5,900"
+        },
+        {
+            "sizeText": "6呎",
+            "sizeDesc": "5*6.2尺 / 152x188公分",
+            "price": "4,700~6,000"
+        },
+        {
+            "sizeText": "7呎",
+            "sizeDesc": "5*6.2尺 / 152x188公分",
+            "price": "4,800~6,000"
+        }
+    ]
 }
