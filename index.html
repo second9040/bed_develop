@@ -134,9 +134,10 @@
                                 <li class="listItem" data-item="3" onclick="goPage('products.html?product_id=0')" ><div></div></li>
                                 <li class="listItem" data-item="4" onclick="goPage('products.html?product_id=0')" ><div></div></li>
                                 <li class="listItem" data-item="5" onclick="goPage('products.html?product_id=0')" ><div></div></li>
+                                <li class="listItem" data-item="6" onclick="goPage('products.html?product_id=0')" ><div></div></li>
                             </ul>
                         </div>
-                        <div class="scrollController" onclick="goPage('products.html?product_id=0')">
+                        <div class="scrollController">
                             <div class="btn_left"></div>
                             <div class="btn_right"></div>
                         </div>
@@ -234,9 +235,13 @@
                 img: './images/products/bed/bed_5.png',
                 name: '商業用訂製床墊'
             },
+            {
+                img: './images/products/bed/bed_6.png',
+                name: '雲朵極致紓壓床墊'
+            },
         ];
-        for( let i = 0; i < 5; i++){
-            list_temp = `<a href="#"><span class="product_img abc123"><img src="${limit_arrays[i].img}"></span><span class="product_name">${limit_arrays[i].name}</span></a>`;
+        for( let i = 0; i < 6; i++){
+            list_temp = `<a href="#"><span class="product_img"><img src="${limit_arrays[i].img}"></span><span class="product_name">${limit_arrays[i].name}</span></a>`;
             $('#limit_products li > div').eq(i).html(list_temp)
         }
     }
