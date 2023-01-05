@@ -64,8 +64,8 @@ export function footerTemp(){
             <div id="social_contact_us">
                 <ul class="clearfix">
                     <li><a href="https://www.facebook.com/wonderfulMattres" target="_blank"><img src="images/icon/fb_icon.png" title="製床所 FB" alt="製床所 FB"></a></li>
-                    <li><a href="#"><img src="images/icon/line_icon.png" title="製床所 line" alt="製床所 line"></a></li>
-                    <li><a href="#"><img src="images/icon/ig_icon.png" title="製床所 ig" alt="製床所 ig"></a></li>
+                    <li><a href="https://lin.ee/KwKuDdB" target="_blank"><img src="images/icon/line_icon.png" title="製床所 line" alt="製床所 line"></a></li>
+                    <li><a href="https://instagram.com/wonderfulmattress?igshid=YWJhMjlhZTc=" target="_blank"><img src="images/icon/ig_icon.png" title="製床所 ig" alt="製床所 ig"></a></li>
                 </ul>
             </div>
         </div>
