@@ -1,5 +1,5 @@
 export function getProductData(){
-    fetch('json/products_items.json')
+    fetch('json/products_items.json?230110')
     .then(res => {
         return res.json();
     })

@@ -1,7 +1,7 @@
 let _limitedData = null;
 export function getProductData(){
     // 好眠商品資料獲取
-    fetch('json/products_items.json?22122803')
+    fetch('json/products_items.json?230110-1')
     .then(res => {
         return res.json();
     })
@@ -44,6 +44,7 @@ function productList_temp(getData){
             if (count % 3 === 1) {
                 list_template += `</div>`;
             }
+            console.log(item, index)
         }
     })
     $('#products_box').html(list_template)

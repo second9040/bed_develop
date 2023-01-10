@@ -7,7 +7,7 @@
     <title>製床所御品 - 首頁</title>
     <script src="js/jquery-2.2.4.min.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/layout.css?1228">
+    <link rel="stylesheet" href="css/layout.css?011003">
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- fontawesome -->
@@ -109,22 +109,6 @@
             </section>
             <section id="products">
                 <div class="container">
-                    <!-- <div class="title">熱門商品</div>
-                    <div class="scrollBox">
-                        <div class="scrollBox_order">
-                            <ul id="hot_products" class="scrollItem">
-                                <li class="listItem" data-item="1"><div></div></li>
-                                <li class="listItem" data-item="2"><div></div></li>
-                                <li class="listItem" data-item="3"><div></div></li>
-                                <li class="listItem" data-item="4"><div></div></li>
-                                <li class="listItem" data-item="5"><div></div></li>
-                            </ul>
-                        </div>
-                        <div class="scrollController">
-                            <div class="btn_left"></div>
-                            <div class="btn_right"></div>
-                        </div>
-                    </div> -->
                     <div class="title">好眠商品 / Product</div>
                     <div class="scrollBox">
                         <div class="scrollBox_order">
@@ -135,6 +119,7 @@
                                 <li class="listItem" data-item="4" onclick="goPage('products.html?product_id=0')" ><div></div></li>
                                 <li class="listItem" data-item="5" onclick="goPage('products.html?product_id=0')" ><div></div></li>
                                 <li class="listItem" data-item="6" onclick="goPage('products.html?product_id=0')" ><div></div></li>
+                                <li class="listItem" data-item="7" onclick="goPage('products.html?product_id=0')" ><div></div></li>
                             </ul>
                         </div>
                         <div class="scrollController">
@@ -155,7 +140,7 @@
 </script>
 <script type="module" src="js/js_template.js?0105"></script>
 <script type="module" src="js/template/customer_module.js"></script>
-<script type="module" src="js/template/scrollBox.js?1"></script>
+<script type="module" src="js/template/scrollBox.js?230110"></script>
 <script>
     $(document).ready(function(){
         hot_product();
@@ -217,11 +202,11 @@
         const limit_arrays = [
             {
                 img: './images/products/bed/bed_1.png',
-                name: '波浪 plus 舒眠床墊'
+                name: '波浪舒眠床墊'
             },
             {
                 img: './images/products/bed/bed_2.png',
-                name: '尊爵-舒眠床墊'
+                name: '波浪極致舒眠床墊'
             },
             {
                 img: './images/products/bed/bed_3.png',
@@ -229,18 +214,22 @@
             },
             {
                 img: './images/products/bed/bed_4.png',
-                name: '商業用床墊'
+                name: '雲朵極致紓壓床墊'
             },
             {
                 img: './images/products/bed/bed_5.png',
-                name: '商業用訂製床墊'
+                name: '尊爵舒眠床墊'
             },
             {
                 img: './images/products/bed/bed_6.png',
-                name: '雲朵極致紓壓床墊'
+                name: '商業用床墊'
+            },
+            {
+                img: './images/products/bed/bed_7.png',
+                name: '商業用訂製床墊'
             },
         ];
-        for( let i = 0; i < 6; i++){
+        for( let i = 0; i < 7; i++){
             list_temp = `<a href="#"><span class="product_img"><img src="${limit_arrays[i].img}"></span><span class="product_name">${limit_arrays[i].name}</span></a>`;
             $('#limit_products li > div').eq(i).html(list_temp)
         }

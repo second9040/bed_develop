@@ -38,7 +38,7 @@ function go_prev(getThis){
     // 記憶目前圖片的位置
     let item_position = [];
     for( var i = 0; i < list_length; i++){
-        if( i < 6){
+        if( i < 7){
             item_position.push(parseInt(this_item.eq(i).css('left')))
         }
     }
@@ -74,10 +74,14 @@ function go_prev(getThis){
                 this_item.eq(i).css('left',item_position[i+1])
             }
 
-            let appendBox_first2 = `<li class="listItem" style="left: 0px; width: ${this_item.css('width')};" data-item="${last_item_data}">${last_item.html()}</li>`;
+            let appendBox_first2 = '';
+            if($(window).width() < 768){ // 手機版找不到 active 問題是什麼 全加（不然無法顯示商品名稱）
+                appendBox_first2 = `<li class="listItem active" style="left: 0px; width: ${this_item.css('width')};" data-item="${last_item_data}">${last_item.html()}</li>`;
+            } else {
+                appendBox_first2 = `<li class="listItem" style="left: 0px; width: ${this_item.css('width')};" data-item="${last_item_data}">${last_item.html()}</li>`;
+            }
             this_order.prepend(appendBox_first2);
             $('.delete-only').remove();
-
             clickStatus = 0
         },timer);
     }
@@ -92,7 +96,7 @@ function go_next(getThis){
     // 記憶目前圖片的位置
     let item_position = [];
     for( var i = 0; i < list_length; i++){
-        if( i < 6){
+        if( i < 7){
             item_position.push(parseInt(this_item.eq(i).css('left')))
         }
     }
