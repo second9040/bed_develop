@@ -846,6 +846,13 @@ footer #fast_link_popBox #go_top::after {
   background-image: url(../images/banner/index_banner.png?1);
   background-size: cover;
   background-position: center;
+  background-size: calc(100% + 11vw) 135%;
+  background-position: -11vw center;
+}
+@media (min-width: 1200px) {
+  .banner#idx_banner {
+    background-position: -11vw center;
+  }
 }
 .banner#idx_banner .logo {
   position: absolute;
@@ -2273,6 +2280,11 @@ section#products_page #products_box {
 }
 section#products_page #products_box .products_box_item {
   padding: 10px;
+}
+@media (min-width: 768px) {
+  section#products_page #products_box .products_box_item {
+    width: 33%;
+  }
 }
 section#products_page #products_box .products_box_item a {
   display: block;

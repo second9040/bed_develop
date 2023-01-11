@@ -73,7 +73,7 @@
                       <div class="swiperContainer">
                         <div class="swiper">
                             <div class="swiper-wrapper">
-                                <img class="swiper-slide" src="images/products/bed/bed_2.png" alt="">
+                                <img class="swiper-slide" src="images/products/bed/bed_5.png?1" alt="">
                                 <img class="swiper-slide" src="images/products/wave/section4_circle.png" alt="">
                                 <img class="swiper-slide" src="images/products/wave/section4_circle.png" alt="">
                                 <img class="swiper-slide" src="images/products/wave/section4_circle.png" alt="">
@@ -195,7 +195,7 @@
     <script>
         const product_url = location.href;
         let sizeList = null
-        fetch(`json/products/p0_item5.json?210110`)
+        fetch(`json/products/p0_item5.json?210111-1`)
         .then(res => {
             return res.json()
         })
@@ -346,6 +346,13 @@ section .divImgElement {
   width: 100%;
   text-align: center;
 }
+
+#section4 .divImgElement {
+  top: 35%;
+  max-width: 800px;
+  max-height: 800px;
+}
+
 #section5 .section_container .textField .desc {
   padding: 15px;
 }
