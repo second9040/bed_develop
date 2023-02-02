@@ -5,6 +5,28 @@
     "price_s3": "25900",
     "price_s4": "26900",
     "price_s5": "27900",
-    "itemImg": "images/bed_example.jpg",
-    "content": ["qq_cloud_bed.jpg"]
+    "itemImg": "images/products/bedsideTable/bedsideTable_2.png",
+    "content": ["qq_cloud_bed.jpg"],
+    "sizeList": [
+        {
+            "sizeText": "3.5呎",
+            "sizeDesc": "5*6.2尺 / 152x188公分",
+            "price": "4,500~5,800"
+        },
+        {
+            "sizeText": "5呎",
+            "sizeDesc": "5*6.2尺 / 152x188公分",
+            "price": "4,600~5,900"
+        },
+        {
+            "sizeText": "6呎",
+            "sizeDesc": "5*6.2尺 / 152x188公分",
+            "price": "4,700~6,000"
+        },
+        {
+            "sizeText": "7呎",
+            "sizeDesc": "5*6.2尺 / 152x188公分",
+            "price": "4,800~6,000"
+        }
+    ]
 }
