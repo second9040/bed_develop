@@ -73,8 +73,8 @@ export function footerTemp(){
     <div id="fast_link_popBox">
         <ul id="fast_link_popList">
             <li class="pop_fb"><a href="https://www.facebook.com/wonderfulMattres" target="_blank"><img src="images/icon/fb_icon_circle.png" title="製床所 FB" alt="製床所 FB"></a></li>
-            <li class="pop_line"><a href="#"><img src="images/icon/line_icon_circle.png" title="製床所 line" alt="製床所 line"></a></li>
-            <li class="pop_ig"><a href="#"><img src="images/icon/ig_icon_circle.png" title="製床所 ig" alt="製床所 ig"></a></li>
+            <li class="pop_line"><a href="https://lin.ee/KwKuDdB" target="_blank"><img src="images/icon/line_icon_circle.png" title="製床所 line" alt="製床所 line"></a></li>
+            <li class="pop_ig"><a href="#" target="_blank"><img src="images/icon/ig_icon_circle.png" title="製床所 ig" alt="製床所 ig"></a></li>
         </ul>
         <div id="fast_link_pop" class="click_me"><img src="images/icon/click_me.png"></div>
         <div id="fast_link_pop" class="click_me_text"><img src="images/icon/click_me_text.png"></div>
