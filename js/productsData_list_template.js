@@ -52,7 +52,7 @@ function productList_temp(getData){
 function limitedList_temp(getData){
     let list_template= ``;
     getData.forEach( (item, index) => {
-        let showType = item.videoId ? '<div class="videoBox"><iframe src="https://www.youtube.com/embed/XzyQ-Z7leL8" frameborder="0" allowFullScreen="true"></iframe></div>' : `<img src="./images/limited/limited_item_0${index+1}.jpg?1225">`;
+    let showType = item.videoId ? '<div class="videoBox"><iframe src="https://www.youtube.com/embed/XzyQ-Z7leL8" frameborder="0" allowFullScreen="true"></iframe></div>' : `<img src="./images/limited/limited_item_${index > 8 ? Number(index + 1) : '0' + Number(index + 1)}.jpg?0221">`;
         list_template += `
         <div class="products_box_item abc" id="anchor${index+1}">
             <a href="javascript: void(0);">
@@ -73,12 +73,13 @@ function limitedList_temp(getData){
         if ($('.videoBox')) {
             if ($('.product_img img')) {
                 // 有圖片，iframe 使用圖片寬度
-                $('.videoBox').width(_width);
+                $('.videoBox').width(_width - 40);
             } else {
                 // 沒有圖片，iframe 寬度用扣的
                 let boxWidth = $('.products_box_item').width();
                 let textContainerWidth = $('.textContainer').width();
-                $('.videoBox').width(boxWidth);
+                let smallerWidth = boxWidth > textContainerWidth ? textContainerWidth : boxWidth;  
+                $('.videoBox').width(smallerWidth - 40);
             }
         }
         if (!_width) {
