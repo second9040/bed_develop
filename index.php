@@ -155,6 +155,7 @@
                                 <li class="listItem" data-item="5" onclick="goPage('products.html?product_id=0')" ><div></div></li>
                                 <li class="listItem" data-item="6" onclick="goPage('products.html?product_id=0')" ><div></div></li>
                                 <li class="listItem" data-item="7" onclick="goPage('products.html?product_id=0')" ><div></div></li>
+                                <li class="listItem" data-item="8" onclick="goPage('products.html?product_id=0')" ><div></div></li>
                             </ul>
                         </div>
                         <div class="scrollController">
@@ -262,6 +263,10 @@
             {
                 img: './images/products/bed/bed_7.png',
                 name: '商業用訂製床墊'
+            },
+            {
+                img: './images/products/bed/bed_8.png',
+                name: '雲朵獨立筒/波浪乳膠薄墊'
             },
         ];
         for( let i = 0; i < 7; i++){

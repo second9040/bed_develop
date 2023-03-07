@@ -38,7 +38,7 @@ function go_prev(getThis){
     // 記憶目前圖片的位置
     let item_position = [];
     for( var i = 0; i < list_length; i++){
-        if( i < 7){
+        if( i < 8){
             item_position.push(parseInt(this_item.eq(i).css('left')))
         }
     }
@@ -96,7 +96,7 @@ function go_next(getThis){
     // 記憶目前圖片的位置
     let item_position = [];
     for( var i = 0; i < list_length; i++){
-        if( i < 7){
+        if( i < 8){
             item_position.push(parseInt(this_item.eq(i).css('left')))
         }
     }
