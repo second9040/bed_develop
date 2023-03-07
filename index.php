@@ -269,7 +269,7 @@
                 name: '雲朵獨立筒/波浪乳膠薄墊'
             },
         ];
-        for( let i = 0; i < 7; i++){
+        for( let i = 0; i < 8; i++){
             list_temp = `<a href="#"><span class="product_img"><img src="${limit_arrays[i].img}"></span><span class="product_name">${limit_arrays[i].name}</span></a>`;
             $('#limit_products li > div').eq(i).html(list_temp)
         }
