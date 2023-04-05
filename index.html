@@ -21,7 +21,7 @@
 </head>
 <body>
     <div w3-include-html="other.html"></div>
-    <!-- <header></header> -->
+    <header></header>
     <main>
         <div class="banner" id="idx_banner">
             <div class="logo"><img src="images/banner_logo.png" alt="製床所御品"></div>
@@ -34,23 +34,60 @@
             <div class="banner_cloud"><img src="images/banner/index_cloud.png"></div>
             <div id="particles-js"></div>
         </div>
-        <section class="clearfix">
-            <div id="women_box">
-                <div class="women_img"></div>
-                <div class="contentBox">
-                    <div class="title">製床所御品</div>
-                    <div class="content">
-                        <p>秉持匠心手作精神，一針一線專注細節<br>
-                            製床所相信床墊擁有獨一無二的靈魂，<br>
-                            織就無數美好的夜晚，<br>
-                            就像被施展了魔法，生活平凡的小確幸
-                            <!-- 美好，是可以創造的 -->
-                        </p>
+        <article id="mainPage_article">
+            <section id="newsBox" class="clearfix">
+                <div class="container">
+                    <div class="title">最新消息</div>
+                    <div class="limitedSwiperContainer">
+                        <div class="swiper">
+                            <div class="swiper-wrapper"></div>
+                            <!-- <div class="swiper-pagination"></div> -->
+                            <!-- <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div> -->
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <article id="mainPage_article">
+            </section>
+            <section class="clearfix">
+                <div id="women_box">
+                    <div class="women_img"></div>
+                    <div class="contentBox">
+                        <div class="title">製床所御品</div>
+                        <div class="content">
+                            <p>秉持匠心手作精神，一針一線專注細節<br>
+                                製床所相信床墊擁有獨一無二的靈魂，<br>
+                                織就無數美好的夜晚，<br>
+                                就像被施展了魔法，生活平凡的小確幸
+                                <!-- 美好，是可以創造的 -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="products">
+                <div class="container">
+                    <div class="title">好眠商品 / Product</div>
+                    <div class="scrollBox">
+                        <div class="scrollBox_order">
+                            <ul id="limit_products" class="scrollItem">
+                                <li class="listItem" data-item="1" onclick="goPage('products.html?product_id=0')" ><div></div></li>
+                                <li class="listItem" data-item="2" onclick="goPage('products.html?product_id=0')" ><div></div></li>
+                                <li class="listItem" data-item="3" onclick="goPage('products.html?product_id=0')" ><div></div></li>
+                                <li class="listItem" data-item="4" onclick="goPage('products.html?product_id=0')" ><div></div></li>
+                                <li class="listItem" data-item="5" onclick="goPage('products.html?product_id=0')" ><div></div></li>
+                                <li class="listItem" data-item="6" onclick="goPage('products.html?product_id=0')" ><div></div></li>
+                                <li class="listItem" data-item="7" onclick="goPage('products.html?product_id=0')" ><div></div></li>
+                                <li class="listItem" data-item="8" onclick="goPage('products.html?product_id=0')"><div></div></li>
+                            </ul>
+                        </div>
+                        <div class="scrollController">
+                            <div class="btn_left"></div>
+                            <div class="btn_right"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="feature">
                 <div class="title">獨家特色</div>
                 <div class="scrollBox">
@@ -84,54 +121,8 @@
                     </div>
                 </div>
             </section>
+            <!-- 客製項目 -->
             <section id="customized"></section>
-            <section id="newsBox" class="clearfix">
-                <div class="title_left">
-                    <div class="title">限時優惠 / <span class="text_en">News</span></div>
-                </div>
-                <div class="limitedSwiperContainer">
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
-                            <img class="swiper-slide" onclick="goPage('limited.html', 1)" src="images/limited_item_rect_01.jpg?0222" alt="">
-                            <img class="swiper-slide" onclick="goPage('limited.html', 2)" src="images/limited_item_rect_02.jpg?0222" alt="">
-                            <img class="swiper-slide" onclick="goPage('limited.html', 3)" src="images/limited_item_rect_03.jpg?0222" alt="">
-                            <img class="swiper-slide" onclick="goPage('limited.html', 4)" src="images/limited_item_rect_04.jpg?0222" alt="">
-                            <img class="swiper-slide" onclick="goPage('limited.html', 5)" src="images/limited_item_rect_05.jpg?0222" alt="">
-                        </div>
-                        <!-- <div class="swiper-pagination"></div> -->
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev">
-                        </div>
-                        <div class="swiper-button-next">
-                            <!-- <i class="fa-solid fa-angle-right"></i> -->
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="products">
-                <div class="container">
-                    <div class="title">好眠商品 / Product</div>
-                    <div class="scrollBox">
-                        <div class="scrollBox_order">
-                            <ul id="limit_products" class="scrollItem">
-                                <li class="listItem" data-item="1" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="2" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="3" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="4" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="5" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="6" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="7" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="8" onclick="goPage('products.html?product_id=0')"><div></div></li>
-                            </ul>
-                        </div>
-                        <div class="scrollController">
-                            <div class="btn_left"></div>
-                            <div class="btn_right"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </article>
     </main>
     <footer></footer>
@@ -148,6 +139,7 @@
     $(document).ready(function(){
         hot_product();
         limit_product();
+        news_swiper();
     })
     $('#newsContent .btn_left').on('click', function(event){
         clickLeft();
@@ -241,35 +233,50 @@
             $('#limit_products li > div').eq(i).html(list_temp)
         }
     }
+    function news_swiper() {
+        let timestamp = new Date().getTime();
+        let slides = '';
+        for( let i = 1; i <= 5; i++){
+            slides += `
+                <div class="swiper-slide" >
+                    <div data-swiper-parallax-scale="0.8" data-swiper-parallax-opacity="1" >
+                        <img onclick="goPage('limited.html', ${i})" src="images/limited_item_rect_0${i}.jpg?${timestamp}" alt="">
+                    </div>
+                </div>
+            `;
+        }
+        $('#newsBox .swiper-wrapper').html(slides);
 
+        
+        let mySwiper = new Swiper('.swiper', {
+            direction: 'horizontal', // 垂直切換選項
+            loop: true, // 迴圈模式選項
+            parallax: true, // 視差設定
+            centeredSlides: true,
+            spaceBetween:  $('body').width() > 991 ? 45 : 25,
+            slidesPerView: $('body').width() > 600 ? 3 : 1,
+            // Navigation arrows
+            // navigation: {
+            //     nextEl: '.swiper-button-next',
+            //     prevEl: '.swiper-button-prev',
+            // },
+            autoplay: {
+                delay: 2000,
+            },
+            // 如果需要分頁器
+            // pagination: {
+            //     el: '.swiper-pagination',
+            // },
+        })
+        setTimeout(() => {
+            if ($('body').width > 1200 && $('.limitedSwiperContainer').height() - $('#customized').height() > 30) {
+                $('#customized').height($('.limitedSwiperContainer').height() - 30);
+            }
+        }, 100);
+    }
     function goPage (page, index) {
         window.location.href = `${page}`;
     }
-</script>
-<script>
-    let mySwiper = new Swiper('.swiper', {
-        direction: 'horizontal', // 垂直切換選項
-        loop: true, // 迴圈模式選項
-        spaceBetween:  $('body').width() > 991 ? 45 : 25,
-        slidesPerView: $('body').width() > 991 ? 2 : 1,
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 2000,
-        },
-        // 如果需要分頁器
-        // pagination: {
-        //     el: '.swiper-pagination',
-        // },
-    })
-    setTimeout(() => {
-        if ($('body').width > 1200 && $('.limitedSwiperContainer').height() - $('#customized').height() > 30) {
-            $('#customized').height($('.limitedSwiperContainer').height() - 30);
-        }
-    }, 100);
 </script>
 </html>
 
@@ -277,42 +284,22 @@
 .limitedSwiperContainer {
   position: relative;
   width: auto;
-  background-color: #fff;
+  background-color: transparent;
   margin: 0 auto 0;
 }
-.limitedSwiperContainer::after {
-    position: absolute;
-    display: block;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: -50px;
-    background-color: #fff;
-    transform: skewX(-10deg);
-}
+
 .swiper {
-  padding: 30px 50px;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 40px auto 20px;
+  padding-right: 20px;
 }
 .swiper-wrapper {
-  /* max-width: 300px; */
   bottom: 0px;
   padding: 0 10px;
-}
-img.swiper-slide {
-}
-@media (min-width: 768px) {
-  .swiper {
-    width: 50vw;
-  }
 }
 
 @media (min-width: 991px) {
   .limitedSwiperContainer {
-      margin-left: 480px;
-      width: calc(100% - 480px);
       padding-right: 15px;
   }
   .swiper {
@@ -326,9 +313,6 @@ img.swiper-slide {
   }
 }
 @media (min-width: 1200px) {
-  .limitedSwiperContainer {
-
-  }
   .swiper {
     border: none;
   }
@@ -348,7 +332,7 @@ img.swiper-slide {
   color: #2f5575;
   padding: 10px 2px;
   font-size: 45px;
-  background: #fff;
+  background: transparent;
   height: 100%;
   width: 60px;
   top: 0;
