@@ -44,31 +44,24 @@
                             <!-- <div class="swiper-pagination"></div> -->
                             <!-- <div class="swiper-button-prev"></div>
                             <div class="swiper-button-next"></div> -->
-                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="clearfix">
-                <div id="women_box">
-                    <div class="women_img"></div>
-                    <div class="contentBox">
-                        <div class="title">製床所御品</div>
-                        <div class="content">
-                            <p>秉持匠心手作精神，一針一線專注細節<br>
-                                製床所相信床墊擁有獨一無二的靈魂，<br>
-                                織就無數美好的夜晚，<br>
-                                就像被施展了魔法，生活平凡的小確幸
-                                <!-- 美好，是可以創造的 -->
-                            </p>
-                        </div>
+            <section id="desc_box">
+                <div class="container">
+                    <div class="title">製床所御品</div>
+                    <div class="descText">帶著職人精神，秉持匠心手作功法，一針一線，專注細節地客製床墊。御品製床所相信，每張床墊都擁有獨一無二的靈魂，能陪伴您編織無數美好的夜晚，帶著勞碌一天的身體躺上去，床墊就像施展魔法，舒適柔軟帶來的好眠，造就您生活中不可或缺的幸福睡眠時光。</div>
+                    <div class="descImage">
+                        <img src="./images/desc_image.png" alt="">
                     </div>
                 </div>
             </section>
             <section id="products">
+                <div style="position: absolute;bottom: 0; width: 100% ;height: 40%;background-color: #E7F5FE;"></div>
                 <div class="container">
-                    <div class="title">好眠商品 / Product</div>
-                    <div class="scrollBox">
+                    <div class="title">好眠商品</div>
+                    <!-- <div class="scrollBox">
                         <div class="scrollBox_order">
                             <ul id="limit_products" class="scrollItem">
                                 <li class="listItem" data-item="1" onclick="goPage('products.html?product_id=0')" ><div></div></li>
@@ -78,12 +71,17 @@
                                 <li class="listItem" data-item="5" onclick="goPage('products.html?product_id=0')" ><div></div></li>
                                 <li class="listItem" data-item="6" onclick="goPage('products.html?product_id=0')" ><div></div></li>
                                 <li class="listItem" data-item="7" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="8" onclick="goPage('products.html?product_id=0')"><div></div></li>
+                                <li class="listItem" data-item="8" onclick="goPage('products.html?product_id=0')"><div></div></li> 
                             </ul>
                         </div>
                         <div class="scrollController">
                             <div class="btn_left"></div>
                             <div class="btn_right"></div>
+                        </div>
+                    </div> -->
+                    <div class="commonSwiperContainer">
+                        <div class="commonSwiper">
+                            <div class="swiper-wrapper"></div>
                         </div>
                     </div>
                 </div>
@@ -138,8 +136,8 @@
 <script>
     $(document).ready(function(){
         hot_product();
-        limit_product();
-        news_swiper();
+        news_swiper(); // 最新消息
+        common_product(); // 好眠商品
     })
     $('#newsContent .btn_left').on('click', function(event){
         clickLeft();
@@ -192,51 +190,95 @@
             $('#hot_products li > div').eq(i).html(list_temp)
         }
     }
-    function limit_product(){
+    function common_product(){
         let list_temp = '';
         const limit_arrays = [
             {
                 img: './images/products/bed/bed_1.png',
-                name: '波浪舒眠床墊'
+                name: '波浪舒眠床墊',
+                url: './products.html?product_id=0'
             },
             {
                 img: './images/products/bed/bed_2.png',
-                name: '波浪極致舒眠床墊'
+                name: '波浪極致舒眠床墊',
+                url: './products.html?product_id=0'
             },
             {
                 img: './images/products/bed/bed_3.png',
-                name: 'QQ 雲朵床墊'
+                name: 'QQ 雲朵床墊',
+                url: './products.html?product_id=0'
             },
             {
                 img: './images/products/bed/bed_4.png',
-                name: '雲朵極致紓壓床墊'
+                name: '雲朵極致紓壓床墊',
+                url: './products.html?product_id=0'
             },
             {
                 img: './images/products/bed/bed_5.png',
-                name: '尊爵舒眠床墊'
+                name: '尊爵舒眠床墊',
+                url: './products.html?product_id=0'
             },
             {
                 img: './images/products/bed/bed_6.png',
-                name: '商業用床墊'
+                name: '商業用床墊',
+                url: './products.html?product_id=0'
             },
             {
                 img: './images/products/bed/bed_7.png',
-                name: '商業用訂製床墊'
+                name: '商業用訂製床墊',
+                url: './products.html?product_id=0'
             },
             {
                 img: './images/products/bed/bed_8.png',
-                name: '雲朵獨立筒/波浪乳膠薄墊'
+                name: '雲朵獨立筒/波浪乳膠薄墊',
+                url: './products.html?product_id=0'
             },
         ];
-        for( let i = 0; i < 8; i++){
-            list_temp = `<a href="#"><span class="product_img"><img src="${limit_arrays[i].img}"></span><span class="product_name">${limit_arrays[i].name}</span></a>`;
-            $('#limit_products li > div').eq(i).html(list_temp)
+        // for( let i = 0; i < 8; i++){
+        //     list_temp = `<a href="#"><span class="product_img"><img src="${limit_arrays[i].img}"></span><span class="product_name">${limit_arrays[i].name}</span></a>`;
+        //     $('#limit_products li > div').eq(i).html(list_temp)
+        // }
+
+        let timestamp = new Date().getTime();
+        let slides = '';
+        for(let i = 0; i < limit_arrays.length; i++) {
+            slides += `
+                <div class="swiper-slide" >
+                    <div class="slideDiv">
+                        <a href="${limit_arrays[i].url}"><span class="product_img"><img src="${limit_arrays[i].img}"></span><span class="product_name">${limit_arrays[i].name}</span></a>
+                    </div>
+                </div>
+            `;
         }
+        $('#products .commonSwiperContainer .swiper-wrapper').html(slides);
+
+        
+        let mySwiper = new Swiper('.commonSwiper', {
+            direction: 'horizontal', // 垂直切換選項
+            loop: true, // 迴圈模式選項
+            centeredSlides: true,
+            // slidesPerView: $('body').width() > 1200 ? 5 : $('body').width() > 600 ? 3 : 1,
+            slidesPerView: $('body').width() > 800 ? 5 : $('body').width() > 600 ? 3 : 1,
+            autoplay: {
+                delay: 2000,
+            },
+            on: {
+                transitionStart: function() {
+                    $('.commonSwiperContainer .swiper-slide').css('transform', 'scale(0.75)');
+
+                    $('.commonSwiperContainer .swiper-slide.swiper-slide-active').css('transform', 'scale(0.95)');
+
+                    $('.commonSwiperContainer .swiper-slide.swiper-slide-next').css('transform', 'scale(0.85)');
+                    $('.commonSwiperContainer .swiper-slide.swiper-slide-prev').css('transform', 'scale(0.85)');
+
+                }
+            }
+        })
     }
     function news_swiper() {
         let timestamp = new Date().getTime();
         let slides = '';
-        for( let i = 1; i <= 5; i++){
+        for( let i = 1; i <= 5; i++) {
             slides += `
                 <div class="swiper-slide" >
                     <div data-swiper-parallax-scale="0.8" data-swiper-parallax-opacity="1" >
@@ -281,14 +323,16 @@
 </html>
 
 <style>
-.limitedSwiperContainer {
+.limitedSwiperContainer,
+.commonSwiperContainer {
   position: relative;
   width: auto;
   background-color: transparent;
   margin: 0 auto 0;
 }
 
-.swiper {
+.swiper,
+.commonSwiper {
   overflow: hidden;
   margin: 40px auto 20px;
   padding-right: 20px;
@@ -299,10 +343,12 @@
 }
 
 @media (min-width: 991px) {
-  .limitedSwiperContainer {
+  .limitedSwiperContainer,
+  .commonSwiperContainer {
       padding-right: 15px;
   }
-  .swiper {
+  .swiper,
+  .commonSwiper {
     width: 95%;
     max-width: 1600px;
   }
@@ -313,7 +359,8 @@
   }
 }
 @media (min-width: 1200px) {
-  .swiper {
+  .swiper,
+  .commonSwiper {
     border: none;
   }
   .swiper-wrapper {
@@ -378,4 +425,25 @@
     transform: rotate(-45deg);
 }
 
+.commonSwiperContainer {
+    margin-top: 20px;
+}
+
+.commonSwiperContainer .swiper-slide a {
+    color: #2f5575;
+}
+.commonSwiperContainer .swiper-slide a:hover {
+    color: #2f5575;
+}
+
+.commonSwiperContainer .swiper-slide .slideDiv {
+  text-align: center;
+  background-color: #fff;
+  padding: 0 10px 20px;
+  box-shadow: 3px 5px 30px #ccc;
+}
+
+.swiper-slide-active {
+    font-weight: bold;
+}
 </style>

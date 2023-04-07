@@ -1299,135 +1299,51 @@ section .title_left .title {
     float: right;
   }
 }
-section #women_box {
+section #desc_box {
   position: relative;
 }
 @media (max-width: 767px) {
-  section #women_box {
+  section #desc_box {
     margin-top: 28px;
   }
 }
-section #women_box .women_img {
-  width: 100%;
-  height: 260px;
-  background-image: url(../images/women_sleep.png);
-  background-size: cover;
-  background-position: 50%;
-}
-@media (min-width: 768px) {
-  section #women_box .women_img {
-    height: 680px;
-  }
-}
-section #women_box .contentBox {
-  position: absolute;
-  background-color: rgba(144, 184, 211, 0.9);
-  color: #2f5575;
-  box-shadow: 0 0 8px #666;
-  width: 100%;
-  top: 16px;
-  padding: 20px 0;
-  margin: auto;
-}
-@media (min-width: 768px) {
-  section #women_box .contentBox {
-    top: 0;
-    bottom: 0;
-    right: 10px;
-    width: 500px;
-    height: 300px;
-    padding: 30px;
-    background-color: rgba(144, 184, 211, 0.7);
-  }
-  }
 
-@media (min-width: 992px) {
-  section #women_box .contentBox {
-    right: 4%;
-    width: 530px;
-    height: 410px;
-    padding: 70px;
-  }
+section#feature .title,
+section#newsBox .title,
+section#desc_box .title,
+section#products .title {
+  color: #2f5575;
+  width: 220px;
 }
-@media (min-width: 1200px) {
-  section #women_box .contentBox {
-    width: calc(600px + 1vw);
-    height: 467px;
-    padding: 100px;
-  }
+
+section#desc_box {
+  background-image: url('../images/desc_bg.png');
+  background-size: cover;
+  background-position: center;
+  color: #2f5575;
+  padding: 30px 15px 0;
 }
-@media (min-width: 1600px) {
-  section #women_box .contentBox {
-    width: calc(700px + 5vw);
-  }
+section#desc_box .descText {
+  width: 50%;
+  margin: 20px auto;
+  line-height: 30px;
 }
-section #women_box .contentBox .title {
-  width: 290px;
+
+section#desc_box .descImage {
+  width: 90%;
+  margin: 0 auto;
 }
 @media (max-width: 767px) {
-  section #women_box .contentBox .title {
-    padding: 0;
-  }
-  section #women_box .contentBox .title::after {
-    width: 120px;
-    height: 1px;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-}
-@media (min-width: 768px) {
-  section #women_box .contentBox .title {
-    width: 320px;
-  }
-}
-section #women_box .contentBox .content {
-  width: 280px;
-  margin: auto;
-}
-section #women_box .contentBox .content p {
-  font-size: 15px;
-  line-height: 30px;
-  padding: 4px;
-  margin: 0;
-}
-@media (min-width: 768px) {
-  section #women_box .contentBox .content p {
-    font-size: 18px;
-    width: 360px;
-    margin: 30px auto;
-    line-height: 40px;
-    padding: 0;
-  }
-}
-@media (min-width: 1200px) {
-  section #women_box .contentBox .content p {
-    font-size: 22px;
-    width: 100%;
-    text-align: center;
+  section#desc_box .descText {
+    width: 90%;
   }
 }
 
-@media (min-width: 768px) {
-  section #women_box .contentBox .content {
-    width: 300px;
-  }
-}
-
-@media (min-width: 1200px) {
-  section #women_box .contentBox .content {
-    width: 100%
-  }
-}
 section#feature {
   background-color: #fafafa;
   padding: 50px 0;
 }
-section#feature .title,
-section#newsBox .title {
-  color: #2f5575;
-  width: 220px;
-}
+
 section#feature .scrollBox .scrollItem .listItem {
   width: 100%;
   margin: 0;
@@ -2135,27 +2051,12 @@ section#customize_page #customizeBox .customize_text1 .text1_important_text {
 }
 section#products {
   background-color: #90b8d3;
-}
-@media (min-width: 992px) {
-  section#products {
-    padding: 10px 0;
-  }
-}
-@media (min-width: 1200px) {
-  section#products {
-    padding: 30px 0;
-  }
-}
-section#products .title {
-  color: #2f5575;
-  width: 240px;
-  padding: 10px 0;
-}
-
-@media (min-width: 768px) {
-  section#products .title {
-    width: 320px;
-  }
+  padding: 30px 0 15px;
+  background-image: url('../images/common_cloud.png?2');
+  background-repeat-y: no-repeat;
+  background-position: top;
+  background-size: 40%;
+  position: relative;
 }
 section#products .scrollBox {
   padding: 30px 0;
