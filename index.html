@@ -58,7 +58,7 @@
                 </div>
             </section>
             <section id="products">
-                <div style="position: absolute;bottom: 0; width: 100% ;height: 40%;background-color: #E7F5FE;"></div>
+                <div style="position: absolute; bottom: 0; width: 100%; height: 40%; background-color: #E7F5FE;"></div>
                 <div class="container">
                     <div class="title">好眠商品</div>
                     <!-- <div class="scrollBox">
@@ -87,57 +87,47 @@
                 </div>
             </section>
             <section id="feature">
-                <div class="title">獨家特色</div>
-                <div class="scrollBox">
-                    <div class="scrollBox_order">
-                        <ul class="scrollItem">
-                            <li class="listItem" data-item="1">
-                                <div class="feature_img"><img src="images/feature_01.png" alt="指定合作廠商"></div>
-                                <div class="feature_title">指定合作廠商</div>
-                            </li>
-                            <li class="listItem" data-item="2">
-                                <div class="feature_img"><img src="images/feature_02.png" alt="客製化設計"></div>
-                                <div class="feature_title">客製化設計</div>
-                            </li>
-                            <li class="listItem" data-item="3">
-                                <div class="feature_img"><img src="images/feature_03.png" alt="職人手作"></div>
-                                <div class="feature_title">職人手作</div>
-                            </li>
-                            <li class="listItem" data-item="4">
-                                <div class="feature_img"><img src="images/feature_04.png" alt="運送、舊床回收"></div>
-                                <div class="feature_title">運送、舊床回收</div>
-                            </li>
-                            <li class="listItem" data-item="5">
-                                <div class="feature_img"><img src="images/feature_05.png" alt="專人線上諮詢"></div>
-                                <div class="feature_title">專人線上諮詢</div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="scrollController">
-                        <div class="btn_left"></div>
-                        <div class="btn_right"></div>
+                <img src="images/decorationCloud1.png" alt="" class="decorationCloud cloud1">
+                <img src="images/decorationCloud2.png" alt="" class="decorationCloud cloud2">
+                <div class="container">
+                    <div class="title">獨家特色</div>
+                    <div class="featureSwiperContainer">
+                        <div class="featureSwiper">
+                            <div class="swiper-wrapper"></div>
+                        </div>
                     </div>
                 </div>
             </section>
-            <!-- 客製項目 -->
-            <section id="customized"></section>
+            <section id="customized">
+                <img src="images/decorationCloud4.png" alt="" class="decorationCloud cloud4">
+                <div class="container">
+                    <img src="images/decorationCloud3.png" alt="" class="decorationCloud cloud3">
+                    <div class="title">客製項目</div>
+                    <div class="cusotmizedItemContainer"></div>
+                </div>
+            </section>
         </article>
     </main>
-    <footer></footer>
+    <footer class="homepage"></footer>
 </body>
 <script src="js/particles.js"></script>
 <script>
     let this_page = 'main_page';
     particlesJS.load('particles-js','json/particlesjs-config.json')
 </script>
-<script type="module" src="js/js_template.js?0202-02"></script>
-<script type="module" src="js/template/customer_module.js"></script>
+<script type="module" src="js/js_template.js?0407-01"></script>
+<!-- <script type="module" src="js/template/customer_module.js"></script> -->
 <script type="module" src="js/template/scrollBox.js?230110"></script>
 <script>
     $(document).ready(function(){
         hot_product();
         news_swiper(); // 最新消息
         common_product(); // 好眠商品
+        feature_item(); // 獨家特色
+        customized_item(); // 客製項目
+        window.addEventListener('resize', () => {
+            window.location.reload();
+        })
     })
     $('#newsContent .btn_left').on('click', function(event){
         clickLeft();
@@ -257,8 +247,7 @@
             direction: 'horizontal', // 垂直切換選項
             loop: true, // 迴圈模式選項
             centeredSlides: true,
-            // slidesPerView: $('body').width() > 1200 ? 5 : $('body').width() > 600 ? 3 : 1,
-            slidesPerView: $('body').width() > 800 ? 5 : $('body').width() > 600 ? 3 : 1,
+            slidesPerView: $('body').width() > 1200 ? 5 : $('body').width() > 600 ? 3 : 1,
             autoplay: {
                 delay: 2000,
             },
@@ -316,6 +305,49 @@
             }
         }, 100);
     }
+    function feature_item() {
+        let timestamp = new Date().getTime();
+        let slides = '';
+        let slogan = ['裝潢設計<br>合作廠商', '專人線上諮詢', '職人手作', '客製化設計', '運送救床回收'];
+        for(let i = 0; i < slogan.length; i++) {
+            slides += `
+                <div class="swiper-slide" >
+                    <div class="slideDiv" data-swiper-parallax-scale="0.8">
+                        <img src="images/featureItem${i + 1}.png">
+                        <div class="sloganDiv">${slogan[i]}</div>
+                    </div>
+                </div>
+            `;
+        }
+        $('#feature .featureSwiperContainer .swiper-wrapper').html(slides);
+
+        
+        let mySwiper = new Swiper('.featureSwiper', {
+            direction: 'horizontal', // 垂直切換選項
+            loop: true, // 迴圈模式選項
+            centeredSlides: true,
+            slidesPerView: $('body').width() > 1200 ? 5 : $('body').width() > 600 ? 3 : 1,
+            autoplay: {
+                delay: 2500,
+            },
+            parallax: true, // 視差設定
+        })
+    }
+    function customized_item() {
+        let timestamp = new Date().getTime();
+        let ItemList = '';
+        let nameList = ['客製尺寸', '軟硬任選', '材質訂做', '百變造型'];
+
+        for(let i = 0; i < nameList.length; i++) {
+            ItemList += `
+                <div class="itemBox" >
+                    <img src="images/customized${i + 1}.png">
+                    <div class="nameDiv">${nameList[i]}</div>
+                </div>
+            `;
+        }
+        $('#customized .cusotmizedItemContainer').html(ItemList);
+    }
     function goPage (page, index) {
         window.location.href = `${page}`;
     }
@@ -324,7 +356,9 @@
 
 <style>
 .limitedSwiperContainer,
-.commonSwiperContainer {
+.commonSwiperContainer,
+.featureSwiperContainer,
+.cusotmizedItemContainer {
   position: relative;
   width: auto;
   background-color: transparent;
@@ -332,7 +366,9 @@
 }
 
 .swiper,
-.commonSwiper {
+.commonSwiper,
+.featureSwiperContainer,
+.cusotmizedItemContainer {
   overflow: hidden;
   margin: 40px auto 20px;
   padding-right: 20px;
@@ -344,7 +380,9 @@
 
 @media (min-width: 991px) {
   .limitedSwiperContainer,
-  .commonSwiperContainer {
+  .commonSwiperContainer,
+  .featureSwiperContainer,
+  .cusotmizedItemContainer {
       padding-right: 15px;
   }
   .swiper,
@@ -443,7 +481,95 @@
   box-shadow: 3px 5px 30px #ccc;
 }
 
+.swiper-slide {
+    max-width: 500px;
+}
 .swiper-slide-active {
     font-weight: bold;
+}
+
+.featureSwiperContainer .swiper-slide .slideDiv {
+    padding: 0 10px 20px;
+    position: relative;
+    max-width: 250px;
+    margin: 0 auto;
+}
+.featureSwiperContainer .swiper-slide .slideDiv .sloganDiv {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    background-color: #223170;
+    border-radius: 20px;
+    padding: 15px 5px;
+    width: 140px;
+    margin: -45px auto 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.decorationCloud {
+    position: absolute;
+}
+
+.cloud1 {
+    top: -115px;
+    left: 0;
+    max-width: 350px
+}
+.cloud2 {
+    bottom: 80px;
+    right: 0;
+    max-width: 300px
+}
+.cloud3 {
+    left: -50px;
+    top: -15px;
+    max-width: 330px;
+}
+.cloud4 {
+    left: 53%;
+    transform: translateX(-50%);
+    bottom: -170px;
+    max-width: 400px;
+}
+
+@media (max-width: 576px) {
+    .cloud1,
+    .cloud2,
+    .cloud3,
+    .cloud4 {
+        max-width: 30vw;
+    }
+}
+#customized .container {
+    position: relative;
+}
+
+.cusotmizedItemContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cusotmizedItemContainer .itemBox {
+    margin: 15px;
+}
+
+.cusotmizedItemContainer .itemBox img {
+    max-width: 200px;
+}
+
+.cusotmizedItemContainer .itemBox .nameDiv {
+    position: relative;
+    z-index: 1;
+    color: #223170;
+    border: solid 2px #223170;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 10px 5px;
+    max-width: 200px;
+    margin: -25px auto 0;
+    text-align: center;
+    font-size: 20px;
 }
 </style>
