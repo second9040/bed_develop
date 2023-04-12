@@ -53,16 +53,26 @@ function limitedList_temp(getData){
     let list_template= ``;
     getData.forEach( (item, index) => {
     let showType = item.videoId ? '<div class="videoBox"><iframe src="https://www.youtube.com/embed/XzyQ-Z7leL8" frameborder="0" allowFullScreen="true"></iframe></div>' : `<img src="./images/limited/limited_item_${index > 8 ? Number(index + 1) : '0' + Number(index + 1)}.jpg?0221">`;
+    
+        let isLastOne = index == getData.length - 1 ? 'isLastOne' : '';
+        let deepColor = index == getData.length - 1 && $('body').width() >= 768 ? 'deepColor' : '';
         list_template += `
         <div class="products_box_item abc" id="anchor${index+1}">
             <a href="javascript: void(0);">
-                <div class="textContainer">
-                    <div class="product_title">${item.titleLine1}</div>
-                    <div class="updateDate">${item.date}</div>
-                    <div class="breakLine"></div>
-                    <div class="product_desc">${item.desc}</div>
-                </div>
                 <span class="product_img">${showType}</span>
+                <div class="textContainer ${deepColor}">
+                    <div class="titleDiv">
+                        <div class="updateDate">
+                            <div>${item.date}</div>
+                            <div class="borderLine"></div>
+                        </div>
+                        <div class="product_title">${item.titleLine1}</div>
+                    </div>
+                    <div class="contentDiv">
+                        <div class="product_desc">${item.desc}</div>
+                    </div>
+                </div>
+                <div class="breakLine ${deepColor} ${isLastOne}"></div>
             </a>
         </div>
         `
@@ -73,13 +83,13 @@ function limitedList_temp(getData){
         if ($('.videoBox')) {
             if ($('.product_img img')) {
                 // 有圖片，iframe 使用圖片寬度
-                $('.videoBox').width(_width - 40);
+                $('.videoBox').width(_width);
             } else {
                 // 沒有圖片，iframe 寬度用扣的
                 let boxWidth = $('.products_box_item').width();
                 let textContainerWidth = $('.textContainer').width();
                 let smallerWidth = boxWidth > textContainerWidth ? textContainerWidth : boxWidth;  
-                $('.videoBox').width(smallerWidth - 40);
+                $('.videoBox').width(smallerWidth);
             }
         }
         if (!_width) {

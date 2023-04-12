@@ -17,33 +17,94 @@
                 <div class="logo"><img src="images/banner/bed_knowledge_text.png" alt="製床所御品"></div>
                 <div class="slogan_text">看過路過不要錯過</div>
             </div>
-            <section id="limited_products_page" class="limited_products_page">
-                <div id="products_box" class="limited_products container clearfix">
-                    <div class="products_box_item"><a href="#">商品</a></div>
-                    <div class="products_box_item"><a href="#">商品</a></div>
-                    <div class="products_box_item"><a href="#">商品</a></div>
-                </div>
-                <!-- <div id="YouTubeVideoPlayerAPI"></div> -->
-            </section>
+            <div id="limited_products_bg">
+              <img class="cloud cloud1" src="./images/limited/cloud1.png" alt="">
+              <img class="cloud cloud2" src="./images/limited/cloud2.png" alt="">
+              <img class="cloud cloud3" src="./images/limited/cloud3.png" alt="">
+              <img class="cloud cloud4" src="./images/limited/cloud4.png" alt="">
+              <img class="cloud cloud5" src="./images/limited/cloud5.png" alt="">
+              <img class="cloud cloud6" src="./images/limited/cloud6.png" alt="">
+              <img class="cloud cloud7" src="./images/limited/cloud7.png" alt="">
+              <img class="cloud cloud8" src="./images/limited/cloud8.png" alt="">
+              <section id="limited_products_page" class="limited_products_page">
+                  <div id="products_box" class="limited_products container clearfix">
+                      <div class="products_box_item"><a href="#">商品</a></div>
+                      <div class="products_box_item"><a href="#">商品</a></div>
+                      <div class="products_box_item"><a href="#">商品</a></div>
+                  </div>
+                  <!-- <div id="YouTubeVideoPlayerAPI"></div> -->
+              </section>
+            </div>
         </main>
         <footer></footer>
     </body>
     <script>
         let this_page = 'limited_page';
+
+        
+        window.addEventListener('resize', () => {
+          window.location.reload();
+        })
     </script>
     <script type="module" src="js/js_template.js?0202-02"></script>
     <script type="module" src="js/productsData_list_template.js?0221-04"></script>
 </html>
 <style>
 /* 改 layout.css 很容易改到產品頁的樣式造成跑版 故改在單獨頁面下 */
+#limited_products_bg {
+  background-image: url('./images/limited/bg.jpg');
+  background-size: contain;
+  background-repeat: repeat;
+  position: relative;
+}
+
+#limited_products_bg .cloud {
+  position: absolute;
+  width: 300px;
+}
+
+
+#limited_products_bg .cloud1 {
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#limited_products_bg .cloud2 {
+  top: 19%;
+  left: 0;
+}
+#limited_products_bg .cloud3 {
+  top: 13%;
+  right: 0;
+}
+#limited_products_bg .cloud4 {
+  top: 30%;
+  right: 0;
+}
+#limited_products_bg .cloud5 {
+  top: 55%;
+  right: 0;
+}
+#limited_products_bg .cloud6 {
+  top: 42%;
+  left: 0;
+}
+#limited_products_bg .cloud7 {
+  top: 66%;
+  left: 0;
+}
+#limited_products_bg .cloud8 {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
 #limited_products_page {
   padding: 25px 0;
-  background-color: #90b8d3;
 }
 section#limited_products_page #products_box .products_box_item a {
   display: block;
   padding: 10px;
-  background-color: #2f5575;
   transition: background-color 0.2s ease;
   margin: 15px 25px 30px;
   border-radius: 20px;
@@ -56,24 +117,22 @@ section#limited_products_page #products_box .products_box_item a {
     }
 }
 
-@media (min-width: 992px) {
-    section#limited_products_page #products_box .products_box_item a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
 section#limited_products_page #products_box .products_box_item a .textContainer {
   padding: 0 20px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   color: #fff;
-  text-align: center;
+}
+@media (min-width: 768px) {
+  section#limited_products_page #products_box .products_box_item a .textContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+section#limited_products_page #products_box .products_box_item a .textContainer.deepColor {
+  color: #013068;
 }
 @media (min-width: 992px) {
     section#limited_products_page #products_box .products_box_item a .textContainer {
-        max-width: 400px;
         padding: 40px 25px;
         text-align: left;
     }
@@ -91,10 +150,20 @@ section#limited_products_page #products_box .products_box_item a .textContainer 
 }
 section#limited_products_page #products_box .products_box_item a .textContainer .updateDate {
   margin: 10px 0;
+  position: relative;
+  display: flex;
 }
-
-section#limited_products_page #products_box .products_box_item a .textContainer .breakLine {
-  width: 25px;
+section#limited_products_page #products_box .products_box_item a .textContainer .updateDate .borderLine {
+  border-top: solid 1px;
+  width: calc(100% - 90px);
+  text-align: revert;
+  margin: 8px 0 0 5px;
+}
+section#limited_products_page #products_box .products_box_item a .breakLine.isLastOne {
+  display: none;
+}
+section#limited_products_page #products_box .products_box_item a .breakLine {
+  width: 100%;
   height: 1px;
   background-color: #fff;
   margin: 10px auto;
@@ -111,17 +180,26 @@ section#limited_products_page #products_box .products_box_item a .textContainer 
     font-weight: 300;
 }
 
-@media (min-width: 448px) {
-section#limited_products_page #products_box .products_box_item a .textContainer .product_desc {
-    line-height: 36px;
-    margin: 10px 0;
-    letter-spacing: 2px;
+section#limited_products_page #products_box .products_box_item a .textContainer .titleDiv {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  section#limited_products_page #products_box .products_box_item a .textContainer .titleDiv {
+  width: 40%;
+}
+
+  section#limited_products_page #products_box .products_box_item a .textContainer .contentDiv {
+    width: 55%;
   }
 }
 
+section#limited_products_page #products_box .products_box_item a .textContainer .product_desc {
+}
 section#limited_products_page #products_box .products_box_item a .product_img img {
   margin: 0 auto;
   padding: 15px;
+  max-width: 800px;
 }
 section#limited_products_page #products_box .products_box_item a span.product_name {
   display: block;
