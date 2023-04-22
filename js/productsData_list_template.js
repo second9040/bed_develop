@@ -52,15 +52,14 @@ function productList_temp(getData){
 function limitedList_temp(getData){
     let list_template= ``;
     getData.forEach( (item, index) => {
-    let showType = item.videoId ? '<div class="videoBox"><iframe src="https://www.youtube.com/embed/XzyQ-Z7leL8" frameborder="0" allowFullScreen="true"></iframe></div>' : `<img src="./images/limited/limited_item_${index > 8 ? Number(index + 1) : '0' + Number(index + 1)}.jpg?0221">`;
+    let showType = item.videoId ? `<div class="videoBox"><iframe src=https://www.youtube.com/embed/${item.videoId} frameborder="0" allowFullScreen="true"></iframe></div>` : `<img src="./images/limited/limited_item_${index > 8 ? Number(index + 1) : '0' + Number(index + 1)}.jpg?0221">`;
     
         let isLastOne = index == getData.length - 1 ? 'isLastOne' : '';
-        let deepColor = index == getData.length - 1 && $('body').width() >= 768 ? 'deepColor' : '';
         list_template += `
         <div class="products_box_item abc" id="anchor${index+1}">
             <a href="javascript: void(0);">
                 <span class="product_img">${showType}</span>
-                <div class="textContainer ${deepColor}">
+                <div class="textContainer">
                     <div class="titleDiv">
                         <div class="updateDate">
                             <div>${item.date}</div>
@@ -72,7 +71,7 @@ function limitedList_temp(getData){
                         <div class="product_desc">${item.desc}</div>
                     </div>
                 </div>
-                <div class="breakLine ${deepColor} ${isLastOne}"></div>
+                <div class="breakLine ${isLastOne}"></div>
             </a>
         </div>
         `

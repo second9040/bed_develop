@@ -7,7 +7,7 @@
     <title>製床所御品 - 首頁</title>
     <script src="js/jquery-2.2.4.min.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/layout.css?011003">
+    <link rel="stylesheet" href="css/layout.css?0407">
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- fontawesome -->
@@ -267,7 +267,7 @@
     function news_swiper() {
         let timestamp = new Date().getTime();
         let slides = '';
-        for( let i = 1; i <= 5; i++) {
+        for( let i = 1; i <= 6; i++) {
             slides += `
                 <div class="swiper-slide" >
                     <div data-swiper-parallax-scale="0.8" data-swiper-parallax-opacity="1" >
@@ -308,7 +308,7 @@
     function feature_item() {
         let timestamp = new Date().getTime();
         let slides = '';
-        let slogan = ['裝潢設計<br>合作廠商', '專人線上諮詢', '職人手作', '客製化設計', '運送救床回收'];
+        let slogan = ['裝潢設計<br>合作廠商', '專人線上諮詢', '職人手作', '客製化設計', '運送舊床回收'];
         for(let i = 0; i < slogan.length; i++) {
             slides += `
                 <div class="swiper-slide" >

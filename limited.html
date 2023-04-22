@@ -18,20 +18,20 @@
                 <div class="slogan_text">看過路過不要錯過</div>
             </div>
             <div id="limited_products_bg">
-              <img class="cloud cloud1" src="./images/limited/cloud1.png" alt="">
-              <img class="cloud cloud2" src="./images/limited/cloud2.png" alt="">
-              <img class="cloud cloud3" src="./images/limited/cloud3.png" alt="">
-              <img class="cloud cloud4" src="./images/limited/cloud4.png" alt="">
-              <img class="cloud cloud5" src="./images/limited/cloud5.png" alt="">
-              <img class="cloud cloud6" src="./images/limited/cloud6.png" alt="">
-              <img class="cloud cloud7" src="./images/limited/cloud7.png" alt="">
-              <img class="cloud cloud8" src="./images/limited/cloud8.png" alt="">
+              <img class="cloud cloud1" src="./images/limited/cloud1.png?042201" alt="">
+              <img class="cloud cloud2" src="./images/limited/cloud2.png?042201" alt="">
+              <img class="cloud cloud3" src="./images/limited/cloud3.png?042202" alt="">
+              <img class="cloud cloud4" src="./images/limited/cloud4.png?042201" alt="">
+              <img class="cloud cloud5" src="./images/limited/cloud5.png?042201" alt="">
+              <img class="cloud cloud6" src="./images/limited/cloud6.png?042201" alt="">
+              <img class="cloud cloud7" src="./images/limited/cloud7.png?042201" alt="">
+              <img class="cloud cloud8" src="./images/limited/cloud8.png?042201" alt="">
+              <img class="cloud cloud9" src="./images/limited/cloud9.png?042201" alt="">
+              <img class="cloud cloud10" src="./images/limited/cloud3.png?042202" alt="">
+              <img class="cloud cloud11" src="./images/limited/cloud11.png?042201" alt="">
+              <img class="cloud cloud12" src="./images/limited/cloud12.png?042201" alt="">
               <section id="limited_products_page" class="limited_products_page">
-                  <div id="products_box" class="limited_products container clearfix">
-                      <div class="products_box_item"><a href="#">商品</a></div>
-                      <div class="products_box_item"><a href="#">商品</a></div>
-                      <div class="products_box_item"><a href="#">商品</a></div>
-                  </div>
+                  <div id="products_box" class="limited_products container clearfix"></div>
                   <!-- <div id="YouTubeVideoPlayerAPI"></div> -->
               </section>
             </div>
@@ -43,64 +43,281 @@
 
         
         window.addEventListener('resize', () => {
-          window.location.reload();
+          // window.location.reload();
         })
     </script>
     <script type="module" src="js/js_template.js?0202-02"></script>
-    <script type="module" src="js/productsData_list_template.js?0221-04"></script>
+    <script type="module" src="js/productsData_list_template.js?0416"></script>
 </html>
 <style>
 /* 改 layout.css 很容易改到產品頁的樣式造成跑版 故改在單獨頁面下 */
 #limited_products_bg {
-  background-image: url('./images/limited/bg.jpg');
+  background-image: url('./images/limited/bg.png?0416');
   background-size: contain;
   background-repeat: repeat;
   position: relative;
+  overflow-x: hidden;
 }
 
 #limited_products_bg .cloud {
   position: absolute;
-  width: 300px;
+  width: 80vw;
+  max-width: 1200px;
 }
 
+
+#limited_products_bg .moon {
+  position: absolute;
+  width: 250px;
+}
 
 #limited_products_bg .cloud1 {
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 3%;
+  left: -100px;
 }
+@media (min-width: 768px) {
+  #limited_products_bg .cloud1 {
+    top: 200px;
+    left: -400px;
+  }
+}
+
 #limited_products_bg .cloud2 {
-  top: 19%;
-  left: 0;
+  top: 3%;
+  right: -150px;
 }
+@media (min-width: 768px) {
+  #limited_products_bg .cloud2 {
+    right: -350px;
+  }
+}
+@media (min-width: 1200px) {
+  #limited_products_bg .cloud2 {
+    right: -500px;
+  }
+}
+
 #limited_products_bg .cloud3 {
+  max-width: 1000px;
   top: 13%;
-  right: 0;
+  left: -100px;
 }
+@media (min-width: 375px) {
+  #limited_products_bg .cloud3 {
+    left: -130px;
+  }
+}
+@media (min-width: 576px) {
+  #limited_products_bg .cloud3 {
+    left: -200px;
+  }
+}
+@media (min-width: 768px) {
+  #limited_products_bg .cloud3 {
+    left: -400px;
+  }
+}
+@media (min-width: 1200px) {
+  #limited_products_bg .cloud3 {
+    top: 11%;
+    left: -375px;
+  }
+}
+
 #limited_products_bg .cloud4 {
-  top: 30%;
-  right: 0;
+  max-width: 800px;
+  top: 14%;
+  right: 50%;
+  transform: translateX(100%);
 }
+@media (min-width: 568px) {
+  #limited_products_bg .cloud4 {
+    top: 16%;
+  }
+}
+@media (min-width: 1200px) {
+  #limited_products_bg .cloud4 {
+    top: 14%;
+  }
+}
+@media (min-width: 1920px) {
+  #limited_products_bg .cloud4 {
+    top: 17%;
+    right: -200px;
+    transform: translateX(0);
+  }
+}
+
 #limited_products_bg .cloud5 {
-  top: 55%;
-  right: 0;
+  top: 22%;
+  left: 47%;
+  transform: translateX(-100%);
 }
+@media (min-width: 375px) {
+  #limited_products_bg .cloud5 {
+    top: 24%;
+  }
+}
+@media (min-width: 414px) {
+  #limited_products_bg .cloud5 {
+    top: calc(24% + 5vw);
+  }
+}
+@media (min-width: 476px) {
+  #limited_products_bg .cloud5 {
+    top: calc(25% + 10vw);
+  }
+}
+@media (min-width: 668px) {
+  #limited_products_bg .cloud5 {
+    top: 27%;
+  }
+}
+@media (min-width: 1920px) {
+  #limited_products_bg .cloud5 {
+    left: 35%;
+  }
+}
+
 #limited_products_bg .cloud6 {
-  top: 42%;
-  left: 0;
+  max-width: 800px;
+  top: 33%;
+  right: -100px;
 }
+@media (min-width: 568px) {
+  #limited_products_bg .cloud6 {
+    top: 35%;
+    right: -300px;
+  }
+}
+
 #limited_products_bg .cloud7 {
-  top: 66%;
-  left: 0;
+  top: 36%;
+  left: -20vw;
 }
+@media (min-width: 375px) {
+  #limited_products_bg .cloud7 {
+    top: 38%;
+  }
+}
+@media (min-width: 414px) {
+  #limited_products_bg .cloud7 {
+    top: 40%;
+  }
+}
+
 #limited_products_bg .cloud8 {
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  top: 48%;
+  right: -100px;
+}
+@media (min-width: 568px) {
+  #limited_products_bg .cloud8 {
+    top: 50%;
+    right: -300px;
+  }
+}
+
+#limited_products_bg .cloud9 {
+  max-width: 800px;
+  top: 64%;
+  left: -35vw;
+}
+@media (min-width: 375px) {
+  #limited_products_bg .cloud9 {
+    top: 65%;
+  }
+}
+@media (min-width: 768px) {
+  #limited_products_bg .cloud9 {
+    top: 64%;
+    left: -20vw;
+  }
+}
+@media (min-width: 1200px) {
+  #limited_products_bg .cloud9 {
+    top: 66%;
+  }
+}
+@media (min-width: 1920px) {
+  #limited_products_bg .cloud9 {
+    max-width: 1200px;
+    top: 64%;
+  }
+}
+
+#limited_products_bg .cloud10 {
+  max-width: 800px;
+  top: 64%;
+  right: -100px;
+}
+@media (min-width: 375px) {
+  #limited_products_bg .cloud10 {
+    top: 65%;
+  }
+}
+@media (min-width: 576px) {
+  #limited_products_bg .cloud10 {
+    right: -200px;
+  }
+}
+@media (min-width: 768px) {
+  #limited_products_bg .cloud10 {
+    top: 64%;
+    right: -300px;
+  }
+}
+@media (min-width: 1200px) {
+  #limited_products_bg .cloud10 {
+    top: 66%;
+  }
+}
+@media (min-width: 1920px) {
+  #limited_products_bg .cloud10 {
+    max-width: 1000px;
+    top: 65%;
+    right: -400px;
+  }
+}
+
+#limited_products_bg .cloud11 {
+  top: 81%;
+  left: -20vw;
+}
+@media (min-width: 768px) {
+  #limited_products_bg .cloud11 {
+  }
+}
+
+#limited_products_bg .cloud12 {
+  top: 82%;
+  right: -100px;
+}
+@media (min-width: 576px) {
+  #limited_products_bg .cloud12 {
+    right: -200px;
+  }
+}
+@media (min-width: 768px) {
+  #limited_products_bg .cloud12 {
+    right: -300px;
+  }
+}
+@media (min-width: 1920px) {
+  #limited_products_bg .cloud12 {
+    right: -500px;
+  }
 }
 
 #limited_products_page {
   padding: 25px 0;
+}
+
+section#limited_products_page #products_box {
+  min-height: 100vh;
+}
+
+section#limited_products_page #products_box .products_box_item {
+  position: relative;
 }
 section#limited_products_page #products_box .products_box_item a {
   display: block;
@@ -199,7 +416,7 @@ section#limited_products_page #products_box .products_box_item a .textContainer 
 section#limited_products_page #products_box .products_box_item a .product_img img {
   margin: 0 auto;
   padding: 15px;
-  max-width: 800px;
+  max-width: 1200px;
 }
 section#limited_products_page #products_box .products_box_item a span.product_name {
   display: block;
@@ -210,7 +427,7 @@ section#limited_products_page #products_box .products_box_item a span.product_na
 }
 section#limited_products_page #products_box .products_box_item a:hover {
   /* background-color: #d6d6d6; */
-  opacity: 0.75;
+  /* opacity: 0.75; */
 }
 
 .videoBox {
