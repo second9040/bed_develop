@@ -61,24 +61,6 @@
                 <div style="position: absolute; bottom: 0; width: 100%; height: 40%; background-color: #E7F5FE;"></div>
                 <div class="container">
                     <div class="title">好眠商品</div>
-                    <!-- <div class="scrollBox">
-                        <div class="scrollBox_order">
-                            <ul id="limit_products" class="scrollItem">
-                                <li class="listItem" data-item="1" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="2" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="3" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="4" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="5" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="6" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="7" onclick="goPage('products.html?product_id=0')" ><div></div></li>
-                                <li class="listItem" data-item="8" onclick="goPage('products.html?product_id=0')"><div></div></li> 
-                            </ul>
-                        </div>
-                        <div class="scrollController">
-                            <div class="btn_left"></div>
-                            <div class="btn_right"></div>
-                        </div>
-                    </div> -->
                     <div class="commonSwiperContainer">
                         <div class="commonSwiper">
                             <div class="swiper-wrapper"></div>
@@ -224,11 +206,6 @@
                 url: './products.html?product_id=0'
             },
         ];
-        // for( let i = 0; i < 8; i++){
-        //     list_temp = `<a href="#"><span class="product_img"><img src="${limit_arrays[i].img}"></span><span class="product_name">${limit_arrays[i].name}</span></a>`;
-        //     $('#limit_products li > div').eq(i).html(list_temp)
-        // }
-
         let timestamp = new Date().getTime();
         let slides = '';
         for(let i = 0; i < limit_arrays.length; i++) {

@@ -69,20 +69,8 @@
 
     {
         "product_name": "波浪舒眠床墊",
-        "product_link": "products_wave.html?product_id=2",
+        "product_link": "p2_1_sliding_rail.html?product_id=2",
         "main_product_id": "2",
-        "category": "bed"
-    },
-    {
-        "product_name": "尊爵舒眠床墊",
-        "product_link": "products_honor.html?product_id=2",
-        "main_product_id": "2",
-        "category": "bed"
-    },
-    {
-        "product_name": "QQ 雲朵床墊",
-        "product_link": "products_cloud.html?product_id=2",
-        "main_product_id": "2",
-        "category": "bed"
+        "category": "wardrobe"
     }
 ]
