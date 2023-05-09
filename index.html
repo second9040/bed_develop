@@ -107,9 +107,10 @@
         common_product(); // 好眠商品
         feature_item(); // 獨家特色
         customized_item(); // 客製項目
-        window.addEventListener('resize', () => {
-            window.location.reload();
-        })
+        // 手機往下滑不知為何好像會觸發，會很怪
+        // window.addEventListener('resize', () => {
+        //     window.location.reload();
+        // })
     })
     $('#newsContent .btn_left').on('click', function(event){
         clickLeft();
