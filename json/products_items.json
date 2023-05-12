@@ -68,8 +68,14 @@
     },
 
     {
-        "product_name": "滑軌式衣櫃",
-        "product_link": "p2_1_sliding_rail.html?product_id=2",
+        "product_name": "居家萬用入門款",
+        "product_link": "p2_0_sliding_rail.html?product_id=2",
+        "main_product_id": "2",
+        "category": "wardrobe"
+    },
+    {
+        "product_name": "主婦多功能收納款",
+        "product_link": "p2_1_multifunctional_storage.html?product_id=2",
         "main_product_id": "2",
         "category": "wardrobe"
     }
