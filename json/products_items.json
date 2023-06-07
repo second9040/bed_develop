@@ -66,6 +66,18 @@
         "main_product_id": "1",
         "category": "bedsideTable"
     },
+    {
+        "product_name": "普通版床架 (左右相拼)",
+        "product_link": "p1_3_original.html?product_id=1",
+        "main_product_id": "1",
+        "category": "bedsideTable"
+    },
+    {
+        "product_name": "木心床架 (左右相拼)",
+        "product_link": "p1_4_wood_core.html?product_id=1",
+        "main_product_id": "1",
+        "category": "bedsideTable"
+    },
 
     {
         "product_name": "居家萬用入門款",

@@ -1,7 +1,8 @@
 #products_image_box {
   position: relative;
   padding-top: 30px;
-  height: 70vw;
+  height: 55vh;
+  max-height: 380px;
 }
 
 #products_image_box .baseImg {
