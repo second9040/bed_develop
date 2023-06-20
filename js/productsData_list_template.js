@@ -1,7 +1,7 @@
 let _limitedData = null;
 export function getProductData(){
     // 好眠商品資料獲取
-    fetch('json/products_items.json?23060701')
+    fetch('json/products_items.json?23062001')
     .then(res => {
         return res.json();
     })

@@ -1,11 +1,11 @@
 {
-    "name": "5x7尺 居家萬用入門款",
+    "name": "3.5x6尺 輕巧衣櫃",
     "price_s1": "23900",
     "price_s2": "24900",
     "price_s3": "25900",
     "price_s4": "26900",
     "price_s5": "27900",
-    "itemImg": "images/products/wardrobe/wardrobe_1.png",
+    "itemImg": "images/products/wardrobe/wardrobe_3.png",
     "content": ["qq_cloud_bed.jpg"],
     "sizeList": [
         {

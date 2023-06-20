@@ -13,6 +13,7 @@ input:focus, textarea:focus {
 html, body {
   font-family: arial, "microsoft jhenghei";
   -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
 }
 
 a {
@@ -1295,6 +1296,11 @@ section .title::after {
   bottom: 0px;
   background-color: #2f5575;
 }
+
+section#newsBox .title::after {
+  background-color: #fff;
+}
+
 section .title_left {
   text-align: center;
 }
@@ -1336,6 +1342,9 @@ section#customized .title {
   width: 220px;
 }
 
+section#newsBox .title {
+  color: #fff;
+}
 section#desc_box {
   background-image: url('../images/desc_bg.png');
   background-size: cover;
@@ -1602,11 +1611,27 @@ section#customized #customerBox .the_bed_style_box .bed_style_item .customer_tex
 section#newsBox {
   background-color: transparent;
   position: relative;
-  background-image: url('../images/news_bg.png');
+  background-image: url('../images/news_bg.jpg?230620-2');
   background-size: cover;
   background-position: center;
   color: #2f5575;
   padding: 30px 15px;
+}
+
+section#newsBox .bgCloud {
+  position: absolute;
+}
+
+section#newsBox .left {
+  top: -13px;
+  left: -150px;
+  width: 380px;
+}
+
+section#newsBox .right {
+  width: 400px;
+  right: -175px;
+  top: -30px;
 }
 
 section#newsBox #newsContent {

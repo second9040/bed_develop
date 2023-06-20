@@ -49,12 +49,6 @@
     },
 
     {
-        "product_name": "普通封邊式底座",
-        "product_link": "p1_0_normal.html?product_id=1",
-        "main_product_id": "1",
-        "category": "bedsideTable"
-    },
-    {
         "product_name": "木心板抽式底座",
         "product_link": "p1_1_drawer.html?product_id=1",
         "main_product_id": "1",
@@ -80,14 +74,20 @@
     },
 
     {
-        "product_name": "居家萬用入門款",
+        "product_name": "5x7尺 居家萬用入門款",
         "product_link": "p2_0_sliding_rail.html?product_id=2",
         "main_product_id": "2",
         "category": "wardrobe"
     },
     {
-        "product_name": "主婦多功能收納款",
+        "product_name": "6x7尺 主婦多功能收納款",
         "product_link": "p2_1_multifunctional_storage.html?product_id=2",
+        "main_product_id": "2",
+        "category": "wardrobe"
+    },
+    {
+        "product_name": "3.5x6尺 輕巧衣櫃",
+        "product_link": "p2_2_lightweight.html?product_id=2",
         "main_product_id": "2",
         "category": "wardrobe"
     }
