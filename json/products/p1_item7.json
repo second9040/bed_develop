@@ -1,16 +1,16 @@
 {
-    "name": "收納式掀床架",
+    "name": "布包床架",
     "price_s1": "23900",
     "price_s2": "24900",
     "price_s3": "25900",
     "price_s4": "26900",
     "price_s5": "27900",
-    "itemImg": "images/products/bedsideTable/bedsideTable_3.png",
+    "itemImg": "images/products/bedsideTable/bedsideTable_7.png",
     "content": ["qq_cloud_bed.jpg"],
     "sizeList": [
         {
-            "sizeText": "3.5呎",
-            "sizeDesc": "3.5*6.2尺 / 106x188公分",
+            "sizeText": "3呎",
+            "sizeDesc": "3*6.2尺 / 106x188公分",
             "price": "4,500~5,800"
         },
         {

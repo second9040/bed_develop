@@ -61,14 +61,32 @@
         "category": "bedsideTable"
     },
     {
-        "product_name": "普通版床架 (左右相拼)",
-        "product_link": "p1_3_original.html?product_id=1",
+        "product_name": "收納式掀床架",
+        "product_link": "p1_3_organiser_lift_up_frame.html?product_id=1",
         "main_product_id": "1",
         "category": "bedsideTable"
     },
     {
-        "product_name": "木心床架 (左右相拼)",
-        "product_link": "p1_4_wood_core.html?product_id=1",
+        "product_name": "普通版床架 (左右相拼)",
+        "product_link": "p1_4_original.html?product_id=1",
+        "main_product_id": "1",
+        "category": "bedsideTable"
+    },
+    {
+        "product_name": "雙拼床架木心板（無抽屜）",
+        "product_link": "p1_5_wood_core.html?product_id=1",
+        "main_product_id": "1",
+        "category": "bedsideTable"
+    },
+    {
+        "product_name": "雙拼床架木心板（有抽屜）",
+        "product_link": "p1_6_wood_core_with_drawer.html?product_id=1",
+        "main_product_id": "1",
+        "category": "bedsideTable"
+    },
+    {
+        "product_name": "布包床架",
+        "product_link": "p1_7_cloth_bag_frame.html?product_id=1",
         "main_product_id": "1",
         "category": "bedsideTable"
     },
@@ -86,7 +104,7 @@
         "category": "wardrobe"
     },
     {
-        "product_name": "3.5x6尺 輕巧衣櫃",
+        "product_name": "3x6尺 輕巧衣櫃",
         "product_link": "p2_2_lightweight.html?product_id=2",
         "main_product_id": "2",
         "category": "wardrobe"
