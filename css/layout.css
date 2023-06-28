@@ -1611,9 +1611,9 @@ section#customized #customerBox .the_bed_style_box .bed_style_item .customer_tex
 section#newsBox {
   background-color: transparent;
   position: relative;
-  background-image: url('../images/news_bg.jpg?230620-2');
-  background-size: cover;
-  background-position: center;
+  background-image: url('../images/news_bg.jpg?230620-3');
+  background-size: contain;
+  background-position: right;
   color: #2f5575;
   padding: 30px 15px;
 }
