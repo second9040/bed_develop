@@ -1,7 +1,7 @@
 let _limitedData = null;
 export function getProductData(){
     // 好眠商品資料獲取
-    fetch('json/products_items.json?23062001')
+    fetch('json/products_items.json?230628-2')
     .then(res => {
         return res.json();
     })
@@ -37,7 +37,7 @@ function productList_temp(getData){
             list_template += `
                 <div class="products_box_item">
                     <a href="${item.product_link}">
-                        <span class="product_img"><img src="images/products/${item.category}/${item.category}_${count++}.png"></span>
+                        <span class="product_img"><img src="images/products/${item.category}/${item.category}_${count++}.png?062803"></span>
                         <div style="text-align: center; margin-top: 15px; color: #666; font-size: 18px;">${item.product_name}</div>
                     </a>
                 </div>`;
