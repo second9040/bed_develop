@@ -10,7 +10,7 @@ export function getProductData(){
     );
 
     // 限時商品資料獲取
-    fetch('json/products_limited_items.json?0608')
+    fetch('json/products_limited_items.json?0704-02')
     .then(res => {
         return res.json();
     })
@@ -52,12 +52,12 @@ function productList_temp(getData){
 function limitedList_temp(getData){
     let list_template= ``;
     getData.forEach( (item, index) => {
-    let showType = item.videoId ? `<div class="videoBox"><iframe src=https://www.youtube.com/embed/${item.videoId} frameborder="0" allowFullScreen="true"></iframe></div>` : `<img src="./images/limited/limited_item_${index > 8 ? Number(index + 1) : '0' + Number(index + 1)}.jpg?0221">`;
+    let showType = item.videoId ? `<div class="videoBox"><iframe src=https://www.youtube.com/embed/${item.videoId} frameborder="0" allowFullScreen="true"></iframe></div>` : `<img src="./images/limited/limited_item_${item.imageNum}.jpg?0704">`;
     
         let isLastOne = index == getData.length - 1 ? 'isLastOne' : '';
         list_template += `
         <div class="products_box_item abc" id="anchor${index+1}">
-            <a href="javascript: void(0);">
+            <div class="descContainer">
                 <span class="product_img">${showType}</span>
                 <div class="textContainer">
                     <div class="titleDiv">
@@ -68,11 +68,11 @@ function limitedList_temp(getData){
                         <div class="product_title">${item.titleLine1}</div>
                     </div>
                     <div class="contentDiv">
-                        <div class="product_desc">${item.desc}</div>
+                        <div class="product_desc">${checkLink(item.desc)}</div>
                     </div>
                 </div>
                 <div class="breakLine ${isLastOne}"></div>
-            </a>
+            </div>
         </div>
         `
     });
@@ -96,4 +96,22 @@ function limitedList_temp(getData){
         }
     }, 500)
 }
+
+function checkLink(text) {
+  // 使用正則表達式找出網址
+  var pattern = /(https?:\/\/\S+)/g;
+  var urls = text.match(pattern);
+
+  // 將網址替換為帶有 <a> 標籤的網址
+  if (urls) {
+    for (var i = 0; i < urls.length; i++) {
+      var url = urls[i];
+      var link = '<a href="' + url + '" style="color: #fff; text-decoration: underline;" target="_blank">' + url + '</a>';
+      text = text.replace(url, link);
+    }
+  }
+
+  return text;
+}
+
 getProductData();
