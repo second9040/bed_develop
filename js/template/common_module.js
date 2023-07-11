@@ -3,7 +3,7 @@ import { nav_lists , page_id } from "/../js/template/link_module.js";
 export function headerTemp(){
     let header_temp = `
         <div class="container">
-            <div class="logo"><a href="index.html"><img src="images/top_logo.png"></a></div>
+            <div class="logo"><a href="index.html"><img src="images/top_logo.png?0711-4"></a></div>
             <div id="nav_hamberger">
                 <div class="ham_bar"></div>
             </div>

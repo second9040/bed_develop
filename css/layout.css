@@ -936,6 +936,7 @@ footer #fast_link_popBox #go_top::after {
   position: absolute;
   bottom: -60px;
   z-index: 3;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .banner#idx_banner .banner_cloud {

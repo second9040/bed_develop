@@ -47,6 +47,12 @@
         "main_product_id": "0",
         "category": "bed"
     },
+    {
+        "product_name": "南洋進口天然藤席",
+        "product_link": "p0_rattan_mat.html?product_id=0",
+        "main_product_id": "0",
+        "category": "bed"
+    },
 
     {
         "product_name": "木心板抽式底座",
@@ -87,6 +93,30 @@
     {
         "product_name": "布包床架",
         "product_link": "p1_7_cloth_bag_frame.html?product_id=1",
+        "main_product_id": "1",
+        "category": "bedsideTable"
+    },
+    {
+        "product_name": "床頭片(基本款)",
+        "product_link": "p1_8_bed_head_basic.html?product_id=1",
+        "main_product_id": "1",
+        "category": "bedsideTable"
+    },
+    {
+        "product_name": "床頭片(書架型)",
+        "product_link": "p1_9_bed_head_with_bookshelf.html?product_id=1",
+        "main_product_id": "1",
+        "category": "bedsideTable"
+    },
+    {
+        "product_name": "床頭片(軟墊)",
+        "product_link": "p1_10_bed_head_with_cushioned.html?product_id=1",
+        "main_product_id": "1",
+        "category": "bedsideTable"
+    },
+    {
+        "product_name": "床頭片(書架+軟墊)",
+        "product_link": "p1_11_bed_head_with_bookshelf_and_cushioned.html?product_id=1",
         "main_product_id": "1",
         "category": "bedsideTable"
     },
