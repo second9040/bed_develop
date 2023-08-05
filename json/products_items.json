@@ -53,6 +53,12 @@
         "main_product_id": "0",
         "category": "bed"
     },
+    {
+        "product_name": "超級涼感抗暑床墊",
+        "product_link": "super_cool_anti_heat_mattress.html?product_id=0",
+        "main_product_id": "0",
+        "category": "bed"
+    },
 
     {
         "product_name": "木心板抽式底座",
@@ -117,6 +123,12 @@
     {
         "product_name": "床頭片(書架+軟墊)",
         "product_link": "p1_11_bed_head_with_bookshelf_and_cushioned.html?product_id=1",
+        "main_product_id": "1",
+        "category": "bedsideTable"
+    },
+    {
+        "product_name": "床頭床架組(熱銷床組款式)",
+        "product_link": "p1_12_bedside_with_bedframe.html?product_id=1",
         "main_product_id": "1",
         "category": "bedsideTable"
     },
