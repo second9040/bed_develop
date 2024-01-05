@@ -10,7 +10,7 @@ export function getProductData(){
     );
 
     // 限時商品資料獲取
-    fetch('json/products_limited_items.json?1206-2')
+    fetch('json/products_limited_items.json?0105')
     .then(res => {
         return res.json();
     })
