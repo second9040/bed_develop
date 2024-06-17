@@ -1,0 +1,37 @@
+.index-page {
+  & .sitename {
+    margin: 0;
+  }
+  & .cart_div {
+    position: relative;
+    margin-right: 40px;
+    & .cart_icon {
+        width: 20px;
+    }
+    & .cart_items_count {
+      position: absolute;
+      top: 5px;
+      right: -17px;
+      background: #fff;
+      border-radius: 50%;
+      padding: 0 5px;
+      font-size: 70%;
+      &.last_than_99 {
+        top: 3px;
+        right: -23px;
+        padding: 2px 5px;
+      }
+      &.last_than_999 {
+        top: 1px;
+        padding: 3px 5px;
+        right: -30px;
+      }
+      &.last_than_9999 {
+        top: 1px;
+        padding: 4px 5px;
+        right: -35px;
+      }
+    }
+  }
+
+}

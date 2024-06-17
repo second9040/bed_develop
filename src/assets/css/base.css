@@ -19,6 +19,22 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  /* 
+    文字主要用 color1   
+    內背景用 color6 
+  */
+
+  --color1-blue: #30526B;
+  --color2-green: #53BDD7;
+  --color3-green:#2991B8;
+  --color4-pink:#F46D85;
+  --color5-green:#9EBB51;
+  --color6-white:#F5F8F9;
+
+  --contact-btn-green: #0dc754;
+  --contact-btn-hover-green: #75FB7B;
+
 }
 
 /* semantic color variables for this project */
@@ -83,4 +99,28 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
 }

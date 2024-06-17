@@ -2,10 +2,11 @@
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
 import TemplateView from "./views/TemplateView.vue";
+import IndexView from "./views/IndexView.vue";
 </script>
 
 <template>
-  <TemplateView />
+  <IndexView />
   <RouterView />
 </template>
 

@@ -53,7 +53,7 @@ defineProps({});
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted" href="index.html#about">Get Started</a>
+        <a class="btn-chatbed" href="index.html#about">Get Started</a>
       </div>
     </header>
 
@@ -1523,12 +1523,12 @@ defineProps({});
 <script>
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace('@', '..');
+    const handlePath = imgPath.replace("@", "..");
     return new URL(handlePath, import.meta.url).href;
   } catch (err) {
     console.warn(err);
   }
-}
+};
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper-bundle.css";
@@ -1538,7 +1538,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// import required modules 
+// import required modules
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 export default {
