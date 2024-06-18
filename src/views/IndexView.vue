@@ -4,76 +4,99 @@ defineProps({});
 
 <template lang="pug">
   .index-page
-    header.header.d-flex.align-items-center.fixed-top#header
-      .container.container-fluid.position-relative.d-flex.align-items-center.justify-content-between
-        a.logo.d-flex.align-items-center.me-auto.me-xl-0(href="index.html")
-          //- Uncomment the line below if you also wish to use an image logo
-          // img(src="../assets/images/logo.png" alt="")
-          h1.sitename 製床所御品
+    header#header.header.d-flex.align-items-center.fixed-top
+      a.logo(href="index.html")
+        h1.sitename 製床所御品
+      //- a.logo.d-flex.align-items-center.me-auto.me-xl-0(href="index.html")
+      //-   h1.sitename 製床所御品
 
-        nav#navmenu.navmenu
-          ul
-            li
-              a.active(href="index.html#hero")
-            li
-              a(href="index.html#about") 床墊
-            li
-              a(href="index.html#services") 床架/床頭櫃
-            li
-              a(href="index.html#portfolio") 其他配件
-            li
-              a(href="index.html#pricing") 關於我們
-            li
-              a(href="index.html#team") 限時優惠
-            li
-              a(href="blog.html") 床墊知識
-              //- Uncomment the dropdown menu if needed
-              // li.dropdown
-              //   a(href="#")
-              //     span Dropdown
-              //     i.bi.bi-chevron-down.toggle-dropdown
-              //   ul
-              //     li
-              //       a(href="#") Dropdown 1
-              //     li.dropdown
-              //       a(href="#")
-              //         span Deep Dropdown
-              //         i.bi.bi-chevron-down.toggle-dropdown
-              //       ul
-              //         li
-              //           a(href="#") Deep Dropdown 1
-              //         li
-              //           a(href="#") Deep Dropdown 2
-              //         li
-              //           a(href="#") Deep Dropdown 3
-              //         li
-              //           a(href="#") Deep Dropdown 4
-              //         li
-              //           a(href="#") Deep Dropdown 5
-              //     li
-              //       a(href="#") Dropdown 2
-              //     li
-              //       a(href="#") Dropdown 3
-              //     li
-              //       a(href="#") Dropdown 4
-            li
-              a(href="index.html#contact") 好評分享
-            li
-              a(href="index.html#contact") 體驗據點
-          i.mobile-nav-toggle.d-xl-none.bi.bi-list
+      nav#navmenu.navmenu
+        ul
+          li
+            a(href="index.html#bed") 床墊
+          li
+            a(href="index.html#services") 床架/床頭櫃
+          li
+            a(href="index.html#portfolio") 其他配件
+          li
+            a(href="index.html#pricing") 關於我們
+          li
+            a(href="index.html#team") 限時優惠
+          li
+            a(href="blog.html") 床墊知識
+            //- Uncomment the dropdown menu if needed
+            // li.dropdown
+            //   a(href="#")
+            //     span Dropdown
+            //     i.bi.bi-chevron-down.toggle-dropdown
+            //   ul
+            //     li
+            //       a(href="#") Dropdown 1
+            //     li.dropdown
+            //       a(href="#")
+            //         span Deep Dropdown
+            //         i.bi.bi-chevron-down.toggle-dropdown
+            //       ul
+            //         li
+            //           a(href="#") Deep Dropdown 1
+            //         li
+            //           a(href="#") Deep Dropdown 2
+            //         li
+            //           a(href="#") Deep Dropdown 3
+            //         li
+            //           a(href="#") Deep Dropdown 4
+            //         li
+            //           a(href="#") Deep Dropdown 5
+            //     li
+            //       a(href="#") Dropdown 2
+            //     li
+            //       a(href="#") Dropdown 3
+            //     li
+            //       a(href="#") Dropdown 4
+          li
+            a(href="index.html#contact") 好評分享
+          li
+            a(href="index.html#contact") 體驗據點
+        i.mobile-nav-toggle.d-xl-none.bi.bi-list
 
-        .d-flex.align-items-center
-          .cart_div
-            img.cart_icon(src="../assets/images/cart_icon.png")
-            .cart_items_count(
-              :class="number_style()"
-            ) {{ cart_items_count }}
+      .d-flex.align-items-center.position-relative.justify-content-end
+        .cart_div_pc
+          img.cart_icon(src="../assets/images/cart_icon.png")
+          .cart_items_count(
+            :class="number_style()"
+          ) {{ cart_items_count }}
 
-          a.btn-chatbed(href="index.html#about")
-            span 聊聊床墊
+        a.btn-chatbed(href="index.html#about")
+          span 聊聊床墊
 
     main.main
-      // Hero Section
+      // bed_banner Section
+      section#bed.section
+        swiper.swiper-container(
+          :loop='true' 
+          :modules='modules' 
+          :pagination="{ el: '.swiper-pagination', clickable: true }"
+          :slides-per-view='1' 
+          :space-between='10' 
+          :autoplay='{ delay: 5000, disableOnInteraction: false }'
+          :navigation='{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }'
+        )
+          swiper-slide.swiper-slide(v-for='(banner, index) in banners' :key='index')
+            .position-relative
+              .banner_container.position-relative
+                img.banner-slide(:src='getImagePath(banner.img)' :alt='banner.name')
+              .text_div.position-absolute
+                h1 {{ banner.title }}
+                h3 {{ banner.desc }}
+                button.banner_btn.button.btn.btn-primary(
+                  v-if="banner.btn_text"
+                  type="button"
+                ) {{ banner.btn_text}}
+
+          .swiper-pagination
+          .swiper-button-next
+          .swiper-button-prev
+
       section#hero.hero.section
         img(src='../assets/images/hero-bg.jpg' alt='' data-aos='fade-in')
         .container
@@ -986,8 +1009,32 @@ export default {
   },
   data() {
     return {
-      cart_items_count: 99,
+      cart_items_count: 0,
       modules: [Autoplay, Navigation, Pagination],
+      banners: [
+        {
+          img: "assets/images/banner_kari01.jpg",
+          name: "banner_kari01",
+          title: "擁有最適合你的床",
+          desc: "交給床墊魔法師",
+          btn_text: "馬上了解",
+          btn_link: "",
+        },
+        {
+          img: "assets/images/hero-bg.jpg",
+          name: "hero",
+          title: "擁有最適合你的床2",
+          desc: "交給床墊魔法師2",
+          btn_text: "馬上了解",
+          btn_link: "",
+        },
+        {
+          img: "assets/images/banner_kari01.jpg",
+          name: "banner_kari01",
+          title: "擁有最適合你的床3",
+          desc: "交給床墊魔法師3",
+        },
+      ],
       testimonials: [
         {
           name: "Saul Goodman",
@@ -1029,6 +1076,10 @@ export default {
   },
   mounted() {
     // this.initSwiper();
+    this.checkSwiperLoaded();
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.updateBannerHeight);
   },
   methods: {
     number_style() {
@@ -1036,6 +1087,16 @@ export default {
       if (count > 9 && count <= 99) return "last_than_99";
       if (count > 99 && count <= 999) return "last_than_999";
       if (count > 999) return "last_than_9999";
+    },
+    checkSwiperLoaded() {
+      const swiperElement = this.$el.querySelector('.swiper-container');
+      if (swiperElement && swiperElement.swiper) {
+        this.updateBannerHeight();
+        window.addEventListener('resize', this.updateBannerHeight);
+      } else {
+        // 如果Swiper還未加載完成,稍後再次檢查
+        setTimeout(this.checkSwiperLoaded, 100);
+      }
     },
     initSwiper() {
       new Swiper(".swiper-container", {
@@ -1050,7 +1111,50 @@ export default {
           type: "bullets",
           clickable: true,
         },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
       });
+    },
+    updateBannerHeight() {
+      const banner_slide = document.querySelectorAll(".banner-slide");
+      const bannerContainers = document.querySelectorAll(".banner_container");
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+      let bannerContainerHeight = 600;
+      if (screenWidth > 900) {
+        bannerContainerHeight = screenWidth * 0.5 > 640 ? screenHeight * 0.8 : screenWidth * 0.5;
+
+      }
+      bannerContainers.forEach((container) => {
+        container.style.height = `${bannerContainerHeight}px`;
+      });
+
+      // 根據 bannerContainer 高度調整圖片呈現位置
+      banner_slide.forEach((container) => {
+        let topPos = 0;
+        let topLeft = 0;
+        
+        if (screenWidth > 1700) {
+          topPos = bannerContainerHeight * -0.2 - screenWidth * 0.05;
+        } else if (screenWidth > 1400) {
+          topPos = bannerContainerHeight * -.15;
+        } else if (screenWidth > 900) {
+          topPos = bannerContainerHeight * -.05;
+        } else {
+          const maxWidth = 900;
+          const minWidth = 320;
+          const maxLeft = 0;
+          const minLeft = -300;
+
+          // screenWidth 越小, left 負的愈多
+          let leftVal = ((screenWidth - minWidth) / (maxWidth - minWidth)) * (maxLeft - minLeft) + minLeft;
+          container.style.left = `${leftVal}px`;
+        }
+        container.style.top = `${topPos}px`;
+      });
+      console.log(`h: ${bannerContainerHeight}, w: ${screenWidth}`)
     },
     getImagePath(img) {
       return require(`@/${img}`);
@@ -1093,10 +1197,6 @@ export default {
   font-size: 24px;
 }
 
-.swiper-container {
-  border: solid;
-  background: #e2ff33;
-}
 </style>
 <style lang="scss">
 @import "@/assets/css/index.scss";

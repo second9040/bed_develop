@@ -1660,8 +1660,4 @@ h3 {
   font-size: 24px;
 }
 
-.swiper-container {
-  border: solid;
-  background: #e2ff33;
-}
 </style>

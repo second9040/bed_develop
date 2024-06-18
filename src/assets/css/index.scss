@@ -1,9 +1,32 @@
 .index-page {
+
+  .header {
+    justify-content: space-around;
+  }
+  a.logo {
+    width: 150px;
+  }
+  // header 
+  
+  @media (max-width: 1199px) {
+    .header {
+      padding: 20px;
+      justify-content: flex-start;
+
+      .mobile-nav-toggle {
+        right: 0;
+        top: 22px;
+        position: absolute;
+      }
+    }
+  }
+
   & .sitename {
     margin: 0;
   }
-  & .cart_div {
+  & .cart_div_pc {
     position: relative;
+    margin-left: 20px;
     margin-right: 40px;
     & .cart_icon {
         width: 20px;
@@ -30,6 +53,101 @@
         top: 1px;
         padding: 4px 5px;
         right: -35px;
+      }
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .cart_div_pc,
+    .btn-chatbed {
+      display: none;
+    }
+  }
+
+  // bed banner
+  
+  #bed.section {
+    & .banner_container {
+      overflow: hidden;
+      position: relative;
+      
+      & .banner-slide {
+        position: absolute;
+        top: -150px;
+        width: 100%;
+        @media (max-width: 900px) {
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+
+    & .text_div {
+      top: 40%;
+      left: 11%;
+      @media (max-width: 1199px) {
+        width: calc(100% - 200px);
+        left: 50%;
+        top: 25%;
+        transform: translateX(-50%);
+        text-align: center;
+      }
+      & h1,
+      & h3 {
+        color: var(--color6-white);
+      }
+      & h1 {
+        font-weight: bold;
+        line-height: 2.5rem;
+      }
+      & h3 {
+        margin-top: 16px;
+      }
+
+      @media (max-width: 576px) {
+        width: calc(100% - 150px);
+        top: 35%;
+      }
+    }
+
+
+    & .banner_btn {
+      margin-top: 13%;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 6px 30px;
+    }
+
+    & .swiper-pagination {
+      bottom: var(--swiper-pagination-bottom, 25px);
+      & .swiper-pagination-bullet {
+        background: var(--color6-white);
+        opacity: .8;
+        width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 10px));
+        height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 10px));
+        &-active {
+          background: var(--color3-green);
+        }
+      }
+    }
+
+    & .swiper-button,
+    & .swiper-button {
+      &-prev,
+      &-next {
+        color: #000;
+        background-color: #fff;
+        padding: 28px 25px;
+        top: var(--swiper-navigation-top-offset, 52%);
+        &:after {
+          font-size: 28px;
+        }
+      }
+      &-prev {
+        left: var(--swiper-navigation-sides-offset, 20px);
+      }
+      &-next {
+        right: 20px;
       }
     }
   }
