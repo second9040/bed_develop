@@ -144,7 +144,6 @@ h6 {
 
 .header .btn-chatbed:hover,
 .header .btn-chatbed:focus:hover {
-  color: var(--color3-green);
   background: color-mix(in srgb, var(--contact-btn-hover-green), transparent 15%);
 }
 

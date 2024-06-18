@@ -58,15 +58,21 @@ defineProps({});
           li
             a(href="index.html#contact") 體驗據點
         i.mobile-nav-toggle.d-xl-none.bi.bi-list
-
-      .d-flex.align-items-center.position-relative.justify-content-end
-        .cart_div_pc
+        .cart_div.mobile
           img.cart_icon(src="../assets/images/cart_icon.png")
           .cart_items_count(
             :class="number_style()"
           ) {{ cart_items_count }}
 
-        a.btn-chatbed(href="index.html#about")
+      .d-flex.align-items-center.position-relative.justify-content-end
+        .cart_div.pc
+          img.cart_icon(src="../assets/images/cart_icon.png")
+          .cart_items_count(
+            :class="number_style()"
+          ) {{ cart_items_count }}
+
+        a.btn-chatbed.pc(href="https://line.me/ti/p/~@121povpz" target="_blank")
+          img.line_icon(src="../assets/images/line_icon.png")
           span 聊聊床墊
 
     main.main
@@ -96,6 +102,11 @@ defineProps({});
           .swiper-pagination
           .swiper-button-next
           .swiper-button-prev
+
+        a.w-100.btn-chatbed.mobile(href="https://line.me/ti/p/~@121povpz" target="_blank")
+          img.line_icon(src="../assets/images/line_icon.png")
+          span 聊聊床墊
+
 
       section#hero.hero.section
         img(src='../assets/images/hero-bg.jpg' alt='' data-aos='fade-in')

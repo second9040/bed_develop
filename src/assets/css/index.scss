@@ -24,10 +24,24 @@
   & .sitename {
     margin: 0;
   }
-  & .cart_div_pc {
+  & .cart_div {
     position: relative;
     margin-left: 20px;
     margin-right: 40px;
+    &.mobile {
+      display: none;
+    }
+    @media (max-width: 1199px) {
+      &.pc {
+        display: none;
+      }
+      &.mobile {
+          display: initial;
+          position: absolute;
+          top: 22px;
+          right: 25px;
+        }
+    }
     & .cart_icon {
         width: 20px;
     }
@@ -48,19 +62,52 @@
         top: 1px;
         padding: 3px 5px;
         right: -30px;
+        @media (max-width: 1199px) {
+          right: -25px;
+        }
       }
       &.last_than_9999 {
         top: 1px;
         padding: 4px 5px;
         right: -35px;
+        @media (max-width: 1199px) {
+          right: -25px;
+        }
       }
     }
   }
 
-  @media (max-width: 1199px) {
-    .cart_div_pc,
-    .btn-chatbed {
+  .btn-chatbed {
+    cursor: pointer;
+    color: #fff;
+    &.mobile {
       display: none;
+    }
+    @media (max-width: 1199px) {
+      &.pc {
+        display: none;
+      }
+      &.mobile {
+        display: block;
+        width: 100%;
+        text-align: center;
+
+        background: var(--contact-btn-green);
+        font-size: 14px;
+        padding: 10px;
+        margin: 0;
+        transition: 0.3s;
+        
+        &:hover,
+        &:focus:hover {
+          background: color-mix(in srgb, var(--contact-btn-hover-green), transparent 15%);
+        }
+      }
+    }
+    & .line_icon {
+      width: 20px;
+      margin-top: -3px;
+      margin-right: 5px;
     }
   }
 
