@@ -1,4 +1,5 @@
 .index-page {
+  color: var(--color1-blue);
 
   .header {
     justify-content: space-around;
@@ -6,6 +7,15 @@
   a.logo {
     width: 150px;
   }
+
+  // common css
+
+  .title_desc {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
   // header 
   
   @media (max-width: 1199px) {
@@ -164,39 +174,135 @@
       border-radius: 20px;
       padding: 6px 30px;
     }
+  }
 
-    & .swiper-pagination {
-      bottom: var(--swiper-pagination-bottom, 25px);
-      & .swiper-pagination-bullet {
-        background: var(--color6-white);
-        opacity: .8;
-        width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 10px));
-        height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 10px));
-        &-active {
-          background: var(--color3-green);
+  // 製床所熱銷商品
+  #hot_items.section {
+    .hot_items_tabs {
+      margin-top: 40px;
+      .nav-item {
+        cursor: pointer;
+        color: var(--color7-gray);
+        padding: 15px 0px;
+        margin: 0 20px;
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: 600;
+        @media (max-width: 375px) {
+          margin: 0 10px;
+        }
+        &.active {
+          color: var(--color1-blue);
+          border-bottom: solid 3px var(--color1-blue);
+        }
+      }
+      .tab_bottom_line {
+        width: calc(100% - 80px);
+        @media (max-width: 476px) {
+          width: 100%;
         }
       }
     }
 
-    & .swiper-button,
-    & .swiper-button {
-      &-prev,
-      &-next {
-        color: #000;
-        background-color: #fff;
-        padding: 28px 25px;
-        top: var(--swiper-navigation-top-offset, 52%);
-        &:after {
-          font-size: 28px;
+    .hot_item_swiper {
+      padding-bottom: 40px;
+      padding: 0 35px;
+      @media (max-width: 476px) {
+        padding: 0 5px;
+      }
+      & .hot_item_img {
+        width: 100%;
+      }
+      & .swiper-pagination {
+          // display: none;
+          bottom: var(--swiper-pagination-bottom, 0px);
+          @media (max-width: 1199px) {
+          // display: block;
+          bottom: var(--swiper-pagination-bottom, 0px);
         }
       }
-      &-prev {
-        left: var(--swiper-navigation-sides-offset, 20px);
+
+      & .swiper-button,
+      & .swiper-button {
+        &-prev,
+        &-next {
+          background-color: transparent;
+          @media (max-width: 476px) {
+            top: 30vh;
+          }
+          @media (max-width: 420px) {
+            top: 25vh;
+          }
+        }
+        &-prev {
+          left: -15px;
+        }
+        &-next {
+          right: -15px;
+        }
+        @media (max-width: 476px) {
+          &-prev {
+            left: 0px;
+          }
+          &-next {
+            right: 0px;
+          }
+        }
       }
-      &-next {
-        right: 20px;
-      }
+      .hot_item_div {
+        background-color: var(--color6-white);
+        border-radius: 20px;
+        margin-bottom: 40px;
+        & h4 {
+          margin: 10px 0;
+        }
+        & p.price {
+          font-size: 16px;
+          color: var(--color8-price-red);
+        }
+      } 
     }
+
+    // 軟硬度
+    .hardness_degree_div {
+      margin-bottom: 15px;
+      justify-content: center;
+      .text_circle {
+        border-radius: 50%;
+        font-size: 18px;
+        color: #fff;
+        font-weight: bold;
+        padding: 5px 12px;
+        background-color: var(--color2-green);
+      }
+      .degree_item {
+        border-radius: 10px;
+        width: 14px;
+        height: 10px;
+        background-color: var(--color9-degree-green);
+        margin: 4px;
+        &.active {
+         background-color: var(--color4-pink);
+        }
+      }
+      @media (max-width: 1399px) {
+        transform: scale(0.85);
+      }
+      @media (max-width: 1199px) {
+        transform: scale(0.95);
+      }
+      // @media (max-width: 991px) {
+      //   transform: scale(0.8);
+      //   .text_circle {
+      //     padding: 4px 10px;
+      //     font-size: 16px;
+      //   }
+      //   .degree_item {
+      //     width: 10px;
+      //   }
+      // }
+    }
+
   }
 
 }

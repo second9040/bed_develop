@@ -31,6 +31,11 @@
   --color4-pink:#F46D85;
   --color5-green:#9EBB51;
   --color6-white:#F5F8F9;
+  --color7-gray: #B7C1C4;
+  --color8-price-red: #B54747;
+  --color9-degree-green: #D6EAD4;
+  
+  
 
   --contact-btn-green: #0dc754;
   --contact-btn-hover-green: #75FB7B;
@@ -127,7 +132,6 @@ p {
 
 .btn-primary {
   background-color: var(--color3-green);
-
 }
 .btn-primary:hover {
   background-color: #fff;
@@ -136,6 +140,26 @@ p {
 }
 .btn-primary:active {
   background-color: var(--color4-pink) !important;
+  border: none;
+  color: #fff;
+}
+
+.btn-outline-primary {
+  border-color: var(--color3-green);
+  color: var(--color3-green);
+  transition: .6s;
+  padding: 10px;
+  border-radius: 30px;
+  width: 100%;
+}
+.btn-outline-primary:hover {
+  background-color: var(--color3-green) !important;
+  border-color: var(--color3-green) !important;
+  color: #fff;
+  border: none;
+}
+.btn-outline-primary:active {
+  border-color: var(--color4-pink) !important;
   border: none;
   color: #fff;
 }

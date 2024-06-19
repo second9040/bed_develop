@@ -78,7 +78,7 @@ defineProps({});
     main.main
       // bed_banner Section
       section#bed.section
-        swiper.swiper-container(
+        swiper.banner_swiper(
           :loop='true' 
           :modules='modules' 
           :pagination="{ el: '.swiper-pagination', clickable: true }"
@@ -107,20 +107,55 @@ defineProps({});
           img.line_icon(src="../assets/images/line_icon.png")
           span 聊聊床墊
 
-
-      section#hero.hero.section
-        img(src='../assets/images/hero-bg.jpg' alt='' data-aos='fade-in')
+      section#hot_items.section
         .container
-          .row
-            .col-lg-10
-              h2(data-aos='fade-up' data-aos-delay='100') Welcome to Our Website
-              p(data-aos='fade-up' data-aos-delay='200')
-                | We are team of talented designers making websites with Bootstrap
-            .col-lg-5
-              form.sign-up-form.d-flex(action='#' data-aos='fade-up' data-aos-delay='300')
-                input.form-control(type='text' placeholder='Enter email address')
-                input.btn.btn-primary(type='submit' value='Sign up')
-      // /Hero Section
+          h2.text-center(data-aos='fade-up') 製床所熱銷商品
+          .title_desc.text-center(data-aos='fade-up') 台灣職人手作，品質保證、高CP值首選
+
+          .hot_items_tabs(data-aos='fade-up')
+            ul.nav.justify-content-center
+              li.nav-item(
+                v-for="(tab, index) in hot_items_tabs" 
+                :key="index" 
+                @click="activeTab = index + 1"
+                :class="{ active: activeTab === index + 1 }"
+              ) {{ tab.name }}
+              
+              hr.tab_bottom_line.mt-0
+
+            .tab-content
+              swiper.hot_item_swiper(
+                :loop='true' 
+                :modules='modules' 
+                :pagination="{ el: '.swiper-pagination', clickable: true }"
+                :slides-per-view="calcSlideToShow('hot_item')" 
+                :space-between='35' 
+                :autoplay='{ delay: 5000, disableOnInteraction: false }'
+                :navigation='{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }'
+              )
+                swiper-slide.swiper-slide(
+                  v-for="(item, key) in hot_items['item_' + activeTab]" :key="key"
+                )
+                  .hot_item_div
+                    img.hot_item_img(:src='getImagePath(item.img)'  :alt="item.name")
+                    .px-3.pb-4
+                      h4 {{ item.name }}
+                      p.price NT$ {{ addComma(item.price) }} 起
+                      p {{ item.desc }}
+                      .hardness_degree_div.d-flex
+                        .text_circle 軟
+                        .mx-1.d-flex.align-items-center
+                          .degree_item(
+                            v-for="count in 7"
+                            :class="{ 'active': item.hardness_degree == count }"
+                          )
+                          //- p.m-0 硬度: {{ item.hardness_degree }}
+                        .text_circle 硬
+                      button.button.btn.btn-outline-primary(type="button" @click="viewMore(item)") 了解更多
+                .swiper-pagination
+                .swiper-button-next
+                .swiper-button-prev
+              
       // Clients Section
       section#clients.clients.section
         .container(data-aos='fade-up')
@@ -1021,6 +1056,7 @@ export default {
   data() {
     return {
       cart_items_count: 0,
+      screenWidth: 0,
       modules: [Autoplay, Navigation, Pagination],
       banners: [
         {
@@ -1046,6 +1082,143 @@ export default {
           desc: "交給床墊魔法師3",
         },
       ],
+      swiperOptions: {
+        loop: true,
+        speed: 600,
+        autoplay: {
+          delay: 500,
+        },
+        slidesPerView: "auto",
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+      hot_items_tabs: [
+        { name: "床墊", type: 1 },
+        { name: "床架/床頭櫃", type: 2 },
+        { name: "其他配件", type: 3 },
+      ],
+      activeTab: 1,
+      hot_items: {
+        item_1: [
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 7800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 4,
+          },
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 7800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 3,
+          },
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 7800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 4,
+          },
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 7800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 3,
+          },
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 75800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 2,
+          },
+        ],
+        item_2: [
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 27800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 4,
+          },
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 37800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 3,
+          },
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 7800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 2,
+          },
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 17800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 1,
+          },
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 7800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 4,
+          },
+        ],
+        item_3: [
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 3330,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 7,
+          },
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 7800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 6,
+          },
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 4,
+          },
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 47800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 5,
+          },
+          {
+            img: "assets/images/hot_item_1.png",
+            name: "波浪舒眠床墊",
+            price: 7800,
+            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+            hardness_degree: 2,
+          },
+        ],
+      },
+
       testimonials: [
         {
           name: "Saul Goodman",
@@ -1090,7 +1263,7 @@ export default {
     this.checkSwiperLoaded();
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.updateBannerHeight);
+    window.removeEventListener("resize", this.updateBannerHeight);
   },
   methods: {
     number_style() {
@@ -1100,33 +1273,26 @@ export default {
       if (count > 999) return "last_than_9999";
     },
     checkSwiperLoaded() {
-      const swiperElement = this.$el.querySelector('.swiper-container');
+      const swiperElement = this.$el.querySelector(".banner_swiper");
       if (swiperElement && swiperElement.swiper) {
         this.updateBannerHeight();
-        window.addEventListener('resize', this.updateBannerHeight);
+        window.addEventListener("resize", this.updateBannerHeight);
       } else {
         // 如果Swiper還未加載完成,稍後再次檢查
         setTimeout(this.checkSwiperLoaded, 100);
       }
     },
     initSwiper() {
-      new Swiper(".swiper-container", {
-        loop: true,
-        speed: 600,
-        autoplay: {
-          delay: 500,
-        },
-        slidesPerView: "auto",
-        pagination: {
-          el: ".swiper-pagination",
-          type: "bullets",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
+      // new Swiper(".banner_swiper", this.swiperOptions);
+
+      // let hot_swiper_options = JSON.parse(JSON.stringify(this.swiperOptions));
+      // hot_swiper_options.pagination.el = "hot-swiper-pagination";
+      // hot_swiper_options.navigation.nextEl = "hot-swiper-button-next";
+      // hot_swiper_options.navigation.prevEl = "hot-swiper-button-prev";
+      // new Swiper(".hot_item_swiper", hot_swiper_options);
+      // console.log(hot_swiper_options.pagination.el);
+      // console.log(hot_swiper_options.navigation.nextEl);
+      // console.log(hot_swiper_options.navigation.prevEl);
     },
     updateBannerHeight() {
       const banner_slide = document.querySelectorAll(".banner-slide");
@@ -1134,9 +1300,11 @@ export default {
       const screenWidth = window.innerWidth;
       const screenHeight = window.innerHeight;
       let bannerContainerHeight = 600;
-      if (screenWidth > 900) {
-        bannerContainerHeight = screenWidth * 0.5 > 640 ? screenHeight * 0.8 : screenWidth * 0.5;
 
+      this.screenWidth = screenWidth;
+      if (screenWidth > 900) {
+        bannerContainerHeight =
+          screenWidth * 0.5 > 640 ? screenHeight * 0.8 : screenWidth * 0.5;
       }
       bannerContainers.forEach((container) => {
         container.style.height = `${bannerContainerHeight}px`;
@@ -1146,13 +1314,13 @@ export default {
       banner_slide.forEach((container) => {
         let topPos = 0;
         let topLeft = 0;
-        
+
         if (screenWidth > 1700) {
           topPos = bannerContainerHeight * -0.2 - screenWidth * 0.05;
         } else if (screenWidth > 1400) {
-          topPos = bannerContainerHeight * -.15;
+          topPos = bannerContainerHeight * -0.15;
         } else if (screenWidth > 900) {
-          topPos = bannerContainerHeight * -.05;
+          topPos = bannerContainerHeight * -0.05;
         } else {
           const maxWidth = 900;
           const minWidth = 320;
@@ -1160,15 +1328,37 @@ export default {
           const minLeft = -300;
 
           // screenWidth 越小, left 負的愈多
-          let leftVal = ((screenWidth - minWidth) / (maxWidth - minWidth)) * (maxLeft - minLeft) + minLeft;
+          let leftVal =
+            ((screenWidth - minWidth) / (maxWidth - minWidth)) * (maxLeft - minLeft) +
+            minLeft;
           container.style.left = `${leftVal}px`;
         }
         container.style.top = `${topPos}px`;
       });
-      console.log(`h: ${bannerContainerHeight}, w: ${screenWidth}`)
+      console.log(`h: ${bannerContainerHeight}, w: ${screenWidth}`);
     },
     getImagePath(img) {
       return require(`@/${img}`);
+    },
+    viewMore(hot_item) {
+      console.log(hot_item);
+    },
+    calcSlideToShow(swiperName) {
+      if (swiperName == "hot_item") {
+        if (this.screenWidth > 1199) {
+          return 4;
+        }
+        if (this.screenWidth > 991) {
+          return 3;
+        }
+        if (this.screenWidth > 768) {
+          return 2;
+        }
+        return 1;
+      }
+    },
+    addComma(num) {
+      return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     },
   },
 };
@@ -1207,8 +1397,8 @@ export default {
   color: #f39c12;
   font-size: 24px;
 }
-
 </style>
 <style lang="scss">
+@import "@/assets/css/base.scss";
 @import "@/assets/css/index.scss";
 </style>

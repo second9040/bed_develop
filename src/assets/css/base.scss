@@ -1,0 +1,33 @@
+.swiper-pagination {
+  bottom: var(--swiper-pagination-bottom, 25px);
+  &-bullet {
+    background: var(--color6-white);
+    opacity: .8;
+    width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 10px));
+    height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 10px));
+    &-active {
+      background: var(--color3-green);
+    }
+  }
+}
+
+
+.swiper-button,
+.swiper-button {
+  &-prev,
+  &-next {
+    color: #000;
+    background-color: #fff;
+    padding: 28px 25px;
+    top: var(--swiper-navigation-top-offset, 52%);
+    &:after {
+      font-size: 28px;
+    }
+  }
+  &-prev {
+    left: var(--swiper-navigation-sides-offset, 20px);
+  }
+  &-next {
+    right: 20px;
+  }
+}
