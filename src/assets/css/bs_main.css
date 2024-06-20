@@ -48,8 +48,8 @@ a,
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #32353a; /* Color for headings, subheadings and title throughout the website */
+  --default-color: #30526B; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #30526B; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #e84545; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --contrast-color: #ffffff; /* The contrast color is used for elements when the background color is one of the heading, accent, or default colors. Its purpose is to ensure proper contrast and readability when placed over these more dominant colors */
 }
@@ -1492,16 +1492,17 @@ section,
 
 .faq .faq-container .faq-item .faq-toggle {
   position: absolute;
-  top: 20px;
+  top: 25px;
   right: 20px;
   font-size: 16px;
   line-height: 0;
   transition: 0.3s;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .faq .faq-container .faq-item .faq-toggle:hover {
-  color: var(--accent-color);
+  /* color: var(--accent-color); */
 }
 
 .faq .faq-container .faq-active h3 {
@@ -1517,7 +1518,7 @@ section,
 
 .faq .faq-container .faq-active .faq-toggle {
   transform: rotate(90deg);
-  color: var(--accent-color);
+  /* color: var(--accent-color); */
 }
 
 /*--------------------------------------------------------------

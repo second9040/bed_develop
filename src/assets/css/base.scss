@@ -31,3 +31,44 @@
     right: 20px;
   }
 }
+
+.arrow_right {
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+  }
+
+  .arrow_right::before,
+  .arrow_right::after {
+    content: '';
+    position: absolute;
+    border: solid black;
+  }
+
+  .arrow_right::before {
+    top: -5px;
+    left: 0;
+    border-width: 2px 2px 0 0;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+  }
+
+  .arrow_right::after {
+    bottom: -5px;
+    left: 0;
+    border-width: 0 2px 2px 0;
+    width: 10px;
+    height: 10px;
+    transform: rotate(-45deg);
+  }
+
+.triangle_icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid black;
+}
