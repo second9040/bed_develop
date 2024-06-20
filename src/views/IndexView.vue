@@ -3,212 +3,18 @@ defineProps({});
 </script>
 
 <template lang="pug">
-  .index-page
-    header#header.header.d-flex.align-items-center.fixed-top
-      a.logo(href="index.html")
-        h1.sitename 製床所御品
-      //- a.logo.d-flex.align-items-center.me-auto.me-xl-0(href="index.html")
-      //-   h1.sitename 製床所御品
-
-      nav#navmenu.navmenu
-        ul
-          li
-            a(href="index.html#bed") 床墊
-          li
-            a(href="index.html#hot_items") 床架/床頭櫃
-          li
-            a(href="index.html#hot_items") 其他配件
-          li
-            a(href="index.html#pricing") 關於我們
-          li
-            a(href="index.html#team") 限時優惠
-          li
-            a(href="index.html#how_select") 床墊知識
-            //- Uncomment the dropdown menu if needed
-            // li.dropdown
-            //   a(href="#")
-            //     span Dropdown
-            //     i.bi.bi-chevron-down.toggle-dropdown
-            //   ul
-            //     li
-            //       a(href="#") Dropdown 1
-            //     li.dropdown
-            //       a(href="#")
-            //         span Deep Dropdown
-            //         i.bi.bi-chevron-down.toggle-dropdown
-            //       ul
-            //         li
-            //           a(href="#") Deep Dropdown 1
-            //         li
-            //           a(href="#") Deep Dropdown 2
-            //         li
-            //           a(href="#") Deep Dropdown 3
-            //         li
-            //           a(href="#") Deep Dropdown 4
-            //         li
-            //           a(href="#") Deep Dropdown 5
-            //     li
-            //       a(href="#") Dropdown 2
-            //     li
-            //       a(href="#") Dropdown 3
-            //     li
-            //       a(href="#") Dropdown 4
-          li
-            a(href="index.html#contact") 好評分享
-          li
-            a(href="index.html#contact") 體驗據點
-        i.mobile-nav-toggle.d-xl-none.bi.bi-list
-        .cart_div.mobile
-          img.cart_icon(src="../assets/images/cart_icon.png")
-          .cart_items_count(
-            :class="number_style()"
-          ) {{ cart_items_count }}
-
-      .d-flex.align-items-center.position-relative.justify-content-end
-        .cart_div.pc
-          img.cart_icon(src="../assets/images/cart_icon.png")
-          .cart_items_count(
-            :class="number_style()"
-          ) {{ cart_items_count }}
-
-        a.btn-chatbed.pc(href="https://line.me/ti/p/~@121povpz" target="_blank")
-          img.line_icon(src="../assets/images/line_icon.png")
-          span 聊聊床墊
-
+  .index-page 
+    index-header
     main.main
-      // bed_banner Section
-      section#bed.section
-        swiper.banner_swiper(
-          :loop='true' 
-          :modules='modules' 
-          :pagination="{ el: '.swiper-pagination', clickable: true }"
-          :slides-per-view='1' 
-          :space-between='10' 
-          :autoplay='{ delay: 5000, disableOnInteraction: false }'
-          :navigation='{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }'
-        )
-          swiper-slide.swiper-slide(v-for='(banner, index) in banners' :key='index')
-            .position-relative
-              .banner_container.position-relative
-                img.banner-slide(:src='getImagePath(banner.img)' :alt='banner.name')
-              .text_div.position-absolute
-                h1 {{ banner.title }}
-                h3 {{ banner.desc }}
-                button.banner_btn.button.btn.btn-primary(
-                  v-if="banner.btn_text"
-                  type="button"
-                ) {{ banner.btn_text}}
-
-          .swiper-pagination
-          .swiper-button-next
-          .swiper-button-prev
-
-        a.w-100.btn-chatbed.mobile(href="https://line.me/ti/p/~@121povpz" target="_blank")
-          img.line_icon(src="../assets/images/line_icon.png")
-          span 聊聊床墊
-
-      section#hot_items.section
-        .container
-          h2.text-center(data-aos='fade-up') 製床所熱銷商品
-          .title_desc.text-center(data-aos='fade-up') 台灣職人手作，品質保證、高CP值首選
-
-          .hot_items_tabs(data-aos='fade-up')
-            ul.nav.justify-content-center
-              li.nav-item(
-                v-for="(tab, index) in hot_items_tabs" 
-                :key="index" 
-                @click="activeTab = index + 1"
-                :class="{ active: activeTab === index + 1 }"
-              ) {{ tab.name }}
-              
-              hr.tab_bottom_line.mt-0
-
-            .tab-content
-              swiper.hot_item_swiper(
-                :loop='true' 
-                :modules='modules' 
-                :pagination="{ el: '.swiper-pagination', clickable: true }"
-                :slides-per-view="calcSlideToShow('hot_item')" 
-                :space-between='35' 
-                :autoplay='{ delay: 5000, disableOnInteraction: false }'
-                :navigation='{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }'
-              )
-                swiper-slide.swiper-slide(
-                  v-for="(item, key) in hot_items['item_' + activeTab]" :key="key"
-                )
-                  .hot_item_div
-                    img.hot_item_img(:src='getImagePath(item.img)'  :alt="item.name")
-                    .px-3.pb-4
-                      h4 {{ item.name }}
-                      p.price NT$ {{ addComma(item.price) }} 起
-                      p {{ item.desc }}
-                      .hardness_degree_div.d-flex
-                        .text_circle 軟
-                        .mx-1.d-flex.align-items-center
-                          .degree_item(
-                            v-for="count in 7"
-                            :class="{ 'active': item.hardness_degree == count }"
-                          )
-                          //- p.m-0 硬度: {{ item.hardness_degree }}
-                        .text_circle 硬
-                      button.button.btn.btn-outline-primary(type="button" @click="viewMore(item)") 了解更多
-                .swiper-pagination
-                .swiper-button-next
-                .swiper-button-prev
-
-
-      section#how_select.faq.section.pt-4
-        .container
-          h2.text-center(data-aos='fade-up') 床墊怎麼選？
-          .title_desc.text-center(data-aos='fade-up') 靈魂好床墊三大關鍵
-          div.how_to_select_div
-            .key_factor_div
-              .factor_obj(v-for="(item, index) in key_factor_obj")
-                .img_container.position-relative
-                  img(
-                    :src="getImagePath(item.img)"
-                    :class="{'first_img': index == 0}"
-                  )
-                  .factor_color_container
-                    .factor_body(:class="'index_' + (index % 2)")
-                .desc_div
-                  h3 {{ item.name }}
-                  p {{ item.desc }}
-                  button.button.btn.btn-outline-primary(type="button" @click="viewMore(item)") 了解更多
-            .divider
-            .container
-              .row
-                .col-4.qa_intro.position-relative
-                  .text
-                    h2 挑選你的靈魂床墊
-                    h2 就找製床所
-                  .qa_img_container.pc
-                    img.qa_intro_bg(src="../assets/images/index/qa_intro_bg.png")
-
-                .col-8.faq_obj.pb-4(data-aos='fade-up' data-aos-delay='200')
-                  .faq-container
-                    .position-relative(
-                      v-for="(item, index) in qa_obj"
-                      :class="{'faq-active': show_qa == (index + 1)}"
-                      @click="click_show_qa(index + 1)"
-                    )
-                      .d-flex
-                        .triangle_icon
-                        .faq-item
-                          h4 Q: {{ item.question}}
-                          .faq-content
-                            p {{ item.ans }}
-                          .arrow_right
-                    .contact_div
-                      .left 
-                        h3 你是否還有其他疑問？
-                        h6 床的問題，製床所有方法，為你打造專屬你的靈魂床墊！
-                      .divider
-                      .right.d-flex.align-items-center
-                        img.line_icon(src="../assets/images/line_icon.png") 
-                        h6.mx-2.font-bold.contact 來聊聊
-                    img.qa_img_container.mobile(src="../assets/images/index/qa_intro_bg.png")
-
+      bed-banner
+      hot-items(
+        :screenWidth="screenWidth"
+        @view-more="viewMore"
+      )
+      qa-view(
+        @view-more="viewMore"
+      )
+    
       // About Section
       section#about.about.section
         .container(data-aos='fade-up' data-aos-delay='100')
@@ -1077,219 +883,26 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
+import indexHeader from "@/components/index/indexHeader.vue";
+import bedBanner from "@/components/index/bedBanner.vue";
+import hotItems from "@/components/index/hotItems.vue";
+import qaView from "@/components/index/qaView.vue";
+
 export default {
-  name: "TestimonialSwiper",
+  name: "IndexView",
   components: {
     Swiper,
     SwiperSlide,
+
+    indexHeader,
+    bedBanner,
+    hotItems,
+    qaView,
   },
   data() {
     return {
-      cart_items_count: 0,
       screenWidth: 0,
       modules: [Autoplay, Navigation, Pagination],
-      banners: [
-        {
-          img: "assets/images/banner_kari01.jpg",
-          name: "banner_kari01",
-          title: "擁有最適合你的床",
-          desc: "交給床墊魔法師",
-          btn_text: "馬上了解",
-          btn_link: "",
-        },
-        {
-          img: "assets/images/hero-bg.jpg",
-          name: "hero",
-          title: "擁有最適合你的床2",
-          desc: "交給床墊魔法師2",
-          btn_text: "馬上了解",
-          btn_link: "",
-        },
-        {
-          img: "assets/images/banner_kari01.jpg",
-          name: "banner_kari01",
-          title: "擁有最適合你的床3",
-          desc: "交給床墊魔法師3",
-        },
-      ],
-      swiperOptions: {
-        loop: true,
-        speed: 600,
-        autoplay: {
-          delay: 500,
-        },
-        slidesPerView: "auto",
-        pagination: {
-          el: ".swiper-pagination",
-          type: "bullets",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      },
-      hot_items_tabs: [
-        { name: "床墊", type: 1 },
-        { name: "床架/床頭櫃", type: 2 },
-        { name: "其他配件", type: 3 },
-      ],
-      activeTab: 1,
-      hot_items: {
-        item_1: [
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 7800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 4,
-          },
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 7800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 3,
-          },
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 7800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 4,
-          },
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 7800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 3,
-          },
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 75800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 2,
-          },
-        ],
-        item_2: [
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 27800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 4,
-          },
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 37800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 3,
-          },
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 7800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 2,
-          },
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 17800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 1,
-          },
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 7800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 4,
-          },
-        ],
-        item_3: [
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 3330,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 7,
-          },
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 7800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 6,
-          },
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 4,
-          },
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 47800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 5,
-          },
-          {
-            img: "assets/images/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 7800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 2,
-          },
-        ],
-      },
-      key_factor_obj: [
-        {
-          img: "assets/images/index/choose01.jpg",
-          name: "支撐力",
-          desc: "由彈簧的軟硬度和排列與數量影響，製床所有各種軟硬客製選擇。",
-          href: "",
-          color: "#53BDD7",
-        },
-        {
-          img: "assets/images/index/choose02.jpg",
-          name: "舒適度",
-          desc: "符合人體工學，屁股腰椎交接處不懸空，使躺感更服貼舒服。",
-          href: "",
-          color: "#9EBB51",
-        },
-        {
-          img: "assets/images/index/choose03.jpg",
-          name: "支撐力",
-          desc: "不同材質的表步，透氣、排汗及涼爽程度不同，皆可自選。",
-          href: "",
-          color: "#53BDD7",
-        },
-      ],
-      show_qa: 1,
-      qa_obj: [
-        {
-          question: "先生上下床都會影響到我，但喜歡偏硬的床，有辦法解決嗎？",
-          ans:
-            "有的，可以參考我們的高碳鋼Q床，其中使用了專利研發的吸震材料，讓硬床也可以一夜好眠。也可以針對近一步需求，下方聊聊，打造你的靈魂床墊。",
-        },
-        {
-          question: "學生租屋有便宜的床墊嗎？",
-          ans:
-            "當然有的，製床所可為你的出租套房，打造設計感統一，耐用且高CP值的出租床組。",
-        },
-        {
-          question: "已經買獨立筒，為什麼還會腰痠背痛？",
-          ans:
-            "市售獨立筒床墊因結構方式容易讓彈簧分離，支撐力會因使用年限受限，可能因為結構分離，失去支撐力，使你腰痠背痛，歡迎下方聊聊，針對喜歡的軟硬與需求，打造你的靈魂床墊。",
-        },
-      ],
-
       testimonials: [
         {
           name: "Saul Goodman",
@@ -1330,19 +943,12 @@ export default {
     };
   },
   mounted() {
-    // this.initSwiper();
     this.checkSwiperLoaded();
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.updateBannerHeight);
   },
   methods: {
-    number_style() {
-      let count = this.cart_items_count;
-      if (count > 9 && count <= 99) return "last_than_99";
-      if (count > 99 && count <= 999) return "last_than_999";
-      if (count > 999) return "last_than_9999";
-    },
     checkSwiperLoaded() {
       const swiperElement = this.$el.querySelector(".banner_swiper");
       if (swiperElement && swiperElement.swiper) {
@@ -1352,17 +958,6 @@ export default {
         // 如果Swiper還未加載完成,稍後再次檢查
         setTimeout(this.checkSwiperLoaded, 100);
       }
-    },
-    initSwiper() {
-      // new Swiper(".banner_swiper", this.swiperOptions);
-      // let hot_swiper_options = JSON.parse(JSON.stringify(this.swiperOptions));
-      // hot_swiper_options.pagination.el = "hot-swiper-pagination";
-      // hot_swiper_options.navigation.nextEl = "hot-swiper-button-next";
-      // hot_swiper_options.navigation.prevEl = "hot-swiper-button-prev";
-      // new Swiper(".hot_item_swiper", hot_swiper_options);
-      // console.log(hot_swiper_options.pagination.el);
-      // console.log(hot_swiper_options.navigation.nextEl);
-      // console.log(hot_swiper_options.navigation.prevEl);
     },
     updateBannerHeight() {
       const banner_slide = document.querySelectorAll(".banner-slide");
@@ -1413,26 +1008,6 @@ export default {
     viewMore(hot_item) {
       console.log(hot_item);
     },
-    calcSlideToShow(swiperName) {
-      if (swiperName == "hot_item") {
-        if (this.screenWidth > 1199) {
-          return 4;
-        }
-        if (this.screenWidth > 991) {
-          return 3;
-        }
-        if (this.screenWidth > 768) {
-          return 2;
-        }
-        return 1;
-      }
-    },
-    addComma(num) {
-      return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-    },
-    click_show_qa(index) {
-      this.show_qa = this.show_qa == index ? 0 : index;
-    },
   },
 };
 </script>
@@ -1474,5 +1049,4 @@ export default {
 <style lang="scss">
 @import "@/assets/css/base.scss";
 @import "@/assets/css/index.scss";
-@import "@/assets/css/index/how_to_select.scss";
 </style>
