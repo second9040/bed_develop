@@ -14,6 +14,8 @@ defineProps({});
       qa-view(
         @view-more="viewMore"
       )
+      bed-size
+      bed-good-service
     
       // About Section
       section#about.about.section
@@ -887,6 +889,8 @@ import indexHeader from "@/components/index/indexHeader.vue";
 import bedBanner from "@/components/index/bedBanner.vue";
 import hotItems from "@/components/index/hotItems.vue";
 import qaView from "@/components/index/qaView.vue";
+import bedSize from "@/components/index/bedSize.vue";
+import bedGoodService from "@/components/index/bedGoodService.vue";
 
 export default {
   name: "IndexView",
@@ -898,6 +902,8 @@ export default {
     bedBanner,
     hotItems,
     qaView,
+    bedSize,
+    bedGoodService,
   },
   data() {
     return {
