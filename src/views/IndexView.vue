@@ -16,6 +16,10 @@ defineProps({});
       )
       bed-size
       bed-good-service
+      good-comment(
+        :screenWidth="screenWidth"
+        @view-more="viewMore"
+      )
     
       // About Section
       section#about.about.section
@@ -891,6 +895,7 @@ import hotItems from "@/components/index/hotItems.vue";
 import qaView from "@/components/index/qaView.vue";
 import bedSize from "@/components/index/bedSize.vue";
 import bedGoodService from "@/components/index/bedGoodService.vue";
+import goodComment from "@/components/index/goodComment.vue";
 
 export default {
   name: "IndexView",
@@ -904,6 +909,7 @@ export default {
     qaView,
     bedSize,
     bedGoodService,
+    goodComment,
   },
   data() {
     return {

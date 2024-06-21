@@ -10,7 +10,7 @@
           h3 {{ item.name }}
           h6 {{ item.size }}
 
-      .customize_div.row
+      .customize_div.row(data-aos='fade-up' data-aos-delay='200')
         .col-6.left
           button.cust_btn.button.btn.btn-primary.mobile(
               type="button"

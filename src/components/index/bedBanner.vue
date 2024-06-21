@@ -59,9 +59,6 @@ export default {
     SwiperSlide,
   },
   props: {
-    modules: {
-      type: Array
-    },
   },
   data() {
     return {
