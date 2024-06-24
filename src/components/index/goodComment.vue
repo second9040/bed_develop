@@ -45,11 +45,7 @@
           src="../../assets/images/index/cus_bg.png"
         )
 
-    section#testimonials.testimonials.section
-      h2.text-center(data-aos='fade-up') 床墊小知識
-      .title_desc.text-center(data-aos='fade-up') 還有許多眉眉角角等你來探索
-      
-</template>
+ </template>
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper-bundle.css";
@@ -101,6 +97,23 @@ export default {
           img: "assets/images/index/photo_test3.png",
         },
       ],
+      knowledge_obj: [
+        {
+          title: "床墊汰換多久一次較適合？",
+          desc: "床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑 床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑",
+          img: "assets/images/index/blogimg.jpg",
+        },
+        {
+          title: "床墊汰換多久一次較適合？",
+          desc: "床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑 床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑",
+          img: "assets/images/index/blogimg.jpg",
+        },
+        {
+          title: "床墊汰換多久一次較適合？",
+          desc: "床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑 床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑",
+          img: "assets/images/index/blogimg.jpg",
+        },
+      ]
     };
   },
   mounted() {
