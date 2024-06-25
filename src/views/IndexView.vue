@@ -7,6 +7,7 @@ defineProps({});
     index-header
     main.main
       bed-banner
+      bed-know-you-best
       hot-items(
         :screenWidth="screenWidth"
         @view-more="viewMore"
@@ -55,6 +56,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 import indexHeader from "@/components/index/indexHeader.vue";
 import bedBanner from "@/components/index/bedBanner.vue";
+import bedKnowYouBest from "@/components/index/bedKnowYouBest.vue";
 import hotItems from "@/components/index/hotItems.vue";
 import qaView from "@/components/index/qaView.vue";
 import bedSize from "@/components/index/bedSize.vue";
@@ -71,6 +73,7 @@ export default {
 
     indexHeader,
     bedBanner,
+    bedKnowYouBest,
     hotItems,
     qaView,
     bedSize,

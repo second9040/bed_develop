@@ -42,7 +42,7 @@
       .bg_cloud_div.d-flex
         img(
           v-for="repeat in 4"
-          src="../../assets/images/index/cus_bg.png"
+          src="../../assets/images/index/bg_cloud2.png"
         )
 
  </template>
