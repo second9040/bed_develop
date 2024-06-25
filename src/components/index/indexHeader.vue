@@ -1,9 +1,7 @@
 <template lang="pug">
   header#header.header.d-flex.align-items-center.fixed-top
     a.logo(href="index.html")
-      h1.sitename 製床所御品
-    //- a.logo.d-flex.align-items-center.me-auto.me-xl-0(href="index.html")
-    //-   h1.sitename 製床所御品
+      img.logo_header(src="../../assets/images/logo_header.png")
 
     nav#navmenu.navmenu
       ul
@@ -69,9 +67,8 @@
       a.btn-chatbed.pc(href="https://line.me/ti/p/~@121povpz" target="_blank")
         img.line_icon(src="../../assets/images/line_icon.png")
         span 聊聊床墊
-</template> 
+</template>
 <script>
-
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper-bundle.css";
 
@@ -85,25 +82,25 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const require = (imgPath) => {
   try {
-      const handlePath = imgPath.replace("@", "../..");
-      return new URL(handlePath, import.meta.url).href;
+    const handlePath = imgPath.replace("@", "../..");
+    return new URL(handlePath, import.meta.url).href;
   } catch (err) {
-      console.warn(err);
+    console.warn(err);
   }
 };
 
 export default {
-  name: "hotItems",
+  name: "indexHeader",
   components: {
     Swiper,
     SwiperSlide,
   },
   props: {
     modules: {
-      type: Array
+      type: Array,
     },
     screenWidth: {
-      type: Number
+      type: Number,
     },
   },
   data() {
@@ -116,7 +113,7 @@ export default {
   },
   methods: {
     checkSwiperLoaded() {
-      this.$emit('check-swiper-loaded');
+      this.$emit("check-swiper-loaded");
     },
     number_style() {
       let count = this.cart_items_count;
@@ -124,6 +121,10 @@ export default {
       if (count > 99 && count <= 999) return "last_than_999";
       if (count > 999) return "last_than_9999";
     },
-  }
-}
+  },
+};
 </script>
+
+<style>
+@import "@/assets/css/index/index_header.scss";
+</style>

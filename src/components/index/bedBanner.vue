@@ -14,12 +14,12 @@
           .banner_container.position-relative
             img.banner-slide(:src='getImagePath(banner.img)' :alt='banner.name')
             .text_div.position-absolute
-            h1 {{ banner.title }}
-            h3 {{ banner.desc }}
-            button.banner_btn.button.btn.btn-primary(
-                v-if="banner.btn_text"
-                type="button"
-            ) {{ banner.btn_text}}
+              h1 {{ banner.title }}
+              h3 {{ banner.desc }}
+              button.banner_btn.button.btn.btn-primary(
+                  v-if="banner.btn_text"
+                  type="button"
+              ) {{ banner.btn_text}}
 
       .swiper-pagination
       .swiper-button-next
@@ -98,3 +98,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@import "@/assets/css/index/bed_banner.scss";
+</style>
