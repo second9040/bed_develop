@@ -15,7 +15,9 @@ defineProps({});
       qa-view(
         @view-more="viewMore"
       )
-      bed-size
+      bed-size(
+        @view-more="viewMore"
+      )
       bed-good-service
       good-comment(
         :screenWidth="screenWidth"

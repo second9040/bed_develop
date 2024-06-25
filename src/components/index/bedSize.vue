@@ -1,14 +1,17 @@
 <template lang="pug">
   section#bed_size.section.pt-0
     .container
-      h2.text-center(data-aos='fade-up') 人性化床墊任君挑選
-      .title_desc.text-center(data-aos='fade-up') 製床所實現您對靈魂床墊的所有想像
+      h2.text-center(data-aos='fade-up') 尺寸任意門
+      .title_desc.text-center(data-aos='fade-up') 你想要的尺寸我們都有
 
       .bed_size_div
         .bed_item(v-for="(item, index) in size_obj")
           img(:src="getImagePath('assets/images/index/bed0' + (index + 1)) + '.svg'")
           h3 {{ item.name }}
-          h6 {{ item.size }}
+          h6 {{ item.desc }}
+          button.button.btn.btn-outline-primary(type="button" @click="viewMore(item)") 了解更多
+
+          //- h6 {{ item.size }}
 
       .customize_div.row(data-aos='fade-up' data-aos-delay='200')
         .col-6.left
@@ -47,19 +50,23 @@ export default {
     return {
       size_obj: [
         {
-          name: "單人加大",
+          name: "台灣規格",
+          desc: "台灣製",
           size: "106 x 188 x 25 cm",
         },
         {
-          name: "標準雙人",
+          name: "日本規格",
+          desc: "無印良品、宜得利",
           size: "152 x 188 x 25 cm",
         },
         {
-          name: "雙人加大",
+          name: "歐美規格",
+          desc: "IKEA",
           size: "182 x 188 x 25 cm",
         },
         {
-          name: "雙人特大",
+          name: "設計師客製",
+          desc: "任何尺寸皆可客製",
           size: "182 x 212 x 25 cm",
         },
       ],
