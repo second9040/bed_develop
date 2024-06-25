@@ -47,9 +47,9 @@
           //     li
           //       a(href="#") Dropdown 4
         li
-          a(href="index.html#contact") 好評分享
+          a(href="index.html#good_comment") 好評分享
         li
-          a(href="index.html#contact") 體驗據點
+          a(href="index.html#footer") 體驗據點
       i.mobile-nav-toggle.d-xl-none.bi.bi-list
       .cart_div.mobile
         img.cart_icon(src="../../assets/images/cart_icon.png")
