@@ -20,83 +20,14 @@ defineProps({});
         :screenWidth="screenWidth"
         @view-more="viewMore"
       )
-      bedKnowledge(
+      bed-knowledge(
         :screenWidth="screenWidth"
       )
-    
-    footer#footer.footer.position-relative
-      .container.footer-top
-        .row.gy-4
-          .col-lg-5.col-md-12.footer-about
-            a.logo.d-flex.align-items-center(href='index.html')
-              span.sitename Append
-            p
-              | Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra
-              | videa magna derita valies darta donna mare fermentum iaculis eu non diam
-              | phasellus.
-            .social-links.d-flex.mt-4
-              a(href='')
-                i.bi.bi-twitter-x
-              a(href='')
-                i.bi.bi-facebook
-              a(href='')
-                i.bi.bi-instagram
-              a(href='')
-                i.bi.bi-linkedin
-          .col-lg-2.col-6.footer-links
-            h4 Useful Links
-            ul
-              li
-                a(href='#') Home
-              li
-                a(href='#') About us
-              li
-                a(href='#') Services
-              li
-                a(href='#') Terms of service
-              li
-                a(href='#') Privacy policy
-          .col-lg-2.col-6.footer-links
-            h4 Our Services
-            ul
-              li
-                a(href='#') Web Design
-              li
-                a(href='#') Web Development
-              li
-                a(href='#') Product Management
-              li
-                a(href='#') Marketing
-              li
-                a(href='#') Graphic Design
-          .col-lg-3.col-md-12.footer-contact.text-center.text-md-start
-            h4 Contact Us
-            p A108 Adam Street
-            p New York, NY 535022
-            p United States
-            p.mt-4
-              strong Phone:
-              span +1 5589 55488 55
-            p
-              strong Email:
-              span info@example.com
-      .container.copyright.text-center.mt-4
-        p
-          | &copy; 
-          span Copyright
-          strong.sitename Append
-          span All Rights Reserved
-        .credits
-          // All the links in the footer should remain intact.
-          // You can delete the links only if you've purchased the pro version.
-          // Licensing information: https://bootstrapmade.com/license/
-          // Purchase the pro version with working PHP/AJAX contact form: [buy-url]
-          | Designed by 
-          a(href='https://bootstrapmade.com/') BootstrapMade
+    index-footer
     
     // Scroll Top
     a#scroll-top.scroll-top.d-flex.align-items-center.justify-content-center(href="#")
-      i.bi.bi-arrow-up-short
+      i.bi.bi-chevron-up
 
     // Preloader
     //- #preloader
@@ -130,6 +61,7 @@ import bedSize from "@/components/index/bedSize.vue";
 import bedGoodService from "@/components/index/bedGoodService.vue";
 import goodComment from "@/components/index/goodComment.vue";
 import bedKnowledge from "@/components/index/bedKnowledge.vue";
+import indexFooter from "@/components/index/indexFooter.vue";
 
 export default {
   name: "IndexView",
@@ -145,6 +77,7 @@ export default {
     bedGoodService,
     goodComment,
     bedKnowledge,
+    indexFooter,
   },
   data() {
     return {

@@ -72,3 +72,13 @@
     border-bottom: 8px solid transparent;
     border-right: 8px solid black;
 }
+
+a {
+  color: #000;
+  &:hover {
+    color: #000;
+    text-decoration: underline;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}

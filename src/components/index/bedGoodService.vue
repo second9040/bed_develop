@@ -35,15 +35,15 @@ export default {
         },
         {
           name: "專人線上諮詢",
-          desc: "有任何疑問和需求，都可以透過電話或是LINE@與我們專業的服務人員諮詢聊聊。<br><br>電話：04-23201861<br>LINE：@121povpz",
+          desc: "有任何疑問和需求，都可以透過電話或是LINE@與我們專業的服務人員諮詢聊聊。<br><br>電話：04-23201861<br>LINE：~@121povpz",
         },
         {
           name: "運送舊床回收",
-          desc: "家中有舊床需要處理，我們提供免費協助舊床下樓、舊床回收聯絡，免去處理舊床的煩惱！<br><br>我們也提供新床配送服務，是時候換張新床好好享受了！"
+          desc: "製床所提供<br>✔免費協助舊床下樓<br>✔舊床回收聯絡<br>✔新床配送服務<br><br>免去處理舊床的煩惱！是時候換張新床好好享受了！"
         },
         {
           name: "10年保固",
-          desc: "我們的床皆是職人手作，訂購後約7個工作天製作，並有10年保固、15年責任承擔，品質有保證！"
+          desc: "✔床皆是職人手作<br> ✔訂購後7個工作天內交貨<br> ✔10年保固<br> ✔15年責任承擔<br><br> 每張床墊都是專屬於你、為你打造，品質有保證！"
         }
       ]
     };
@@ -77,7 +77,7 @@ export default {
           return `<a href="tel: ${match.replace(/04/, '+886-4-')}">${match}</a>`;
         })
         .replace(linePattern, (match) => {
-          return `<a href="https://line.me/R/ti/p/${match.slice(1)}" target="_blank">${match}</a>`;
+          return `<a href="https://line.me/ti/p/${match}" target="_blank">${match}</a>`;
         });
 
       return updatedText;
