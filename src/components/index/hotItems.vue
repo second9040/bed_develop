@@ -238,5 +238,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/css/index/hot_items.scss";
+@import "@/assets/scss/index/hot_items.scss";
 </style>

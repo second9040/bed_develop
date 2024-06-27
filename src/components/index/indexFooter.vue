@@ -113,5 +113,5 @@ export default {
 </script>
 
 <style scoped>
-@import '@/assets/css/index_footer.scss';
+@import '@/assets/scss/index_footer.scss';
 </style>

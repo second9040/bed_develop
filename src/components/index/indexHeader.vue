@@ -127,5 +127,5 @@ export default {
 </script>
 
 <style>
-@import "@/assets/css/index_header.scss";
+@import "@/assets/scss/index_header.scss";
 </style>

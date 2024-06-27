@@ -87,5 +87,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/css/index/bed_good_service.scss";
+@import "@/assets/scss/index/bed_good_service.scss";
 </style>

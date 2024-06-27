@@ -132,5 +132,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/css/index/how_to_select.scss";
+@import "@/assets/scss/index/how_to_select.scss";
 </style>

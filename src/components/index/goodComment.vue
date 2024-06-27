@@ -146,5 +146,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/css/index/good_comment.scss";
+@import "@/assets/scss/index/good_comment.scss";
 </style>

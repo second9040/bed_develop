@@ -100,5 +100,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/css/index/bed_banner.scss";
+@import "@/assets/scss/index/bed_banner.scss";
 </style>

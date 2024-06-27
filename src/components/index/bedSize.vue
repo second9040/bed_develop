@@ -85,5 +85,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/css/index/bed_size.scss";
+@import "@/assets/scss/index/bed_size.scss";
 </style>

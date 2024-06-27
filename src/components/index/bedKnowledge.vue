@@ -130,5 +130,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/css/index/bed_knowledge.scss";
+@import "@/assets/scss/index/bed_knowledge.scss";
 </style>
