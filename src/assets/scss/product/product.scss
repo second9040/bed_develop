@@ -1,0 +1,144 @@
+$color_1: var(--color1-blue);
+$color_2: #6a7964;
+$color_3: #999999;
+
+.sidebar_widget {
+  padding-right: 33px;
+}
+
+.widget_list {
+  margin-bottom: 56px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 28px;
+    color: $color_1;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+}
+
+.widget_categories {
+  >ul {
+    >li {
+      >a {
+        font-size: 18px;
+        display: block;
+        line-height: 30px;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      ul {
+        padding: 3px 0 14px 15px;
+
+        li {
+          a {
+            font-size: 14px;
+            line-height: 20px;
+            display: block;
+            color: $color_1;
+            &:hover {
+              text-decoration: underline;
+              span {
+                text-decoration: underline;
+              }
+            }
+            &.selected {
+              font-weight: bold;
+            }
+
+            span {
+              float: right;
+            }
+          }
+        }
+      }
+    }
+
+    >li.widget_sub_categories {
+      >a {
+        position: relative;
+      }
+    }
+  }
+}
+
+.widget_brands {
+  h3 {
+    cursor: pointer;
+  }
+
+  ul {
+    li {
+      a {
+        font-size: 13px;
+        line-height: 30px;
+        display: block;
+        color: $color_1;
+        &:hover {
+          text-decoration: underline;
+
+          span {
+            text-decoration: underline;
+          }
+        }
+
+        span {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .sidebar_widget {
+    padding-right: 0;
+  }
+
+  .widget_list {
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .sidebar_widget {
+    padding-right: 0;
+    margin-top: 67px;
+  }
+
+  .widget_list {
+    margin-bottom: 33px;
+
+    h2 {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sidebar_widget {
+    padding-right: 0;
+    margin-top: 51px;
+  }
+
+  .widget_list {
+    margin-bottom: 35px;
+
+    h2 {
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+  }
+}

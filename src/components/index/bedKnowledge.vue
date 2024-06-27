@@ -32,10 +32,11 @@ div
 
   // 和我們聊聊      
   section#contact_us.contact_us.section.d-flex
-    .content_div
-      h2 和我們聊聊
-      p 有任何疑問都可以與我們聊聊，讓專業的製床所為你服務
-      button.btn.button.btn-primary(type="button") 用LINE聊聊
+    .container
+      .content_div
+        h2 和我們聊聊
+        p 有任何疑問都可以與我們聊聊，讓專業的製床所為你服務
+        button.btn.button.btn-primary(type="button") 用LINE聊聊
       
 </template>
 <script>

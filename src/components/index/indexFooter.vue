@@ -45,32 +45,39 @@
 								.icon.momo
 			.divider
 			.copyright ©2024 Copyright 御品製床所 All Rights Reserved
+		a.w-100.btn-chatbed.mobile(
+			href="https://line.me/ti/p/~@121povpz"
+			target="_blank"
+		)
+			img.line_icon(src="../../assets/images/line_icon.png")
+			span 聊聊床墊
+
 
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/swiper-bundle.css";
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/swiper-bundle.css'
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 // import required modules
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace("@", "../..");
-    return new URL(handlePath, import.meta.url).href;
+    const handlePath = imgPath.replace('@', '../..')
+    return new URL(handlePath, import.meta.url).href
   } catch (err) {
-    console.warn(err);
+    console.warn(err)
   }
-};
+}
 
 export default {
-  name: "indexFooter",
+  name: 'indexFooter',
   components: {
     Swiper,
     SwiperSlide,
@@ -86,25 +93,25 @@ export default {
   data() {
     return {
       cart_items_count: 0,
-    };
+    }
   },
   mounted() {
-    this.checkSwiperLoaded();
+    this.checkSwiperLoaded()
   },
   methods: {
     checkSwiperLoaded() {
-      this.$emit("check-swiper-loaded");
+      this.$emit('check-swiper-loaded')
     },
     number_style() {
-      let count = this.cart_items_count;
-      if (count > 9 && count <= 99) return "last_than_99";
-      if (count > 99 && count <= 999) return "last_than_999";
-      if (count > 999) return "last_than_9999";
+      let count = this.cart_items_count
+      if (count > 9 && count <= 99) return 'last_than_99'
+      if (count > 99 && count <= 999) return 'last_than_999'
+      if (count > 999) return 'last_than_9999'
     },
   },
-};
+}
 </script>
 
 <style scoped>
-@import "@/assets/css/index/index_footer.scss";
+@import '@/assets/css/index_footer.scss';
 </style>

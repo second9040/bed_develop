@@ -54,12 +54,12 @@ section#knowledge.knowledge {
 section#contact_us {
   justify-content: center;
   align-items: center;
-  background-image: url('../../images/index/contact_bg.jpg');
-  background-position: center;
-  background-size: 100%;
-  margin: 50px 30px;
-  border-radius: 20px;
+  margin-top: -80px;
   & .content_div {
+    padding: 50px 10px;
+    border-radius: 20px;
+    background-image: url('../../images/index/contact_bg.jpg');
+    background-position: center;
     text-align: center;
     color: #fff;
     & h2 {

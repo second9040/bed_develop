@@ -1,0 +1,87 @@
+.scroll-top {
+  background-color: var(--color4-pink);
+  border-radius: 50% !important;
+
+  & i {
+    font-size: 14px;
+  }
+}
+
+.breadcrumb_content {
+  margin-top: 35px;
+  margin-bottom: 75px;
+  @media (max-width: 1200px) {
+    margin-top: 45px;
+    text-align: center;
+  }
+  @media (max-width: 991px) {
+    margin-bottom: 20px;
+  }
+  & ul li {
+    display: inline-block;
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-right: 8px;
+    padding-right: 17px;
+    position: relative;
+    color: var(--color1-blue);
+    font-weight: 400;
+
+    & a {
+      padding: 0;
+      color: var(--color1-blue);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      content: ">";
+      right: 0;
+      top: 50%;
+      transform: translatey(-50%);
+    }
+    
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      font-weight: 900;
+    }
+    
+    &:last-child::before {
+      display: none;
+    }
+  }
+}
+
+
+// multiselect
+// 選中時顏色
+.multiselect {
+  .multiselect__option--selected {
+    background: var(--color2-green) !important;
+    color: #fff !important;
+    // hover 顏色
+    &.multiselect__option--highlight {
+      background: var(--color5-green) !important;
+    }
+  }
+  &__select {
+    &::after {
+      content: '';
+      position: relative;
+      right: 9px;
+      top: calc(65% - 3px);
+      color: #fff;
+      border-style: solid;
+      border-width: 4px 4px 0 4px;
+      border-color: #fff transparent transparent transparent;
+    }
+  }
+  &--active {
+    & .multiselect__select {
+      right: 10px;
+    }
+  }
+}

@@ -92,11 +92,25 @@ export default {
   },
   mounted() {
     this.checkSwiperLoaded();
+
+    this.loadExternalScript('/public/js/index/bs_main.js')
+      .catch(err => {
+        console.error('Failed to load external script:', err);
+      });
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.updateBannerHeight);
   },
   methods: {
+    loadExternalScript(src) {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error(`Failed to load script ${src}`));
+        document.head.appendChild(script);
+      });
+    },
     checkSwiperLoaded() {
       const swiperElement = this.$el.querySelector(".banner_swiper");
       if (swiperElement && swiperElement.swiper) {
@@ -197,4 +211,5 @@ export default {
 <style lang="scss">
 @import "@/assets/css/base.scss";
 @import "@/assets/css/index.scss";
+@import '@/assets/scss/common.scss';
 </style>

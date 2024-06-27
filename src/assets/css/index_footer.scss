@@ -1,8 +1,9 @@
-.index-page footer#footer {
+.index-page footer#footer,
+.page-footer footer#footer {
     background-color: #336A7E;
 		color: #fff;
 		border-radius: 50px 50px 0 0;
-		padding-bottom: 15px;
+		padding-bottom: 0px;
 		a {
 			color: #fff;
 			&:hover {
@@ -80,21 +81,21 @@
 							cursor: pointer;
 						}
 						&.fb {
-							background-image: url('../../images/fb_icon.png');
+							background-image: url('../images/fb_icon.png');
 							&:hover {
-								background-image: url('../../images/fb_icon_hover.png');
+								background-image: url('../images/fb_icon_hover.png');
 							}
 						}
 						&.ig {
-							background-image: url('../../images/ig_icon.png');
+							background-image: url('../images/ig_icon.png');
 							&:hover {
-								background-image: url('../../images/ig_icon_hover.png');
+								background-image: url('../images/ig_icon_hover.png');
 							}
 						}
 						&.line {
-							background-image: url('../../images/line_icon_bg_white.png');
+							background-image: url('../images/line_icon_bg_white.png');
 							&:hover {
-								background-image: url('../../images/line_icon_bg_white_hover.png');
+								background-image: url('../images/line_icon_bg_white_hover.png');
 							}
 						}
 					}
@@ -112,15 +113,15 @@
 							cursor: pointer;
 						}
 						&.shopee {
-							background-image: url('../../images/shopee_icon.png');
+							background-image: url('../images/shopee_icon.png');
 							&:hover {
-								background-image: url('../../images/shopee_icon_hover.png');
+								background-image: url('../images/shopee_icon_hover.png');
 							}
 						}
 						&.momo {
-							background-image: url('../../images/momo_icon.png');
+							background-image: url('../images/momo_icon.png');
 							&:hover {
-								background-image: url('../../images/momo_icon_hover.png?1');
+								background-image: url('../images/momo_icon_hover.png?1');
 							}
 						}
 					}
@@ -141,6 +142,51 @@
 
 		& .copyright {
 			padding-top: 10px;
+			padding-bottom: 30px;
 			text-align: center;
 		}
+
+	  & .btn-chatbed {
+	  	cursor: pointer;
+	  	color: #fff;
+	
+	  	&.mobile {
+	  		display: none;
+	  	}
+	
+	  	@media (max-width: 1199px) {
+	  		&.pc {
+	  			display: none;
+	  		}
+	
+	  		&.mobile {
+	  			display: block;
+	  			width: 100%;
+	  			text-align: center;
+	
+	  			background: var(--contact-btn-green);
+	  			font-size: 14px;
+	  			padding: 10px;
+	  			margin: 0;
+	  			transition: 0.3s;
+	
+	  			&:hover,
+	  			&:focus:hover {
+	  				background: color-mix(in srgb, var(--contact-btn-hover-green), transparent 15%);
+	  			}
+	  		}
+	  	}
+	
+	  	& .line_icon {
+	  		width: 20px;
+	  		margin-top: -3px;
+	  		margin-right: 5px;
+	  	}
+	  }
+}
+
+.index-page footer#footer {
+	& .btn-chatbed.mobile {
+		display: none;
+	}
 }

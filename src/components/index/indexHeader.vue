@@ -1,72 +1,73 @@
 <template lang="pug">
-  header#header.header.d-flex.align-items-center.fixed-top
-    a.logo(href="index.html")
-      img.logo_header(src="../../assets/images/logo_header.png")
+  header#header.header.fixed-top
+    .container.d-flex.align-items-center
+      a.logo(href="/")
+        img.logo_header(src="../../assets/images/logo_header.png")
 
-    nav#navmenu.navmenu
-      ul
-        li
-          a(href="index.html#bed") 床墊
-        li
-          a(href="index.html#hot_items") 床架/床頭櫃
-        li
-          a(href="index.html#hot_items") 其他配件
-        li
-          a(href="index.html#pricing") 關於我們
-        li
-          a(href="index.html#team") 限時優惠
-        li
-          a(href="index.html#how_select") 床墊知識
-          //- Uncomment the dropdown menu if needed
-          // li.dropdown
-          //   a(href="#")
-          //     span Dropdown
-          //     i.bi.bi-chevron-down.toggle-dropdown
-          //   ul
-          //     li
-          //       a(href="#") Dropdown 1
-          //     li.dropdown
-          //       a(href="#")
-          //         span Deep Dropdown
-          //         i.bi.bi-chevron-down.toggle-dropdown
-          //       ul
-          //         li
-          //           a(href="#") Deep Dropdown 1
-          //         li
-          //           a(href="#") Deep Dropdown 2
-          //         li
-          //           a(href="#") Deep Dropdown 3
-          //         li
-          //           a(href="#") Deep Dropdown 4
-          //         li
-          //           a(href="#") Deep Dropdown 5
-          //     li
-          //       a(href="#") Dropdown 2
-          //     li
-          //       a(href="#") Dropdown 3
-          //     li
-          //       a(href="#") Dropdown 4
-        li
-          a(href="index.html#good_comment") 好評分享
-        li
-          a(href="index.html#footer") 體驗據點
-      i.mobile-nav-toggle.d-xl-none.bi.bi-list
-      .cart_div.mobile
-        img.cart_icon(src="../../assets/images/cart_icon.png")
-        .cart_items_count(
-          :class="number_style()"
-        ) {{ cart_items_count }}
+      nav#navmenu.navmenu
+        ul
+          li
+            a(href="/product_list") 床墊
+          li
+            a(href="/product_list#bedFrame") 床架/床頭櫃
+          li
+            a(href="#hot_items") 其他配件
+          li
+            a(href="#pricing") 關於我們
+          li
+            a(href="#team") 限時優惠
+          li
+            a(href="#how_select") 床墊知識
+            //- Uncomment the dropdown menu if needed
+            // li.dropdown
+            //   a(href="#")
+            //     span Dropdown
+            //     i.bi.bi-chevron-down.toggle-dropdown
+            //   ul
+            //     li
+            //       a(href="#") Dropdown 1
+            //     li.dropdown
+            //       a(href="#")
+            //         span Deep Dropdown
+            //         i.bi.bi-chevron-down.toggle-dropdown
+            //       ul
+            //         li
+            //           a(href="#") Deep Dropdown 1
+            //         li
+            //           a(href="#") Deep Dropdown 2
+            //         li
+            //           a(href="#") Deep Dropdown 3
+            //         li
+            //           a(href="#") Deep Dropdown 4
+            //         li
+            //           a(href="#") Deep Dropdown 5
+            //     li
+            //       a(href="#") Dropdown 2
+            //     li
+            //       a(href="#") Dropdown 3
+            //     li
+            //       a(href="#") Dropdown 4
+          li
+            a(href="#good_comment") 好評分享
+          li
+            a(href="#footer") 體驗據點
+        i.mobile-nav-toggle.d-xl-none.bi.bi-list
+        .cart_div.mobile
+          img.cart_icon(src="../../assets/images/cart_icon.png")
+          .cart_items_count(
+            :class="number_style()"
+          ) {{ cart_items_count }}
 
-    .d-flex.align-items-center.position-relative.justify-content-end
-      .cart_div.pc
-        img.cart_icon(src="../../assets/images/cart_icon.png")
-        .cart_items_count(
-          :class="number_style()"
-        ) {{ cart_items_count }}
+      .d-flex.align-items-center.position-relative.justify-content-end
+        .cart_div.pc
+          img.cart_icon(src="../../assets/images/cart_icon.png")
+          .cart_items_count(
+            :class="number_style()"
+          ) {{ cart_items_count }}
 
-      a.btn-chatbed.pc(href="https://line.me/ti/p/~@121povpz" target="_blank")
-        img.line_icon(src="../../assets/images/line_icon.png")
-        span 聊聊床墊
+        a.btn-chatbed.pc(href="https://line.me/ti/p/~@121povpz" target="_blank")
+          img.line_icon(src="../../assets/images/line_icon.png")
+          span 聊聊床墊
 </template>
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -126,5 +127,5 @@ export default {
 </script>
 
 <style>
-@import "@/assets/css/index/index_header.scss";
+@import "@/assets/css/index_header.scss";
 </style>
