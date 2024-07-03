@@ -52,18 +52,18 @@
           li
             a(href="#footer") 體驗據點
         i.mobile-nav-toggle.d-xl-none.bi.bi-list
-        .cart_div.mobile
+        .cart_div.mobile(@click="showCart(1)")
           img.cart_icon(src="../../assets/images/cart_icon.png")
           .cart_items_count(
             :class="number_style()"
-          ) {{ cart_items_count }}
+          ) {{ cart_item_total }}
 
       .d-flex.align-items-center.position-relative.justify-content-end
-        .cart_div.pc
+        .cart_div.pc(@click="showCart(1)")
           img.cart_icon(src="../../assets/images/cart_icon.png")
           .cart_items_count(
             :class="number_style()"
-          ) {{ cart_items_count }}
+          ) {{ cart_item_total }}
 
         a.btn-chatbed.pc(href="https://line.me/ti/p/~@121povpz" target="_blank")
           img.line_icon(src="../../assets/images/line_icon.png")
@@ -80,6 +80,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { mapState, mapActions } from 'vuex';
 
 const require = (imgPath) => {
   try {
@@ -109,15 +110,24 @@ export default {
       cart_items_count: 0,
     };
   },
+  computed: {
+    ...mapState([
+      'cart_item_total'
+    ]),
+  },
   mounted() {
     this.checkSwiperLoaded();
   },
   methods: {
+    ...mapActions(['toggleCart']),
+    showCart(action) {
+      this.toggleCart(action);
+    },
     checkSwiperLoaded() {
       this.$emit("check-swiper-loaded");
     },
     number_style() {
-      let count = this.cart_items_count;
+      let count = this.cart_item_total;
       if (count > 9 && count <= 99) return "last_than_99";
       if (count > 99 && count <= 999) return "last_than_999";
       if (count > 999) return "last_than_9999";

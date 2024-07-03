@@ -196,7 +196,8 @@
       // shop  area end
       // newsletter section start
     .page-footer
-      index-footer
+      index-footer    
+    cart-view
     
     // Scroll Top
     a#scroll-top.scroll-top.d-flex.align-items-center.justify-content-center(href="#")
@@ -283,11 +284,15 @@ import Multiselect from 'vue-multiselect'
 import indexHeader from '@/components/index/indexHeader.vue'
 import indexFooter from '@/components/index/indexFooter.vue'
 
+import cartView from '@/components/cartView.vue'
+
 export default {
   name: 'product_list',
   components: {
     indexHeader,
     indexFooter,
+
+    cartView,
 
     Multiselect,
   },

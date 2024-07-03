@@ -3,6 +3,8 @@ import './assets/css/bs_main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import store from './store';
+
 
 // Import the FontAwesome core
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -19,6 +21,7 @@ library.add(faQuoteRight, faStar)
 const app = createApp(App)
 
 app.use(router)
+app.use(store);
 
 // Register the FontAwesome component
 app.component('font-awesome-icon', FontAwesomeIcon)
