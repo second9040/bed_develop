@@ -24,6 +24,9 @@ export default createStore({
     calcCartItemTotal(state, item) {
       state.cart_item_total += item;
     },
+    resetCart(state) {
+      state.cart_item_total = 0;
+    },
   },
   actions: {
     toggleCart({ commit }, action) {

@@ -122,6 +122,7 @@ export default {
     },
   },
   mounted() {
+    this.$store.commit('resetCart')
     this.cart_items.forEach((item) => {
       this.countItem(item.amount)
       this.cart_price_total += item.amount * item.price

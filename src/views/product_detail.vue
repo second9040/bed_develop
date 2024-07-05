@@ -61,49 +61,6 @@
                 template(v-slot:noResult)
                   span 查無選項
 
-              // shop wrapper start
-              .shop_banner
-                img(src="../assets/images/product/list/banner.jpg" alt="product_banner")
-              // shop toolbar end
-              .row.shop_wrapper
-                .single_product(v-for="item in products_obj")
-                  img.hot_item_img(:src='getImagePath(item.img)'  :alt="item.name")
-                  .px-3.pb-4
-                    h4 {{ item.name }}
-                    p.price NT$ {{ addComma(item.price) }} 起
-                    p {{ item.desc }}
-                    .hardness_degree_div.d-flex
-                      .text_circle 軟
-                      .mx-1.d-flex.align-items-center
-                        .degree_item(
-                          v-for="count in 7"
-                          :class="{ 'active': item.hardness_degree == count }"
-                        )
-                        //- p.m-0 硬度: {{ item.hardness_degree }}
-                      .text_circle 硬
-
-                    button.button.btn.btn-outline-primary(type="button" @click="viewMore(item)") 了解更多
-              
-              #pagination.pagination_style.pagination.justify-content-center
-                ul.d-flex
-                  li
-                    a(href='#')  &lt;&lt; 
-                  li
-                    a(href='#') 1
-                  li
-                    a.current(href='#') 2
-                  li
-                    a(href='#') 3
-                  li
-                    a(href='#') 4
-                  li
-                    a(href='#') 5
-                  li
-                    a(href='#') &gt;&gt;
-              // shop toolbar end
-              // shop wrapper end
-      // shop  area end
-      // newsletter section start
     .page-footer
       index-footer    
     cart-view
@@ -124,7 +81,6 @@ const require = (imgPath) => {
   }
 }
 
-import $ from 'jquery'
 import Multiselect from 'vue-multiselect'
 
 import indexHeader from '@/components/index/indexHeader.vue'
@@ -133,7 +89,7 @@ import indexFooter from '@/components/index/indexFooter.vue'
 import cartView from '@/components/cartView.vue'
 
 export default {
-  name: 'product_list',
+  name: 'ProductDetail',
   components: {
     indexHeader,
     indexFooter,

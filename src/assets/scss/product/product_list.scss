@@ -18,14 +18,15 @@
   }
 
   .shop_banner {
-    margin-top: 100px;
+    margin-top: 0;
     width: 100%;
+    margin-bottom: 30px;
+      
     img {
       width: calc(100% - 6px);
     }
     @media (max-width: 991px) {
-      margin-top: 0px;
-      margin-bottom: 0 ;
+      margin-top: 40px;
     }
   }
 

@@ -2735,10 +2735,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: #666666;
     margin-bottom: 0; }
 
-.shop_banner {
-  height: 260px;
-  margin-bottom: 45px; }
-
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .shop_reverse .row {
     flex-direction: column-reverse; } }
