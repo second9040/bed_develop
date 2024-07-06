@@ -1,5 +1,5 @@
 <template lang="pug">
-  #product_list_page.product_list_page.other_page
+  #product_detail.product_detail.other_page
     .page-header
       index-header
     .container
@@ -15,6 +15,27 @@
               li 所有床墊
           .row
             .col-lg-3.col-md-12
+              h2.selected_item_h2.text-center(v-if="selected_item") {{ selected_item.name }}
+              multiselect.w-100.mobile(
+                v-model="selected_item"
+                :options="widget_list_obj"
+                :multiple="false"
+                :allowEmpty="false"
+                group-values="sub"
+                group-label="name"
+                :group-select="false"
+                placeholder=""
+                track-by="id"
+                label="name"
+                tagPlaceholder=""
+                selectedLabel=""
+                selectLabel=""
+                selectGroupLabel=""
+                deselectLabel=""
+                @select="selectSubCategoryBySelect"
+              )
+                template(v-slot:noResult)
+                  span 查無選項
               //- li(v-if="selected_item") {{ selected_item.name }}
               // sidebar widget start
               aside.sidebar_widget.pc
@@ -38,28 +59,8 @@
                               @click="selectSubCategory($event, item2)"
                             ) {{ item2.name }}
 
-            .col-lg-9.col-md-12
-              h2.selected_item_h2.text-center(v-if="selected_item") {{ selected_item.name }}
-              multiselect.w-100.mobile(
-                v-model="selected_item"
-                :options="widget_list_obj"
-                :multiple="false"
-                :allowEmpty="false"
-                group-values="sub"
-                group-label="name"
-                :group-select="false"
-                placeholder=""
-                track-by="id"
-                label="name"
-                tagPlaceholder=""
-                selectedLabel=""
-                selectLabel=""
-                selectGroupLabel=""
-                deselectLabel=""
-                @select="selectSubCategoryBySelect"
-              )
-                template(v-slot:noResult)
-                  span 查無選項
+            swiper-part(:item="item")
+            brief-desc(:item="item")
 
     .page-footer
       index-footer    
@@ -88,6 +89,9 @@ import indexFooter from '@/components/index/indexFooter.vue'
 
 import cartView from '@/components/cartView.vue'
 
+import swiperPart from '@/components/product_detail/swiperPart.vue'
+import briefDesc from '@/components/product_detail/briefDesc.vue'
+
 export default {
   name: 'ProductDetail',
   components: {
@@ -97,10 +101,12 @@ export default {
     cartView,
 
     Multiselect,
+
+    swiperPart,
+    briefDesc,
   },
   data() {
     return {
-      screenWidth: 0,
       show_category_list: [],
       widget_list_obj: [
         {
@@ -164,56 +170,33 @@ export default {
       ],
       selected_sub_cat: '',
       selected_item: null,
-      products_obj: [
-        {
-          product_id: 1,
-          img: 'assets/images/index/hot_item_1.png',
-          name: '波浪舒眠床墊',
-          price: 7800,
-          desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
-          hardness_degree: 2,
-        },
-        {
-          product_id: 2,
-          img: 'assets/images/index/hot_item_1.png',
-          name: '波浪舒眠床墊',
-          price: 7800,
-          desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
-          hardness_degree: 4,
-        },
-        {
-          product_id: 3,
-          img: 'assets/images/index/hot_item_1.png',
-          name: '波浪舒眠床墊',
-          price: 7800,
-          desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
-          hardness_degree: 3,
-        },
-        {
-          product_id: 4,
-          img: 'assets/images/index/hot_item_1.png',
-          name: '波浪舒眠床墊',
-          price: 7800,
-          desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
-          hardness_degree: 4,
-        },
-        {
-          product_id: 5,
-          img: 'assets/images/index/hot_item_1.png',
-          name: '波浪舒眠床墊',
-          price: 7800,
-          desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
-          hardness_degree: 3,
-        },
-        {
-          product_id: 6,
-          img: 'assets/images/index/hot_item_1.png',
-          name: '波浪舒眠床墊',
-          price: 75800,
-          desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
-          hardness_degree: 2,
-        },
-      ],
+      item: {
+        img: [
+          'assets/images/product/item1.jpg',
+          'assets/images/product/item2.jpg',
+          'assets/images/product/item1.jpg',
+          'assets/images/product/item2.jpg',
+          'assets/images/product/item1.jpg',
+          'assets/images/product/item2.jpg',
+        ],
+        name: '波浪舒眠床墊',
+        price: 11899,
+        desc: [
+          '太空科技調節溫度，保持身體恆溫，減少睡眠中48%聚熱',
+          '德國KIKOO Tech Pro® 透氣科技，涼爽舒適 12 個小時',
+          '9 區設計，能完美貼合支撐身體曲線，舒緩腰痠背痛',
+          '涼感舒適不悶熱，最適合台灣氣候',
+          '吸震抗干擾，淺眠不被翻身打擾',
+          'SGS CertiPUR-US等多重認證，無毒無甲醛',
+        ],
+        size_obj: [
+          '106 x 188 x 25 cm',
+          '152 x 188 x 25 cm',
+          '182 x 188 x 25 cm',
+          '182 x 212 x 25 cm',
+        ],
+        hardness_degree: 4,
+      },
     }
   },
   methods: {
@@ -281,7 +264,7 @@ export default {
 
 <style scoped>
 @import '@/assets/scss/common.scss';
+@import '@/assets/css/product_temp/style.css';
 @import '@/assets/scss/product/product.scss';
 @import '@/assets/scss/product/product_list.scss';
-@import '@/assets/css/product_temp/style.css';
 </style>

@@ -10,9 +10,11 @@
 .breadcrumb_content {
   margin-top: 35px;
   margin-bottom: 75px;
-  @media (max-width: 1200px) {
+  @media (max-width: 1199px) {
     margin-top: -10px;
-    // margin-bottom: 20px;
+  }
+  @media (max-width: 991px) {
+    margin-bottom: 20px;
   }
   & ul li {
     display: inline-block;
