@@ -108,10 +108,23 @@ export default {
       this.screenWidth = screenWidth
 
       if (screenWidth < 1200) {
-        let slideImgHeight = document.querySelector('.small_swiper img').offsetHeight;
-  
-        document.querySelector('.small_swiper .swiper-button-prev').style.height = `${slideImgHeight + 5}px`
-        document.querySelector('.small_swiper .swiper-button-next').style.height = `${slideImgHeight + 5}px`
+        let slideImg = document.querySelector('.small_swiper img');
+        let slideImgHeight = 0;
+        if (slideImg) {
+          slideImgHeight = slideImg.offsetHeight
+        } else {
+          return;
+        }
+
+        if (slideImgHeight) {
+          document.querySelector('.small_swiper .swiper-button-prev').style.height = `${slideImgHeight + 5}px`
+          document.querySelector('.small_swiper .swiper-button-next').style.height = `${slideImgHeight + 5}px`
+        } else {
+          // 沒取到高度表示 swiper 還沒加載完成
+          setTimeout(() => {
+            this.updateSwiperSetting()
+          }, 100);
+        }
       }
     },
     smallSwiperClick(slide) {

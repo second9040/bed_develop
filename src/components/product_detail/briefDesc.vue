@@ -65,7 +65,7 @@ const require = (imgPath) => {
 import Multiselect from 'vue-multiselect'
 
 export default {
-  name: 'ProductDetail',
+  name: 'briefDesc',
   components: {
     Multiselect,
   },
