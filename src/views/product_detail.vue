@@ -70,6 +70,10 @@
             .col-lg-3.col-md-12
             good-comment(:item="item")
 
+          .row
+            .col-lg-3.col-md-12
+            common-qa(:item="item")
+
     .page-footer
       index-footer    
     cart-view
@@ -101,6 +105,7 @@ import swiperPart from '@/components/product_detail/swiperPart.vue'
 import briefDesc from '@/components/product_detail/briefDesc.vue'
 import tabIntro from '@/components/product_detail/tabIntro.vue'
 import goodComment from '@/components/product_detail/goodComment.vue'
+import commonQa from '@/components/product_detail/commonQa.vue'
 
 export default {
   name: 'ProductDetail',
@@ -116,6 +121,7 @@ export default {
     briefDesc,
     tabIntro,
     goodComment,
+    commonQa,
   },
   data() {
     return {
@@ -287,6 +293,46 @@ export default {
           ],
           desc: '床墊結合4倍NASA技術，讓你涼爽舒適一整夜，支撐身體充分放鬆<br>1. Outlast Space Tech®PCM 恆溫纖維 採用NASA太空服的技術，可智慧調節溫度，讓睡覺時體溫能保持穩定。<br> 2. 零壓力冷凝記憶層 NASA為太空人設計的減壓記憶棉，能夠完美支撐身體，享受無壓力的睡眠。<br> 3. Hexagrid Pro 六角蜂巢原理 靈感來自太空船結構，增強床墊的穩定性和支撐力。，分散體重壓力。<br>4. Diamond Fusion 石墨烯科技 石墨烯高效導熱，保持床墊涼爽，有效排出多餘熱量，保持床墊涼爽。',
         },
+        good_comment_obj: [
+          {
+            name: 'Z小姐',
+            comment:
+              '老闆很專業而且很實在，不會一直推銷最貴的商品，仔細講解商品優異處，介紹符合訴求的商品，會讓客人親自體驗再選擇適合自己的，超有誠意的銷售。',
+            img: 'assets/images/index/photo_test1.png',
+          },
+          {
+            name: 'A先生',
+            comment:
+              '老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄 老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄',
+            img: 'assets/images/index/photo_test3.png',
+          },
+          {
+            name: '李小姐',
+            comment:
+              '非常感謝店長介紹很詳細，貨比三家當天就決定還是要去這邊買，不會一直推銷最貴的床，很好溝通也會仔細聽你的訴求。 ',
+            img: 'assets/images/index/photo_test2.png',
+          },
+          {
+            name: 'A先生',
+            comment:
+              '老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄 老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄',
+            img: 'assets/images/index/photo_test3.png',
+          },
+        ],
+        qa_obj: [
+          {
+            question: '訂購多久後會幫我配送？',
+            ans: '有的，可以參考我們的高碳鋼Q床，其中使用了專利研發的吸震材料，讓硬床也可以一夜好眠。也可以針對近一步需求，下方聊聊，打造你的靈魂床墊。',
+          },
+          {
+            question: '舊床可以幫忙回收嗎？',
+            ans: '當然有的，製床所可為你的出租套房，打造設計感統一，耐用且高CP值的出租床組。',
+          },
+          {
+            question: '表布和內層可以拆開來洗嗎？',
+            ans: '市售獨立筒床墊因結構方式容易讓彈簧分離，支撐力會因使用年限受限，可能因為結構分離，失去支撐力，使你腰痠背痛，歡迎下方聊聊，針對喜歡的軟硬與需求，打造你的靈魂床墊。',
+          },
+        ],
       },
     }
   },
@@ -329,7 +375,6 @@ export default {
       return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
     },
     viewMore(item) {
-      console.log(item)
       this.$router.push({
         name: 'product_detail',
         params: {

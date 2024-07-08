@@ -1,16 +1,21 @@
 <template lang="pug">
   .col-lg-9.col-md-12.product_detail_comment
-    h4 製床所床墊好評不斷
+    .title_div.position-relative
+      h4 製床所床墊好評不斷
+      .swiper_pagination
+        i.bi.bi-chevron-left(@click="showSlide(-1)")
+        i.bi.bi-chevron-right(@click="showSlide(1)")
+
     swiper.good_comment_swiper(
       :loop='true' 
       :modules='modules' 
       :pagination="{ el: '.swiper-pagination', clickable: true }"
-      :slides-per-view="calcSlideToShow('good_comment')" 
+      :slides-per-view="calcSlideToShow()" 
       :space-between='35' 
       :autoplay='{ delay: 5000, disableOnInteraction: false }'
       :navigation='{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }'
     )
-      swiper-slide.swiper-slide(v-for='(item, index) in good_comment_obj' :key='index')
+      swiper-slide.swiper-slide(v-for='(item, index) in item.good_comment_obj' :key='index')
         .comment-item
           .d-flex
             img.comment-photo.flex-shrink-0(:src='getImagePath(item.img)' :alt='item.name')
@@ -28,8 +33,8 @@
                   i.bi.bi-quote.quote-icon-right.short(v-if="textView(item.comment, index) == 'short'")
               div.position-relative(style="width: 50px;" v-if=" textView(item.comment, index) == 'long'")
                 i.bi.bi-quote.quote-icon-right.long
-
-      .swiper-pagination
+      .swiper-button-next.d-none
+      .swiper-button-prev.d-none
 
  </template>
 <script>
@@ -58,49 +63,15 @@ export default {
     Swiper,
     SwiperSlide,
   },
+  props: {
+    item: {
+      type: Object,
+    },
+  },
   data() {
     return {
       modules: [Autoplay, Navigation, Pagination],
       screenWidth: 0,
-      good_comment_obj: [
-        {
-          name: "Z小姐",
-          comment: "老闆很專業而且很實在，不會一直推銷最貴的商品，仔細講解商品優異處，介紹符合訴求的商品，會讓客人親自體驗再選擇適合自己的，超有誠意的銷售。",
-          img: "assets/images/index/photo_test1.png",
-        },
-        {
-          name: "李小姐",
-          comment: "非常感謝店長介紹很詳細，貨比三家當天就決定還是要去這邊買，不會一直推銷最貴的床，很好溝通也會仔細聽你的訴求。 ",
-          img: "assets/images/index/photo_test2.png",
-        },
-        {
-          name: "A先生",
-          comment: "老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄 老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄",
-          img: "assets/images/index/photo_test3.png",
-        },
-      ],
-      knowledge_obj: [
-        {
-          title: "床墊汰換多久一次較適合？",
-          desc: "床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑 床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑",
-          img: "assets/images/index/blogimg.jpg",
-        },
-        {
-          title: "床墊汰換多久一次較適合？",
-          desc: "床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑 床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑",
-          img: "assets/images/index/blogimg.jpg",
-        },
-        {
-          title: "床墊汰換多久一次較適合？",
-          desc: "床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑 床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑",
-          img: "assets/images/index/blogimg.jpg",
-        },
-        {
-          title: "床墊汰換多久一次較適合？",
-          desc: "床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑 床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑",
-          img: "assets/images/index/blogimg.jpg",
-        },
-      ]
     };
   },
   beforeDestroy() {
@@ -121,8 +92,11 @@ export default {
       this.$emit("view-more", item);
     },
     calcSlideToShow() {
-      if (this.screenWidth > 767) {
+      if (this.screenWidth > 1199) {
         return 3;
+      }
+      if (this.screenWidth > 767) {
+        return 2;
       }
       return 1;
     },
@@ -135,6 +109,10 @@ export default {
         return "short";
       }
       return "short";
+    },
+    showSlide(action) {
+      let btnName = action == 1 ? "next" : "prev";
+      document.querySelector(`.product_detail_comment .swiper-button-${btnName} `).click();
     },
   },
 };
