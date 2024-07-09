@@ -11,7 +11,8 @@
         
         hr.tab_bottom_line.mt-0
 
-        .tab_content(v-if="content")
+        // 商品特色
+        .tab_content(v-if="content && activeTab == 1")
           .main_content(v-html="content.main")
           .secondary_content.d-flex
             .left
@@ -21,6 +22,25 @@
 
             .right
               img(:src="getImagePath(content.img)" :alt="content.tab")
+
+        // 床墊結構
+        .tab_content.tab2(v-if="content && activeTab == 2")
+          .main_content(v-html="content.main")
+          .main_img
+            img(:src="getImagePath(content.mainImg)" :alt="content.tab")
+          .feature_div.d-flex
+            .feature_item(v-for="f in content.feature")
+              img(:src="getImagePath(f.img)" :alt="f.title")
+              .text_div
+                h4 {{ f.title }}
+                p {{ f.desc }}
+          
+          .bottom_div.d-flex(v-if="content && content.bottom")
+            .left 
+              h4 {{ content.bottom.title }}
+              p(v-html="content.bottom.desc")
+            .right 
+              img(:src="getImagePath(content.bottom.img)" :alt="content.bottom.title")
     
     .deliverService
       h4 製床所配送服務

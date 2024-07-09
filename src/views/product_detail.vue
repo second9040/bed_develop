@@ -216,6 +216,7 @@ export default {
         hardness_degree: 4,
         tab_content: [
           {
+            name: 'feature',
             tab: '商品特色',
             main: '床墊結合4倍NASA技術，讓你涼爽舒適一整夜，支撐身體充分放鬆<br>1. Outlast Space Tech®PCM 恆溫纖維 採用NASA太空服的技術，可智慧調節溫度，讓睡覺時體溫能保持穩定。<br> 2. 零壓力冷凝記憶層 NASA為太空人設計的減壓記憶棉，能夠完美支撐身體，享受無壓力的睡眠。<br> 3. Hexagrid Pro 六角蜂巢原理 靈感來自太空船結構，增強床墊的穩定性和支撐力。，分散體重壓力。<br>4. Diamond Fusion 石墨烯科技 石墨烯高效導熱，保持床墊涼爽，有效排出多餘熱量，保持床墊涼爽。',
             secondary: [
@@ -239,29 +240,40 @@ export default {
             img: 'assets/images/product/item2.jpg',
           },
           {
+            name: 'structure',
             tab: '床墊結構',
-            main: '床墊結合4倍NASA技術，讓你涼爽舒適一整夜，支撐身體充分放鬆<br>1. Outlast Space Tech®PCM 恆溫纖維 採用NASA太空服的技術，可智慧調節溫度，讓睡覺時體溫能保持穩定。<br> 2. 零壓力冷凝記憶層 NASA為太空人設計的減壓記憶棉，能夠完美支撐身體，享受無壓力的睡眠。<br> 3. Hexagrid Pro 六角蜂巢原理 靈感來自太空船結構，增強床墊的穩定性和支撐力。，分散體重壓力。<br>4. Diamond Fusion 石墨烯科技 石墨烯高效導熱，保持床墊涼爽，有效排出多餘熱量，保持床墊涼爽。',
-            secondary: [
+            main: '連結式床墊，使用高碳鋼硬彈簧與厚實的內襯，充分支撐身體不容易凹陷，高耐用不易壞。',
+            mainImg: 'assets/images/product/tab2-main.jpg',
+            feature: [
               {
-                title: '提升深層睡眠30%',
-                desc: 'Lunio 乳膠床墊通過了“AASM美國睡眠中心”的嚴格測試，比一般床墊能確實提升深層睡眠30%，一晚達到5次以上的深度睡眠週期。',
+                title: '棉質表布',
+                desc: '大部分的衣服材質（70%化學纖維+30%棉紗）',
+                img: 'assets/images/product/tab2-feature1.jpg',
               },
               {
-                title: '舒適恆溫表布',
-                desc: 'Outlast Space Tech®智慧溫控技術，感應體溫並調節，讓身體維持恆溫的舒適感，睡眠時不受冷熱干擾。',
+                title: '高碳鋼硬彈簧',
+                desc: '使用中鋼彈簧、鋼線串聯，躺下去能平均分散重量，讓脊椎平直伸展、支撐身體不易凹陷，使之較為穩固。',
+                img: 'assets/images/product/tab2-feature2.jpg',
               },
               {
-                title: '零重力的輕盈涼感',
-                desc: '零重力的冷凝支撐層，透氣性提高30倍，提供零重力般的輕盈涼感，翻身也不易受到干擾。',
+                title: '厚實內襯',
+                desc: '緩衝與彈簧的接觸，該添加的材料都有添加，做的很扎實很有支撐力。',
+                img: 'assets/images/product/tab2-feature3.jpg',
               },
               {
-                title: '德國科技，持久清涼',
-                desc: '鋁來減少多餘床墊的熱量，讓床墊持續保持涼爽。',
+                title: '強化邊框',
+                desc: '床沿四邊做支撐加墊，讓上下床更有支撐力，使邊緣不易變形。',
+                img: 'assets/images/product/tab2-feature4.jpg',
               },
             ],
-            img: 'assets/images/product/item1.jpg',
+            bottom: {
+              title: '100%台灣職人手作',
+              desc: '製床所長期以來的經驗與堅持，為不同需求喜好打造專屬床墊。<br><br>高碳鋼Q床使用非常多且粗的彈簧，擁有扎實Q彈的支撐力，平價並且非常耐用，不必擔心使用年限的問題，CP值高，推薦給喜歡硬床的你！',
+              img: 'assets/images/product/tab2-bottom.jpg',
+            },
           },
           {
+            name: 'size',
             tab: '床墊尺寸',
             main: '床墊結合4倍NASA技術，讓你涼爽舒適一整夜，支撐身體充分放鬆<br>1. Outlast Space Tech®PCM 恆溫纖維 採用NASA太空服的技術，可智慧調節溫度，讓睡覺時體溫能保持穩定。<br> 2. 零壓力冷凝記憶層 NASA為太空人設計的減壓記憶棉，能夠完美支撐身體，享受無壓力的睡眠。<br> 3. Hexagrid Pro 六角蜂巢原理 靈感來自太空船結構，增強床墊的穩定性和支撐力。，分散體重壓力。<br>4. Diamond Fusion 石墨烯科技 石墨烯高效導熱，保持床墊涼爽，有效排出多餘熱量，保持床墊涼爽。',
             secondary: [
