@@ -52,6 +52,8 @@ export default createStore({
         price: 11899,
       },
     ],
+    tw_city_name: [ "臺北市", "基隆市", "新北市", "連江縣", "宜蘭縣", "釣魚臺", "新竹市", "新竹縣", "桃園市", "苗栗縣", "臺中市", "彰化縣", "南投縣", "嘉義市", "嘉義縣", "雲林縣", "臺南市", "高雄市", "南海島", "澎湖縣", "金門縣", "屏東縣", "臺東縣", "花蓮縣"],
+    cart_price_total: 0,
   },
   mutations: {
     toggleCart(state, action) {
@@ -129,5 +131,6 @@ export default createStore({
     cart_item_total: (state) => state.cart_item_total,
     cart_items: (state) => state.cart_items,
     cart_price_total: (state) => state.cart_items,
+    tw_city_name: (state) => state.cart_items,
   },
 });

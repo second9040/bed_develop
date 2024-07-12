@@ -128,5 +128,27 @@
     & .multiselect__select {
       right: 10px;
     }
+    & .multiselect__tags {
+      border-color: #9ec5fe;
+    }
   }
+}
+
+input.form-control {
+  border-radius: 0;
+  height: 40px;
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+textarea.form-control {
+  border-radius: 0;
+  &:focus {
+    box-shadow: none;
+  }
+}
+ 
+.bold {
+  font-weight: bold;
 }

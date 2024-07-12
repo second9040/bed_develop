@@ -78,6 +78,9 @@ export default {
     addComma(num) {
       return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     },
+    goBack() {
+      this.$router.go(-1);
+    },
   },
 
   mounted() {
