@@ -76,7 +76,7 @@
 
     .page-footer
       index-footer    
-    cart-view
+    cart-aside
     
     // Scroll Top
     a#scroll-top.scroll-top.d-flex.align-items-center.justify-content-center(href="#")
@@ -99,7 +99,7 @@ import Multiselect from 'vue-multiselect'
 import indexHeader from '@/components/index/indexHeader.vue'
 import indexFooter from '@/components/index/indexFooter.vue'
 
-import cartView from '@/components/cartView.vue'
+import cartAside from '@/components/cartAside.vue'
 
 import swiperPart from '@/components/product_detail/swiperPart.vue'
 import briefDesc from '@/components/product_detail/briefDesc.vue'
@@ -113,7 +113,7 @@ export default {
     indexHeader,
     indexFooter,
 
-    cartView,
+    cartAside,
 
     Multiselect,
 

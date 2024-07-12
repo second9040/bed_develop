@@ -42,6 +42,7 @@
             type="number" 
             min="1"
             v-model="select_amount"
+            @input="validateAmount"
           )
           span.increment(@click="changeAmount(1)")
             i.bi.bi-chevron-right
@@ -94,6 +95,14 @@ export default {
         this.select_amount -= 1
       } else if (val == 1) {
         this.select_amount += 1
+      }
+    },
+    validateAmount() {
+      const amount = this.select_amount;
+      if (amount < 1) {
+        this.select_amount = 1;
+      } else if (amount > 99) {
+        this.select_amount = 99;
       }
     },
   },

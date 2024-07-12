@@ -6,19 +6,6 @@
     }
   }
 
-  .main_section {
-    padding: 105px 0 80px;
-
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
-      padding: 140px 0 10px;
-      text-align: center;
-    }
-
-    @media only screen and (max-width: 767px) {
-      padding: 55px 0 40px;
-    }
-  }
-
   .shop_banner {
     margin-top: 0;
     width: 100%;

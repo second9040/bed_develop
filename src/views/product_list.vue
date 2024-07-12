@@ -106,7 +106,7 @@
       // newsletter section start
     .page-footer
       index-footer    
-    cart-view
+    cart-aside
     
     // Scroll Top
     a#scroll-top.scroll-top.d-flex.align-items-center.justify-content-center(href="#")
@@ -130,7 +130,7 @@ import Multiselect from 'vue-multiselect'
 import indexHeader from '@/components/index/indexHeader.vue'
 import indexFooter from '@/components/index/indexFooter.vue'
 
-import cartView from '@/components/cartView.vue'
+import cartAside from '@/components/cartAside.vue'
 
 export default {
   name: 'product_list',
@@ -138,7 +138,7 @@ export default {
     indexHeader,
     indexFooter,
 
-    cartView,
+    cartAside,
 
     Multiselect,
   },

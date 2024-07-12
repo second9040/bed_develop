@@ -27,7 +27,7 @@ defineProps({});
         :screenWidth="screenWidth"
       )
     index-footer
-    cart-view
+    cart-aside
     
     // Scroll Top
     a#scroll-top.scroll-top.d-flex.align-items-center.justify-content-center(href="#")
@@ -67,7 +67,7 @@ import bedGoodService from "@/components/index/bedGoodService.vue";
 import goodComment from "@/components/index/goodComment.vue";
 import bedKnowledge from "@/components/index/bedKnowledge.vue";
 import indexFooter from "@/components/index/indexFooter.vue";
-import cartView from "@/components/cartView.vue";
+import cartAside from "@/components/cartAside.vue";
 
 export default {
   name: "IndexView",
@@ -85,7 +85,7 @@ export default {
     goodComment,
     bedKnowledge,
     indexFooter,
-    cartView,
+    cartAside,
   },
   data() {
     return {
