@@ -39,22 +39,8 @@ export default {
     }
   },
   mounted() {
-    this.loadExternalScript('/public/js/index/bs_main.js')
-      .catch(err => {
-        console.error('Failed to load external script:', err);
-      });
-
   },
   methods: {
-    loadExternalScript(src) {
-      return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = src;
-        script.onload = () => resolve();
-        script.onerror = () => reject(new Error(`Failed to load script ${src}`));
-        document.head.appendChild(script);
-      });
-    },
     click_show_qa(index) {
       this.show_qa = this.show_qa == index ? 0 : index;
     },

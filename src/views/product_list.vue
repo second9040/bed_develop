@@ -261,15 +261,6 @@ export default {
     }
   },
   methods: {
-    loadExternalScript(src) {
-      return new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = src
-        script.onload = () => resolve()
-        script.onerror = () => reject(new Error(`Failed to load script ${src}`))
-        document.head.appendChild(script)
-      })
-    },
     checkShow(id) {
       return this.show_category_list.includes(id)
     },
@@ -309,10 +300,6 @@ export default {
     },
   },
   mounted() {
-    this.loadExternalScript('/public/js/index/bs_main.js').catch((err) => {
-      console.error('Failed to load external script:', err)
-    })
-
     this.show_category_list.push(this.widget_list_obj[0].id)
     this.selected_sub_cat = this.widget_list_obj[0].sub[0].id
     this.selected_item = this.widget_list_obj[0].sub[0]

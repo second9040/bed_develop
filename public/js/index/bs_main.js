@@ -29,8 +29,10 @@
 
   function mobileNavToogle() {
     if (document.querySelector('.index-page')) {
+      console.log(111)
       document.querySelector('.index-page').classList.toggle('mobile-nav-active');
     } else {
+      console.log('222')
       document.querySelector('.other_page').classList.toggle('mobile-nav-active');
     }
     mobileNavToggleBtn.classList.toggle('bi-list');
