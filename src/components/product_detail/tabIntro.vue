@@ -24,7 +24,7 @@
               img(:src="getImagePath(content.img)" :alt="content.tab")
 
         // 床墊結構
-        .tab_content.tab2(v-if="content && activeTab == 2")
+        .tab_content.tab2(v-if="content && activeTab >= 2")
           .main_content(v-html="content.main")
           .main_img
             img(:src="getImagePath(content.mainImg)" :alt="content.tab")

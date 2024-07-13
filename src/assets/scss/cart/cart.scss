@@ -6,7 +6,7 @@
   .progress_bar_div {
     display: flex;
     .progress-container {
-      width: 60%;
+      width: 45%;
       position: relative;
       margin: 60px auto 10px;
       @media (max-width: 767px) {
@@ -88,6 +88,32 @@
       }
       &3 {
         right: -15px;
+      }
+    }
+  }
+
+  .step3_thanks {
+    text-align: center;
+    margin: 30px auto;
+    width: 45%;
+
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+
+  .step3 {
+    .info_container {
+      &.d-flex {
+        @media (max-width: 991px) {
+          display: block !important;
+        }
+      }
+    }
+    .action_div {
+      margin: 50px auto;
+      @media (max-width: 767px) {
+        width: 100%;
       }
     }
   }

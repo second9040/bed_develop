@@ -27,6 +27,7 @@
     }
 
     .tab_content {
+      text-align: left;
       padding: 10px 0;
       @media (max-width: 991px) {
         text-align: left;
@@ -97,7 +98,7 @@
             padding: 20px 15px 10px;
             // height: 200px;
             text-align: center;
-            border-radius: 15px;
+            border-radius: 0 0 15px 15px;
             @media (max-width: 1199px) {
               height: 220px;
             }
@@ -112,7 +113,7 @@
             }
 
             p {
-              height: 200px;
+              height: 120px;
               text-align: left;
               @media (max-width: 576px) {
                 height: auto;
@@ -150,9 +151,7 @@
 
   .deliverService {
     margin: 5px 0 35px;
-    @media (max-width: 991px) {
-      text-align: left;
-    }
+    text-align: left;
 
     @media (max-width: 767px) {
       margin: 35px 0 0px;

@@ -92,5 +92,5 @@ export default {
 <style scoped>
 @import '@/assets/scss/common.scss';
 @import '@/assets/scss/cart/cart.scss';
-@import '@/assets/scss/cart/step2/cart_info.scss';
+@import '@/assets/scss/cart/step2/product_info.scss';
 </style>

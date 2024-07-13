@@ -131,8 +131,7 @@ export default {
       return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     },
     placeOrder() {
-      // 下單邏輯
-      console.log('下單購買');
+      this.$emit('place-order');
     },
   },
 
