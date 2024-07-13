@@ -290,7 +290,6 @@ export default {
       return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
     },
     viewMore(item) {
-      console.log(item)
       this.$router.push({
         name: 'product_detail',
         params: {

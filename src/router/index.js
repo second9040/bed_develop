@@ -19,6 +19,7 @@ const router = createRouter({
       name: 'product_detail',
       component: () => import('../views/product_detail.vue'),
     },
+    // detail 沒給 id 則回 list
     {
       path: '/product_detail',
       redirect: 'product_list'
@@ -27,6 +28,16 @@ const router = createRouter({
       path: '/cart',
       name: 'cart',
       component: () => import('../views/CartView.vue'),
+    },
+    {
+      path: '/latestDiscount',
+      name: 'latestDiscount',
+      component: () => import('../views/discount.vue'),
+    },
+    {
+      path: '/discount_detail',
+      name: 'discount_detail',
+      component: () => import('../views/discount_detail.vue'),
     },
     {
       path: '/about',

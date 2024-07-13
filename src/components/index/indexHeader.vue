@@ -15,7 +15,7 @@
           li
             a(href="#pricing") 關於我們
           li
-            a(href="#team") 限時優惠
+            a(href="/latestDiscount") 限時優惠
           li
             a(href="#how_select") 床墊知識
             //- Uncomment the dropdown menu if needed

@@ -11,7 +11,8 @@
             ul
               li
                 a(href='/') 首頁
-              li 所有商品
+              li
+                a(href='/product_list') 所有商品
               li 所有床墊
           .row
             .col-lg-3.col-md-12
