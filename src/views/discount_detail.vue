@@ -2,45 +2,32 @@
   #latestDiscount.latestDiscount.other_page
     .page-header
       index-header
-    .container
+    .container(v-if="discount_obj")
       .main_section
         .container
           .breadcrumb_content
             ul
               li
                 a(href='/') 首頁
-              li 即時優惠
+              li
+                a(href='/latestDiscount') 即時優惠
+              li {{ discount_obj.title }}
           .row
             .col-md-12
-              h2.page_title 即時優惠
+              h2.page_title {{ discount_obj.title }}
+              .detail_div 
+                .left
+                  .img_container 
+                    img(:src="getImagePath(discount_obj.img)")
+                .right
+                  .desc(v-html="transformURL(discount_obj.desc)")
+          
+              button.buyNow.button.btn.btn-primary(
+                type="button" 
+                @click="buyNow(discount_obj)"
+              ) 馬上搶購
+                  
 
-              .discount_content_div
-                .discount_item(
-                  v-for="(discount, index) in discount_list"
-                  @click="showDetail(discount)"
-                )
-                  .img_container
-                    img(:src='getImagePath(discount.img)' :alt='discount.title')
-                  .text_div
-                    h4 {{ discount.title }}
-                    p.desc(v-html="truncateText(discount.desc)")
-
-              #pagination.pagination_style.pagination.justify-content-center
-                ul.d-flex
-                  li
-                    a(href='#')  &lt;&lt; 
-                  li
-                    a(href='#') 1
-                  li
-                    a.current(href='#') 2
-                  li
-                    a(href='#') 3
-                  li
-                    a(href='#') 4
-                  li
-                    a(href='#') 5
-                  li
-                    a(href='#') &gt;&gt;
     .page-footer
       index-footer    
     cart-aside
@@ -92,34 +79,27 @@ export default {
       "emptyCart",
     ]),
     getImagePath(img) {
-      console.log(img)
+      console.log(img);
       return require(`@/${img}`);
     },
-    truncateText(text) {
-      if (text.length > 60) {
-        return text.slice(0, 60) + '...more';
-      }
-      return text;
+    transformURL(text) {
+      const urlRegex = /https?:\/\/[^\s]+/g;
+      const textWithLinks = text.replace(urlRegex, function (url) {
+        return `<a href="${url}" target="_blank" style="color: #30526b; text-decoration: underline;">${url}</a>`;
+      });
+      return textWithLinks;
     },
-    showDetail(obj) {
-      this.$router.push({
-        name: 'discount_detail',
-        params: {
-          discount_id: obj.discount_id,
-        },
-        query: {
-          discount_obj: JSON.stringify(obj)
-        }
-      })
+    buyNow(obj) {
+
     },
   },
   mounted() {
     if (history.state.discount_obj) {
-      this.discount_obj = JSON.parse(history.state.discount_obj)
+      this.discount_obj = JSON.parse(history.state.discount_obj);
     } else {
       this.$router.push({
-        name: 'latestDiscount'
-      })
+        name: "latestDiscount",
+      });
     }
   },
 };
