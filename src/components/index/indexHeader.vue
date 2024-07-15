@@ -50,7 +50,7 @@
           li
             a(href="#good_comment") 好評分享
           li
-            a(href="#footer") 體驗據點
+            a(href="/experience_site") 體驗據點
         i.mobile-nav-toggle.d-xl-none.bi.bi-list
         .cart_div.mobile(@click="showCart(1)")
           img.cart_icon(src="../../assets/images/cart_icon.png")

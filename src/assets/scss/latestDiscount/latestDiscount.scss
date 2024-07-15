@@ -101,6 +101,13 @@
   border-radius: 25px;
   margin: 0 calc(50% - 80px) 20px;
   width: 160px;
+  border: solid 1px var(--color3-green);
+  &:hover {
+    background-color: var(--color3-green);
+    border:solid 1px var(--color3-green);
+    opacity: .8;
+    color: #fff;
+  }
   @media (max-width: 991px) {
     margin-bottom: 70px;
   }

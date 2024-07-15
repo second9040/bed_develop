@@ -40,6 +40,11 @@ const router = createRouter({
       component: () => import('../views/discount_detail.vue'),
     },
     {
+      path: '/experience_site',
+      name: 'experience_site',
+      component: () => import('../views/experience_site.vue'),
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

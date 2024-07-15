@@ -79,7 +79,6 @@ export default {
       "emptyCart",
     ]),
     getImagePath(img) {
-      console.log(img);
       return require(`@/${img}`);
     },
     transformURL(text) {
