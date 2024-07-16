@@ -19,16 +19,11 @@
                   type="button" 
                   @click="goBack()"
                 ) 返回列表
-                                
-    cart-aside
 
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex";
-
-import indexHeader from "@/components/index/indexHeader.vue";
-import cartAside from "@/components/cartAside.vue";
 
 const require = (imgPath) => {
   try {
@@ -42,9 +37,6 @@ const require = (imgPath) => {
 export default {
   name: "bed_knowledge_detail",
   components: {
-    indexHeader,
-
-    cartAside,
   },
   data() {
     return {
@@ -86,6 +78,9 @@ export default {
     },
     goBack() {
       this.$router.go(-1);
+      window.scrollTo({
+        top: 0
+      })
     },
   },
   mounted() {

@@ -1,7 +1,5 @@
 <template lang="pug">
   #product_list_page.product_list_page.other_page
-    .page-header
-      index-header
     .container
       // shop  area start
       //- .shop_section.shop_reverse
@@ -103,14 +101,6 @@
               // shop toolbar end
               // shop wrapper end
       // shop  area end
-      // newsletter section start
-    .page-footer
-      index-footer    
-    cart-aside
-    
-    // Scroll Top
-    a#scroll-top.scroll-top.d-flex.align-items-center.justify-content-center(href="#")
-      i.bi.bi-chevron-up
 
 </template>
 
@@ -127,19 +117,9 @@ const require = (imgPath) => {
 import $ from 'jquery'
 import Multiselect from 'vue-multiselect'
 
-import indexHeader from '@/components/index/indexHeader.vue'
-import indexFooter from '@/components/index/indexFooter.vue'
-
-import cartAside from '@/components/cartAside.vue'
-
 export default {
   name: 'product_list',
   components: {
-    indexHeader,
-    indexFooter,
-
-    cartAside,
-
     Multiselect,
   },
   data() {

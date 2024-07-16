@@ -48,6 +48,9 @@ export default {
       this.$router.push({
         name: 'product_list',
       })
+      window.scrollTo({
+        top: 0
+      })
     },
   },
 }

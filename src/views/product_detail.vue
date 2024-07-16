@@ -1,7 +1,5 @@
 <template lang="pug">
   #product_detail.product_detail.other_page
-    .page-header
-      index-header
     .container
       // shop  area start
       //- .shop_section.shop_reverse
@@ -75,14 +73,6 @@
             .col-lg-3.col-md-12
             common-qa(:item="item")
 
-    .page-footer
-      index-footer    
-    cart-aside
-    
-    // Scroll Top
-    a#scroll-top.scroll-top.d-flex.align-items-center.justify-content-center(href="#")
-      i.bi.bi-chevron-up
-
 </template>
 
 <script>
@@ -97,11 +87,6 @@ const require = (imgPath) => {
 
 import Multiselect from 'vue-multiselect'
 
-import indexHeader from '@/components/index/indexHeader.vue'
-import indexFooter from '@/components/index/indexFooter.vue'
-
-import cartAside from '@/components/cartAside.vue'
-
 import swiperPart from '@/components/product_detail/swiperPart.vue'
 import briefDesc from '@/components/product_detail/briefDesc.vue'
 import tabIntro from '@/components/product_detail/tabIntro.vue'
@@ -111,11 +96,6 @@ import commonQa from '@/components/product_detail/commonQa.vue'
 export default {
   name: 'ProductDetail',
   components: {
-    indexHeader,
-    indexFooter,
-
-    cartAside,
-
     Multiselect,
 
     swiperPart,

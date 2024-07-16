@@ -1,7 +1,5 @@
 <template lang="pug">
   #latestDiscount.latestDiscount.other_page
-    .page-header
-      index-header
     .container(v-if="discount_obj")
       .main_section
         .container
@@ -27,22 +25,10 @@
                 @click="buyNow(discount_obj)"
               ) 馬上搶購
                   
-
-    .page-footer
-      index-footer    
-    cart-aside
-
-    // Scroll Top
-    a#scroll-top.scroll-top.d-flex.align-items-center.justify-content-center(href="#")
-      i.bi.bi-chevron-up
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex";
-
-import indexHeader from "@/components/index/indexHeader.vue";
-import indexFooter from "@/components/index/indexFooter.vue";
-import cartAside from "@/components/cartAside.vue";
 
 const require = (imgPath) => {
   try {
@@ -55,12 +41,6 @@ const require = (imgPath) => {
 
 export default {
   name: "latestDiscount",
-  components: {
-    indexHeader,
-    indexFooter,
-
-    cartAside,
-  },
   data() {
     return {
       discount_obj: null,

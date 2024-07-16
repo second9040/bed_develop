@@ -15,12 +15,24 @@
   function toggleScrolled() {
     const selectBody = document.querySelector('.index-page') ? document.querySelector('.index-page') : document.querySelector('.other_page');
     const selectHeader = document.querySelector('#header');
+    
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
+  function checkLoad() {
+    const selectBody = document.querySelector('.index-page') ? document.querySelector('.index-page') : document.querySelector('.other_page');
+    return selectBody
+  }
+  if (checkLoad()) {
+    document.addEventListener('scroll', toggleScrolled);
+    window.addEventListener('load', toggleScrolled);
+  } else {
+    setTimeout(() => {
+      checkLoad();
+    }, 300);
+  }
+
 
   /**
    * Mobile nav toggle
@@ -28,13 +40,8 @@
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToogle() {
-    if (document.querySelector('.index-page')) {
-      console.log(111)
-      document.querySelector('.index-page').classList.toggle('mobile-nav-active');
-    } else {
-      console.log('222')
-      document.querySelector('.other_page').classList.toggle('mobile-nav-active');
-    }
+    document.querySelector('#header').classList.toggle('mobile-nav-active');
+   
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
   }

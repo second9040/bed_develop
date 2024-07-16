@@ -17,36 +17,7 @@
           li
             a(href="/latestDiscount") 限時優惠
           li
-            a(href="#how_select") 床墊知識
-            //- Uncomment the dropdown menu if needed
-            // li.dropdown
-            //   a(href="#")
-            //     span Dropdown
-            //     i.bi.bi-chevron-down.toggle-dropdown
-            //   ul
-            //     li
-            //       a(href="#") Dropdown 1
-            //     li.dropdown
-            //       a(href="#")
-            //         span Deep Dropdown
-            //         i.bi.bi-chevron-down.toggle-dropdown
-            //       ul
-            //         li
-            //           a(href="#") Deep Dropdown 1
-            //         li
-            //           a(href="#") Deep Dropdown 2
-            //         li
-            //           a(href="#") Deep Dropdown 3
-            //         li
-            //           a(href="#") Deep Dropdown 4
-            //         li
-            //           a(href="#") Deep Dropdown 5
-            //     li
-            //       a(href="#") Dropdown 2
-            //     li
-            //       a(href="#") Dropdown 3
-            //     li
-            //       a(href="#") Dropdown 4
+            a(href="/bed_knowledge") 床墊知識
           li
             a(href="#good_comment") 好評分享
           li

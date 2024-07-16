@@ -4,7 +4,6 @@ defineProps({});
 
 <template lang="pug">
   .index-page 
-    index-header
     main.main
       bed-banner
       bed-know-you-best
@@ -26,15 +25,6 @@ defineProps({});
       bed-knowledge(
         :screenWidth="screenWidth"
       )
-    index-footer
-    cart-aside
-    
-    // Scroll Top
-    a#scroll-top.scroll-top.d-flex.align-items-center.justify-content-center(href="#")
-      i.bi.bi-chevron-up
-
-    // Preloader
-    //- #preloader
 </template>
 <script>
 const require = (imgPath) => {
@@ -57,7 +47,6 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
-import indexHeader from "@/components/index/indexHeader.vue";
 import bedBanner from "@/components/index/bedBanner.vue";
 import bedKnowYouBest from "@/components/index/bedKnowYouBest.vue";
 import hotItems from "@/components/index/hotItems.vue";
@@ -66,8 +55,6 @@ import bedSize from "@/components/index/bedSize.vue";
 import bedGoodService from "@/components/index/bedGoodService.vue";
 import goodComment from "@/components/index/goodComment.vue";
 import bedKnowledge from "@/components/index/bedKnowledge.vue";
-import indexFooter from "@/components/index/indexFooter.vue";
-import cartAside from "@/components/cartAside.vue";
 
 export default {
   name: "IndexView",
@@ -75,7 +62,6 @@ export default {
     Swiper,
     SwiperSlide,
 
-    indexHeader,
     bedBanner,
     bedKnowYouBest,
     hotItems,
@@ -84,8 +70,6 @@ export default {
     bedGoodService,
     goodComment,
     bedKnowledge,
-    indexFooter,
-    cartAside,
   },
   data() {
     return {

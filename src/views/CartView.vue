@@ -1,7 +1,5 @@
 <template lang="pug">
   #cartView.cartView.other_page
-    .page-header
-      index-header
     .container
       .main_section
         .container
@@ -40,21 +38,10 @@
                 ) LINE聊聊
                 button.goBack.button.btn.btn-primary(@click="goBack") 繼續逛逛
 
-    .page-footer
-      index-footer    
-    cart-aside
-
-    // Scroll Top
-    a#scroll-top.scroll-top.d-flex.align-items-center.justify-content-center(href="#")
-      i.bi.bi-chevron-up
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex";
-
-import indexHeader from "@/components/index/indexHeader.vue";
-import indexFooter from "@/components/index/indexFooter.vue";
-import cartAside from "@/components/cartAside.vue";
 
 import productInfo from "@/components/cart/step2/productInfo.vue";
 import orderInfo from "@/components/cart/step2/orderInfo.vue";
@@ -65,11 +52,6 @@ import checkOrderInfo from "@/components/cart/step3/orderInfo.vue";
 export default {
   name: "cart_info",
   components: {
-    indexHeader,
-    indexFooter,
-
-    cartAside,
-
     productInfo,
     orderInfo,
     checkProductInfo,
