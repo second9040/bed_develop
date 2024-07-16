@@ -178,8 +178,7 @@ h6 {
 
 /* Index Page Header on Scroll
 ------------------------------*/
-.index-page .header,
-.page-header .header {
+.header {
   --background-color: var(--color2-green);
   --heading-color: var(--color6-white);
   --nav-color: var(--color6-white);

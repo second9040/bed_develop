@@ -1,6 +1,4 @@
-.index-page,
-.page-header {
-  & #header.header {
+#header.header {
     justify-content: space-around;
     @media (max-width: 1199px) {
       padding: 10px 20px;
@@ -119,7 +117,6 @@
         }
       }
     }
-  }
 
   // 配合 RWD 故 header 跟 bed_banner 都會用到
   & .btn-chatbed {
