@@ -13,7 +13,7 @@
           li
             a(href="#hot_items") 其他配件
           li
-            a(href="#pricing") 關於我們
+            a(href="/about") 關於我們
           li
             a(href="/latestDiscount") 限時優惠
           li

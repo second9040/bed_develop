@@ -1,6 +1,6 @@
 <template lang="pug">
-	footer#footer.footer.position-relative
-		.container
+	footer#footer.footer
+		.container.position-relative
 			.footer-top.d-flex
 				.store_info_div.d-flex
 					.store_info

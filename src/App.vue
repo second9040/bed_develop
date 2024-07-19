@@ -7,20 +7,23 @@ import cartAside from "@/components/cartAside.vue";
 </script>
 
 <template>
-  <div class="page-header">
-    <index-header />
+  <div>
+    <div style="min-height: calc(100vh - 320px)">
+      <div class="page-header">
+        <index-header />
+      </div>
+      <RouterView />
+    </div>
+    <index-footer />
+    <a
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      href="#"
+    >
+      <i class="bi bi-chevron-up"></i>
+    </a>
+    <cart-aside />
   </div>
-  <RouterView />
-  <index-footer />
-  <a
-    id="scroll-top"
-    class="scroll-top d-flex align-items-center justify-content-center"
-    href="#"
-  >
-    <i class="bi bi-chevron-up"></i>
-  </a>
-  <cart-aside />
-        
 </template>
 
 <style scoped>

@@ -147,7 +147,7 @@ h6 {
   background: color-mix(in srgb, var(--contact-btn-hover-green), transparent 15%);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .header .logo {
     order: 1;
   }
@@ -189,7 +189,7 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Navmenu - Desktop */
-@media (min-width: 1200px) {
+@media (min-width: 1199px) {
   .navmenu {
     padding: 0;
   }
