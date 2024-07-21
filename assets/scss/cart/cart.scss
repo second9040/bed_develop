@@ -1,0 +1,195 @@
+#cartView {
+  .page_title {
+    text-align: center;
+  }
+
+  .progress_bar_div {
+    display: flex;
+    .progress-container {
+      width: 45%;
+      position: relative;
+      margin: 60px auto 10px;
+      @media (max-width: 767px) {
+        width: 80%;
+      }
+      @media (max-width: 576px) {
+        width: 90%;
+      }
+    }
+  
+    .progress {
+      width: 100%;
+      height: 3px;
+      background-color: var(--color1-blue);
+      position: relative;
+    }
+  
+    .progress-bar {
+      height: 3px;
+      width: 0;
+      transition: width 0.5s ease;
+    }
+  
+    .step-container {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: -10px;
+      width: 100%;
+    }
+  
+    .step {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border: solid 3px #69869B;
+      background-color: #fff;
+      border-radius: 50%;
+      position: relative;
+      
+    }
+  
+    .step.active,
+    .step.done {
+      background-color: var(--color1-blue);
+      border: solid 3px var(--color1-blue);
+    }
+
+
+    .label.active,
+    .label.done {
+      color: var(--color1-blue);
+    }
+  
+    .step span {
+      font-size: 20px;
+      color: #fff;
+    }
+  
+    .step-labels {
+      width: 100%;
+      margin: 15px auto 70px;
+    }
+  
+    .label {
+      text-align: center;
+      flex: 1;
+      color: #69869B;
+      position: absolute;
+      top: 0;
+      &1 {
+        left: -20px;
+      }
+      &2 {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &3 {
+        right: -15px;
+      }
+    }
+  }
+
+  .step3_thanks {
+    text-align: center;
+    margin: 30px auto;
+    width: 45%;
+
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+
+  .step3 {
+    .info_container {
+      &.d-flex {
+        @media (max-width: 991px) {
+          display: block !important;
+        }
+      }
+    }
+    .action_div {
+      display: flex;
+      justify-content: center;
+      margin: 50px auto 0;
+      width: 60%;
+      @media (max-width: 1199px) {
+        margin-bottom: 50px;
+      }
+      @media (max-width: 767px) {
+        display: block;
+        width: 100%;
+      }
+
+      button {
+        width: 300px;
+        border-radius: 25px;
+        transition: .3s;
+
+        &:hover {
+          color: #fff;
+          border: solid 1px;
+        }
+
+        @media (max-width: 767px) {
+          width: 100%;
+          margin-bottom: 20px;
+          padding: 10px;
+        }
+      }
+
+      .btn-chatbed {
+        cursor: pointer;
+        color: #fff;
+        background: #06C755;
+        border-color: #06C755 !important;
+        margin-right: 30px;
+
+        &:hover,
+        &:focus:hover {
+          background: #00FF68 !important;
+          border-color: #00FF68 !important;
+        }
+
+        &.mobile {
+          display: none;
+        }
+
+        @media (max-width: 1199px) {
+          &.pc {
+            display: none;
+          }
+
+          &.mobile {
+            display: block;
+            width: 100%;
+            text-align: center;
+
+            font-size: 14px;
+            padding: 10px;
+            margin: 0;
+            transition: 0.3s;
+
+          }
+        }
+
+        & .line_icon {
+          width: 20px;
+          margin-top: -3px;
+          margin-right: 5px;
+        }
+      }
+
+      .goBack {
+        border: solid 1px var(--color3-green);
+
+        &:hover {
+          opacity: 0.8;
+          background-color: var(--color2-green);
+        }
+      }
+    }
+  }
+}

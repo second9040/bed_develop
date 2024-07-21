@@ -1,0 +1,51 @@
+.bed_knowledge_detail {
+  margin: 60px 0;
+  .info_div {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    border-bottom: solid 1px #DEE9EA;
+    @media (max-width: 767px) {
+      display: block;
+    }
+    .date {
+      color: var(--color3-green);
+      margin: 10px 0;
+      @media (max-width: 767px) {
+        margin-bottom: 0;
+      }
+    }
+    .tag_div {
+      display: flex;
+      flex-wrap: wrap;
+    
+      .tag {
+        padding: 3px 5px;
+        border: solid 1px;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .content_div {
+    margin: 35px 0;
+    text-align: left;
+  }
+
+  .btn_box {
+    display: flex;
+    justify-content: flex-end;
+    .goBack {
+      width: 160px;
+      margin: 15px 10px 60px 0;
+      &:hover {
+        border: solid 1px;
+      }
+      @media (max-width: 576px) {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,208 @@
+.scroll-top {
+  background-color: var(--color4-pink);
+  border-radius: 50% !important;
+
+  & i {
+    font-size: 14px;
+  }
+}
+
+.main_section {
+  padding: 105px 0 80px;
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    padding: 60px 0 10px;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 991px) {
+    padding: 90px 0 10px;
+  }
+
+}
+
+.breadcrumb_content {
+  text-align: center;
+  margin-top: 35px;
+  & ul {
+    padding-left: 0;
+  }
+  & ul li {
+    display: inline-block;
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-right: 8px;
+    padding-right: 17px;
+    position: relative;
+    color: var(--color1-blue);
+    font-weight: 400;
+
+    & a {
+      padding: 0;
+      color: var(--color1-blue);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      content: ">";
+      right: 0;
+      top: 50%;
+      transform: translatey(-50%);
+    }
+    
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      font-weight: 900;
+    }
+    
+    &:last-child::before {
+      display: none;
+    }
+  }
+}
+
+// for 產品頁的設定
+.product_list_page,
+.product_detail {
+  .main_section {
+    padding: 105px 0 80px;
+  
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      padding: 140px 0 10px;
+      text-align: center;
+    }
+  
+    @media only screen and (max-width: 767px) {
+      padding: 55px 0 40px;
+    }
+  }
+}
+.product_list_page .breadcrumb_content,
+.product_detail .breadcrumb_content {
+  text-align: left;
+  margin-bottom: 75px;
+  @media (max-width: 1199px) {
+    text-align: center;
+    margin-top: -10px;
+  }
+
+  @media (max-width: 991px) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 767px) {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+}
+
+// multiselect
+// 選中時顏色
+.multiselect {
+  .multiselect__option--selected {
+    background: var(--color2-green) !important;
+    color: #fff !important;
+    // hover 顏色
+    &.multiselect__option--highlight {
+      background: var(--color5-green) !important;
+    }
+  }
+  &__select {
+    &::after {
+      content: '';
+      position: relative;
+      right: 9px;
+      top: calc(65% - 3px);
+      color: #fff;
+      border-style: solid;
+      border-width: 4px 4px 0 4px;
+      border-color: #fff transparent transparent transparent;
+    }
+  }
+  &--active {
+    & .multiselect__select {
+      right: 10px;
+    }
+    & .multiselect__tags {
+      border-color: #9ec5fe;
+    }
+  }
+}
+
+input.form-control {
+  border-radius: 0;
+  height: 40px;
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+textarea.form-control {
+  border-radius: 0;
+  &:focus {
+    box-shadow: none;
+  }
+}
+ 
+.bold {
+  font-weight: bold;
+}
+
+.pagination_style {
+  padding-top: 40px;
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    margin-bottom: 45px;
+    padding-top: 19px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    padding-top: 19px;
+    margin-bottom: 25px;
+  }
+
+  & .ellipsis {
+    padding: 5px 10px;
+    color: #999;
+    border: none;
+    cursor: default;
+  }
+
+  & ul {
+    flex-wrap: wrap;
+
+    & li {
+      transition: none;
+      margin-left: 5px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      & a {
+        padding: 3px;
+        display: inline-block;
+        font-size: 18px;
+        color: #999999;
+        transition: none;
+
+        &:hover {
+          background: #fff !important;
+          cursor: pointer;
+          text-decoration: underline;
+        }
+
+        &.current {
+          color: #000000;
+          font-weight: 600;
+        }
+      }
+
+    }
+  }
+}
