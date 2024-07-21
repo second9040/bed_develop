@@ -182,7 +182,7 @@ export default {
 }
 </style>
 <style lang="scss">
-@import "@/assets/scss/base.scss";
-@import "@/assets/scss/index.scss";
-@import '@/assets/scss/common.scss';
+@import "../../public/assets/scss/base.scss";
+@import "../../public/assets/scss/index.scss";
+@import '../../public/assets/scss/common.scss';
 </style>

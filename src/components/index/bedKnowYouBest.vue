@@ -69,5 +69,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/scss/index/bed_know_you_best.scss";
+@import "/assets/scss/index/bed_know_you_best.scss";
 </style>

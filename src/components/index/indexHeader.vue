@@ -6,22 +6,22 @@
 
       nav#navmenu.navmenu
         ul
-          li
-            a(href="/product_list") 床墊
-          li
-            a(href="/product_list#bedFrame") 床架/床頭櫃
-          li
-            a(href="#hot_items") 其他配件
-          li
-            a(href="/about") 關於我們
-          li
-            a(href="/latestDiscount") 限時優惠
-          li
-            a(href="/bed_knowledge") 床墊知識
-          li
-            a(href="#good_comment") 好評分享
-          li
-            a(href="/experience_site") 體驗據點
+          li(@click="goTo('product_list')")
+            a(href="") 床墊
+          li(@click="goTo('product_list')")
+            a(href="") 床架/床頭櫃
+          li(@click="goTo('product_list')")
+            a(href="") 其他配件
+          li(@click="goTo('about')")
+            a(href="") 關於我們
+          li(@click="goTo('latestDiscount')")
+            a(href="") 限時優惠
+          li(@click="goTo('bed_knowledge')")
+            a(href="") 床墊知識
+          li(@click="goTo('good_comment')")
+            a(href="") 好評分享
+          li(@click="goTo('experience_site')")
+            a(href="") 體驗據點
         i.mobile-nav-toggle.d-xl-none.bi.bi-list
         .cart_div.mobile(@click="showCart(1)")
           img.cart_icon(src="../../assets/images/cart_icon.png")
@@ -88,7 +88,7 @@ export default {
   },
   mounted() {
     this.checkSwiperLoaded();
-    this.loadExternalScript('/public/js/index/bs_main.js')
+    this.loadExternalScript('/assets/js/index/bs_main.js')
       .catch(err => {
         console.error('Failed to load external script:', err);
       });
@@ -116,10 +116,17 @@ export default {
       if (count > 99 && count <= 999) return "last_than_999";
       if (count > 999) return "last_than_9999";
     },
+    goTo(page_name) {
+      console.log(page_name)
+      console.log("?")
+      this.$router.push({
+        name: page_name
+      })
+    },
   },
 };
 </script>
 
 <style>
-@import "@/assets/scss/index_header.scss";
+@import "/assets/scss/index_header.scss";
 </style>

@@ -1,0 +1,131 @@
+.order_info_container {
+  width: calc(40% - 15px);
+  @media (max-width: 991px) {
+    width: 100%;
+    margin: 40px 0;
+  }
+  .step3_order_info {
+    border: solid 1px #D9E6E8;
+    padding: 30px 20px;
+    text-align: left;
+    margin-left: 15px;
+    @media (max-width: 991px) {
+      margin-left: 0;
+    }
+
+    .order_info {
+      font-weight: bold;
+      margin: 16px 0 20px;
+      height: 100%;
+
+      .list {
+        margin-bottom: 5px;
+
+        h6 {
+          width: 110px;
+        }
+
+        display: flex;
+      }
+
+      .bank_info {
+        background-color: var(--color6-white);
+        padding: 20px 30px;
+        margin: 15px 0;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    form .row {
+      margin-bottom: 25px;
+    }
+
+    .deliverySelect,
+    .paymentSelect {
+      margin-bottom: 15px;
+
+      .multiselect {
+        margin: 10px 0 15px;
+      }
+
+      .comment {
+        margin-bottom: 0;
+
+        a {
+          color: #68C5DC;
+        }
+      }
+    }
+
+    .paymentSelect {
+      margin-top: 30px;
+    }
+
+    .remark {
+      margin-top: 30px;
+      border-radius: 0;
+    }
+
+    @media (max-width: 767px) {
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      form .row {
+        margin-bottom: 0;
+      }
+    }
+
+    .card-body {
+      color: var(--color1-blue);
+
+      .price {
+        margin-top: 20px;
+      }
+
+      .card-title {
+        font-weight: bold;
+      }
+
+      .price,
+      .delivery_fee,
+      .total {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          margin-bottom: 5px;
+        }
+      }
+
+      .divider {
+        width: 100%;
+        background-color: #D9E6E8;
+        height: 1px;
+        margin: 30px 0;
+      }
+
+      .price_red {
+        color: var(--color8-price-red);
+      }
+
+      .order {
+        width: 100%;
+        border: solid 1px var(--color2-green);
+        border-radius: 25px;
+        padding: 6px 12px;
+        margin: 20px 0 0;
+        height: 46px;
+        color: #fff;
+
+        &:hover {
+          opacity: 0.8;
+          background-color: var(--color2-green);
+        }
+      }
+    }
+  }
+}
