@@ -83,21 +83,21 @@
 							cursor: pointer;
 						}
 						&.fb {
-							background-image: url('../images/fb_icon.png');
+							background-image: url('/assets/images/fb_icon.png');
 							&:hover {
-								background-image: url('../images/fb_icon_hover.png');
+								background-image: url('/assets/images/fb_icon_hover.png');
 							}
 						}
 						&.ig {
-							background-image: url('../images/ig_icon.png');
+							background-image: url('/assets/images/ig_icon.png');
 							&:hover {
-								background-image: url('../images/ig_icon_hover.png');
+								background-image: url('/assets/images/ig_icon_hover.png');
 							}
 						}
 						&.line {
-							background-image: url('../images/line_icon_bg_white.png');
+							background-image: url('/assets/images/line_icon_bg_white.png');
 							&:hover {
-								background-image: url('../images/line_icon_bg_white_hover.png');
+								background-image: url('/assets/images/line_icon_bg_white_hover.png');
 							}
 						}
 					}
@@ -115,15 +115,15 @@
 							cursor: pointer;
 						}
 						&.shopee {
-							background-image: url('../images/shopee_icon.png');
+							background-image: url('/assets/images/shopee_icon.png');
 							&:hover {
-								background-image: url('../images/shopee_icon_hover.png');
+								background-image: url('/assets/images/shopee_icon_hover.png');
 							}
 						}
 						&.momo {
-							background-image: url('../images/momo_icon.png');
+							background-image: url('/assets/images/momo_icon.png');
 							&:hover {
-								background-image: url('../images/momo_icon_hover.png?1');
+								background-image: url('/assets/images/momo_icon_hover.png?1');
 							}
 						}
 					}
