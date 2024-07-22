@@ -53,4 +53,13 @@
     <script src="/bed_develop/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   
   </body>
+  <script>
+    (function () {
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
 </html>
