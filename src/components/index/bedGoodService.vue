@@ -6,7 +6,7 @@
       .service_desc_obj(data-aos='fade-up')
         .service_desc_item(v-for="(item, index) in service_desc_obj")
           .smile_icon_div(:class="{'odd': index % 2 == 1, 'even': index % 2 == 0}")
-            img.smile_icon(src="../../assets/images/index/smile.svg")
+            img.smile_icon(src="/assets/images/index/smile.svg")
           h4 {{ item.name }}
           .desc(v-html="embedLink(item.desc)")
 
@@ -15,7 +15,8 @@
 <script>
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace("@", "../..");
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href;
   } catch (err) {
     console.warn(err);
@@ -59,22 +60,18 @@ export default {
       const urlPattern = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|]*)/ig;
       const phonePattern = /(\b04[-]?\d{3}[\d-]?\d{4}\b)/g;
       const linePattern = /(@[a-zA-Z0-9_]+)/g;
-      
-      const formatPhoneNumber = (phone) => {
-        return phone.replace(/04/, '+886-4-');
-      };
 
       let updatedText = text
         .replace(urlPattern, (match) => {
           return `<a href="${match}" target="_blank">
                     <img
-                      src="${this.getImagePath('assets/images/map_icon.png')}"
+                      src="${this.getImagePath('/assets/images/map_icon.png')}"
                       style="margin-top: -3px; width: 15px;"
                       alt="Map Icon" />
                     </a>`;
         })
         .replace(phonePattern, (match) => {
-          return `<a href="tel: ${match.replace(/04/, '+886-4-')}">${match}</a>`;
+          return `<a href="tel: ${match.replace(/04-/, '+886-4-')}">${match}</a>`;
         })
         .replace(linePattern, (match) => {
           return `<a href="https://line.me/ti/p/${match}" target="_blank">${match}</a>`;
@@ -87,5 +84,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/scss/index/bed_good_service.scss";
+@import "/assets/scss/index/bed_good_service.scss";
 </style>

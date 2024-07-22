@@ -13,7 +13,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: './', // 設置公共路徑為相對路徑
+  base: process.env.NODE_ENV === 'production' ? '/bed_develop/' : '/', // 在这里设置 base 路径
   css: {
     preprocessorOptions: {
       scss: {

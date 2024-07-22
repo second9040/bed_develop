@@ -64,6 +64,11 @@ div.container.cart_order_info
             v-model="selectedPayment"
             :options="paymentOptions"
             placeholder="選擇付款方式"
+            tagPlaceholder=""
+            selectedLabel=""
+            selectLabel=""
+            selectGroupLabel=""
+            deselectLabel=""
           )
           p.comment 結帳後將會提供本店銀行帳號，後續會有客服人員致電聯繫，確認訂單細節及配送流程。
           p.comment 若是選擇其他方式付款，或是任何其他需求可先在備註欄填寫，後續客服人員會向您確認備註事項。
@@ -92,14 +97,6 @@ div.container.cart_order_info
 </template>
 
 <script>
-const require = (imgPath) => {
-  try {
-    const handlePath = imgPath.replace("@", "../../..");
-    return new URL(handlePath, import.meta.url).href;
-  } catch (err) {
-    console.warn(err);
-  }
-};
 import { mapState, mapActions } from 'vuex'
 import Multiselect from 'vue-multiselect';
 
@@ -124,9 +121,6 @@ export default {
   },
   methods: {
     ...mapActions(['toggleCart', 'countItem', 'removeItem', 'validateAmount', 'changeCartItemAmount', 'emptyCart']),
-    getImagePath(img) {
-      return require(`@/${img}`);
-    },
     addComma(num) {
       return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     },
@@ -146,9 +140,9 @@ export default {
 @import 'vue-multiselect/dist/vue-multiselect.css';
 </style>
 <style scoped>
-@import '@/assets/scss/common.scss';
-@import '@/assets/scss/cart/cart.scss';
-@import '@/assets/scss/cart/step2/order_info.scss';
+@import '/assets/scss/common.scss';
+@import '/assets/scss/cart/cart.scss';
+@import '/assets/scss/cart/step2/order_info.scss';
 </style>
 <style lang="scss">
 .cart_order_info {

@@ -5,8 +5,8 @@
         .container
           .breadcrumb_content
             ul
-              li
-                a(href='/') 首頁
+              li(@click="goto('home')")
+                a(href='javascript: void(0)') 首頁
               li 體驗據點
           .row
             .col-md-12
@@ -31,7 +31,7 @@
                           a(:href="sub_item.map" target="_blank")
                             img.map_icon(
                               v-if="index == 0"
-                              src="../assets/images/map_icon.png" 
+                              src="/assets/images/map_icon.png" 
                               alt="Map Icon" 
                             )
                     .right
@@ -83,7 +83,8 @@ import { mapState, mapActions } from "vuex";
 
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace("@", "..");
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href;
   } catch (err) {
     console.warn(err);
@@ -96,7 +97,7 @@ export default {
     return {
       site_obj: [
         {
-          img: "assets/images/experience_site/site1.png",
+          img: "/assets/images/experience_site/site1.png",
           title: "忠明旗艦店 - 體驗免預約",
           sub_title: [
             {
@@ -121,7 +122,7 @@ export default {
           ]
         },
         {
-          img: "assets/images/experience_site/site2.png",
+          img: "/assets/images/experience_site/site2.png",
           title: "東山分店 - 體驗免預約",
           sub_title: [
             {
@@ -173,6 +174,12 @@ export default {
     buyNow(obj) {
 
     },
+    goto(page, hash = null) {
+      this.$router.push({
+        name: page,
+        hash: hash,
+      });
+    },
   },
   mounted() {
   },
@@ -180,6 +187,6 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/scss/common.scss";
-@import "@/assets/scss/experience_site.scss";
+@import "/assets/scss/common.scss";
+@import "/assets/scss/experience_site.scss";
 </style>

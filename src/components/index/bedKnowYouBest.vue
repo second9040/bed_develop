@@ -21,7 +21,8 @@
 <script>
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace("@", "../..");
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href;
   } catch (err) {
     console.warn(err);
@@ -36,19 +37,19 @@ export default {
         {
           title: "專業床墊諮詢",
           desc: "針對你所偏好的軟硬度與需求，打造最適合你的床墊",
-          img: "assets/images/index/demo_img_01.svg",
+          img: "/assets/images/index/demo_img_01.svg",
           link: "https://line.me/ti/p/~@121povpz",
         },
         {
           title: "專業床墊訂製",
           desc: "床墊尺寸、形狀、材質、表布顏色等皆可客製符合需求",
-          img: "assets/images/index/demo_img_01.svg",
+          img: "/assets/images/index/demo_img_01.svg",
           link: "https://line.me/ti/p/~@121povpz",
         },
         {
           title: "職人手作床墊",
           desc: "專業職人細緻手作，超值且快速，最快1週即可出貨",
-          img: "assets/images/index/demo_img_01.svg",
+          img: "/assets/images/index/demo_img_01.svg",
           link: "https://line.me/ti/p/~@121povpz",
         },
       ],
@@ -69,5 +70,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/scss/index/bed_know_you_best.scss";
+@import "/assets/scss/index/bed_know_you_best.scss";
 </style>

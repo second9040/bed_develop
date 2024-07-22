@@ -8,7 +8,7 @@
 						p
 							span 地址：台中市北區忠明路234號
 							a(href="https://maps.app.goo.gl/SdT2S3j7pAErf8UB7" target="_blank")
-								img.map_icon(src="../../assets/images/map_icon_white.png" alt="Map Icon" )
+								img.map_icon(src="/assets/images/map_icon_white.png" alt="Map Icon" )
 						p
 							span 電子信箱：
 							a(href="mailto: jerry113520@gmail.com" target="_blank") jerry113520@gmail.com
@@ -20,7 +20,7 @@
 						p
 							span 地址：台中市北屯區東山路一段35-2號
 							a(href="https://maps.app.goo.gl/eMc5oGj1j8YXHZTs6" target="_blank")
-								img.map_icon(src="../../assets/images/map_icon_white.png" alt="Map Icon" )
+								img.map_icon(src="/assets/images/map_icon_white.png" alt="Map Icon" )
 						p
 							span 電子信箱：
 							a(href="mailto: jerry113520@gmail.com" target="_blank") jerry113520@gmail.com
@@ -49,46 +49,18 @@
 			href="https://line.me/ti/p/~@121povpz"
 			target="_blank"
 		)
-			img.line_icon(src="../../assets/images/line_icon.png")
+			img.line_icon(src="/assets/images/line_icon.png")
 			span 聊聊床墊
 
 
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import 'swiper/swiper-bundle.css'
-
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-
-// import required modules
-import { Autoplay, Navigation, Pagination } from 'swiper/modules'
-
-const require = (imgPath) => {
-  try {
-    const handlePath = imgPath.replace('@', '../..')
-    return new URL(handlePath, import.meta.url).href
-  } catch (err) {
-    console.warn(err)
-  }
-}
-
 export default {
   name: 'indexFooter',
   components: {
-    Swiper,
-    SwiperSlide,
   },
   props: {
-    modules: {
-      type: Array,
-    },
-    screenWidth: {
-      type: Number,
-    },
   },
   data() {
     return {
@@ -113,5 +85,5 @@ export default {
 </script>
 
 <style scoped>
-@import '@/assets/scss/index_footer.scss';
+@import '/assets/scss/index_footer.scss';
 </style>

@@ -27,15 +27,6 @@ defineProps({});
       )
 </template>
 <script>
-const require = (imgPath) => {
-  try {
-    const handlePath = imgPath.replace("@", "..");
-    return new URL(handlePath, import.meta.url).href;
-  } catch (err) {
-    console.warn(err);
-  }
-};
-
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper-bundle.css";
 
@@ -137,9 +128,6 @@ export default {
       });
       console.log(`h: ${bannerContainerHeight}, w: ${screenWidth}`);
     },
-    getImagePath(img) {
-      return require(`@/${img}`);
-    },
     viewMore(hot_item) {
       console.log(hot_item);
     },
@@ -181,8 +169,8 @@ export default {
   font-size: 24px;
 }
 </style>
-<style lang="scss">
-@import "@/assets/scss/base.scss";
-@import "@/assets/scss/index.scss";
-@import '@/assets/scss/common.scss';
+<style>
+@import "/assets/scss/base.scss";
+@import "/assets/scss/index.scss";
+@import '/assets/scss/common.scss';
 </style>

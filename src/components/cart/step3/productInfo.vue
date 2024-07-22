@@ -36,7 +36,8 @@
 <script>
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace("@", "../../..");
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/../..";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href;
   } catch (err) {
     console.warn(err);
@@ -73,7 +74,7 @@ export default {
 </script>
 
 <style scoped>
-@import '@/assets/scss/common.scss';
-@import '@/assets/scss/cart/cart.scss';
-@import '@/assets/scss/cart/step3/product_info.scss';
+@import '/assets/scss/common.scss';
+@import '/assets/scss/cart/cart.scss';
+@import '/assets/scss/cart/step3/product_info.scss';
 </style>

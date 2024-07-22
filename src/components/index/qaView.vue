@@ -28,7 +28,7 @@
                     h2 挑選你的靈魂床墊
                     h2 就找製床所
                   .qa_img_container.pc
-                    img.qa_intro_bg(src="../../assets/images/index/qa_intro_bg.png")
+                    img.qa_intro_bg(src="/assets/images/index/qa_intro_bg.png")
 
                 .col-8.faq_obj.pb-4(data-aos='fade-up' data-aos-delay='200')
                   .faq-container
@@ -50,16 +50,17 @@
                         h6 床的問題，製床所有方法，為你打造專屬你的靈魂床墊！
                       .divider
                       .right.d-flex.align-items-center
-                        img.line_icon(src="../../assets/images/line_icon.png") 
+                        img.line_icon(src="/assets/images/line_icon.png") 
                         h6.mx-2.font-bold.contact 來聊聊
-                    img.qa_img_container.mobile(src="../../assets/images/index/qa_intro_bg.png")
+                    img.qa_img_container.mobile(src="/assets/images/index/qa_intro_bg.png")
 </template>
 
 <script>
 
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace("@", "../..");
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href;
   } catch (err) {
     console.warn(err);
@@ -74,21 +75,21 @@ export default {
       show_qa: 1,
       key_factor_obj: [
         {
-          img: "assets/images/index/choose01.jpg",
+          img: "/assets/images/index/choose01.jpg",
           name: "支撐力",
           desc: "由彈簧的軟硬度和排列與數量影響，製床所有各種軟硬客製選擇。",
           href: "",
           color: "#53BDD7",
         },
         {
-          img: "assets/images/index/choose02.jpg",
+          img: "/assets/images/index/choose02.jpg",
           name: "舒適度",
           desc: "符合人體工學，屁股腰椎交接處不懸空，使躺感更服貼舒服。",
           href: "",
           color: "#9EBB51",
         },
         {
-          img: "assets/images/index/choose03.jpg",
+          img: "/assets/images/index/choose03.jpg",
           name: "感受性",
           desc: "不同材質的表步，透氣、排汗及涼爽程度不同，皆可自選。",
           href: "",
@@ -132,5 +133,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/scss/index/how_to_select.scss";
+@import "/assets/scss/index/how_to_select.scss";
 </style>

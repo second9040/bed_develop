@@ -15,7 +15,7 @@
               p {{ item.desc }}
               .amount {{ item.amount }} x {{ addComma(item.price) }}
             img.trash_can(
-              src="../assets/images/trash_can.png"
+              src="/assets/images/trash_can.png"
               @click="removeItem(index)"
             )
 
@@ -27,7 +27,7 @@
             type="button"
             @click="go_to_pay"
           )
-            img.cart_icon(src="../assets/images/cart_icon.png")
+            img.cart_icon(src="/assets/images/cart_icon.png")
             | 前往結帳
 
 </template>
@@ -35,7 +35,8 @@
 <script>
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace('@', '..')
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href
   } catch (err) {
     console.warn(err)
@@ -83,5 +84,5 @@ export default {
 <style></style>
 
 <style scoped>
-@import '@/assets/scss/cart_aside.scss';
+@import '/assets/scss/cart_aside.scss';
 </style>

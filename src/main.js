@@ -1,5 +1,3 @@
-import './assets/css/bs_main.css'
-
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'

@@ -7,8 +7,8 @@
         .container
           .breadcrumb_content
             ul
-              li
-                a(href='/') 首頁
+              li(@click="goto('home')")
+                a(href='javascript: void(0)') 首頁
               li 所有商品
               li 所有床墊
           .row
@@ -61,7 +61,7 @@
 
               // shop wrapper start
               .shop_banner
-                img(src="../assets/images/product/list/banner.jpg" alt="product_banner")
+                img(src="/assets/images/product/list/banner.jpg" alt="product_banner")
               // shop toolbar end
               .row.shop_wrapper
                 .single_product(v-for="item in products_obj")
@@ -107,7 +107,8 @@
 <script>
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace('@', '..')
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href
   } catch (err) {
     console.warn(err)
@@ -191,7 +192,7 @@ export default {
       products_obj: [
         {
           product_id: 1,
-          img: 'assets/images/index/hot_item_1.png',
+          img: '/assets/images/index/hot_item_1.png',
           name: '波浪舒眠床墊',
           price: 7800,
           desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
@@ -199,7 +200,7 @@ export default {
         },
         {
           product_id: 2,
-          img: 'assets/images/index/hot_item_1.png',
+          img: '/assets/images/index/hot_item_1.png',
           name: '波浪舒眠床墊',
           price: 7800,
           desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
@@ -207,7 +208,7 @@ export default {
         },
         {
           product_id: 3,
-          img: 'assets/images/index/hot_item_1.png',
+          img: '/assets/images/index/hot_item_1.png',
           name: '波浪舒眠床墊',
           price: 7800,
           desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
@@ -215,7 +216,7 @@ export default {
         },
         {
           product_id: 4,
-          img: 'assets/images/index/hot_item_1.png',
+          img: '/assets/images/index/hot_item_1.png',
           name: '波浪舒眠床墊',
           price: 7800,
           desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
@@ -223,7 +224,7 @@ export default {
         },
         {
           product_id: 5,
-          img: 'assets/images/index/hot_item_1.png',
+          img: '/assets/images/index/hot_item_1.png',
           name: '波浪舒眠床墊',
           price: 7800,
           desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
@@ -231,7 +232,7 @@ export default {
         },
         {
           product_id: 6,
-          img: 'assets/images/index/hot_item_1.png',
+          img: '/assets/images/index/hot_item_1.png',
           name: '波浪舒眠床墊',
           price: 75800,
           desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
@@ -277,6 +278,12 @@ export default {
         },
       })
     },
+    goto(page, hash = null) {
+      this.$router.push({
+        name: page,
+        hash: hash,
+      });
+    },
   },
   mounted() {
     this.show_category_list.push(this.widget_list_obj[0].id)
@@ -290,8 +297,8 @@ export default {
 </style>
 
 <style scoped>
-@import '@/assets/scss/common.scss';
-@import '@/assets/scss/product/product.scss';
-@import '@/assets/scss/product/product_list.scss';
-@import '@/assets/css/product_temp/style.css';
+@import '/assets/scss/common.scss';
+@import '/assets/scss/product/product.scss';
+@import '/assets/scss/product/product_list.scss';
+@import '/assets/css/product_temp/style.css';
 </style>

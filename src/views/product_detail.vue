@@ -7,10 +7,10 @@
         .container
           .breadcrumb_content
             ul
-              li
-                a(href='/') 首頁
-              li
-                a(href='/product_list') 所有商品
+              li(@click="goto('home')")
+                a(href='javascript: void(0)') 首頁
+              li(@click="goto('product_list')")
+                a(href='javascript: void(0)') 所有商品
               li 所有床墊
           .row
             .col-lg-3.col-md-12
@@ -76,15 +76,6 @@
 </template>
 
 <script>
-const require = (imgPath) => {
-  try {
-    const handlePath = imgPath.replace('@', '..')
-    return new URL(handlePath, import.meta.url).href
-  } catch (err) {
-    console.warn(err)
-  }
-}
-
 import Multiselect from 'vue-multiselect'
 
 import swiperPart from '@/components/product_detail/swiperPart.vue'
@@ -171,12 +162,12 @@ export default {
       selected_item: null,
       item: {
         img: [
-          'assets/images/product/item1.jpg',
-          'assets/images/product/item2.jpg',
-          'assets/images/product/item1.jpg',
-          'assets/images/product/item2.jpg',
-          'assets/images/product/item1.jpg',
-          'assets/images/product/item2.jpg',
+          '/assets/images/product/item1.jpg',
+          '/assets/images/product/item2.jpg',
+          '/assets/images/product/item1.jpg',
+          '/assets/images/product/item2.jpg',
+          '/assets/images/product/item1.jpg',
+          '/assets/images/product/item2.jpg',
         ],
         name: '波浪舒眠床墊',
         price: 11899,
@@ -218,39 +209,39 @@ export default {
                 desc: '鋁來減少多餘床墊的熱量，讓床墊持續保持涼爽。',
               },
             ],
-            img: 'assets/images/product/item2.jpg',
+            img: '/assets/images/product/item2.jpg',
           },
           {
             name: 'structure',
             tab: '床墊結構',
             main: '連結式床墊，使用高碳鋼硬彈簧與厚實的內襯，充分支撐身體不容易凹陷，高耐用不易壞。',
-            mainImg: 'assets/images/product/tab2-main.jpg',
+            mainImg: '/assets/images/product/tab2-main.jpg',
             feature: [
               {
                 title: '棉質表布',
                 desc: '大部分的衣服材質（70%化學纖維+30%棉紗）',
-                img: 'assets/images/product/tab2-feature1.jpg',
+                img: '/assets/images/product/tab2-feature1.jpg',
               },
               {
                 title: '高碳鋼硬彈簧',
                 desc: '使用中鋼彈簧、鋼線串聯，躺下去能平均分散重量，讓脊椎平直伸展、支撐身體不易凹陷，使之較為穩固。',
-                img: 'assets/images/product/tab2-feature2.jpg',
+                img: '/assets/images/product/tab2-feature2.jpg',
               },
               {
                 title: '厚實內襯',
                 desc: '緩衝與彈簧的接觸，該添加的材料都有添加，做的很扎實很有支撐力。',
-                img: 'assets/images/product/tab2-feature3.jpg',
+                img: '/assets/images/product/tab2-feature3.jpg',
               },
               {
                 title: '強化邊框',
                 desc: '床沿四邊做支撐加墊，讓上下床更有支撐力，使邊緣不易變形。',
-                img: 'assets/images/product/tab2-feature4.jpg',
+                img: '/assets/images/product/tab2-feature4.jpg',
               },
             ],
             bottom: {
               title: '100%台灣職人手作',
               desc: '製床所長期以來的經驗與堅持，為不同需求喜好打造專屬床墊。<br><br>高碳鋼Q床使用非常多且粗的彈簧，擁有扎實Q彈的支撐力，平價並且非常耐用，不必擔心使用年限的問題，CP值高，推薦給喜歡硬床的你！',
-              img: 'assets/images/product/tab2-bottom.jpg',
+              img: '/assets/images/product/tab2-bottom.jpg',
             },
           },
           {
@@ -275,14 +266,14 @@ export default {
                 desc: '鋁來減少多餘床墊的熱量，讓床墊持續保持涼爽。',
               },
             ],
-            img: 'assets/images/product/item2.jpg',
+            img: '/assets/images/product/item2.jpg',
           },
         ],
         deliverService: {
           img: [
-            'assets/images/product/item3.jpg',
-            'assets/images/product/item3.jpg',
-            'assets/images/product/item3.jpg',
+            '/assets/images/product/item3.jpg',
+            '/assets/images/product/item3.jpg',
+            '/assets/images/product/item3.jpg',
           ],
           desc: '床墊結合4倍NASA技術，讓你涼爽舒適一整夜，支撐身體充分放鬆<br>1. Outlast Space Tech®PCM 恆溫纖維 採用NASA太空服的技術，可智慧調節溫度，讓睡覺時體溫能保持穩定。<br> 2. 零壓力冷凝記憶層 NASA為太空人設計的減壓記憶棉，能夠完美支撐身體，享受無壓力的睡眠。<br> 3. Hexagrid Pro 六角蜂巢原理 靈感來自太空船結構，增強床墊的穩定性和支撐力。，分散體重壓力。<br>4. Diamond Fusion 石墨烯科技 石墨烯高效導熱，保持床墊涼爽，有效排出多餘熱量，保持床墊涼爽。',
         },
@@ -291,25 +282,25 @@ export default {
             name: 'Z小姐',
             comment:
               '老闆很專業而且很實在，不會一直推銷最貴的商品，仔細講解商品優異處，介紹符合訴求的商品，會讓客人親自體驗再選擇適合自己的，超有誠意的銷售。',
-            img: 'assets/images/index/photo_test1.png',
+            img: '/assets/images/index/photo_test1.png',
           },
           {
             name: 'A先生',
             comment:
               '老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄 老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄',
-            img: 'assets/images/index/photo_test3.png',
+            img: '/assets/images/index/photo_test3.png',
           },
           {
             name: '李小姐',
             comment:
               '非常感謝店長介紹很詳細，貨比三家當天就決定還是要去這邊買，不會一直推銷最貴的床，很好溝通也會仔細聽你的訴求。 ',
-            img: 'assets/images/index/photo_test2.png',
+            img: '/assets/images/index/photo_test2.png',
           },
           {
             name: 'A先生',
             comment:
               '老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄 老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄老闆親切好溝通、有問必達，會依照預算推薦適合的床墊，很開心第一次買床墊就遇到那麼棒的店家😄',
-            img: 'assets/images/index/photo_test3.png',
+            img: '/assets/images/index/photo_test3.png',
           },
         ],
         qa_obj: [
@@ -352,9 +343,6 @@ export default {
     selectSubCategoryBySelect(item) {
       this.selected_sub_cat = item.id
     },
-    getImagePath(img) {
-      return require(`@/${img}`)
-    },
     addComma(num) {
       return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
     },
@@ -365,6 +353,12 @@ export default {
           product_id: item.product_id,
         },
       })
+    },
+    goto(page, hash = null) {
+      this.$router.push({
+        name: page,
+        hash: hash,
+      });
     },
   },
   mounted() {
@@ -379,8 +373,8 @@ export default {
 </style>
 
 <style scoped>
-@import '@/assets/scss/common.scss';
-@import '@/assets/css/product_temp/style.css';
-@import '@/assets/scss/product/product.scss';
-@import '@/assets/scss/product/product_list.scss';
+@import '/assets/scss/common.scss';
+@import '/assets/css/product_temp/style.css';
+@import '/assets/scss/product/product.scss';
+@import '/assets/scss/product/product_list.scss';
 </style>

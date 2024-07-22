@@ -5,8 +5,8 @@
         .container
           .breadcrumb_content
             ul
-              li
-                a(href='/') 首頁
+              li(@click="goto('home')")
+                a(href='javascript: void(0)') 首頁
               li 關於我們
               li 職人客製
           .row
@@ -23,7 +23,7 @@
                   .title {{ f.title }}
                 .card_div
                   .img_container
-                    img(:src="getImagePath('assets/images/about_us/custom/custom_icon0' + (selected_tab + 1) + '.svg')")
+                    img(:src="getImagePath('/assets/images/about_us/custom/custom_icon0' + (selected_tab + 1) + '.svg')")
                   .tab_desc 
                     .title_div.d-flex
                       h3.title {{ features[selected_tab].title }}
@@ -56,7 +56,7 @@
                 .process_item_div(v-for="(item, index) in custom_process_obj")
                   .process_item
                     .img_container 
-                      img(:src="getImagePath('assets/images/about_us/custom/process' + (index + 1) + '.png')")
+                      img(:src="getImagePath('/assets/images/about_us/custom/process' + (index + 1) + '.png')")
                     h3.title {{ item.title }}
                     .desc {{ item.desc }}
                   .arrow(:class="{'last': index == custom_process_obj.length - 1}")
@@ -75,7 +75,7 @@
               .meet_your_need_div
                 .left
                   .img_container 
-                    img(:src="getImagePath('assets/images/about_us/custom/meet_your_need.png')")
+                    img(:src="getImagePath('/assets/images/about_us/custom/meet_your_need.png')")
                 .right
                   h3 家裡太小怎麼辦?!
                   .desc 35歲的A小姐，終於在太平買下第一間夢想中的屋子，但是新臥室太小了，放下床以後就剩下走道而已，來到御品為臥室購入新床時，將這個煩惱告訴了師傅，於是，師傅就為A小姐量身打造，抽屜數量多、且剛好符合走道空間，甚至巧妙避開牆面...
@@ -91,7 +91,8 @@ import { mapState, mapActions } from "vuex";
 
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace("@", "..");
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href;
   } catch (err) {
     console.warn(err);
@@ -185,6 +186,12 @@ export default {
     viewMore() {
 
     },
+    goto(page, hash = null) {
+      this.$router.push({
+        name: page,
+        hash: hash,
+      });
+    },
   },
   mounted() {
   },
@@ -192,6 +199,6 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/scss/common.scss";
-@import "@/assets/scss/about_us.scss";
+@import "/assets/scss/common.scss";
+@import "/assets/scss/about_us.scss";
 </style>

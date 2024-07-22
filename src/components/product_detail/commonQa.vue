@@ -57,5 +57,5 @@ export default {
 </script>
 
 <style scoped>
-@import '@/assets/scss/product/detail/common_qa.scss';
+@import '/assets/scss/product/detail/common_qa.scss';
 </style>

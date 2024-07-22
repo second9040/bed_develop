@@ -26,7 +26,7 @@
       .swiper-button-prev
 
     a.w-100.btn-chatbed.mobile(href="https://line.me/ti/p/~@121povpz" target="_blank")
-      img.line_icon(src="../../assets/images/line_icon.png")
+      img.line_icon(src="/assets/images/line_icon.png")
       span 聊聊床墊
 
 </template> 
@@ -45,7 +45,8 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const require = (imgPath) => {
   try {
-      const handlePath = imgPath.replace("@", "../..");
+      let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
+      const handlePath = imgPath.replace("@", "../.." + check_url);
       return new URL(handlePath, import.meta.url).href;
   } catch (err) {
       console.warn(err);
@@ -65,7 +66,7 @@ export default {
       modules: [Autoplay, Navigation, Pagination],
       banners: [
         {
-          img: "assets/images/index/banner_kari01.jpg",
+          img: "/assets/images/index/banner_kari01.jpg",
           name: "banner_kari01",
           title: "擁有最適合你的床",
           desc: "交給床墊魔法師",
@@ -73,7 +74,7 @@ export default {
           btn_link: "",
         },
         {
-          img: "assets/images/index/hero-bg.jpg",
+          img: "/assets/images/index/hero-bg.jpg",
           name: "hero",
           title: "擁有最適合你的床2",
           desc: "交給床墊魔法師2",
@@ -81,7 +82,7 @@ export default {
           btn_link: "",
         },
         {
-          img: "assets/images/index/banner_kari01.jpg",
+          img: "/assets/images/index/banner_kari01.jpg",
           name: "banner_kari01",
           title: "擁有最適合你的床3",
           desc: "交給床墊魔法師3",
@@ -100,5 +101,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/scss/index/bed_banner.scss";
+@import "/assets/scss/index/bed_banner.scss";
 </style>

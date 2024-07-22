@@ -53,7 +53,8 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace("@", "../..");
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href;
   } catch (err) {
     console.warn(err);
@@ -77,25 +78,25 @@ export default {
         {
           title: "床墊汰換多久一次較適合？",
           desc: "床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑 床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑",
-          img: "assets/images/index/blogimg.jpg",
+          img: "/assets/images/index/blogimg.jpg",
           link: "#",
         },
         {
           title: "床墊汰換多久一次較適合？",
           desc: "床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑 床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑",
-          img: "assets/images/index/blogimg.jpg",
+          img: "/assets/images/index/blogimg.jpg",
+          link: "#",
+        },
+        {
+          title: "床墊汰換多久一次較適合？",
+          desc: "床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑 床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑1",
+          img: "/assets/images/index/blogimg.jpg",
           link: "#",
         },
         {
           title: "床墊汰換多久一次較適合？",
           desc: "床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑 床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑",
-          img: "assets/images/index/blogimg.jpg",
-          link: "#",
-        },
-        {
-          title: "床墊汰換多久一次較適合？",
-          desc: "床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑 床墊是我們日常生活中不可或缺的部分，它們直接關係到我們的睡眠質量和整體健康。然而， 對於何時該汰換床墊這個問題，許多人可能感到困惑",
-          img: "assets/images/index/blogimg.jpg",
+          img: "/assets/images/index/blogimg.jpg",
           link: "#",
         },
       ]
@@ -130,5 +131,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/scss/index/bed_knowledge.scss";
+@import "/assets/scss/index/bed_knowledge.scss";
 </style>

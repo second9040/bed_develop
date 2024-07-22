@@ -11,8 +11,8 @@
         
         hr.tab_bottom_line.mt-0
 
-        // 商品特色
-        .tab_content(v-if="content && activeTab == 1")
+        // 商品特色 床墊尺寸
+        .tab_content(v-if="content && activeTab != 2")
           .main_content(v-html="content.main")
           .secondary_content.d-flex
             .left
@@ -24,7 +24,7 @@
               img(:src="getImagePath(content.img)" :alt="content.tab")
 
         // 床墊結構
-        .tab_content.tab2(v-if="content && activeTab >= 2")
+        .tab_content.tab2(v-if="content && activeTab == 2")
           .main_content(v-html="content.main")
           .main_img
             img(:src="getImagePath(content.mainImg)" :alt="content.tab")
@@ -60,7 +60,8 @@
 <script>
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace('@', '../..')
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href
   } catch (err) {
     console.warn(err)
@@ -101,6 +102,6 @@ export default {
 </script>
 
 <style scoped>
-@import '@/assets/scss/common.scss';
-@import '@/assets/scss/product/detail/tab_intro.scss';
+@import '/assets/scss/common.scss';
+@import '/assets/scss/product/detail/tab_intro.scss';
 </style>

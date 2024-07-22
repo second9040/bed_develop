@@ -54,15 +54,6 @@
 </template>
 
 <script>
-const require = (imgPath) => {
-  try {
-    const handlePath = imgPath.replace('@', '../..')
-    return new URL(handlePath, import.meta.url).href
-  } catch (err) {
-    console.warn(err)
-  }
-}
-
 import Multiselect from 'vue-multiselect'
 
 export default {
@@ -84,9 +75,6 @@ export default {
     },
   },
   methods: {
-    getImagePath(img) {
-      return require(`@/${img}`)
-    },
     addComma(num) {
       return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
     },
@@ -105,6 +93,9 @@ export default {
         this.select_amount = 99;
       }
     },
+    viewMore(item) {
+
+    },
   },
   mounted() {
   },
@@ -116,11 +107,11 @@ export default {
 </style>
 
 <style scoped>
-@import '@/assets/scss/common.scss';
-@import '@/assets/css/product_temp/style.css';
-@import '@/assets/scss/product/product.scss';
-@import '@/assets/scss/product/product_list.scss';
-@import '@/assets/scss/product/detail/swiper_and_brief_desc.scss';
+@import '/assets/scss/common.scss';
+@import '/assets/css/product_temp/style.css';
+@import '/assets/scss/product/product.scss';
+@import '/assets/scss/product/product_list.scss';
+@import '/assets/scss/product/detail/swiper_and_brief_desc.scss';
 </style>
 <style lang="scss">
 #product_detail {

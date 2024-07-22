@@ -1,0 +1,158 @@
+#header.header {
+    justify-content: space-around;
+    @media (max-width: 1199px) {
+      padding: 10px 20px;
+      justify-content: flex-start;
+
+      .mobile-nav-toggle {
+        right: 0;
+        top: 22px;
+        position: absolute;
+      }
+    }
+    & .container {
+      justify-content: space-between;
+      @media (max-width: 1199px) {
+        justify-content: flex-start;
+      }
+    }
+    & .logo {
+      & img {
+        height: 50px !important;
+        max-height: initial !important;
+        @media (max-width: 1199px) {
+          height: 40px !important;
+        }
+      }
+    }
+     
+    & .cart_div {
+      position: relative;
+      margin-left: 20px;
+      margin-right: 40px;
+      cursor: pointer;
+      &.mobile {
+        display: none;
+      }
+      @media (max-width: 1199px) {
+        &.pc {
+          display: none;
+        }
+        &.mobile {
+            display: initial;
+            position: absolute;
+            top: 22px;
+            right: 25px;
+          }
+      }
+      & .cart_icon {
+          width: 20px;
+      }
+      & .cart_items_count {
+        position: absolute;
+        top: 5px;
+        right: -17px;
+        background: #fff;
+        border-radius: 50%;
+        padding: 0 5px;
+        font-size: 70%;
+        &.last_than_99 {
+          top: 3px;
+          right: -23px;
+          padding: 2px 5px;
+        }
+        &.last_than_999 {
+          top: 1px;
+          padding: 3px 5px;
+          right: -30px;
+          @media (max-width: 1199px) {
+            right: -25px;
+          }
+        }
+        &.last_than_9999 {
+          top: 1px;
+          padding: 4px 5px;
+          right: -35px;
+          @media (max-width: 1199px) {
+            right: -25px;
+          }
+        }
+      }
+    }
+
+    & .navmenu li:hover>a,
+    & .navmenu .active,
+    & .navmenu .active:focus {
+
+    }
+
+    & .navmenu {
+      & a,
+      & a:focus {
+        @media (max-width: 1199px) {
+          transition: none;
+        }
+      }
+      li:hover>a,
+      .active,
+      .active:focus {
+        color: #fff;
+        position: relative;
+        text-decoration: none;
+        @media (max-width: 1199px) {
+          color: #000;
+          font-weight: bold;
+          text-decoration: underline;
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          width: calc(100% - 30px);
+          height: 3px;
+          bottom: 10px;
+          background-color: #fff;
+          @media (max-width: 1199px) {
+            // background-color: #fff;
+          }
+        }
+      }
+    }
+
+  }
+
+  
+  // 配合 RWD 故 header 跟 bed_banner 都會用到
+  .btn-chatbed {
+    cursor: pointer;
+    color: #fff;
+    width: 140px;
+    &.mobile {
+      display: none;
+    }
+    @media (max-width: 1199px) {
+      &.pc {
+        display: none;
+      }
+      &.mobile {
+        display: block;
+        width: 100%;
+        text-align: center;
+
+        background: var(--contact-btn-green);
+        font-size: 14px;
+        padding: 10px;
+        margin: 0;
+        transition: 0.3s;
+        
+        &:hover,
+        &:focus:hover {
+          background: color-mix(in srgb, var(--contact-btn-hover-green), transparent 15%);
+        }
+      }
+    }
+    & .line_icon {
+      width: 20px;
+      margin-top: -3px;
+      margin-right: 5px;
+    }
+  }

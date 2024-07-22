@@ -5,8 +5,8 @@
         .container
           .breadcrumb_content
             ul
-              li
-                a(href='/') 首頁
+              li(@click="goto('home')")
+                a(href='javascript: void(0)') 首頁
               li 購物車
           .row
             .col-md-12
@@ -86,6 +86,12 @@ export default {
         top: 0
       })
     },
+    goto(page, hash = null) {
+      this.$router.push({
+        name: page,
+        hash: hash,
+      });
+    },
   },
   mounted() {
   },
@@ -93,6 +99,6 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/scss/common.scss";
-@import "@/assets/scss/cart/cart.scss";
+@import "/assets/scss/common.scss";
+@import "/assets/scss/cart/cart.scss";
 </style>

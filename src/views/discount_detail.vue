@@ -5,10 +5,10 @@
         .container
           .breadcrumb_content
             ul
-              li
-                a(href='/') 首頁
-              li
-                a(href='/latestDiscount') 即時優惠
+              li(@click="goto('home')")
+                a(href='javascript: void(0)') 首頁
+              li(@click="goto('latestDiscount')")
+                a(href='javascript: void(0)') 即時優惠
               li {{ discount_obj.title }}
           .row
             .col-md-12
@@ -32,7 +32,8 @@ import { mapState, mapActions } from "vuex";
 
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace("@", "..");
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href;
   } catch (err) {
     console.warn(err);
@@ -63,13 +64,24 @@ export default {
     },
     transformURL(text) {
       const urlRegex = /https?:\/\/[^\s]+/g;
-      const textWithLinks = text.replace(urlRegex, function (url) {
-        return `<a href="${url}" target="_blank" style="color: #30526b; text-decoration: underline;">${url}</a>`;
-      });
+      const phonePattern = /(\b04[-]?\d{3}[\d-]?\d{4}\b)/g;
+      const textWithLinks = text
+        .replace(urlRegex, function (url) {
+          return `<a href="${url}" target="_blank" style="color: #30526b; text-decoration: underline;">${url}</a>`;
+        })
+        .replace(phonePattern, (match) => {
+          return `<a href="tel: ${match.replace(/04-/, '+886-4-')}"  target="_blank" style="color: #30526b; text-decoration: underline;">${match}</a>`;
+        });
       return textWithLinks;
     },
     buyNow(obj) {
 
+    },
+    goto(page, hash = null) {
+      this.$router.push({
+        name: page,
+        hash: hash,
+      });
     },
   },
   mounted() {
@@ -85,6 +97,6 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/scss/common.scss";
-@import "@/assets/scss/latestDiscount/latestDiscount.scss";
+@import "/assets/scss/common.scss";
+@import "/assets/scss/latestDiscount/latestDiscount.scss";
 </style>

@@ -37,14 +37,6 @@ div.order_info_container
 </template>
 
 <script>
-const require = (imgPath) => {
-  try {
-    const handlePath = imgPath.replace("@", "../../..");
-    return new URL(handlePath, import.meta.url).href;
-  } catch (err) {
-    console.warn(err);
-  }
-};
 import { mapState, mapActions } from 'vuex'
 import Multiselect from 'vue-multiselect';
 
@@ -69,9 +61,6 @@ export default {
   },
   methods: {
     ...mapActions(['toggleCart', 'countItem', 'removeItem', 'validateAmount', 'changeCartItemAmount', 'emptyCart']),
-    getImagePath(img) {
-      return require(`@/${img}`);
-    },
     addComma(num) {
       return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     },
@@ -91,9 +80,9 @@ export default {
 @import 'vue-multiselect/dist/vue-multiselect.css';
 </style>
 <style scoped>
-@import '@/assets/scss/common.scss';
-@import '@/assets/scss/cart/cart.scss';
-@import '@/assets/scss/cart/step3/order_info.scss';
+@import '/assets/scss/common.scss';
+@import '/assets/scss/cart/cart.scss';
+@import '/assets/scss/cart/step3/order_info.scss';
 </style>
 <style lang="scss">
 .cart_order_info {

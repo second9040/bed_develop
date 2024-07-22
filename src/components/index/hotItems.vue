@@ -63,8 +63,9 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const require = (imgPath) => {
   try {
-      const handlePath = imgPath.replace("@", "../..");
-      return new URL(handlePath, import.meta.url).href;
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
+    return new URL(handlePath, import.meta.url).href;
   } catch (err) {
       console.warn(err);
   }
@@ -92,35 +93,35 @@ export default {
       hot_items: {
         item_1: [
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 7800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
           },
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 7800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 3,
           },
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 7800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
           },
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 7800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 3,
           },
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 75800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
@@ -129,35 +130,35 @@ export default {
         ],
         item_2: [
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 27800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
           },
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 37800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 3,
           },
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 7800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 2,
           },
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 17800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 1,
           },
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 7800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
@@ -166,35 +167,35 @@ export default {
         ],
         item_3: [
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 3330,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 7,
           },
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 7800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 6,
           },
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
           },
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 47800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 5,
           },
           {
-            img: "assets/images/index/hot_item_1.png",
+            img: "/assets/images/index/hot_item_1.png",
             name: "波浪舒眠床墊",
             price: 7800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
@@ -238,5 +239,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/scss/index/hot_items.scss";
+@import "/assets/scss/index/hot_items.scss";
 </style>

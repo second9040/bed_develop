@@ -5,8 +5,8 @@
         .container
           .breadcrumb_content
             ul
-              li
-                a(href='/') 首頁
+              li(@click="goto('home')")
+                a(href='javascript: void(0)') 首頁
               li 床墊知識
           .row
             .col-md-12
@@ -50,7 +50,8 @@ import { mapState, mapActions } from "vuex";
 
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace("@", "..");
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href;
   } catch (err) {
     console.warn(err);
@@ -83,7 +84,7 @@ export default {
           title: "1獨立筒床墊缺點你真的了解嗎？深入解讀獨立筒彈簧床的美麗與哀愁",
           date: "2024 / 06 / 24",
           desc: "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
-          img: "assets/images/discount/discount_1130105.jpg",
+          img: "/assets/images/discount/discount_1130105.jpg",
           tag: ["#獨立筒", "#彈簧床", "#床墊迷思"],
           detail: temp_detail
         },
@@ -91,7 +92,7 @@ export default {
           title: "2獨立筒床墊缺點你真的了解嗎？深入解讀獨立筒彈簧床的美麗與哀愁",
           date: "2024 / 05 / 23",
           desc: "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
-          img: "assets/images/discount/discount_1130105.jpg",
+          img: "/assets/images/discount/discount_1130105.jpg",
           tag: ["#獨立筒1", "#彈簧床", "#床墊迷思"],
           detail: temp_detail
         },
@@ -99,7 +100,7 @@ export default {
           title: "3獨立筒床墊缺點你真的了解嗎？深入解讀獨立筒彈簧床的美麗與哀愁",
           date: "2024 / 03 / 24",
           desc: "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
-          img: "assets/images/discount/discount_1130105.jpg",
+          img: "/assets/images/discount/discount_1130105.jpg",
           tag: ["#獨立筒", "#彈簧床", "#床墊迷思"],
           detail: temp_detail
         },
@@ -107,7 +108,7 @@ export default {
           title: "4獨立筒床墊缺點你真的了解嗎？深入解讀獨立筒彈簧床的美麗與哀愁",
           date: "2024 / 01 / 04",
           desc: "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
-          img: "assets/images/discount/discount_1130105.jpg",
+          img: "/assets/images/discount/discount_1130105.jpg",
           tag: ["#獨立筒", "#彈簧床", "#床墊迷思"],
           detail: temp_detail
         },
@@ -115,7 +116,7 @@ export default {
           title: "5獨立筒床墊缺點你真的了解嗎？深入解讀獨立筒彈簧床的美麗與哀愁",
           date: "2023 / 06 / 24",
           desc: "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
-          img: "assets/images/discount/discount_1130105.jpg",
+          img: "/assets/images/discount/discount_1130105.jpg",
           tag: ["#獨立筒", "#彈簧床", "#床墊迷思"],
           detail: temp_detail
         },
@@ -146,6 +147,12 @@ export default {
         },
       })
     },
+    goto(page, hash = null) {
+      this.$router.push({
+        name: page,
+        hash: hash,
+      });
+    },
   },
   mounted() {
   },
@@ -153,6 +160,6 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/scss/common.scss";
-@import "@/assets/scss/bed_knowledge.scss";
+@import "/assets/scss/common.scss";
+@import "/assets/scss/bed_knowledge.scss";
 </style>

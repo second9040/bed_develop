@@ -13,7 +13,7 @@
     <title>製床所御品</title>
 
     <!-- Favicons -->
-    <link href="/src/assets/images/favicon.png" rel="icon">
+    <link href="/assets/images/favicon.png" rel="icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -21,13 +21,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="/src/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/src/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="/src/assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="/src/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
     <!-- Main CSS File -->
-    <link href="/src/assets/css/bs_main.css" rel="stylesheet">
+    <link href="/assets/css/bs_main.css" rel="stylesheet">
 
     <!-- for SEO -->
     <script type="application/ld+json">
@@ -38,18 +38,27 @@
         "url": "Replace_with_your_site_URL"
         }
     </script>
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+  </script>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
 
-    <script src="/src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/src/assets/vendor/php-email-form/validate.js"></script>
-    <script src="/src/assets/vendor/aos/aos.js"></script>
-    <script src="/src/assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="/src/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="/src/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="/src/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   
   </body>
 </html>

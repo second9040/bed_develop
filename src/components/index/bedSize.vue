@@ -6,7 +6,7 @@
 
       .bed_size_div
         .bed_item(v-for="(item, index) in size_obj")
-          img(:src="getImagePath('assets/images/index/bed0' + (index + 1)) + '.svg'")
+          img(:src="getImagePath('/assets/images/index/bed0' + (index + 1)) + '.svg'")
           h3 {{ item.name }}
           h6 {{ item.desc }}
           button.button.btn.btn-outline-primary(type="button" @click="viewMore(item)") 了解更多
@@ -19,14 +19,14 @@
               type="button"
           ) 我想客製
           .img_container
-            img(src="../../assets/images/index/custom_dog.png")
+            img(src="/assets/images/index/custom_dog.png")
         .col-6.right
           .text_div
             h4 特殊需求，就交給製床所！
             p 製床所可以客製各種不同尺寸、軟硬度、舒適度、造型等等，歡迎與柴聯絡，讓我們為你服務！
           .cus_item_img_div
             .cus_item(v-for="(item, index) in cus_item_obj")
-              img.cus_item_img(:src="getImagePath('assets/images/index/cus_itemimg0' + (index + 1)) + '.png'")
+              img.cus_item_img(:src="getImagePath('/assets/images/index/cus_itemimg0' + (index + 1)) + '.png'")
               h4 {{ item.name }}
         button.cust_btn.button.btn.btn-primary.pc(
             type="button"
@@ -37,7 +37,8 @@
 <script>
 const require = (imgPath) => {
   try {
-    const handlePath = imgPath.replace("@", "../..");
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href;
   } catch (err) {
     console.warn(err);
@@ -85,5 +86,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/scss/index/bed_size.scss";
+@import "/assets/scss/index/bed_size.scss";
 </style>

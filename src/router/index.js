@@ -64,11 +64,30 @@ const router = createRouter({
     }
   ],
   scrollBehavior(to, from, savedPosition) {
-    // always scroll to top
-    return {
-      top: 0,
-      behavior: 'smooth'
-    };
+    return new Promise((resolve) => {
+      if (to.hash) {
+        // 使用 setTimeout 來確保 DOM 已經更新
+        setTimeout(() => {
+          const element = document.querySelector(to.hash)
+          if (element) {
+            const offset = window.innerWidth > 1199 ? 100 : 66 // 偏移量，可以根據需要調整
+            const elementPosition = element.getBoundingClientRect().top
+            const offsetPosition = elementPosition + window.pageYOffset - offset
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            })
+          }
+          resolve()
+        }, 100)
+      } else {
+        resolve({
+          top: 0,
+          behavior: 'smooth'
+        })
+      }
+    })
   },
 })
 
