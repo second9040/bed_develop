@@ -5,43 +5,55 @@
         li.nav-item(
           v-for="(tab_obj, index) in item.tab_content" 
           :key="index" 
-          @click="selectTab(index)"
+          @click="scrollToTab(index)"
           :class="{ active: activeTab === index + 1 }"
         ) {{ tab_obj.tab }}
         
         hr.tab_bottom_line.mt-0
 
         // 商品特色 床墊尺寸
-        .tab_content(v-if="content && activeTab != 2")
-          .main_content(v-html="content.main")
+        .tab_content#tab-1
+          .main_content(v-html="item.tab_content[0].main")
           .secondary_content.d-flex
             .left
-              .list(v-for="list in content.secondary")
+              .list(v-for="list in item.tab_content[0].secondary")
                 h6 {{ list.title }}
                 p {{ list.desc }}
 
             .right
-              img(:src="getImagePath(content.img)" :alt="content.tab")
+              img(:src="getImagePath(item.tab_content[0].img)" :alt="item.tab_content[0].tab")
 
         // 床墊結構
-        .tab_content.tab2(v-if="content && activeTab == 2")
-          .main_content(v-html="content.main")
+        .tab_content.tab2#tab-2
+          .main_content(v-html="item.tab_content[1].main")
           .main_img
-            img(:src="getImagePath(content.mainImg)" :alt="content.tab")
+            img(:src="getImagePath(item.tab_content[1].mainImg)" :alt="item.tab_content[1].tab")
           .feature_div.d-flex
-            .feature_item(v-for="f in content.feature")
+            .feature_item(v-for="f in item.tab_content[1].feature")
               img(:src="getImagePath(f.img)" :alt="f.title")
               .text_div
                 h4 {{ f.title }}
                 p {{ f.desc }}
           
-          .bottom_div.d-flex(v-if="content && content.bottom")
-            .left 
-              h4 {{ content.bottom.title }}
-              p(v-html="content.bottom.desc")
+          .bottom_div.d-flex(v-if="item.tab_content[1].bottom")
+            .left
+              h4 {{ item.tab_content[1].bottom.title }}
+              p(v-html="item.tab_content[1].bottom.desc")
             .right 
-              img(:src="getImagePath(content.bottom.img)" :alt="content.bottom.title")
+              img(:src="getImagePath(item.tab_content[1].bottom.img)" :alt="item.tab_content[1].bottom.title")
+
     
+        .tab_content#tab-3
+          .main_content(v-html="item.tab_content[2].main")
+          .secondary_content.d-flex
+            .left
+              .list(v-for="list in item.tab_content[2].secondary")
+                h6 {{ list.title }}
+                p {{ list.desc }}
+            .right
+              img(:src="getImagePath(item.tab_content[2].img)" :alt="item.tab_content[2].tab")
+
+
     .deliverService
       h4 製床所配送服務
       .imgDiv.d-flex(v-if="deliver")
@@ -89,13 +101,27 @@ export default {
     getImagePath(img) {
       return require(`@/${img}`)
     },
-    selectTab(index) {
-      this.content = this.item.tab_content[index];
-      this.activeTab = index + 1
+    scrollToTab(index) {
+      this.activeTab = index + 1; // 還是可以記錄目前點的是哪個 tab
+
+      // 延遲一點等DOM更新
+      this.$nextTick(() => {
+        const el = document.getElementById(`tab-${index + 1}`);
+        if (el) {
+          const headerOffset = 100; // 你的固定 header 高度
+          const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth', // 平滑滾動，會比較舒服
+          });
+        }
+      });
     },
   },
   mounted() {
-    this.selectTab(0);
+    this.activeTab = 1; // 預設 highlight 第1個 tab
     this.deliver = this.item.deliverService
   },
 }
