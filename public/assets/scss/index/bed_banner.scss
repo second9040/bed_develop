@@ -1,17 +1,30 @@
 
 .index-page {
   #bed.section {
+      @media (min-width: 1200px) {
+        padding: 100px 0;
+      }
     & .banner_container {
-      overflow: hidden;
+      // overflow: hidden;
       position: relative;
+      // height: 500px;
       
-      & .banner-slide {
+      & .banner-slide{
         position: absolute;
-        top: -150px;
+        left: 50%;
         width: 100%;
+        transform: translateX(-50%);
         @media (max-width: 900px) {
           height: 100%;
-          width: auto;
+        }
+      }
+      & .slide_text {
+        position: absolute;
+        left: 50%;
+        width: 100%;
+        transform: translateX(-50%);
+        @media (min-width: 1700px) {
+          bottom: 0px;
         }
       }
     }
@@ -51,6 +64,11 @@
       border-radius: 20px;
       padding: 6px 30px;
       border-color: var(--color3-green);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: 48%;
     }
   }
 }

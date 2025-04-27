@@ -54,13 +54,28 @@ const router = createRouter({
       name: 'bed_knowledge_detail',
       component: () => import('../views/bed_knowledge_detail.vue'),
     },
+    // {
+    //   path: '/about',
+    //   name: 'about',
+    //   // route level code-splitting
+    //   // this generates a separate chunk (About.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
+    //   component: () => import('../views/AboutView.vue')
+    // },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      path: '/about_us',
+      name: 'about_us',
+      component: () => import('../views/AboutView_1_us.vue')
+    },
+    {
+      path: '/about_feature',
+      name: 'about_feature',
+      component: () => import('../views/AboutView_2_feature.vue')
+    },
+    {
+      path: '/about_buy_note',
+      name: 'about_buy_note',
+      component: () => import('../views/AboutView_3_buy_note.vue')
     }
   ],
   scrollBehavior(to, from, savedPosition) {

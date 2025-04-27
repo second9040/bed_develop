@@ -1,26 +1,7 @@
 <template lang="pug">
     section#how_select.faq.section.pt-4
         .container
-          h2.text-center(data-aos='fade-up') 床墊怎麼選？
-          .title_desc.text-center(data-aos='fade-up') 靈魂好床墊三大關鍵
           div.how_to_select_div
-            .key_factor_div
-              .factor_obj(
-                v-for="(item, index) in key_factor_obj"
-                data-aos='fade-up'
-              )
-                .img_container.position-relative
-                  img(
-                    :src="getImagePath(item.img)"
-                    :class="{'first_img': index == 0}"
-                  )
-                  .factor_color_container
-                    .factor_body(:class="'index_' + (index % 2)")
-                .desc_div
-                  h3 {{ item.name }}
-                  p {{ item.desc }}
-                  button.button.btn.btn-outline-primary(type="button" @click="viewMore(item)") 了解更多
-            .divider
             .container
               .row
                 .col-4.qa_intro.position-relative

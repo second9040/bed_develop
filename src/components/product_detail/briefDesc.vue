@@ -11,7 +11,8 @@
     .desc
       ul
         li(v-for="desc in item.desc") {{ desc }}
-    h3.price NT$ {{ addComma(item.price) }}
+    span.discount_price NT$ {{ addComma(selected_size.discount_price) }}
+    span.price NT$ {{ addComma(selected_size.ori_price) }}
     .sizeDiv.d-flex.align-items-center
       h5 選擇尺寸
       multiselect.w-100(
@@ -20,6 +21,8 @@
         :multiple="false"
         :allowEmpty="false"
         placeholder="尺寸需求，請在備註欄填寫"
+        label="size"
+        track-by="size"
         tagPlaceholder=""
         selectedLabel=""
         selectLabel=""
@@ -98,6 +101,9 @@ export default {
     },
   },
   mounted() {
+    if (this.item.size_obj.length > 0) {
+      this.selected_size = this.item.size_obj[0];
+    }
   },
 }
 </script>

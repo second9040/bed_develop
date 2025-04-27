@@ -6,17 +6,17 @@ defineProps({});
   .index-page 
     main.main
       bed-banner
-      bed-know-you-best
+      feature-view(
+        @view-more="viewMore"
+      )
       hot-items(
         :screenWidth="screenWidth"
         @view-more="viewMore"
       )
-      qa-view(
-        @view-more="viewMore"
-      )
-      bed-size(
-        @view-more="viewMore"
-      )
+      bed-know-you-best
+      //- bed-size(
+      //-   @view-more="viewMore"
+      //- )
       bed-good-service
       good-comment(
         :screenWidth="screenWidth"
@@ -24,6 +24,9 @@ defineProps({});
       )
       bed-knowledge(
         :screenWidth="screenWidth"
+      )
+      qa-view(
+        @view-more="viewMore"
       )
 </template>
 <script>
@@ -41,11 +44,12 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import bedBanner from "@/components/index/bedBanner.vue";
 import bedKnowYouBest from "@/components/index/bedKnowYouBest.vue";
 import hotItems from "@/components/index/hotItems.vue";
-import qaView from "@/components/index/qaView.vue";
+import featureView from "@/components/index/featureView.vue";
 import bedSize from "@/components/index/bedSize.vue";
 import bedGoodService from "@/components/index/bedGoodService.vue";
 import goodComment from "@/components/index/goodComment.vue";
 import bedKnowledge from "@/components/index/bedKnowledge.vue";
+import qaView from "@/components/index/qaView.vue";
 
 export default {
   name: "IndexView",
@@ -56,11 +60,12 @@ export default {
     bedBanner,
     bedKnowYouBest,
     hotItems,
-    qaView,
+    featureView,
     bedSize,
     bedGoodService,
     goodComment,
     bedKnowledge,
+    qaView,
   },
   data() {
     return {
@@ -90,13 +95,29 @@ export default {
       const bannerContainers = document.querySelectorAll(".banner_container");
       const screenWidth = window.innerWidth;
       const screenHeight = window.innerHeight;
-      let bannerContainerHeight = 600;
+      // let bannerContainerHeight = 600;
 
-      this.screenWidth = screenWidth;
-      if (screenWidth > 900) {
-        bannerContainerHeight =
-          screenWidth * 0.5 > 640 ? screenHeight * 0.8 : screenWidth * 0.5;
+      // this.screenWidth = screenWidth;
+      // if (screenWidth > 900) {
+      //   bannerContainerHeight =
+      //     screenWidth * 0.5 > 640 ? screenHeight * 0.8 : screenWidth * 0.5;
+      // }
+
+      let imageAspectRatio = 1200 / 500; // 圖片的原始比例 2.4
+
+      if (screenWidth > 567) {
+        imageAspectRatio = 1200 / 500; // 桌機版
+      } else {
+        imageAspectRatio = 480 / 801; // 手機版
       }
+      // 理論高度
+      let bannerContainerHeight = screenWidth / imageAspectRatio;
+
+      // 如果算出來的高度超過螢幕高度，就改用螢幕高度
+      if (bannerContainerHeight > screenHeight) {
+        bannerContainerHeight = screenHeight;
+      }
+
       bannerContainers.forEach((container) => {
         container.style.height = `${bannerContainerHeight}px`;
       });
@@ -118,13 +139,13 @@ export default {
           const maxLeft = 0;
           const minLeft = -300;
 
-          // screenWidth 越小, left 負的愈多
-          let leftVal =
-            ((screenWidth - minWidth) / (maxWidth - minWidth)) * (maxLeft - minLeft) +
-            minLeft;
-          container.style.left = `${leftVal}px`;
+          // // screenWidth 越小, left 負的愈多
+          // let leftVal =
+          //   ((screenWidth - minWidth) / (maxWidth - minWidth)) * (maxLeft - minLeft) +
+          //   minLeft;
+          // container.style.left = `${leftVal}px`;
         }
-        container.style.top = `${topPos}px`;
+        // container.style.top = `${topPos}px`;
       });
       console.log(`h: ${bannerContainerHeight}, w: ${screenWidth}`);
     },

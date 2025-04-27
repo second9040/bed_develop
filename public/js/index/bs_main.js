@@ -51,7 +51,19 @@
    * Hide mobile nav on same-page/hash links
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
+    navmenu.addEventListener('click',  (event) => {
+      // 如果點擊的元素是 .submenu-toggle，則不關閉 mobile nav
+      if (event.target.classList.contains('submenu-toggle')) {
+        // 顯示對應的 submenu
+        // const submenu = event.target.nextElementSibling;
+        // if (submenu) {
+        //   submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        // }
+        event.preventDefault(); // 防止鏈接的默認行為
+        return; // 結束此處執行，避免觸發 navmenu 關閉
+      }
+
+      // 正常邏輯：關閉 navmenu
       if (document.querySelector('.mobile-nav-active')) {
         mobileNavToogle();
       }

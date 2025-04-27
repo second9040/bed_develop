@@ -1,7 +1,7 @@
 <template lang="pug">
   section#hot_items.section
     .container
-      h2.text-center(data-aos='fade-up') 製床所熱銷商品
+      h2.text-center(data-aos='fade-up') 製床所2024熱銷商品
       .title_desc.text-center(data-aos='fade-up') 台灣職人手作，品質保證、高CP值首選
 
       .hot_items_tabs(data-aos='fade-up')
@@ -86,8 +86,8 @@ export default {
       modules: [Autoplay, Navigation, Pagination],
       hot_items_tabs: [
         { name: "床墊", type: 1 },
-        { name: "床架/床頭櫃", type: 2 },
-        { name: "其他配件", type: 3 },
+        { name: "臥室傢俱", type: 2 },
+        { name: "寢具", type: 3 },
       ],
       activeTab: 1,
       hot_items: {

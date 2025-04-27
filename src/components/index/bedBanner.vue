@@ -12,7 +12,8 @@
       swiper-slide.swiper-slide(v-for='(banner, index) in banners' :key='index')
         .position-relative
           .banner_container.position-relative
-            img.banner-slide(:src='getImagePath(banner.img)' :alt='banner.name')
+            img.banner-slide(:src='getImagePath(banner.img_pc, banner.img_mo)' :alt='banner.name')
+            //- img.slide_text(v-if="banner.img_text" :src='getImagePath(banner.img_text, banner.img_mo)' :alt='banner.name')
             .text_div.position-absolute
               h1 {{ banner.title }}
               h3 {{ banner.desc }}
@@ -29,7 +30,7 @@
       img.line_icon(src="/assets/images/line_icon.png")
       span 聊聊床墊
 
-</template> 
+</template>
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -45,11 +46,11 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const require = (imgPath) => {
   try {
-      let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
-      const handlePath = imgPath.replace("@", "../.." + check_url);
-      return new URL(handlePath, import.meta.url).href;
+    let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
+    const handlePath = imgPath.replace("@", "../.." + check_url);
+    return new URL(handlePath, import.meta.url).href;
   } catch (err) {
-      console.warn(err);
+    console.warn(err);
   }
 };
 
@@ -59,45 +60,51 @@ export default {
     Swiper,
     SwiperSlide,
   },
-  props: {
-  },
+  props: {},
   data() {
     return {
       modules: [Autoplay, Navigation, Pagination],
       banners: [
+        // {
+        //   img_pc: "/assets/images/index/banner_kari01_pc.jpg",
+        //   img_mo: "/assets/images/index/banner_kari01_mo.jpg",
+        //   name: "banner_kari01",
+        //   title: ".",
+        //   desc: ".",
+        //   btn_text: "了解更多",
+        //   btn_link: "",
+        // },
         {
-          img: "/assets/images/index/banner_kari01.jpg",
-          name: "banner_kari01",
-          title: "擁有最適合你的床",
-          desc: "交給床墊魔法師",
-          btn_text: "馬上了解",
+          img_pc: "/assets/images/index/banner_kari02_pc.jpg",
+          img_mo: "/assets/images/index/banner_kari02_mo.jpg",
+          name: "banner_kari02",
+          title: "",
+          desc: "",
+          btn_text: "",
           btn_link: "",
         },
         {
-          img: "/assets/images/index/hero-bg.jpg",
-          name: "hero",
-          title: "擁有最適合你的床2",
-          desc: "交給床墊魔法師2",
-          btn_text: "馬上了解",
-          btn_link: "",
-        },
-        {
-          img: "/assets/images/index/banner_kari01.jpg",
-          name: "banner_kari01",
-          title: "擁有最適合你的床3",
-          desc: "交給床墊魔法師3",
+          img_pc: "/assets/images/index/banner_kari03_pc.jpg",
+          img_mo: "/assets/images/index/banner_kari03_mo.jpg",
+          // img_text: "/assets/images/index/banner_kari03_pc_text.png",
+          name: "banner_kari03",
+          title: "",
+          desc: "",
         },
       ],
     };
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {
-    getImagePath(img) {
-      return require(`@/${img}`);
+    getImagePath(img_pc, img_mo) {
+      if (window.innerWidth > 567) {
+        return require(`@/${img_pc}`);
+      } else {
+        return require(`@/${img_mo}`);
+      }
     },
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
