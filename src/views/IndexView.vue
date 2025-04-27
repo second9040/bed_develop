@@ -97,7 +97,7 @@ export default {
       const screenHeight = window.innerHeight;
       // let bannerContainerHeight = 600;
 
-      // this.screenWidth = screenWidth;
+      this.screenWidth = screenWidth;
       // if (screenWidth > 900) {
       //   bannerContainerHeight =
       //     screenWidth * 0.5 > 640 ? screenHeight * 0.8 : screenWidth * 0.5;
