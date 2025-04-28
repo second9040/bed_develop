@@ -76,9 +76,7 @@
   }
 
   .item_detail {
-    @media (max-width: 991px) {
-      text-align: left;
-    }
+    text-align:left;
     .hardness_degree {
       h4 {
         margin: 20px 0;

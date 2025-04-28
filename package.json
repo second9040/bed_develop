@@ -14,6 +14,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "jquery": "^3.7.1",
+    "pug-lexer": "^5.0.1",
+    "pug-parser": "^6.0.0",
     "swiper": "^11.1.4",
     "vue": "^3.4.21",
     "vue-multiselect": "^3.0.0",
