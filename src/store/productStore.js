@@ -37,6 +37,7 @@ export default {
       '/assets/images/product/bed/1/feature.jpg',
       '/assets/images/product/bed/1/size.jpg'
     ],
+    tab_behavior: 'scroll',
     tab_content: [
       {
         name: 'structure',

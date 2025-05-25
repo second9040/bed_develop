@@ -5,14 +5,25 @@
         li.nav-item(
           v-for="(tab_obj, index) in item.tab_content" 
           :key="index" 
-          @click="selectTab(index)"
+          @click="scrollToTab(index)"
           :class="{ active: activeTab === index + 1 }"
         ) {{ tab_obj.tab }}
         
         hr.tab_bottom_line.mt-0
 
-        .tab-content-image(v-if="item.image_intro.length > 0")
-          img.w-100(:src="getImagePath(item.image_intro[activeTab - 1])" :alt="item.tab_content[activeTab - 1].tab")
+        // tab + 列出所有圖片 + 滾動
+        template(v-if="item.tab_behavior == 'scroll' && item.image_intro.length > 0")
+          .tab-content-image(
+            v-for="(img, index) in item.image_intro" 
+            :id="`tab-${index+1}`"
+            :key="`img-${index}`"
+          )
+            img.w-100(:src="getImagePath(img)" :alt="item.tab_content[index].tab")
+
+        // tab + 點擊呈現指定圖片
+        template(v-else-if="item.image_intro.length > 0")
+          .tab-content-image
+            img.w-100(:src="getImagePath(item.image_intro[activeTab - 1])" :alt="item.tab_content[activeTab - 1].tab")
 
         .tab-content-text(v-else)
           // 商品特色 床墊尺寸
@@ -110,6 +121,10 @@ export default {
       this.activeTab = index + 1
     },
     scrollToTab(index) {
+      if (this.item.tab_behavior !== 'scroll') {
+        this.selectTab(index);
+        return;
+      }
       this.activeTab = index + 1; // 還是可以記錄目前點的是哪個 tab
 
       // 延遲一點等DOM更新
