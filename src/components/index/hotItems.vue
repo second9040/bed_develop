@@ -98,6 +98,7 @@ export default {
             price: 5800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
+            product_id: 1,
           },
           {
             img: "/assets/images/index/hot_item_1.png",
@@ -105,6 +106,7 @@ export default {
             price: 6800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 3,
+            product_id: 2,
           },
           {
             img: "/assets/images/index/hot_item_1.png",
@@ -112,6 +114,7 @@ export default {
             price: 10800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
+            product_id: 3,
           },
           {
             img: "/assets/images/index/hot_item_1.png",
@@ -119,6 +122,7 @@ export default {
             price: 9800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 3,
+            product_id: 4,
           },
           {
             img: "/assets/images/index/hot_item_1.png",
@@ -212,7 +216,14 @@ export default {
       return require(`@/${img}`);
     },
     viewMore(item) {
-      this.$emit('view-more', item);
+      // this.$emit('view-more', item);
+      // this.$router.push({
+      //   name: 'product_detail',
+      //   params: {
+      //     product_id: item.product_id,
+      //   },
+      // });
+      
     },
     click_show_qa(index) {
       this.show_qa = this.show_qa == index ? 0 : index;
