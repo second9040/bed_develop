@@ -36,6 +36,25 @@
                               @click="selectSubCategory($event, item2)"
                             ) {{ item2.name }}
 
+                          div.widget_sub_categories.sub_detail(v-if="item.categories")
+                            template(v-for="(cat, catIndex) in item.categories")
+                              .title_line.d-flex(@click="toggleSubCat(cat.name, $event)")
+                                li.sub_title {{ cat.name }}
+                                .toggle_btn
+                                  i(:class="['bi', isCatExpanded(cat.name) ? 'bi-chevron-up' : 'bi-chevron-down']")
+
+                              .product_div(
+                                v-show="isCatExpanded(cat.name)" 
+                                v-for="(product, productIndex) in cat.products"
+                              )
+                                .product_sub_cat_title {{ product.cat_title }}
+                                ul.product_sub_cat_list
+                                  li.product_sub_cat_item(
+                                    v-for="(subItem, subIndex) in product.items"
+                                    @click="goto('product_list', null, subItem.id)"
+                                  )
+                                    a(href='javascript:void(0)') {{ subItem.name }}
+
             .col-lg-9.col-md-12
               h2.selected_item_h2.text-center(v-if="selected_item") {{ selected_item.name }}
               multiselect.w-100.mobile(
@@ -109,174 +128,349 @@ const require = (imgPath) => {
   try {
     let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "";
     const handlePath = imgPath.replace("@", "../.." + check_url);
-    return new URL(handlePath, import.meta.url).href
+    return new URL(handlePath, import.meta.url).href;
   } catch (err) {
-    console.warn(err)
+    console.warn(err);
   }
-}
+};
 
-import $ from 'jquery'
-import Multiselect from 'vue-multiselect'
+import $ from "jquery";
+import Multiselect from "vue-multiselect";
 
 export default {
-  name: 'product_list',
+  name: "product_list",
   components: {
     Multiselect,
   },
   data() {
     return {
+      // expandedCats: [],  // 記錄被展開的 cat.name 或 catIndex (可以開啟多個分類)
+      expandedCat: null,   // 一次只能顯示一個分類
       screenWidth: 0,
       show_category_list: [],
       widget_list_obj: [
         {
-          name: '床墊',
-          id: 'bed',
+          name: "床墊",
+          id: "bed",
           sub: [
             {
-              name: '所有床墊',
-              link: 'javascript: void(0)',
-              id: 'all',
+              name: "波浪系列-高碳鋼硬彈簧",
+              link: "javascript: void(0)",
+              id: "1",
             },
             {
-              name: '家庭用床墊',
-              link: 'javascript: void(0)',
-              id: 'family',
+              name: "雲朵系列-獨立筒型彈簧",
+              link: "javascript: void(0)",
+              id: "2",
             },
             {
-              name: '租屋用床墊',
-              link: 'javascript: void(0)',
-              id: 'rent',
+              name: "夢幻系列-蜂巢式獨立筒型彈簧",
+              link: "javascript: void(0)",
+              id: "3",
             },
             {
-              name: '嫁妝用床墊',
-              link: 'javascript: void(0)',
-              id: 'marriage',
+              name: "魔力系列-飯店型合金彈簧",
+              link: "javascript: void(0)",
+              id: "4",
+            },
+            {
+              name: "魔力系列-飯店型合金彈簧",
+              link: "javascript: void(0)",
+              id: "5",
+            },
+            {
+              name: "輕雲繚繞系列-乳膠/矽膠薄墊",
+              link: "javascript: void(0)",
+              id: "6",
+            },
+            {
+              name: "翻轉好眠床墊-冬夏兩用藤席床墊",
+              link: "javascript: void(0)",
+              id: "7",
+            },
+            {
+              name: "房東首選系列-商業用床墊",
+              link: "javascript: void(0)",
+              id: "8",
+            },
+            {
+              name: "設計師愛用客製系列-商業用訂製床墊",
+              link: "javascript: void(0)",
+              id: "9",
+            },
+          ],
+          categories: [
+            {
+              name: "依床墊結構分類",
+              products: [{
+                cat_title: "S-Grid 串聯撐壓床墊",
+                items: [
+                  {
+                    name: "波浪系列-高碳鋼硬彈簧",
+                    link: "javascript: void(0)",
+                    id: "",
+                  },
+                  {
+                    name: "魔力系列-飯店型合金彈簧",
+                    link: "javascript: void(0)",
+                    id: "",
+                  },
+                  {
+                    name: "Q綿託付系列-Q彈簧",
+                    link: "javascript: void(0)",
+                    id: "",
+                  },
+                  {
+                    name: "翻轉好眠床墊-冬夏兩用藤席床墊",
+                    link: "javascript: void(0)",
+                    id: "",
+                  },
+                ],
+              },
+              {
+                cat_title: "直排式獨立筒床墊",
+                items: [
+                  {
+                    name: "雲朵系列-獨立筒型彈簧",
+                    link: "javascript: void(0)",
+                    id: "",
+                  },
+                ],
+              },
+              {
+                cat_title: "蜂巢式獨立筒床墊",
+                items: [
+                  {
+                    name: "夢幻系列-蜂巢式獨立筒型彈簧",
+                    link: "javascript: void(0)",
+                    id: "",
+                  },
+                ],
+              },
+              {
+                cat_title: "商用型床墊",
+                items: [
+                  {
+                    name: "房東首選系列-商業用床墊",
+                    link: "javascript: void(0)",
+                    id: "",
+                  },
+                ],
+              },
+              {
+                cat_title: "上班/學生租屋床墊",
+                items: [
+                  {
+                    name: "上班族套房床墊",
+                    link: "javascript: void(0)",
+                    id: "",
+                  },
+                  {
+                    name: "學生租屋床墊",
+                    link: "javascript: void(0)",
+                    id: "",
+                  },
+                ],
+              }
+            ]
+          },
+          {
+            name: "依軟硬需求分類",
+            products: [{
+              cat_title: "偏硬床墊",
+              items: [
+                {
+                  name: "波浪系列-高碳鋼硬彈簧",
+                  link: "javascript: void(0)",
+                  id: "",
+                },
+                {
+                  name: "夢幻系列-蜂巢式獨立筒型彈簧",
+                  link: "javascript: void(0)",
+                  id: "",
+                },
+                {
+                  name: "翻轉好眠床墊-冬夏兩用藤席床墊",
+                  link: "javascript: void(0)",
+                  id: "",
+                },
+              ],
+            },
+            {
+              cat_title: "軟硬適中床墊",
+              items: [
+                {
+                  name: "Q綿託付系列-Q彈簧",
+                  link: "javascript: void(0)",
+                  id: "",
+                },
+                {
+                  name: "雲朵系列-獨立筒型彈簧",
+                  link: "javascript: void(0)",
+                  id: "",
+                }
+              ],
+            },
+            {
+              cat_title: "Q彈偏軟床墊",
+              items: [
+                {
+                  name: "魔力系列-飯店型合金彈簧",
+                  link: "javascript: void(0)",
+                  id: "",
+                }
+              ],
+            }
+          ]
+        },
+      
+        {
+          name: "依使用需求分類",
+          products: [{
+            cat_title: "家用型床墊",
+            items: [
+            ],
+          },
+          {
+            cat_title: "嫁妝型床墊",
+            items: [
+            ],
+          },
+          {
+            cat_title: "出租型床墊",
+            items: [
+            ],
+          },
+          {
+            cat_title: "商業用床墊",
+            items: [
+            ],
+          }
+        ]
+        },
+        ],
+        },
+        {
+          name: "床架/床頭櫃",
+          id: "bedFrame",
+          sub: [
+            {
+              name: "所有床墊",
+              link: "javascript: void(0)",
+              id: "all2",
+            },
+            {
+              name: "家庭用床墊",
+              link: "javascript: void(0)",
+              id: "family2",
             },
           ],
         },
         {
-          name: '床架/床頭櫃',
-          id: 'bedFrame',
+          name: "其他配件",
+          id: "others",
           sub: [
             {
-              name: '所有床墊',
-              link: 'javascript: void(0)',
-              id: 'all2',
+              name: "所有床墊",
+              link: "javascript: void(0)",
+              id: "all3",
             },
             {
-              name: '家庭用床墊',
-              link: 'javascript: void(0)',
-              id: 'family2',
-            },
-          ],
-        },
-        {
-          name: '其他配件',
-          id: 'others',
-          sub: [
-            {
-              name: '所有床墊',
-              link: 'javascript: void(0)',
-              id: 'all3',
-            },
-            {
-              name: '家庭用床墊',
-              link: 'javascript: void(0)',
-              id: 'family3',
+              name: "家庭用床墊",
+              link: "javascript: void(0)",
+              id: "family3",
             },
           ],
         },
       ],
-      selected_sub_cat: '',
+      selected_sub_cat: "",
       selected_item: null,
       products_obj: [
         {
           product_id: 1,
-          img: '/assets/images/index/hot_item_1.png',
-          name: '國民熱銷舒眠床墊',
+          img: "/assets/images/index/hot_item_1.png",
+          name: "國民熱銷舒眠床墊",
           price: 5800,
-          desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
+          desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
           hardness_degree: 6,
         },
         {
           product_id: 2,
-          img: '/assets/images/index/hot_item_1.png',
-          name: '綿雲舒壓床墊',
+          img: "/assets/images/index/hot_item_1.png",
+          name: "綿雲舒壓床墊",
           price: 6800,
-          desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
+          desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
           hardness_degree: 3,
         },
         {
           product_id: 3,
-          img: '/assets/images/index/hot_item_1.png',
-          name: '夢幻舒服床墊',
+          img: "/assets/images/index/hot_item_1.png",
+          name: "夢幻舒服床墊",
           price: 10800,
-          desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
+          desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
           hardness_degree: 3,
         },
         {
           product_id: 4,
-          img: '/assets/images/index/hot_item_1.png',
-          name: '魔力彈韌床墊',
+          img: "/assets/images/index/hot_item_1.png",
+          name: "魔力彈韌床墊",
           price: 9800,
-          desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
+          desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
           hardness_degree: 3,
         },
         {
           product_id: 5,
-          img: '/assets/images/index/hot_item_1.png',
-          name: '波浪舒眠床墊',
+          img: "/assets/images/index/hot_item_1.png",
+          name: "波浪舒眠床墊",
           price: 7800,
-          desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
+          desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
           hardness_degree: 3,
         },
         {
           product_id: 6,
-          img: '/assets/images/index/hot_item_1.png',
-          name: '波浪舒眠床墊',
+          img: "/assets/images/index/hot_item_1.png",
+          name: "波浪舒眠床墊",
           price: 75800,
-          desc: '適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...',
+          desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
           hardness_degree: 2,
         },
       ],
-    }
+    };
   },
   methods: {
     checkShow(id) {
-      return this.show_category_list.includes(id)
+      return this.show_category_list.includes(id);
     },
     toggleCategory(id) {
       if (this.show_category_list.includes(id)) {
-        this.show_category_list = this.show_category_list.filter(function (
-          item
-        ) {
-          return item !== id
-        })
+        this.show_category_list = this.show_category_list.filter(function (item) {
+          return item !== id;
+        });
       } else {
-        this.show_category_list.push(id)
+        this.show_category_list.push(id);
       }
     },
     selectSubCategory(event, item) {
-      event.stopPropagation() // 阻止事件冒泡到父元素
-      this.selected_sub_cat = item.id
-      this.selected_item = item
+      event.stopPropagation(); // 阻止事件冒泡到父元素
+      this.selected_sub_cat = item.id;
+      this.selected_item = item;
     },
     selectSubCategoryBySelect(item) {
-      this.selected_sub_cat = item.id
+      this.selected_sub_cat = item.id;
     },
     getImagePath(img) {
-      return require(`@/${img}`)
+      return require(`@/${img}`);
     },
     addComma(num) {
-      return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
+      return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     },
     viewMore(item) {
       this.$router.push({
-        name: 'product_detail',
+        name: "product_detail",
         params: {
           product_id: item.product_id,
         },
-      })
+      });
     },
     goto(page, hash = null) {
       this.$router.push({
@@ -284,21 +478,32 @@ export default {
         hash: hash,
       });
     },
+    toggleSubCat(name, event) {
+      event.stopPropagation();
+      if (this.expandedCat === name) {
+        this.expandedCat = null;
+      } else {
+        this.expandedCat = name;
+      }
+    },
+    isCatExpanded(name) {
+      return this.expandedCat === name;
+    }
   },
   mounted() {
-    this.show_category_list.push(this.widget_list_obj[0].id)
-    this.selected_sub_cat = this.widget_list_obj[0].sub[0].id
-    this.selected_item = this.widget_list_obj[0].sub[0]
+    this.show_category_list.push(this.widget_list_obj[0].id);
+    this.selected_sub_cat = this.widget_list_obj[0].sub[0].id;
+    this.selected_item = this.widget_list_obj[0].sub[0];
   },
-}
+};
 </script>
 <style>
-@import 'vue-multiselect/dist/vue-multiselect.css';
+@import "vue-multiselect/dist/vue-multiselect.css";
 </style>
 
 <style scoped>
-@import '/assets/scss/common.scss';
-@import '/assets/scss/product/product.scss';
-@import '/assets/scss/product/product_list.scss';
-@import '/assets/css/product_temp/style.css';
+@import "/assets/scss/common.scss";
+@import "/assets/scss/product/product.scss";
+@import "/assets/scss/product/product_list.scss";
+@import "/assets/css/product_temp/style.css";
 </style>
