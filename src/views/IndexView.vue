@@ -17,16 +17,20 @@ defineProps({});
       //- bed-size(
       //-   @view-more="viewMore"
       //- )
-      bed-good-service
-      good-comment(
-        :screenWidth="screenWidth"
+      qa-view(
         @view-more="viewMore"
       )
       bed-knowledge(
         :screenWidth="screenWidth"
       )
-      qa-view(
+      //- 製床所啾甘心
+      bed-good-service
+      good-comment(
+        :screenWidth="screenWidth"
         @view-more="viewMore"
+      )
+      chat-with-us(
+        :screenWidth="screenWidth"
       )
 </template>
 <script>
@@ -50,6 +54,7 @@ import bedGoodService from "@/components/index/bedGoodService.vue";
 import goodComment from "@/components/index/goodComment.vue";
 import bedKnowledge from "@/components/index/bedKnowledge.vue";
 import qaView from "@/components/index/qaView.vue";
+import chatWithUs from "@/components/index/chatWithUs.vue";
 
 export default {
   name: "IndexView",
@@ -66,6 +71,7 @@ export default {
     goodComment,
     bedKnowledge,
     qaView,
+    chatWithUs
   },
   data() {
     return {
@@ -193,5 +199,5 @@ export default {
 <style>
 @import "/assets/scss/base.scss";
 @import "/assets/scss/index.scss";
-@import '/assets/scss/common.scss';
+@import "/assets/scss/common.scss";
 </style>
