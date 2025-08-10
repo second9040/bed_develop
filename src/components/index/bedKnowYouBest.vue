@@ -44,13 +44,13 @@ export default {
           title: "靈魂床墊訂製",
           desc: "床墊尺寸、形狀、厚度、材質、顏色等皆可客製符合需求",
           img: "/assets/images/index/customize.png",
-          link: "/about_feature",
+          link: "about_feature",
         },
         {
           title: "職人手作床墊",
           desc: "專業職人細緻手作，獨具匠心且快速又超值，1周可出貨，急單請聊聊。",
           img: "/assets/images/index/handmake.png",
-          link: "/about_us",
+          link: "about_us",
         },
       ],
     };
@@ -60,8 +60,10 @@ export default {
       return require(`@/${img}`);
     },
     goto(link) {
+      let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/";
+
       let a = document.createElement("a");
-      a.href = link;
+      a.href = `${location.href}${link}`;
       a.target = "_blank";
       a.click();
     },
