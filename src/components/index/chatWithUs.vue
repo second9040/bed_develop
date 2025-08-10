@@ -6,7 +6,8 @@ div
       .content_div
         h2 和我們聊聊
         p 有任何疑問都可以與我們聊聊，讓專業的製床所為你服務
-        button.btn.button.btn-primary(type="button") 用LINE聊聊
+        a(href="https://lin.ee/cPf9JPe" target="_blank")
+          button.btn.button.btn-primary(type="button") 用LINE聊聊
       
 </template>
 <script>

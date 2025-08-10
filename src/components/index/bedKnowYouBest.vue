@@ -38,19 +38,19 @@ export default {
           title: "專業床墊諮詢",
           desc: "針對你所偏好的軟硬度與睡眠需求，打造最適合你的床墊。",
           img: "/assets/images/index/consult.png",
-          link: "https://line.me/ti/p/~@121povpz",
+          link: "https://lin.ee/MO8qYZ9",
         },
         {
           title: "靈魂床墊訂製",
           desc: "床墊尺寸、形狀、厚度、材質、顏色等皆可客製符合需求",
           img: "/assets/images/index/customize.png",
-          link: "https://line.me/ti/p/~@121povpz",
+          link: "/about_feature",
         },
         {
           title: "職人手作床墊",
           desc: "專業職人細緻手作，獨具匠心且快速又超值，1周可出貨，急單請聊聊。",
           img: "/assets/images/index/handmake.png",
-          link: "/about_feature",
+          link: "/about_us",
         },
       ],
     };

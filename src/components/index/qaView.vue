@@ -25,7 +25,7 @@
                           .faq-content
                             p(v-html="item.ans")
                           .arrow_right
-                    .contact_div
+                    a.contact_div(href="https://lin.ee/PXa9fwy" target="_blank")
                       .left 
                         h3 你是否還有其他疑問？
                         h6 床的問題，製床所有方法，為你打造專屬你的靈魂床墊！

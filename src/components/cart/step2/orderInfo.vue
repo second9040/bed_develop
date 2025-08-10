@@ -54,7 +54,7 @@ div.container.cart_order_info
             )
             .comment
               span 若為中彰投以外地區，請透過官方Line（LINE ID：
-              a(href="https://line.me/ti/p/~@121povpz" target="_blank") @121povpz
+              a(href="https://lin.ee/MO8qYZ9" target="_blank") @MO8qYZ9
               span ）聊聊詢問
             .comment 線上客服服務時間：週一 ~ 週日 10:00 ~ 22:00
 

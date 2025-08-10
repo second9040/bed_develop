@@ -36,7 +36,7 @@ export default {
         },
         {
           name: "專人線上諮詢",
-          desc: "有任何疑問和需求，都可以透過電話或是LINE@與我們專業的服務人員諮詢聊聊。<br><br>Facebook Messager：m.me/287358568107452<br>LINE@：~@121povpz",
+          desc: "有任何疑問和需求，都可以透過電話或是LINE@與我們專業的服務人員諮詢聊聊。<br><br>Facebook Messager：m.me/287358568107452<br>LINE@：MO8qYZ9",
         },
         {
           name: "運送舊床回收",
@@ -57,14 +57,15 @@ export default {
       this.$emit("view-more", item);
     },
     embedLink(text) {
-      const urlPattern = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|]*)/ig;
+      const addressUrlPattern = /([^<br>]+?)\s+(https?:\/\/maps\.app\.goo\.gl\/[^\s<]+)/ig;
       const phonePattern = /(\b04[-]?\d{3}[\d-]?\d{4}\b)/g;
       const linePattern = /(@[a-zA-Z0-9_]+)/g;
       const messengerPattern = /(m\.me\/\d+)/g;
 
       let updatedText = text
-        .replace(urlPattern, (match) => {
-          return `<a href="${match}" target="_blank">
+        .replace(addressUrlPattern, (match, addressText, url) => {
+          return `<a href="${url}" target="_blank" style="text-decoration: none; color: inherit; padding: 0;">
+                    ${addressText.trim()}
                     <img
                       src="${this.getImagePath('/assets/images/map_icon.png')}"
                       style="margin-top: -3px; width: 15px;"

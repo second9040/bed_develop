@@ -26,7 +26,7 @@
       .swiper-button-next
       .swiper-button-prev
 
-    a.w-100.btn-chatbed.mobile(href="https://line.me/ti/p/~@121povpz" target="_blank")
+    a.w-100.btn-chatbed.mobile(href="https://lin.ee/MO8qYZ9" target="_blank")
       img.line_icon(src="/assets/images/line_icon.png")
       span 聊聊床墊
 

@@ -141,7 +141,7 @@
             :class="number_style()"
           ) {{ cart_item_total }}
 
-        a.btn-chatbed.pc(href="https://line.me/ti/p/~@121povpz" target="_blank")
+        a.btn-chatbed.pc(href="https://lin.ee/uvYHRcC" target="_blank")
           img.line_icon(src="/assets/images/line_icon.png")
           span 聊聊床墊
 </template>

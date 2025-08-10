@@ -184,6 +184,9 @@
                 border-radius: 10px;
                 color: #fff;
                 padding: 15px;
+                &:hover {
+                    text-decoration: none;
+                }
                 @media (max-width: 767px) {
                     display: block;
                     h3 {

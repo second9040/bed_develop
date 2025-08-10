@@ -15,7 +15,7 @@
               .know_list_div
                 .know_item(
                   v-for="(know, index) in know_list"
-                  @click="showDetail(know)"
+                  @click="showDetail(know, index < 1, 'mattress_support_introduce')"
                 )
                   .img_container
                     img(:src='getImagePath(know.img)' :alt='know.title')
@@ -57,7 +57,8 @@ const require = (imgPath) => {
     console.warn(err);
   }
 };
-
+const temp_detail1 = `
+`;
 const temp_detail = `
 <div>
   <h4>獨立筒床墊缺點1：獨立筒床墊都很軟？</h4>
@@ -81,46 +82,51 @@ export default {
     return {
       know_list: [
         {
-          title: "1獨立筒床墊缺點你真的了解嗎？深入解讀獨立筒彈簧床的美麗與哀愁",
+          title: "床墊支撐力是什麼？解密彈簧與支撐力的關聯性",
           date: "2024 / 06 / 24",
-          desc: "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
-          img: "/assets/images/discount/discount_1130105.jpg",
+          desc:
+            "床墊支撐力是影響睡眠品質的關鍵，不是越硬就越好！要找到適合自己支撐力才對，本篇解析支撐力的定義、彈簧與支撐力的關聯，帶你了解床墊的靈魂核心「彈簧」",
+          img: "/assets/images/bed_knowledge/knowledge_1140810_1.jpg",
           tag: ["#獨立筒", "#彈簧床", "#床墊迷思"],
-          detail: temp_detail
+          detail: temp_detail1,
         },
         {
           title: "2獨立筒床墊缺點你真的了解嗎？深入解讀獨立筒彈簧床的美麗與哀愁",
           date: "2024 / 05 / 23",
-          desc: "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
+          desc:
+            "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
           img: "/assets/images/discount/discount_1130105.jpg",
           tag: ["#獨立筒1", "#彈簧床", "#床墊迷思"],
-          detail: temp_detail
+          detail: temp_detail,
         },
         {
           title: "3獨立筒床墊缺點你真的了解嗎？深入解讀獨立筒彈簧床的美麗與哀愁",
           date: "2024 / 03 / 24",
-          desc: "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
+          desc:
+            "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
           img: "/assets/images/discount/discount_1130105.jpg",
           tag: ["#獨立筒", "#彈簧床", "#床墊迷思"],
-          detail: temp_detail
+          detail: temp_detail,
         },
         {
           title: "4獨立筒床墊缺點你真的了解嗎？深入解讀獨立筒彈簧床的美麗與哀愁",
           date: "2024 / 01 / 04",
-          desc: "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
+          desc:
+            "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
           img: "/assets/images/discount/discount_1130105.jpg",
           tag: ["#獨立筒", "#彈簧床", "#床墊迷思"],
-          detail: temp_detail
+          detail: temp_detail,
         },
         {
           title: "5獨立筒床墊缺點你真的了解嗎？深入解讀獨立筒彈簧床的美麗與哀愁",
           date: "2023 / 06 / 24",
-          desc: "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
+          desc:
+            "網路上有很多文章的說法指出獨立筒床墊缺點，尤其是與連結式彈簧床相比較。這些觀點有些值得深入討論，例如：獨立筒床墊都很軟、獨立筒床墊容易凹陷、Q彈感不如彈簧床、四周支撐性差。有些觀點嚴重誤解，例如：透氣性較差、容易因為摩擦，破損產生異音。",
           img: "/assets/images/discount/discount_1130105.jpg",
           tag: ["#獨立筒", "#彈簧床", "#床墊迷思"],
-          detail: temp_detail
+          detail: temp_detail,
         },
-      ]
+      ],
     };
   },
   computed: {
@@ -138,14 +144,20 @@ export default {
     getImagePath(img) {
       return require(`@/${img}`);
     },
-    showDetail(obj) {
-      this.$router.push({
-        name: 'bed_knowledge_detail',
-        state: {
-          know_id: obj.bed_knowledge_id,
-          know_obj: JSON.stringify(obj)
-        },
-      })
+    showDetail(obj, custom = false, page) {
+      if (custom) {
+        this.$router.push({
+          name: page,
+        });
+      } else {
+        this.$router.push({
+          name: "bed_knowledge_detail",
+          state: {
+            know_id: obj.bed_knowledge_id,
+            know_obj: JSON.stringify(obj),
+          },
+        });
+      }
     },
     goto(page, hash = null) {
       this.$router.push({
@@ -154,8 +166,7 @@ export default {
       });
     },
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
 

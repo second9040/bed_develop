@@ -36,17 +36,17 @@
 								.icon.fb
 							a(href="https://instagram.com/wonderfulmattress?igshid=YWJhMjlhZTc=" target="_blank")
 								.icon.ig
-							a(href="https://line.me/ti/p/~@121povpz" target="_blank")
+							a(href="https://lin.ee/MO8qYZ9" target="_blank")
 								.icon.line
 					.bottom_div.d-flex.align-items-center.shopee_and_momo_icon
-							a(href="https://line.me/ti/p/~@121povpz" target="_blank")
+							a(href="https://lin.ee/MO8qYZ9" target="_blank")
 								.icon.shopee
-							a(href="https://line.me/ti/p/~@121povpz" target="_blank")
+							a(href="https://lin.ee/MO8qYZ9" target="_blank")
 								.icon.momo
 			.divider
 			.copyright ©2024 Copyright 御品製床所 All Rights Reserved
 		a.w-100.btn-chatbed.mobile(
-			href="https://line.me/ti/p/~@121povpz"
+			href="https://lin.ee/MO8qYZ9"
 			target="_blank"
 		)
 			img.line_icon(src="/assets/images/line_icon.png")

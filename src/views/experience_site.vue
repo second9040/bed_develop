@@ -73,7 +73,7 @@
                           type="button" 
                           @click="buyNow(discount_obj)"
                         ) 
-                          a(href="https://line.me/ti/p/~@121povpz" target="_blank")
+                          a(href="https://lin.ee/MO8qYZ9" target="_blank")
                             span LINE與我們聯絡
                          
 </template>
