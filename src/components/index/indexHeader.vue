@@ -13,45 +13,44 @@
               
           )
             a.submenu-toggle(href="javascript: void(0)") 床墊
-            div.submenu.multi-column(v-show="currentMenu === 'bed'")
+            //- div.submenu.multi-column(v-show="currentMenu === 'bed'")
+            div.submenu.multi-column
               .submenu-column
+                div.submenu-header
+                  img.submenu-icon(src="/assets/images/index/headerIcon_hardness.png")
+                  p 軟硬度
                 ul
                   li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 波浪系列-高碳鋼硬彈簧
+                    a(href="javascript: void(0)") 偏軟
                   li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 雲朵系列-獨立筒型彈簧
+                    a(href="javascript: void(0)") 軟有支撐
                   li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 夢幻系列-蜂巢式獨立筒型彈簧
+                    a(href="javascript: void(0)") 軟硬適中
                   li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 魔力系列-飯店型合金彈簧
+                    a(href="javascript: void(0)") 硬有服貼
                   li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 輕雲繚繞-乳膠/矽膠薄墊
-                  li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 翻轉好眠床墊-冬夏兩用藤席床墊
-                  li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 房東首選系列-商業用床墊
-                  li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 設計師愛用客製系列-商業用訂製床墊
-              .submenu-column
+                    a(href="javascript: void(0)") 偏硬
+              .submenu-column.left-bar
+                div.submenu-header
+                  img.submenu-icon(src="/assets/images/index/headerIcon_users.png")
+                  p 使用族群
                 ul
                   li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") S-Grid 串聯撐壓床墊
+                    a(href="javascript: void(0)") 家用型
                   li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 直排式獨立筒床墊
+                    a(href="javascript: void(0)") 出租型
                   li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 蜂巢式獨立筒床墊
-                  li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 商用型床墊
-                  li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 上班/學生租屋床墊
-              .submenu-column
+                    a(href="javascript: void(0)") 客製(軟硬／尺寸/表布)
+              .submenu-column.left-bar
+                div.submenu-header
+                  img.submenu-icon(src="/assets/images/index/headerIcon_structure.png")
+                  p 床墊結構
                 ul
                   li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 偏硬床墊
+                    img.new_icon(src="/assets/images/index/headerIcon_new.png")
+                    a(href="javascript: void(0)") 高強度*串聯式設計
                   li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") 軟硬適中床墊
-                  li(@click="goto('product_list')") 
-                    a(href="javascript: void(0)") Q彈偏軟床墊
+                    a(href="javascript: void(0)") 獨立筒型彈簧
 
           li(
               @click="goto('product_list', null, 'bedstead')" 
