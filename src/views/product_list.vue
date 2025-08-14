@@ -25,7 +25,7 @@
                         li.section(v-for="sec in sections" :key="sec.key")
                           //- Header（點擊可收合）
                           button.section-header(type="button" @click="toggle(sec.key)")
-                            img.icon(:src="sec.icon" :alt="sec.title")
+                            img.icon(:src="getImagePath(sec.icon)" :alt="sec.title")
                             span.title {{ sec.title }}
                             span.bi(:class="{ 'bi-chevron-up': isOpen(sec.key), 'bi-chevron-down': !isOpen(sec.key) }")
 
