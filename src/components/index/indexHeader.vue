@@ -20,36 +20,36 @@
                   img.submenu-icon(src="/assets/images/index/headerIcon_hardness.png")
                   p 軟硬度
                 ul
-                  li(@click="goto('product_list')") 
+                  li(@click="goto('product_list', 'bed')") 
                     a(href="javascript: void(0)") 偏軟
-                  li(@click="goto('product_list')") 
+                  li(@click="goto('product_list', 'bed')") 
                     a(href="javascript: void(0)") 軟有支撐
-                  li(@click="goto('product_list')") 
+                  li(@click="goto('product_list', 'bed')") 
                     a(href="javascript: void(0)") 軟硬適中
-                  li(@click="goto('product_list')") 
+                  li(@click="goto('product_list', 'bed')") 
                     a(href="javascript: void(0)") 硬有服貼
-                  li(@click="goto('product_list')") 
+                  li(@click="goto('product_list', 'bed')") 
                     a(href="javascript: void(0)") 偏硬
               .submenu-column.left-bar
                 div.submenu-header
                   img.submenu-icon(src="/assets/images/index/headerIcon_users.png")
                   p 使用族群
                 ul
-                  li(@click="goto('product_list')") 
+                  li(@click="goto('product_list', 'bed')") 
                     a(href="javascript: void(0)") 家用型
-                  li(@click="goto('product_list')") 
+                  li(@click="goto('product_list', 'bed')") 
                     a(href="javascript: void(0)") 出租型
-                  li(@click="goto('product_list')") 
+                  li(@click="goto('product_list', 'bed')") 
                     a(href="javascript: void(0)") 客製(軟硬／尺寸/表布)
               .submenu-column.left-bar
                 div.submenu-header
                   img.submenu-icon(src="/assets/images/index/headerIcon_structure.png")
                   p 床墊結構
                 ul
-                  li(@click="goto('product_list')") 
+                  li(@click="goto('product_list', 'bed')") 
                     img.new_icon(src="/assets/images/index/headerIcon_new.png")
                     a(href="javascript: void(0)") 高強度*串聯式設計
-                  li(@click="goto('product_list')") 
+                  li(@click="goto('product_list', 'bed')") 
                     a(href="javascript: void(0)") 獨立筒型彈簧
 
           li(
@@ -60,13 +60,13 @@
             a.submenu-toggle(href="javascript: void(0)") 床架/床頭櫃
             div.submenu(v-show="currentMenu === 'bedstead'")
               ul
-                li(@click="goto('product_list')") 
+                li(@click="goto('product_list', 'bedstead')") 
                   a(href="javascript: void(0)") 所有床墊
-                li(@click="goto('product_list')") 
+                li(@click="goto('product_list', 'bedstead')") 
                   a(href="javascript: void(0)") 家庭用床墊
-                li(@click="goto('product_list')") 
+                li(@click="goto('product_list', 'bedstead')") 
                   a(href="javascript: void(0)") 租屋用床墊
-                li(@click="goto('product_list')") 
+                li(@click="goto('product_list', 'bedstead')") 
                   a(href="javascript: void(0)") 嫁妝用床墊
           li(
               @click="goto('product_list', null, 'others')" 
@@ -76,11 +76,11 @@
             a.submenu-toggle(href="javascript: void(0)") 其他配件
             div.submenu(v-show="currentMenu === 'others'")
               ul
-                li(@click="goto('product_list')") 
+                li(@click="goto('product_list', 'others')") 
                   a(href="javascript: void(0)") 所有配件
-                li(@click="goto('product_list')") 
+                li(@click="goto('product_list', 'others')") 
                   a(href="javascript: void(0)") 其他配件1
-                li(@click="goto('product_list')") 
+                li(@click="goto('product_list', 'others')") 
                   a(href="javascript: void(0)") 其他配件2
           //- 目錄高亮的功能只有關於有做，因為其他頁面都還沒真的實作
           li.hasSub(
@@ -158,6 +158,8 @@ export default {
     ...mapState(["cart_item_total"]),
   },
   mounted() {
+    this.selectedMenu(""); // 清除 Vuex 中的 selected_menu，這個是 header 用來判斷商品頁要顯示的商品列表
+
     this.checkSwiperLoaded();
     let check_url = location.href.includes("bed_develop") ? "/bed_develop" : "";
     this.loadExternalScript(check_url + "/js/index/bs_main.js").catch((err) => {
@@ -165,7 +167,7 @@ export default {
     });
   },
   methods: {
-    ...mapActions(["toggleCart"]),
+    ...mapActions(["toggleCart", "selectedMenu"]),
     check_main_active(route_name, target_name) {
       if (!route_name) {
         return false;
@@ -203,7 +205,8 @@ export default {
       if (count > 99 && count <= 999) return "last_than_999";
       if (count > 999) return "last_than_9999";
     },
-    goto(page, hash = null, mobile_submenu = null) {
+    goto(page, selected = null, mobile_submenu = null) {
+      // 最外面的 li 會用 mobile_submenu 來判斷顯示
       if (mobile_submenu) {
         if (window.innerWidth < 1200) {
           if (this.currentMenu != mobile_submenu) {
@@ -213,9 +216,10 @@ export default {
           }
         }
       } else {
+        // 裡面的 li 用 selected 來讓下一頁判斷顯示
+        this.selectedMenu(selected);
         this.$router.push({
           name: page,
-          hash: hash,
         });
       }
     },

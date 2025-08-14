@@ -6,6 +6,20 @@
     }
   }
 
+  .submenu-title {
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    p {
+      font-weight: bold;
+    }
+    img {
+      width: 30px;
+      margin-right: 10px;
+    }
+  }
+
   .shop_banner {
     margin-top: 0;
     width: 100%;
@@ -104,6 +118,7 @@
       display: block;
       margin-bottom: 40px;
     }
+    
   }
 
   .multiselect {
@@ -114,4 +129,197 @@
       }
     }
   }
+}
+
+#product_list_page {
+  .sidebar-filters {
+      width: 240px;
+      user-select: none;
+      font-size: 18px;
+      color: #333;
+      @media (max-width: 1199px) {
+        width: initial;
+      }
+    }
+
+    .section {
+      padding: 0;
+    }
+
+    /* Section 外框 */
+    .section+.section {
+      margin-top: 12px;
+    }
+
+    /* Header 行 */
+    .section-header {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 8px 18px 8px 0px;
+      cursor: pointer;
+    }
+
+    .section-header .title {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .section-header .bi {
+      margin-left: auto;
+      /* 推到最右邊 */
+      font-size: 14px;
+      /* 圖示大小可調整 */
+      color: #333;
+      /* 圖示顏色可調整 */
+    }
+
+    /* 小圖示 */
+    .icon {
+      width: 22px;
+      height: 22px;
+      margin-right: 8px;
+      object-fit: contain;
+    }
+
+    /* 清單 */
+    .items {
+      list-style: disc;
+      margin-left: 22px;
+      /* 讓圓點靠近文字，接近截圖視覺 */
+      padding-left: 14px;
+      /* 控制圓點與文字距離 */
+    }
+
+    /* 清單項目 */
+    .item {
+      line-height: 2.4;
+      position: relative;
+      text-align: left;
+    }
+
+    .new_icon {
+      width: 60px;
+      margin-right: 5px;
+      vertical-align: middle;
+      position: absolute;
+      top: 52%;
+      left: -50px;
+      transform: translateY(-50%);
+
+    }
+
+    /* 連結樣式 */
+    .item-link {
+      text-decoration: none;
+      color: #4a4a4a;
+    }
+
+    .item-link:hover {
+      text-decoration: underline;
+    }
+
+    .item-link.active,
+    .selected_text {
+      color: #1a73e8;
+      /* 藍色高亮（接近截圖） */
+      font-weight: 600;
+      text-align: left;
+    }
+
+    /* 收合動畫 */
+    .collapse-enter-active,
+    .collapse-leave-active {
+      overflow: hidden;
+    }
+
+    .collapse-enter-from,
+    .collapse-leave-to {
+      max-height: 0;
+    }
+
+    .collapse-enter-to,
+    .collapse-leave-from {
+      max-height: 420px;
+      /* 依實際內容高度調整 */
+    }
+
+    .tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      /* 超出時橫向可滾動 */
+      -webkit-overflow-scrolling: touch;
+      /* iOS 慣性滑動 */
+      overscroll-behavior-x: contain;
+      /* 避免冒泡到外層 */
+      border-bottom: 1px solid #e6e6e6;
+      margin-bottom: 12px;
+      /* 讓底線不被裁切 */
+    }
+
+    /* 隱藏捲軸（仍可滑動） */
+    .tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tabs {
+      scrollbar-width: none;
+    }
+
+    .tab {
+      flex: 0 0 auto;
+      /* 不要被壓縮，也不自動撐滿 */
+      white-space: nowrap;
+      /* 不換行 */
+      padding: 8px 12px;
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      width: 160px;
+    }
+
+    .tab.active {
+      color: #0b66e3;
+      border-bottom-color: #0b66e3;
+      font-weight: 700;
+    }
+
+    .product_count {
+      text-align: left;
+    }
+
+    .divider_for_mobile_h2 {
+      @media (max-width: 991px) {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #333;
+        font-weight: 600;
+        margin: 20px 0;
+      }
+  }
+
+    .divider_for_mobile_h2::before,
+    .divider_for_mobile_h2::after {
+      @media (max-width: 991px) {
+        content: "";
+        flex: 1;
+        /* 自動撐滿 */
+        border-top: 1px solid #333;
+        margin-top: -35px;
+      }
+    }
+
+    .divider_for_mobile_h2:not(:empty)::before {
+      margin-right: 12px;
+      /* 線與文字間距 */
+    }
+
+    .divider_for_mobile_h2:not(:empty)::after {
+      margin-left: 12px;
+    }
 }

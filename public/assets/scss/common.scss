@@ -83,10 +83,9 @@
 }
 .product_list_page .breadcrumb_content,
 .product_detail .breadcrumb_content {
-  text-align: left;
+  text-align: right;
   margin-bottom: 75px;
   @media (max-width: 1199px) {
-    text-align: center;
     margin-top: -10px;
   }
 
