@@ -15,7 +15,7 @@
               .know_list_div
                 .know_item(
                   v-for="(know, index) in know_list"
-                  @click="showDetail(know, index < 1, 'mattress_support_introduce')"
+                  @click="showDetail(know, index < pages.length, pages[index])"
                 )
                   .img_container
                     img(:src='getImagePath(know.img)' :alt='know.title')
@@ -80,7 +80,17 @@ export default {
   name: "bed_knowledge",
   data() {
     return {
+      pages: ["mattress_comfort_introduce", "mattress_support_introduce"],
       know_list: [
+        {
+          title: "床墊舒適度怎麼看？關鍵在於床墊搭配的主襯對不對！",
+          date: "2025 / 08 / 15",
+          desc:
+            "總是睡醒腰痠背痛？睡眠是身體修復的關鍵時刻，但不少人明明睡滿 8 小時，早上起來卻仍然腰痠背痛。其實影響睡眠品質的元兇，除去外在壓力外，有可能是你每天躺的那張床——床墊主襯可能挑錯了！",
+          img: "/assets/images/bed_knowledge/knowledge_1140815_0.png",
+          // tag: ["#獨立筒", "#彈簧床", "#床墊迷思"],
+          detail: temp_detail1,
+        },
         {
           title: "床墊支撐力是什麼？解密彈簧與支撐力的關聯性",
           date: "2024 / 06 / 24",

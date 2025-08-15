@@ -15,7 +15,7 @@
             .faq-item
               h4 Q: {{ item.question}}
               .faq-content
-                p {{ item.ans }}
+                p(v-html="item.ans")
               .arrow_right
 
     .d-flex.btn_container
@@ -23,11 +23,9 @@
 
 </template>
 <script>
-
 export default {
   name: "commonQa",
-  components: {
-  },
+  components: {},
   props: {
     item: {
       type: Object,
@@ -36,26 +34,25 @@ export default {
   data() {
     return {
       show_qa: 1,
-    }
+    };
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {
     click_show_qa(index) {
       this.show_qa = this.show_qa == index ? 0 : index;
     },
     goBack() {
       this.$router.push({
-        name: 'product_list',
-      })
+        name: "product_list",
+      });
       window.scrollTo({
-        top: 0
-      })
+        top: 0,
+      });
     },
   },
-}
+};
 </script>
 
 <style scoped>
-@import '/assets/scss/product/detail/common_qa.scss';
+@import "/assets/scss/product/detail/common_qa.scss";
 </style>

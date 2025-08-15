@@ -55,6 +55,11 @@ const router = createRouter({
       component: () => import('@/content/knowledge/mattress_support_introduce.vue'),
     },
     {
+      path: '/bed_knowledge/mattress_comfort_introduce',
+      name: 'mattress_comfort_introduce',
+      component: () => import('@/content/knowledge/mattress_comfort_introduce.vue'),
+    },
+    {
       path: '/bed_knowledge_detail',
       name: 'bed_knowledge_detail',
       component: () => import('../views/bed_knowledge_detail.vue'),
