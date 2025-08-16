@@ -145,12 +145,23 @@ export default {
     Multiselect,
   },
   computed: {
-    ...mapState(["selected_menu"]),
+    ...mapState(["selected_menu", "selected_menu_index", "selected_menu_key"]),
 
     currentItem() {
       if (!this.selected.itemKey) return null;
       const sec = this.sections.find((s) => s.key === this.selected.section);
       return sec?.items.find((i) => i.key === this.selected.itemKey) || null;
+    },
+  },
+  watch: {
+    selected_menu() {
+      this.setProducts();
+    },
+    selected_menu_index() {
+      this.setProducts();
+    },
+    selected_menu_key() {
+      this.setProducts();
     },
   },
   data() {
@@ -650,6 +661,18 @@ export default {
     isActive(key, item) {
       return this.selected.key === key && this.selected.text === item.text;
     },
+    setProducts() {
+      const selectedSection = this.sections[Number(this.selected_menu_key) || 0];
+      const selectedItem =
+        selectedSection.items[Number(this.selected_menu_index) || 0] ||
+        selectedSection.items[0];
+      const firstItemTab = selectedItem.tabs;
+      this.selected.title = selectedSection.title;
+      this.selected.key = selectedSection.key;
+      this.selected.text = selectedItem.text;
+      this.selected.tab = firstItemTab;
+      this.activeTab = firstItemTab[0].key; // 預設選中第一個 tab
+    },
   },
   mounted() {
     this.show_category_list.push(this.widget_list_obj[0].id);
@@ -662,20 +685,14 @@ export default {
     if (menu_obj) {
       this.selected_menu_text = menu_obj.name;
     } else {
-      this.selectedMenu("bed");
+      this.selectedMenu({ title: "bed", key: 0, index: 0 });
       this.selected_menu_text = "床墊";
     }
 
     // 預設選中第一個 section 的第一個項目
     if (this.sections.length > 0 && this.sections[0].items.length > 0) {
-      const firstSection = this.sections[0];
-      const firstItem = firstSection.items[0];
-      const firstItemTab = firstItem.tabs;
-      this.selected.title = firstSection.title;
-      this.selected.key = firstSection.key;
-      this.selected.text = firstItem.text;
-      this.selected.tab = firstItemTab;
-      this.activeTab = firstItemTab[0].key; // 預設選中第一個 tab
+      console.log("this.selected_menu_key", this.selected_menu_key);
+      this.setProducts();
     }
   },
 };

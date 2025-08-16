@@ -55,6 +55,8 @@ export default createStore({
     tw_city_name: [ "臺北市", "基隆市", "新北市", "連江縣", "宜蘭縣", "釣魚臺", "新竹市", "新竹縣", "桃園市", "苗栗縣", "臺中市", "彰化縣", "南投縣", "嘉義市", "嘉義縣", "雲林縣", "臺南市", "高雄市", "南海島", "澎湖縣", "金門縣", "屏東縣", "臺東縣", "花蓮縣"],
     cart_price_total: 0,
     selected_menu: "",
+    selected_menu_index: 0,
+    selected_menu_key: "",
   },
   mutations: {
     toggleCart(state, action) {
@@ -84,7 +86,11 @@ export default createStore({
       state.cart_items[para.index].amount += para.action
       state.cart_item_total += para.action;
     },
-    selectedMenu(state, menu) { state.selected_menu = menu },
+    selectedMenu(state, menu) { 
+      state.selected_menu = menu.title
+      state.selected_menu_index = menu.index
+      state.selected_menu_key = menu.key
+    },
   },
   actions: {
     toggleCart({ commit }, action) {
@@ -138,5 +144,7 @@ export default createStore({
     cart_price_total: (state) => state.cart_items,
     tw_city_name: (state) => state.cart_items,
     selected_menu: (state) => state.selected_menu,
+    selected_menu_index: (state) => state.selected_menu_index,
+    selected_menu_key: (state) => state.selected_menu_key,
   },
 });
