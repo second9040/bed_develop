@@ -107,29 +107,29 @@ body {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 28px;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1.2;
   font-weight: 400;
 }
 
 h3 {
-  font-size: 24px;
-  line-height: 1.5;
-  font-weight: 600;
-}
-
-h4 {
   font-size: 20px;
   line-height: 1.5;
   font-weight: 600;
 }
 
-p {
+h4 {
   font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+p {
+  font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
 }

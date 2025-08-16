@@ -23,7 +23,6 @@
 </template>
 
 <script>
-
 const require = (imgPath) => {
   try {
     let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
@@ -35,8 +34,7 @@ const require = (imgPath) => {
 };
 export default {
   name: "qaView",
-  props: {
-  },
+  props: {},
   data() {
     return {
       show_qa: 1,
@@ -47,6 +45,7 @@ export default {
           desc: "由彈簧的軟硬度和排列與數量影響，製床所有各種軟硬客製選擇。",
           href: "",
           color: "#53BDD7",
+          page_name: "mattress_support_introduce",
         },
         {
           img: "/assets/images/index/choose02.jpg",
@@ -54,6 +53,7 @@ export default {
           desc: "符合人體工學，屁股腰椎交接處不懸空，使躺感更服貼舒服。",
           href: "",
           color: "#9EBB51",
+          page_name: "mattress_comfort_introduce",
         },
         {
           img: "/assets/images/index/choose03.jpg",
@@ -61,9 +61,10 @@ export default {
           desc: "不同材質的表步，透氣、排汗及涼爽程度不同，皆可自選。",
           href: "",
           color: "#53BDD7",
+          page_name: "mattress_ticking_introduce",
         },
       ],
-    }
+    };
   },
   methods: {
     // getImagePath(img) {
@@ -73,12 +74,12 @@ export default {
       return require(`@/${img}`);
     },
     viewMore(item) {
-      this.$emit('view-more', item);
+      this.$emit("view-more", item.page_name);
     },
     click_show_qa(index) {
       this.show_qa = this.show_qa == index ? 0 : index;
     },
-  }
+  },
 };
 </script>
 

@@ -28,9 +28,6 @@
     img {
       width: calc(100% - 6px);
     }
-    @media (max-width: 991px) {
-      margin-top: 40px;
-    }
   }
 
   .sidebar_widget {
@@ -116,7 +113,6 @@
 
     @media (max-width: 991px) {
       display: block;
-      margin-bottom: 40px;
     }
     
   }
@@ -221,10 +217,14 @@
       text-decoration: underline;
     }
 
-    .item-link.active,
+    .item-link.active {
+      color: var(--color2-green);
+      font-weight: 600;
+      text-align: left;
+    }
+    
     .selected_text {
-      color: #1a73e8;
-      /* 藍色高亮（接近截圖） */
+      color: #4a4a4a;
       font-weight: 600;
       text-align: left;
     }
@@ -283,8 +283,8 @@
     }
 
     .tab.active {
-      color: #0b66e3;
-      border-bottom-color: #0b66e3;
+      color: var(--color2-green);
+      border-bottom-color: var(--color2-green);
       font-weight: 700;
     }
 
@@ -310,7 +310,6 @@
         flex: 1;
         /* 自動撐滿 */
         border-top: 1px solid #333;
-        margin-top: -35px;
       }
     }
 

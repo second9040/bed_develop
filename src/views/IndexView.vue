@@ -71,7 +71,7 @@ export default {
     goodComment,
     bedKnowledge,
     qaView,
-    chatWithUs
+    chatWithUs,
   },
   data() {
     return {
@@ -155,8 +155,17 @@ export default {
       });
       console.log(`h: ${bannerContainerHeight}, w: ${screenWidth}`);
     },
-    viewMore(hot_item) {
-      console.log(hot_item);
+    viewMore(page_name, type = "inner") {
+      console.log("viewMore", page_name, type);
+      // 用 type 來判斷是內部連結還是外部連結
+      if (type === "inner") {
+        this.$router.push({
+          name: page_name,
+        });
+      } else {
+        // 外部連結
+        console.log(page_name);
+      }
     },
   },
 };
