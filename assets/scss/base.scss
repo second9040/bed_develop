@@ -1,0 +1,84 @@
+.swiper-pagination {
+  bottom: var(--swiper-pagination-bottom, 25px);
+  &-bullet {
+    background: var(--color6-white);
+    opacity: .8;
+    width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 10px));
+    height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 10px));
+    &-active {
+      background: var(--color3-green);
+    }
+  }
+}
+
+
+.swiper-button,
+.swiper-button {
+  &-prev,
+  &-next {
+    color: #000;
+    background-color: #fff;
+    padding: 28px 25px;
+    top: var(--swiper-navigation-top-offset, 52%);
+    &:after {
+      font-size: 28px;
+    }
+  }
+  &-prev {
+    left: var(--swiper-navigation-sides-offset, 20px);
+  }
+  &-next {
+    right: 20px;
+  }
+}
+
+.arrow_right {
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+  }
+
+  .arrow_right::before,
+  .arrow_right::after {
+    content: '';
+    position: absolute;
+    border: solid black;
+  }
+
+  .arrow_right::before {
+    top: -5px;
+    left: 0;
+    border-width: 2px 2px 0 0;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+  }
+
+  .arrow_right::after {
+    bottom: -5px;
+    left: 0;
+    border-width: 0 2px 2px 0;
+    width: 10px;
+    height: 10px;
+    transform: rotate(-45deg);
+  }
+
+.triangle_icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid black;
+}
+
+a {
+  color: #000;
+  &:hover {
+    color: #000;
+    text-decoration: underline;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
