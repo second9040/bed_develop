@@ -246,7 +246,7 @@ export default {
               ],
             },
             {
-              text: "客製(軟硬／尺寸/表布)",
+              text: "客製(軟硬/尺寸/表布)",
               key: "custom",
               tabs: [
                 { key: "all", label: "全部" },

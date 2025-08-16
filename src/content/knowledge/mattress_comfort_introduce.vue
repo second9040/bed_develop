@@ -211,6 +211,9 @@ export default {
 </style>
 <style lang="scss" scoped>
 #bed_knowledge_detail_custom_250810 {
+  .main_section {
+    text-align: left;
+  }
   p,
   ul,
   li,
@@ -277,17 +280,17 @@ export default {
   }
 
   /* 手機版微調 */
-  @media (max-width: 640px) {
+  @media (max-width: 767px) {
     .spring-table {
       font-size: 14px;
+    }
+    .spring-table th,
+    .spring-table td {
+      word-break: break-all;
     }
     .spring-table th:nth-child(1),
     .spring-table td:nth-child(1) {
       width: 70px;
-    }
-    .spring-table th:nth-child(2),
-    .spring-table td:nth-child(2) {
-      width: 120px;
     }
   }
 

@@ -40,7 +40,7 @@
                   li(@click="goto('product_list', 'bed')") 
                     a(href="javascript: void(0)") 出租型
                   li(@click="goto('product_list', 'bed')") 
-                    a(href="javascript: void(0)") 客製(軟硬／尺寸/表布)
+                    a(href="javascript: void(0)") 客製(軟硬/尺寸/表布)
               .submenu-column.left-bar
                 div.submenu-header
                   img.submenu-icon(src="/assets/images/index/headerIcon_structure.png")

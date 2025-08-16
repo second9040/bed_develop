@@ -80,8 +80,20 @@ export default {
   name: "bed_knowledge",
   data() {
     return {
-      pages: ["mattress_comfort_introduce", "mattress_support_introduce"],
+      pages: [
+        "mattress_ticking_introduce",
+        "mattress_comfort_introduce",
+        "mattress_support_introduce",
+      ],
       know_list: [
+        {
+          title: "床墊表布是肌膚感受關鍵，選對材質睡得更好！",
+          date: "2025 / 08 / 16",
+          desc:
+            "購買床墊時，除了重視「彈簧的軟硬度」或是「主襯有沒有乳膠」之外。另外也需了解床墊接觸你身體的的「表布」材質，也會間接影響睡眠品質，本篇帶你了解床墊表布怎麼選？",
+          img: "/assets/images/bed_knowledge/knowledge_1140816_0.png",
+          // tag: ["#獨立筒", "#彈簧床", "#床墊迷思"],
+        },
         {
           title: "床墊舒適度怎麼看？關鍵在於床墊搭配的主襯對不對！",
           date: "2025 / 08 / 15",
@@ -89,7 +101,6 @@ export default {
             "總是睡醒腰痠背痛？睡眠是身體修復的關鍵時刻，但不少人明明睡滿 8 小時，早上起來卻仍然腰痠背痛。其實影響睡眠品質的元兇，除去外在壓力外，有可能是你每天躺的那張床——床墊主襯可能挑錯了！",
           img: "/assets/images/bed_knowledge/knowledge_1140815_0.png",
           // tag: ["#獨立筒", "#彈簧床", "#床墊迷思"],
-          detail: temp_detail1,
         },
         {
           title: "床墊支撐力是什麼？解密彈簧與支撐力的關聯性",
@@ -98,7 +109,6 @@ export default {
             "床墊支撐力是影響睡眠品質的關鍵，不是越硬就越好！要找到適合自己支撐力才對，本篇解析支撐力的定義、彈簧與支撐力的關聯，帶你了解床墊的靈魂核心「彈簧」",
           img: "/assets/images/bed_knowledge/knowledge_1140810_1.jpg",
           tag: ["#獨立筒", "#彈簧床", "#床墊迷思"],
-          detail: temp_detail1,
         },
         {
           title: "2獨立筒床墊缺點你真的了解嗎？深入解讀獨立筒彈簧床的美麗與哀愁",

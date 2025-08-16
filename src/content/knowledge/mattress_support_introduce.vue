@@ -200,6 +200,9 @@ export default {
 </style>
 <style lang="scss" scoped>
 #bed_knowledge_detail_custom_250810 {
+  .main_section {
+    text-align: left;
+  }
   p,
   ul,
   li,
