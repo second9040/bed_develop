@@ -109,12 +109,7 @@
   }
 
   .selected_item_h2 {
-    display: none;
-
-    @media (max-width: 991px) {
-      display: block;
-    }
-    
+    display: block;
   }
 
   .multiselect {
@@ -292,33 +287,29 @@
       text-align: left;
     }
 
-    .divider_for_mobile_h2 {
-      @media (max-width: 991px) {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        color: #333;
-        font-weight: 600;
-        margin: 20px 0;
-      }
+    .divider_for_h2 {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #333;
+      font-weight: 600;
+      margin: 20px 0;
   }
 
-    .divider_for_mobile_h2::before,
-    .divider_for_mobile_h2::after {
-      @media (max-width: 991px) {
-        content: "";
-        flex: 1;
-        /* 自動撐滿 */
-        border-top: 1px solid #333;
-      }
+    .divider_for_h2::before,
+    .divider_for_h2::after {
+      content: "";
+      flex: 1;
+      /* 自動撐滿 */
+      border-top: 1px solid #333;
     }
 
-    .divider_for_mobile_h2:not(:empty)::before {
+    .divider_for_h2:not(:empty)::before {
       margin-right: 12px;
       /* 線與文字間距 */
     }
 
-    .divider_for_mobile_h2:not(:empty)::after {
+    .divider_for_h2:not(:empty)::after {
       margin-left: 12px;
     }
 }
