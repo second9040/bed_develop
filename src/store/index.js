@@ -57,6 +57,12 @@ export default createStore({
     selected_menu: "",
     selected_menu_index: 0,
     selected_menu_key: "",
+    selected_menu_obj: { // ex: bed > 軟硬度(0) > 軟有支撐(2)
+      title: "", // bed
+      key: "",  // 0
+      index: 0, // 2
+
+    },
   },
   mutations: {
     toggleCart(state, action) {
@@ -90,6 +96,11 @@ export default createStore({
       state.selected_menu = menu.title
       state.selected_menu_index = menu.index
       state.selected_menu_key = menu.key
+      state.selected_menu_obj = {
+        title: menu.title,
+        index: menu.index,
+        key: menu.key,
+      }
     },
   },
   actions: {
@@ -146,5 +157,6 @@ export default createStore({
     selected_menu: (state) => state.selected_menu,
     selected_menu_index: (state) => state.selected_menu_index,
     selected_menu_key: (state) => state.selected_menu_key,
+    selected_menu_obj: (state) => state.selected_menu_obj,
   },
 });

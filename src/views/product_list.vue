@@ -13,7 +13,6 @@
               li {{ selected_menu_text }}
           .row
             .col-lg-3.col-md-12
-              //- li(v-if="selected_item") {{ selected_item.name }}
               // sidebar widget start
               aside.sidebar_widget.pc
                 .widget_inner
@@ -22,7 +21,7 @@
                     hr
                     nav.sidebar-filters
                       ul.section-list
-                        li.section(v-for="sec in sections" :key="sec.key")
+                        li.section(v-for="sec in asideMenu" :key="sec.key")
                           //- Header（點擊可收合）
                           button.section-header(type="button" @click="toggle(sec.key)")
                             img.icon(:src="getImagePath(sec.icon)" :alt="sec.title")
@@ -39,49 +38,60 @@
                                 )
                                 a.item-link(
                                   href="javascript:void(0)"
-                                  @click.prevent="selectItem(sec.key, it)"
+                                  @click.prevent="selectMenu({title: sec.title, key: sec.key, index: idx})"
                                   :class="{ active: isActive(sec.key, it) }"
                                 ) {{ it.text }}
 
             .col-lg-9.col-md-12
-              .divider_for_mobile_h2
+              .divider_for_h2
                 h2.selected_item_h2.text-center(v-if="selected") {{ selected.title }}
-              //- multiselect.w-100.mobile(
-              //-   v-model="selected_item"
-              //-   :options="widget_list_obj"
-              //-   :multiple="false"
-              //-   :allowEmpty="false"
-              //-   group-values="sub"
-              //-   group-label="name"
-              //-   :group-select="false"
-              //-   placeholder=""
-              //-   track-by="id"
-              //-   label="name"
-              //-   tagPlaceholder=""
-              //-   selectedLabel=""
-              //-   selectLabel=""
-              //-   selectGroupLabel=""
-              //-   deselectLabel=""
-              //-   @select="selectSubCategoryBySelect"
-              //- )
-              //-   template(v-slot:noResult)
-              //-     span 查無選項
 
               // shop wrapper start
               .shop_banner
-                img(src="/assets/images/product/list/banner.jpg" alt="product_banner")
+                .banner_field(v-if="selected.banners")
+                  swiper.banner_swiper(
+                      :loop='true' 
+                      :modules='modules' 
+                      :pagination="{ el: '.swiper-pagination', clickable: true }"
+                      :slides-per-view='1' 
+                      :space-between='10' 
+                      :autoplay='{ delay: 5000, disableOnInteraction: false }'
+                      :navigation='{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }'
+                  )
+                    swiper-slide.swiper-slide(v-for='(banner, index) in selected.banners' :key='index')
+                      .position-relative
+                        .banner_container.position-relative
+                          img.banner-slide(:src='getImagePath(banner.img_pc, banner.img_mo)' :alt='banner.name')
+                          //- img.slide_text(v-if="banner.img_text" :src='getImagePath(banner.img_text, banner.img_mo)' :alt='banner.name')
+                          .text_div.position-absolute
+                            h1 {{ banner.title }}
+                            h3 {{ banner.desc }}
+                            button.banner_btn.button.btn.btn-primary(
+                                v-if="banner.btn_text"
+                                type="button"
+                            ) {{ banner.btn_text}}
+
+                    .swiper-pagination
+                    .swiper-button-next
+                    .swiper-button-prev
+
+                img(
+                  v-else
+                  src="/assets/images/product/list/banner.jpg"
+                  alt="product_banner"
+                )
               // shop toolbar end
-              h3.selected_text {{ selected.text }}
-              .tabs(v-if="selected.tab")
+              h3.selected_text(v-if="selected.title != '軟硬度'") {{ selected.text }}
+              .tabs(v-if="selected.tabs")
                 button.tab(
-                  v-for="t in selected.tab"
+                  v-for="t in selected.tabs"
                   :key="t.key"
                   type="button"
                   :class="{ active: activeTab === t.key }"
                   @click="activeTab = t.key"
                 ) {{ t.label }}
 
-              .product_count(v-if="selected && selected.tab && selected.tab.length") 共 10 樣商品
+              .product_count(v-if="selected && selected.tabs && selected.tabs.length") 共 10 樣商品
 
               .row.shop_wrapper
                 .single_product(v-for="item in products_obj")
@@ -138,34 +148,51 @@ const require = (imgPath) => {
 import $ from "jquery";
 import Multiselect from "vue-multiselect";
 import { mapState, mapActions } from "vuex";
+import menuStore from "@/store/menuStore.js";
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+import "swiper/swiper-bundle.css";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import required modules
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 export default {
   name: "product_list",
   components: {
     Multiselect,
+    Swiper,
+    SwiperSlide,
   },
   computed: {
-    ...mapState(["selected_menu", "selected_menu_index", "selected_menu_key"]),
+    ...mapState(["selected_menu_obj"]),
 
     currentItem() {
       if (!this.selected.itemKey) return null;
-      const sec = this.sections.find((s) => s.key === this.selected.section);
+      const sec = this.asideMenu.find((s) => s.key === this.selected.section);
       return sec?.items.find((i) => i.key === this.selected.itemKey) || null;
     },
   },
   watch: {
-    selected_menu() {
-      this.setProducts();
-    },
-    selected_menu_index() {
-      this.setProducts();
-    },
-    selected_menu_key() {
-      this.setProducts();
+    selected_menu_obj() {
+      let o = this.selected_menu_obj;
+      this.selected_menu_text = menuStore[o.title].text;
+      this.asideMenu = menuStore[o.title].asideMenu;
+      this.selectMenu({
+        title: o.title,
+        key: o.key,
+        index: o.index,
+      });
     },
   },
   data() {
     return {
+      modules: [Autoplay, Navigation, Pagination],
+
       selected_menu_text: "",
 
       openMap: {
@@ -175,371 +202,11 @@ export default {
       },
       // 當前選中的清單項目（用於高亮）
       selected: { key: "", text: "", itemKey: "" },
-      activeTab: "all",
 
-      // 三個區塊的資料與圖示
-      sections: [
-        {
-          key: "hardness",
-          title: "軟硬度",
-          icon: "/assets/images/index/headerIcon_hardness.png",
-          items: [
-            {
-              text: "偏軟",
-              key: "hard-soft",
-              tabs: [
-                { key: "all", label: "全部" },
-                { key: "A", label: "Q彈簧" },
-                { key: "B", label: "高碳鋼" },
-                { key: "C", label: "飯店式鈦合金" },
-                { key: "D", label: "旗艦款" },
-              ],
-            },
-            {
-              text: "軟有支撐",
-              key: "soft-support",
-              tabs: [
-                { key: "all", label: "全部" },
-                { key: "balance", label: "軟中帶撐" },
-                { key: "relax", label: "釋壓舒適" },
-              ],
-            },
-            {
-              text: "軟硬適中",
-              key: "medium",
-              tabs: [
-                { key: "all", label: "全部" },
-                { key: "cp", label: "高 CP 值" },
-                { key: "popular", label: "人氣款" },
-              ],
-            },
-            {
-              text: "硬有服貼",
-              key: "hard-fit",
-              tabs: [
-                { key: "all", label: "全部" },
-                { key: "fit", label: "貼合度" },
-                { key: "spine", label: "護脊撐托" },
-              ],
-            },
-            {
-              text: "偏硬",
-              key: "hard",
-              tabs: [
-                { key: "all", label: "全部" },
-                { key: "firm", label: "高硬挺" },
-                { key: "durable", label: "耐用型" },
-              ],
-            },
-          ],
-        },
-        {
-          key: "users",
-          title: "使用族群",
-          icon: "/assets/images/index/headerIcon_users.png",
-          items: [
-            {
-              text: "家用型",
-              key: "home",
-              tabs: [
-                { key: "all", label: "全部" },
-                { key: "family", label: "親子友善" },
-                { key: "easycare", label: "好保養" },
-              ],
-            },
-            {
-              text: "出租型",
-              key: "rental",
-              tabs: [
-                { key: "all", label: "全部" },
-                { key: "budget", label: "預算入門" },
-                { key: "durable", label: "耐用不易塌" },
-              ],
-            },
-            {
-              text: "客製(軟硬/尺寸/表布)",
-              key: "custom",
-              tabs: [
-                { key: "all", label: "全部" },
-                { key: "firmness", label: "客製軟硬" },
-                { key: "size", label: "客製尺寸" },
-                { key: "fabric", label: "客製表布" },
-              ],
-            },
-          ],
-        },
-        {
-          key: "structure",
-          title: "床墊結構",
-          icon: "/assets/images/index/headerIcon_structure.png",
-          items: [
-            {
-              text: "高強度*串聯式設計",
-              key: "sgrid",
-              new: true,
-              tabs: [
-                { key: "all", label: "全部" },
-                { key: "A", label: "Q彈簧" },
-                { key: "B", label: "高碳鋼" },
-                { key: "C", label: "飯店式鈦合金" },
-                { key: "D", label: "旗艦款" },
-              ],
-            },
-            {
-              text: "獨立筒型彈簧",
-              key: "pocket",
-              tabs: [
-                { key: "all", label: "全部" },
-                { key: "firm", label: "高硬挺" },
-                { key: "motion", label: "低干擾" },
-              ],
-            },
-          ],
-        },
-      ],
-
+      asideMenu: null,
       activeTab: "",
 
-      // expandedCats: [],  // 記錄被展開的 cat.name 或 catIndex (可以開啟多個分類)
       expandedCat: null, // 一次只能顯示一個分類
-      screenWidth: 0,
-      show_category_list: [],
-      widget_list_obj: [
-        {
-          name: "床墊",
-          id: "bed",
-          sub: [
-            {
-              name: "波浪系列-高碳鋼硬彈簧",
-              link: "javascript: void(0)",
-              id: "1",
-            },
-            {
-              name: "雲朵系列-獨立筒型彈簧",
-              link: "javascript: void(0)",
-              id: "2",
-            },
-            {
-              name: "夢幻系列-蜂巢式獨立筒型彈簧",
-              link: "javascript: void(0)",
-              id: "3",
-            },
-            {
-              name: "魔力系列-飯店型合金彈簧",
-              link: "javascript: void(0)",
-              id: "4",
-            },
-            {
-              name: "魔力系列-飯店型合金彈簧",
-              link: "javascript: void(0)",
-              id: "5",
-            },
-            {
-              name: "輕雲繚繞系列-乳膠/矽膠薄墊",
-              link: "javascript: void(0)",
-              id: "6",
-            },
-            {
-              name: "翻轉好眠床墊-冬夏兩用藤席床墊",
-              link: "javascript: void(0)",
-              id: "7",
-            },
-            {
-              name: "房東首選系列-商業用床墊",
-              link: "javascript: void(0)",
-              id: "8",
-            },
-            {
-              name: "設計師愛用客製系列-商業用訂製床墊",
-              link: "javascript: void(0)",
-              id: "9",
-            },
-          ],
-          categories: [
-            {
-              name: "依床墊結構分類",
-              products: [
-                {
-                  cat_title: "S-Grid 串聯撐壓床墊",
-                  items: [
-                    {
-                      name: "波浪系列-高碳鋼硬彈簧",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                    {
-                      name: "魔力系列-飯店型合金彈簧",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                    {
-                      name: "Q綿託付系列-Q彈簧",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                    {
-                      name: "翻轉好眠床墊-冬夏兩用藤席床墊",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                  ],
-                },
-                {
-                  cat_title: "直排式獨立筒床墊",
-                  items: [
-                    {
-                      name: "雲朵系列-獨立筒型彈簧",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                  ],
-                },
-                {
-                  cat_title: "蜂巢式獨立筒床墊",
-                  items: [
-                    {
-                      name: "夢幻系列-蜂巢式獨立筒型彈簧",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                  ],
-                },
-                {
-                  cat_title: "商用型床墊",
-                  items: [
-                    {
-                      name: "房東首選系列-商業用床墊",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                  ],
-                },
-                {
-                  cat_title: "上班/學生租屋床墊",
-                  items: [
-                    {
-                      name: "上班族套房床墊",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                    {
-                      name: "學生租屋床墊",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: "依軟硬需求分類",
-              products: [
-                {
-                  cat_title: "偏硬床墊",
-                  items: [
-                    {
-                      name: "波浪系列-高碳鋼硬彈簧",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                    {
-                      name: "夢幻系列-蜂巢式獨立筒型彈簧",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                    {
-                      name: "翻轉好眠床墊-冬夏兩用藤席床墊",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                  ],
-                },
-                {
-                  cat_title: "軟硬適中床墊",
-                  items: [
-                    {
-                      name: "Q綿託付系列-Q彈簧",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                    {
-                      name: "雲朵系列-獨立筒型彈簧",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                  ],
-                },
-                {
-                  cat_title: "Q彈偏軟床墊",
-                  items: [
-                    {
-                      name: "魔力系列-飯店型合金彈簧",
-                      link: "javascript: void(0)",
-                      id: "",
-                    },
-                  ],
-                },
-              ],
-            },
-
-            {
-              name: "依使用需求分類",
-              products: [
-                {
-                  cat_title: "家用型床墊",
-                  items: [],
-                },
-                {
-                  cat_title: "嫁妝型床墊",
-                  items: [],
-                },
-                {
-                  cat_title: "出租型床墊",
-                  items: [],
-                },
-                {
-                  cat_title: "商業用床墊",
-                  items: [],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          name: "床架/床頭櫃",
-          id: "bedFrame",
-          sub: [
-            {
-              name: "所有床墊",
-              link: "javascript: void(0)",
-              id: "all2",
-            },
-            {
-              name: "家庭用床墊",
-              link: "javascript: void(0)",
-              id: "family2",
-            },
-          ],
-        },
-        {
-          name: "其他配件",
-          id: "others",
-          sub: [
-            {
-              name: "所有床墊",
-              link: "javascript: void(0)",
-              id: "all3",
-            },
-            {
-              name: "家庭用床墊",
-              link: "javascript: void(0)",
-              id: "family3",
-            },
-          ],
-        },
-      ],
-      selected_sub_cat: "",
-      selected_item: null,
       products_obj: [
         {
           product_id: 1,
@@ -595,26 +262,6 @@ export default {
   methods: {
     ...mapActions(["selectedMenu"]),
 
-    checkShow(id) {
-      return this.show_category_list.includes(id);
-    },
-    toggleCategory(id) {
-      if (this.show_category_list.includes(id)) {
-        this.show_category_list = this.show_category_list.filter(function (item) {
-          return item !== id;
-        });
-      } else {
-        this.show_category_list.push(id);
-      }
-    },
-    selectSubCategory(event, item) {
-      event.stopPropagation(); // 阻止事件冒泡到父元素
-      this.selected_sub_cat = item.id;
-      this.selected_item = item;
-    },
-    selectSubCategoryBySelect(item) {
-      this.selected_sub_cat = item.id;
-    },
     getImagePath(img) {
       return require(`@/${img}`);
     },
@@ -643,56 +290,62 @@ export default {
         this.expandedCat = name;
       }
     },
-    isCatExpanded(name) {
-      return this.expandedCat === name;
-    },
     toggle(key) {
       this.openMap[key] = !this.openMap[key];
     },
     isOpen(key) {
       return !!this.openMap[key];
     },
-    selectItem(key, item) {
-      this.selected.key = key;
-      this.selected.text = item.text || item.key;
-      // 若需要帶路由或發事件，在這裡處理
-      this.$emit("select", { key, value: item.text });
-    },
     isActive(key, item) {
-      return this.selected.key === key && this.selected.text === item.text;
+      return this.selected.text === item.text;
     },
-    setProducts() {
-      const selectedSection = this.sections[Number(this.selected_menu_key) || 0];
-      const selectedItem =
-        selectedSection.items[Number(this.selected_menu_index) || 0] ||
-        selectedSection.items[0];
-      const firstItemTab = selectedItem.tabs;
-      this.selected.title = selectedSection.title;
-      this.selected.key = selectedSection.key;
-      this.selected.text = selectedItem.text;
-      this.selected.tab = firstItemTab;
-      this.activeTab = firstItemTab[0].key; // 預設選中第一個 tab
+    selectMenu(obj) {
+      // 設定選取的 aside item 高亮
+      if (isNaN(obj.key)) {
+        // mounted 預設選擇的話 key 是數字
+        // 不過直接點選的話 key 是英文 ex: hardness
+        // 所以要找對應的 index
+        this.asideMenu.forEach((element, idx) => {
+          if (element.key === obj.key) {
+            obj.key = idx;
+          }
+        });
+      }
+      let highlightItem = this.asideMenu[obj.key].items[obj.index];
+      highlightItem.title = this.asideMenu[obj.key].title;
+      this.selected = highlightItem;
+
+      // tab 高亮
+      this.activeTab = highlightItem.tabs[0].key;
+      console.log("selected", this.selected);
+
+      // 軟硬度的格式跟別人不一樣＝＝
+      if (this.selected.title == "軟硬度") {
+        this.activeTab = this.selected.key;
+      }
     },
   },
   mounted() {
-    this.show_category_list.push(this.widget_list_obj[0].id);
-    this.selected_sub_cat = this.widget_list_obj[0].sub[0].id;
-    this.selected_item = this.widget_list_obj[0].sub[0];
-
-    let menu_obj = this.widget_list_obj.find((item) => item.id === this.selected_menu);
-    console.log(menu_obj);
-    console.log(this.selected_menu);
-    if (menu_obj) {
-      this.selected_menu_text = menu_obj.name;
+    console.log(this.selected);
+    if (this.selected_menu_obj && this.selected_menu_obj.title) {
+      // 從 header 傳來的
+      let o = this.selected_menu_obj;
+      this.selected_menu_text = menuStore[o.title].text;
+      this.asideMenu = menuStore[o.title].asideMenu;
+      this.selectMenu({
+        title: o.title,
+        key: o.key,
+        index: o.index,
+      });
     } else {
-      this.selectedMenu({ title: "bed", key: 0, index: 0 });
+      // 沒有的話可能是同頁重整，使用預設值
       this.selected_menu_text = "床墊";
-    }
-
-    // 預設選中第一個 section 的第一個項目
-    if (this.sections.length > 0 && this.sections[0].items.length > 0) {
-      console.log("this.selected_menu_key", this.selected_menu_key);
-      this.setProducts();
+      this.asideMenu = menuStore["bed"].asideMenu;
+      this.selectMenu({
+        title: "bed",
+        index: 0,
+        key: 0,
+      });
     }
   },
 };
