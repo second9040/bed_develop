@@ -9,8 +9,7 @@
           :class="{'active': degree <= item.hardness_degree}"
         )
     .desc
-      ul
-        li(v-for="desc in item.desc") {{ desc }}
+      p(v-html="item.desc")
     span.discount_price NT$ {{ addComma(selected_size.discount_price) }}
     span.price NT$ {{ addComma(selected_size.ori_price) }}
     .sizeDiv.d-flex.align-items-center
@@ -57,20 +56,20 @@
 </template>
 
 <script>
-import Multiselect from 'vue-multiselect'
+import Multiselect from "vue-multiselect";
 
 export default {
-  name: 'briefDesc',
+  name: "briefDesc",
   components: {
     Multiselect,
   },
   data() {
     return {
       screenWidth: 0,
-      selected_size: '',
+      selected_size: "",
       select_amount: 1,
       mainSwiper: null,
-    }
+    };
   },
   props: {
     item: {
@@ -79,13 +78,13 @@ export default {
   },
   methods: {
     addComma(num) {
-      return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
+      return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     },
     changeAmount(val) {
       if (this.select_amount > 1 && val == -1) {
-        this.select_amount -= 1
+        this.select_amount -= 1;
       } else if (val == 1) {
-        this.select_amount += 1
+        this.select_amount += 1;
       }
     },
     validateAmount() {
@@ -96,28 +95,26 @@ export default {
         this.select_amount = 99;
       }
     },
-    viewMore(item) {
-
-    },
+    viewMore(item) {},
   },
   mounted() {
     if (this.item.size_obj.length > 0) {
       this.selected_size = this.item.size_obj[0];
     }
   },
-}
+};
 </script>
 
 <style>
-@import 'vue-multiselect/dist/vue-multiselect.css';
+@import "vue-multiselect/dist/vue-multiselect.css";
 </style>
 
 <style scoped>
-@import '/assets/scss/common.scss';
-@import '/assets/css/product_temp/style.css';
-@import '/assets/scss/product/product.scss';
-@import '/assets/scss/product/product_list.scss';
-@import '/assets/scss/product/detail/swiper_and_brief_desc.scss';
+@import "/assets/scss/common.scss";
+@import "/assets/css/product_temp/style.css";
+@import "/assets/scss/product/product.scss";
+@import "/assets/scss/product/product_list.scss";
+@import "/assets/scss/product/detail/swiper_and_brief_desc.scss";
 </style>
 <style lang="scss">
 #product_detail {

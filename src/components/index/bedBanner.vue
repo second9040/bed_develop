@@ -65,18 +65,18 @@ export default {
     return {
       modules: [Autoplay, Navigation, Pagination],
       banners: [
-        // {
-        //   img_pc: "/assets/images/index/banner_kari01_pc.jpg",
-        //   img_mo: "/assets/images/index/banner_kari01_mo.jpg",
-        //   name: "banner_kari01",
-        //   title: ".",
-        //   desc: ".",
-        //   btn_text: "了解更多",
-        //   btn_link: "",
-        // },
         {
-          img_pc: "/assets/images/index/banner_kari02_pc.jpg",
-          img_mo: "/assets/images/index/banner_kari02_mo.jpg",
+          img_pc: "/assets/images/index/banner_kari01_pc.png",
+          img_mo: "/assets/images/index/banner_kari01_mo.png",
+          name: "banner_kari01",
+          title: ".",
+          desc: ".",
+          // btn_text: "了解更多",
+          btn_link: "",
+        },
+        {
+          img_pc: "/assets/images/index/banner_kari02_pc.png",
+          img_mo: "/assets/images/index/banner_kari02_mo.png",
           name: "banner_kari02",
           title: "",
           desc: "",
@@ -84,8 +84,8 @@ export default {
           btn_link: "",
         },
         {
-          img_pc: "/assets/images/index/banner_kari03_pc.jpg",
-          img_mo: "/assets/images/index/banner_kari03_mo.jpg",
+          img_pc: "/assets/images/index/banner_kari03_pc.png",
+          img_mo: "/assets/images/index/banner_kari03_mo.png",
           // img_text: "/assets/images/index/banner_kari03_pc_text.png",
           name: "banner_kari03",
           title: "",
