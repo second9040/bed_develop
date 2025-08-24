@@ -48,7 +48,7 @@
 
                 img.banner-slide(
                   v-else
-                  :src="banner"
+                  :src="getImagePath(banner)"
                   alt="product_banner"
                 )
               // shop toolbar end
@@ -83,22 +83,22 @@
 
                     button.button.btn.btn-outline-primary(type="button" @click="viewMore(item)") 了解更多
               
-              #pagination.pagination_style.pagination.justify-content-center
-                ul.d-flex
-                  li
-                    a(href='#')  &lt;&lt; 
-                  li
-                    a(href='#') 1
-                  li
-                    a.current(href='#') 2
-                  li
-                    a(href='#') 3
-                  li
-                    a(href='#') 4
-                  li
-                    a(href='#') 5
-                  li
-                    a(href='#') &gt;&gt;
+              //- #pagination.pagination_style.pagination.justify-content-center
+              //-   ul.d-flex
+              //-     li
+              //-       a(href='#')  &lt;&lt; 
+              //-     li
+              //-       a(href='#') 1
+              //-     li
+              //-       a.current(href='#') 2
+              //-     li
+              //-       a(href='#') 3
+              //-     li
+              //-       a(href='#') 4
+              //-     li
+              //-       a(href='#') 5
+              //-     li
+              //-       a(href='#') &gt;&gt;
               // shop toolbar end
               // shop wrapper end
       // shop  area end
@@ -195,7 +195,7 @@ export default {
           product_id: 1,
           img: "/assets/images/index/hot_item_1.png",
           name: "國民熱銷舒眠床墊",
-          price: 5800,
+          price: 6800,
           desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
           hardness_degree: 6,
         },
@@ -211,7 +211,7 @@ export default {
           product_id: 3,
           img: "/assets/images/index/hot_item_1.png",
           name: "夢幻舒服床墊",
-          price: 10800,
+          price: 9000,
           desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
           hardness_degree: 3,
         },
@@ -219,25 +219,9 @@ export default {
           product_id: 4,
           img: "/assets/images/index/hot_item_1.png",
           name: "魔力彈韌床墊",
-          price: 9800,
+          price: 13800,
           desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
           hardness_degree: 3,
-        },
-        {
-          product_id: 5,
-          img: "/assets/images/index/hot_item_1.png",
-          name: "波浪舒眠床墊",
-          price: 7800,
-          desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-          hardness_degree: 3,
-        },
-        {
-          product_id: 6,
-          img: "/assets/images/index/hot_item_1.png",
-          name: "波浪舒眠床墊",
-          price: 75800,
-          desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-          hardness_degree: 2,
         },
       ],
     };
