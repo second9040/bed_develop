@@ -16,6 +16,7 @@ export default {
         key: "hardness",
         title: "軟硬度",
         icon: "/assets/images/index/headerIcon_hardness.png",
+        banner: "/assets/images/product/list/hardness.png",
         items: [
           {
             text: "偏軟",
@@ -48,6 +49,7 @@ export default {
         key: "users",
         title: "使用族群",
         icon: "/assets/images/index/headerIcon_users.png",
+        banner: "/assets/images/product/list/users.png",
         items: [
           {
             text: "家用型",
@@ -84,6 +86,7 @@ export default {
         key: "structure",
         title: "床墊結構",
         icon: "/assets/images/index/headerIcon_structure.png",
+        banners: ['/assets/images/product/list/structure1.png', '/assets/images/product/list/structure2.png'],
         items: [
           {
             text: "高強度*串聯式設計",

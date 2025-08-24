@@ -122,7 +122,14 @@
   }
 }
 
-#product_list_page {
+#product_list_page,
+.product_detail {
+  .banner-slide {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;  /* 保持比例裁切，而不是壓縮 */
+      object-position: center; /* 保持圖片置中裁切 */
+  }
   .sidebar-filters {
       width: 240px;
       user-select: none;

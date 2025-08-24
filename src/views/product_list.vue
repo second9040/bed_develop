@@ -10,45 +10,24 @@
               li(@click="goto('home')")
                 a(href='javascript: void(0)') 首頁
               li 所有商品
-              li {{ selected_menu_text }}
+              li {{ selected_menu_text }}分類
           .row
-            .col-lg-3.col-md-12
-              // sidebar widget start
-              aside.sidebar_widget.pc
-                .widget_inner
-                  .widget_list.widget_categories
-                    h2.text-center {{ selected_menu_text }}分類
-                    hr
-                    nav.sidebar-filters
-                      ul.section-list
-                        li.section(v-for="sec in asideMenu" :key="sec.key")
-                          //- Header（點擊可收合）
-                          button.section-header(type="button" @click="toggle(sec.key)")
-                            img.icon(:src="getImagePath(sec.icon)" :alt="sec.title")
-                            span.title {{ sec.title }}
-                            span.bi(:class="{ 'bi-chevron-up': isOpen(sec.key), 'bi-chevron-down': !isOpen(sec.key) }")
-
-                          //- 內容（可收合）
-                          transition(name="collapse")
-                            ul.items(v-show="isOpen(sec.key)")
-                              li.item(v-for="(it, idx) in sec.items" :key="idx")
-                                img.new_icon(
-                                  v-if="it.new == true"
-                                  src="/assets/images/index/headerIcon_new.png"
-                                )
-                                a.item-link(
-                                  href="javascript:void(0)"
-                                  @click.prevent="selectMenu({title: sec.title, key: sec.key, index: idx})"
-                                  :class="{ active: isActive(sec.key, it) }"
-                                ) {{ it.text }}
-
+            menu-aside(
+              :asideMenu="asideMenu"
+              :selectedMenuText="selected_menu_text"
+              :isOpen="isOpen"
+              :isActive="isActive"
+              :getImagePath="getImagePath"
+              @toggle="toggle"
+              @select="selectMenu"
+            )
             .col-lg-9.col-md-12
               .divider_for_h2
                 h2.selected_item_h2.text-center(v-if="selected") {{ selected.title }}
 
               // shop wrapper start
               .shop_banner
-                .banner_field(v-if="selected.banners")
+                .banner_field(v-if="banner && Array.isArray(banner)")
                   swiper.banner_swiper(
                       :loop='true' 
                       :modules='modules' 
@@ -58,26 +37,18 @@
                       :autoplay='{ delay: 5000, disableOnInteraction: false }'
                       :navigation='{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }'
                   )
-                    swiper-slide.swiper-slide(v-for='(banner, index) in selected.banners' :key='index')
+                    swiper-slide.swiper-slide(v-for='(b, index) in banner' :key='index')
                       .position-relative
                         .banner_container.position-relative
-                          img.banner-slide(:src='getImagePath(banner.img_pc, banner.img_mo)' :alt='banner.name')
-                          //- img.slide_text(v-if="banner.img_text" :src='getImagePath(banner.img_text, banner.img_mo)' :alt='banner.name')
-                          .text_div.position-absolute
-                            h1 {{ banner.title }}
-                            h3 {{ banner.desc }}
-                            button.banner_btn.button.btn.btn-primary(
-                                v-if="banner.btn_text"
-                                type="button"
-                            ) {{ banner.btn_text}}
+                          img.banner-slide(:src='getImagePath(b)')
 
                     .swiper-pagination
                     .swiper-button-next
                     .swiper-button-prev
 
-                img(
+                img.banner-slide(
                   v-else
-                  src="/assets/images/product/list/banner.jpg"
+                  :src="banner"
                   alt="product_banner"
                 )
               // shop toolbar end
@@ -160,6 +131,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import menuAside from "@/components/menuAside.vue";
 
 export default {
   name: "product_list",
@@ -167,6 +139,7 @@ export default {
     Multiselect,
     Swiper,
     SwiperSlide,
+    menuAside,
   },
   computed: {
     ...mapState(["selected_menu_obj"]),
@@ -178,21 +151,29 @@ export default {
     },
   },
   watch: {
+    // header 選單觸發
     selected_menu_obj() {
-      let o = this.selected_menu_obj;
-      this.selected_menu_text = menuStore[o.title].text;
-      this.asideMenu = menuStore[o.title].asideMenu;
-      this.selectMenu({
-        title: o.title,
-        key: o.key,
-        index: o.index,
-      });
+      let obj = this.selected_menu_obj;
+
+      let highlightItem = this.asideMenu[obj.key].items[obj.index];
+      highlightItem.title = this.asideMenu[obj.key].title;
+      this.selected = highlightItem;
+
+      this.selected_menu_text = menuStore[obj.title].text;
+      this.asideMenu = menuStore[obj.title].asideMenu;
+      this.activeTab = highlightItem.tabs[0].key;
+      // 軟硬度的格式跟別人不一樣＝＝
+      if (this.selected.title == "軟硬度") {
+        this.activeTab = this.selected.key;
+      }
+      this.banner = this.asideMenu[obj.key].banner || this.asideMenu[obj.key].banners;
     },
   },
   data() {
     return {
       modules: [Autoplay, Navigation, Pagination],
 
+      secTitle: "bed", // 預設床墊
       selected_menu_text: "",
 
       openMap: {
@@ -205,6 +186,8 @@ export default {
 
       asideMenu: null,
       activeTab: "",
+
+      banner: null,
 
       expandedCat: null, // 一次只能顯示一個分類
       products_obj: [
@@ -317,16 +300,26 @@ export default {
 
       // tab 高亮
       this.activeTab = highlightItem.tabs[0].key;
-      console.log("selected", this.selected);
 
       // 軟硬度的格式跟別人不一樣＝＝
       if (this.selected.title == "軟硬度") {
         this.activeTab = this.selected.key;
       }
+      this.banner = this.asideMenu[obj.key].banner || this.asideMenu[obj.key].banners;
+
+      // 把選擇的項目存到 vuex 裡
+      this.selectedMenu({
+        title: this.secTitle,
+        key: obj.key,
+        index: obj.index,
+      });
     },
   },
   mounted() {
     console.log(this.selected);
+    // this.secTitle 還沒寫怎麼指定 目前只有床墊，有其他商品大分類之後
+    // 再來補寫這段邏輯
+
     if (this.selected_menu_obj && this.selected_menu_obj.title) {
       // 從 header 傳來的
       let o = this.selected_menu_obj;
@@ -337,15 +330,19 @@ export default {
         key: o.key,
         index: o.index,
       });
+
+      this.banner = this.asideMenu[o.key].banner || this.asideMenu[o.key].banners;
     } else {
       // 沒有的話可能是同頁重整，使用預設值
       this.selected_menu_text = "床墊";
-      this.asideMenu = menuStore["bed"].asideMenu;
+      this.asideMenu = menuStore[this.secTitle].asideMenu;
       this.selectMenu({
-        title: "bed",
+        title: this.secTitle,
         index: 0,
         key: 0,
       });
+
+      this.banner = this.asideMenu[0].banner || this.asideMenu[0].banners;
     }
   },
 };

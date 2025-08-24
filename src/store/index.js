@@ -101,6 +101,7 @@ export default createStore({
         index: menu.index,
         key: menu.key,
       }
+      console.log("state.selected_menu_obj:", state.selected_menu_obj);
     },
   },
   actions: {
