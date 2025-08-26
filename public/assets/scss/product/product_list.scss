@@ -127,7 +127,7 @@
   .banner-slide {
       width: 100%;
       @media (max-width: 767px) {
-        height: 170px;
+        height: 200px;
         object-fit: cover; /* 保持比例裁切，而不是壓縮 */
         object-position: center; /* 保持圖片置中裁切 */
       }
@@ -328,7 +328,7 @@
 
     .swiper-button-next,
     .swiper-button-prev {
-      padding: 0px 20px;
+      padding: 0;
       opacity: .6;
       height: 25px;
 
