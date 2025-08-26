@@ -62,7 +62,7 @@
                   @click="activeTab = t.key"
                 ) {{ t.label }}
 
-              .product_count(v-if="selected && selected.tabs && selected.tabs.length") 共 10 樣商品
+              .product_count(v-if="selected && selected.tabs && selected.tabs.length") 共 {{ products_obj.length }} 樣商品
 
               .row.shop_wrapper
                 .single_product(v-for="item in products_obj")
@@ -340,4 +340,13 @@ export default {
 @import "/assets/scss/product/product.scss";
 @import "/assets/scss/product/product_list.scss";
 @import "/assets/css/product_temp/style.css";
+</style>
+
+<style lang="scss">
+// swiper 有些樣式不能放在 scoped 裡面 (會吃不到)
+#product_list_page {
+  .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+    background: var(--color7-gray);
+  }
+}
 </style>
