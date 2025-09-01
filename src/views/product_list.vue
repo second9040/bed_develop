@@ -194,7 +194,7 @@ export default {
         {
           product_id: 1,
           img: "/assets/images/index/hot_item_1.png",
-          name: "國民熱銷舒眠床墊",
+          name: "淺波舒眠床墊",
           price: 6800,
           desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
           hardness_degree: 6,
@@ -210,7 +210,7 @@ export default {
         {
           product_id: 3,
           img: "/assets/images/index/hot_item_1.png",
-          name: "夢幻舒服床墊",
+          name: "綿Q托付床墊",
           price: 9000,
           desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
           hardness_degree: 3,
@@ -218,7 +218,7 @@ export default {
         {
           product_id: 4,
           img: "/assets/images/index/hot_item_1.png",
-          name: "魔力彈韌床墊",
+          name: "涼感魔力彈韌床墊",
           price: 13800,
           desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
           hardness_degree: 3,

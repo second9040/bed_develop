@@ -47,9 +47,8 @@
             .swiper-pagination
             .swiper-button-next
             .swiper-button-prev
-</template> 
+</template>
 <script>
-
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper-bundle.css";
 
@@ -67,7 +66,7 @@ const require = (imgPath) => {
     const handlePath = imgPath.replace("@", "../.." + check_url);
     return new URL(handlePath, import.meta.url).href;
   } catch (err) {
-      console.warn(err);
+    console.warn(err);
   }
 };
 export default {
@@ -78,8 +77,8 @@ export default {
   },
   props: {
     screenWidth: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   data() {
     return {
@@ -94,7 +93,7 @@ export default {
         item_1: [
           {
             img: "/assets/images/index/hot_item_1.png",
-            name: "國民熱銷舒眠床墊",
+            name: "淺波舒眠床墊",
             price: 5800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
@@ -110,7 +109,7 @@ export default {
           },
           {
             img: "/assets/images/index/hot_item_1.png",
-            name: "夢幻舒服床墊",
+            name: "綿Q托付床墊",
             price: 10800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
@@ -118,7 +117,7 @@ export default {
           },
           {
             img: "/assets/images/index/hot_item_1.png",
-            name: "魔力彈韌床墊",
+            name: "涼感魔力彈韌床墊",
             price: 9800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 3,
@@ -207,10 +206,9 @@ export default {
           },
         ],
       },
-    }
+    };
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {
     getImagePath(img) {
       return require(`@/${img}`);
@@ -223,7 +221,6 @@ export default {
       //     product_id: item.product_id,
       //   },
       // });
-      
     },
     click_show_qa(index) {
       this.show_qa = this.show_qa == index ? 0 : index;
@@ -245,7 +242,7 @@ export default {
     addComma(num) {
       return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     },
-  }
+  },
 };
 </script>
 
