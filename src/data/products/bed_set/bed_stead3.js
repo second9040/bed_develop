@@ -1,5 +1,5 @@
 export default {
-  name: '原廠油壓式掀床-有框版',
+  name: '日式實木腳底床架',
 
   tag_ch: [],
   tag_en: [],
@@ -18,33 +18,33 @@ export default {
       '/assets/images/product/bed_set/1/3.jpg',
     ],
   desc: `
-<p> <span class="font-bold">🔹 空間升級術，一張床搞定收納煩惱</span><br>
-原廠油壓掀床床組，給你安全、省力、又有型的機能好床架</p>
+<p> <span class="font-bold">🔹日式靜謐居家美學</span><br>
+簡約而純粹，去除繁複裝飾，回歸材質本質之美。</p>
 
-<p> <span class="font-bold">🔹 全木芯板｜紮實用料，經得起時間考驗</span><br>
+<p> <span class="font-bold">🔹全木芯板｜紮實用料，經得起時間考驗</span><br>
 採用全木芯板打造，不僅提升整體穩固性，更擁有極佳的耐重與耐用表現</p>
 
-<p> <span class="font-bold">🔹 高強度原廠油壓棒 ｜重物也能輕鬆開合</span><br>
-搭載高強度油壓撐桿，穩定承重力高達 330磅（約150公斤），掀起床板不費力</p>
+<p> <span class="font-bold">🔹 四周封邊X防撞壓條設計</span><br>
+邊角柔和處理，給家人多一層安全守護</p>
 
-<p> <span class="font-bold">🔹後掀床設計｜掀得高，看得清</span><br>
-掀床開啟更高、更穩，無需低頭鑽入、彎腰找物，床下空間一覽無遺。<br>
+<p> <span class="font-bold">🔹日式實木腳底X架高設計</span><br>
+兼顧日式質感與現代便利，高度友善掃地機器人，清潔無死角<br>
 另有側掀可選購 </p>
 
-<p> <span class="font-bold">🔹安全支撐卡扣｜掀起不怕掉落</span><br>
-安全支撐卡扣，扣上自動鎖定，確保使用過程不會意外滑落，守護你與家人的安全。</p>
+<p> <span class="font-bold">🔹匠心手作X防腐防潮處理</span><br>
+專業防腐防潮處理，延長床體壽命</p>
 `,
     
     size_obj: [
-      { size: '單人加大3.5*6.2尺(106*188cm)', ori_price: 8800, discount_price: 6880 },
-      { size: '標準雙人5*6.2尺(152*188cm)', ori_price: 11800, discount_price: 9800 },
-      { size: '雙人加大6*6.2尺(182*188cm)', ori_price: 14800, discount_price: 12800 },
-      { size: 'King size6*7尺(182*212cm)', ori_price: 20800, discount_price: 16800 },
+      { size: '單人加大3.5*6.2尺(106*188cm)', ori_price: 5500, discount_price: 5000 },
+      { size: '標準雙人5*6.2尺(152*188cm)', ori_price: 7000, discount_price: 6800 },
+      { size: '雙人加大6*6.2尺(182*188cm)', ori_price: 8800, discount_price: 7800 },
+      { size: 'King size6*7尺(182*212cm)', ori_price: 10800, discount_price: 9800 },
     ],
     image_intro: [
-      '/assets/images/product/bed_set/1/intro.png',
-      '/assets/images/product/bed_set/1/feature.png',
-      '/assets/images/product/bed_set/1/size.png'
+      '/assets/images/product/bed_set/3/intro.jpg',
+      '/assets/images/product/bed_set/3/feature.jpg',
+      '/assets/images/product/bed_set/3/size.jpg'
     ],
     tab_behavior: 'scroll',
     tab_content: [

@@ -12,7 +12,8 @@
               li(@click="goto('product_list')")
                 a(href='javascript: void(0)') 所有商品
               li(@click="goto('product_list')")
-                a(href='javascript: void(0)') {{ selected_menu_text }}分類
+                a(href='javascript: void(0)') {{ selected_menu_text }}
+                span(v-if="selected_menu_text == '床墊'") 分類
               li(@click="goto('product_list')")
                 a(href='javascript: void(0)') {{ selected.title }}
               li {{ selected.text }}
@@ -158,14 +159,16 @@ export default {
       this.selected = highlightItem;
 
       // tab 高亮
-      this.activeTab = highlightItem.tabs[0].key;
+      if (highlightItem.tabs) {
+        this.activeTab = highlightItem.tabs[0].key;
+      }
       console.log("selected_detail", this.selected);
 
       // 軟硬度的格式跟別人不一樣＝＝
       if (this.selected.title == "軟硬度") {
         this.activeTab = this.selected.key;
       }
-
+      console.log(this.secTitle);
       // 把選擇的項目存到 vuex 裡
       this.selectedMenu({
         title: this.secTitle,
@@ -187,6 +190,7 @@ export default {
     if (this.selected_menu_obj && this.selected_menu_obj.title) {
       // 從 header 傳來的
       let o = this.selected_menu_obj;
+      this.secTitle = o.title;
       this.selected_menu_text = menuStore[o.title].text;
       this.asideMenu = menuStore[o.title].asideMenu;
       this.selectMenu({
@@ -196,10 +200,11 @@ export default {
       });
     } else {
       // 沒有的話可能是同頁重整，使用預設值
+      this.secTitle = this.$route.params.category;
       this.selected_menu_text = "床墊";
-      this.asideMenu = menuStore["bed"].asideMenu;
+      this.asideMenu = menuStore[this.secTitle].asideMenu;
       this.selectMenu({
-        title: "bed",
+        title: this.secTitle,
         index: 0,
         key: 0,
       });
@@ -208,17 +213,32 @@ export default {
     // 第一次載入時菜單功能正常，用於高亮
     // 載入後再選＝使用者要開其他商品，改成 route
     this.firstLoad = false;
+
+    // 有空再想一想使用者亂打id的話怎麼重新回到列表頁
   },
   watch: {
-    "$route.params.product_id": {
+    "$route.params.category": {
       immediate: true, // 初次載入時也觸發
       handler(newId) {
-        if (newId && productStore[`bed${newId}`]) {
-          this.item = productStore[`bed${newId}`];
+        if (newId && productStore[`${this.$route.params.category}${newId}`]) {
+          this.item = productStore[`${this.$route.params.category}${newId}`];
           // 根據新商品重設選擇狀態
         } else {
           // fallback
-          this.item = productStore["bed1"]; // 預設床墊
+          this.item = productStore[`${this.$route.params.category}1`]; // 預設床墊
+        }
+        console.log("productStore", productStore);
+      },
+    },
+    "$route.params.product_id": {
+      immediate: true, // 初次載入時也觸發
+      handler(newId) {
+        if (newId && productStore[`${this.$route.params.category}${newId}`]) {
+          this.item = productStore[`${this.$route.params.category}${newId}`];
+          // 根據新商品重設選擇狀態
+        } else {
+          // fallback
+          this.item = productStore[`${this.$route.params.category}1`]; // 預設床墊
         }
         console.log("productStore", productStore);
       },

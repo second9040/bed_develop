@@ -131,6 +131,40 @@ export default {
         ],
       },
     ],
+    products_obj: [
+      {
+        product_id: 1,
+        img: "/assets/images/index/hot_item_1.png",
+        name: "淺波舒眠床墊",
+        price: 6800,
+        desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        hardness_degree: 6,
+      },
+      {
+        product_id: 2,
+        img: "/assets/images/index/hot_item_1.png",
+        name: "綿雲舒壓床墊",
+        price: 6800,
+        desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        hardness_degree: 3,
+      },
+      {
+        product_id: 3,
+        img: "/assets/images/index/hot_item_1.png",
+        name: "綿Q托付床墊",
+        price: 9000,
+        desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        hardness_degree: 3,
+      },
+      {
+        product_id: 4,
+        img: "/assets/images/index/hot_item_1.png",
+        name: "涼感魔力彈韌床墊",
+        price: 13800,
+        desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        hardness_degree: 3,
+      },
+    ],
   },
 
   bed_stead: {
@@ -145,22 +179,18 @@ export default {
           {
             text: "木質床頭片",
             key: "hard-soft",
-            tabs: bed_hardness_tabs,
           },
           {
             text: "軟墊床頭片",
             key: "soft-support",
-            tabs: bed_hardness_tabs,
           },
           {
             text: "書架型床頭",
             key: "medium",
-            tabs: bed_hardness_tabs,
           },
           {
             text: "收納床頭櫃",
             key: "hard-fit",
-            tabs: bed_hardness_tabs,
           },
         ],
       },
@@ -173,31 +203,14 @@ export default {
           {
             text: "油壓式掀床架",
             key: "home",
-            tabs: [
-              { key: "all", label: "全部" },
-              { key: "A", label: "厚實棉襯" },
-              { key: "B", label: "1cm乳膠" },
-              { key: "C", label: "2.54cm乳膠" },
-              { key: "D", label: "5.08cm乳膠" },
-            ],
           },
           {
             text: "雙拼式床架",
             key: "rental",
-            tabs: [
-              { key: "all", label: "全部" },
-              { key: "A", label: "上班套房" },
-              { key: "B", label: "學生套房" },
-            ],
           },
           {
             text: "日式木腳床架",
             key: "custom",
-            tabs: [
-              { key: "all", label: "全部" },
-              { key: "A", label: "房東仲介" },
-              { key: "B", label: "設計師" },
-            ],
           },
         ],
       },
@@ -247,6 +260,29 @@ export default {
             ],
           },
         ],
+      },
+    ],
+    products_obj: [
+      {
+        product_id: 1,
+        img: "/assets/images/product/bed_set/1/card.jpg",
+        name: "原廠油壓式掀床-有框版",
+        price: 6800,
+        desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+      },
+      {
+        product_id: 2,
+        img: "/assets/images/product/bed_set/2/card.jpg",
+        name: "雙拼木心板床架-有抽屜",
+        price: 4000,
+        desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+      },
+      {
+        product_id: 3,
+        img: "/assets/images/product/bed_set/3/card.jpg",
+        name: "日式實木腳底床架",
+        price: 5000,
+        desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
       },
     ],
   }

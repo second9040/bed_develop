@@ -63,7 +63,8 @@
                   @click="activeTab = t.key"
                 ) {{ t.label }}
 
-              .product_count(v-if="selected && selected.tabs && selected.tabs.length") 共 {{ products_obj.length }} 樣商品
+              //- .product_count(v-if="selected && selected.tabs && selected.tabs.length && products_obj") 共 {{ products_obj.length }} 樣商品
+              .product_count(v-if="products_obj") 共 {{ products_obj.length }} 樣商品
 
               .row.shop_wrapper
                 .single_product(v-for="item in products_obj")
@@ -72,7 +73,7 @@
                     h4 {{ item.name }}
                     p.price NT$ {{ addComma(item.price) }} 起
                     p {{ item.desc }}
-                    .hardness_degree_div.d-flex
+                    .hardness_degree_div.d-flex(v-if="item.hardness_degree")
                       .text_circle 軟
                       .mx-1.d-flex.align-items-center
                         .degree_item(
@@ -157,6 +158,7 @@ export default {
       let obj = this.selected_menu_obj;
       this.secTitle = obj.title;
       localStorage.setItem("secTitle", this.secTitle);
+      this.products_obj = menuStore[this.secTitle].products_obj;
 
       this.selected_menu_text = menuStore[obj.title].text;
       this.asideMenu = menuStore[obj.title].asideMenu;
@@ -165,7 +167,9 @@ export default {
       highlightItem.title = this.asideMenu[obj.key].title;
       this.selected = highlightItem;
 
-      this.activeTab = highlightItem.tabs[0].key;
+      if (highlightItem.tabs) {
+        this.activeTab = highlightItem.tabs[0].key;
+      }
       // 軟硬度的格式跟別人不一樣＝＝
       if (this.selected.title == "軟硬度") {
         this.activeTab = this.selected.key;
@@ -194,40 +198,7 @@ export default {
       banner: null,
 
       expandedCat: null, // 一次只能顯示一個分類
-      products_obj: [
-        {
-          product_id: 1,
-          img: "/assets/images/index/hot_item_1.png",
-          name: "淺波舒眠床墊",
-          price: 6800,
-          desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-          hardness_degree: 6,
-        },
-        {
-          product_id: 2,
-          img: "/assets/images/index/hot_item_1.png",
-          name: "綿雲舒壓床墊",
-          price: 6800,
-          desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-          hardness_degree: 3,
-        },
-        {
-          product_id: 3,
-          img: "/assets/images/index/hot_item_1.png",
-          name: "綿Q托付床墊",
-          price: 9000,
-          desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-          hardness_degree: 3,
-        },
-        {
-          product_id: 4,
-          img: "/assets/images/index/hot_item_1.png",
-          name: "涼感魔力彈韌床墊",
-          price: 13800,
-          desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-          hardness_degree: 3,
-        },
-      ],
+      products_obj: null,
     };
   },
   methods: {
@@ -244,6 +215,7 @@ export default {
         name: "product_detail",
         params: {
           product_id: item.product_id,
+          category: this.secTitle,
         },
       });
     },
@@ -287,7 +259,9 @@ export default {
       this.selected = highlightItem;
 
       // tab 高亮
-      this.activeTab = highlightItem.tabs[0].key;
+      if (highlightItem.tabs) {
+        this.activeTab = highlightItem.tabs[0].key;
+      }
 
       // 軟硬度的格式跟別人不一樣＝＝
       if (this.selected.title == "軟硬度") {
@@ -310,6 +284,7 @@ export default {
       this.secTitle = o.title;
       this.selected_menu_text = menuStore[o.title].text;
       this.asideMenu = menuStore[o.title].asideMenu;
+      this.products_obj = menuStore[o.title].products_obj;
       this.selectMenu({
         title: o.title,
         key: o.key,
@@ -319,9 +294,10 @@ export default {
       this.banner = this.asideMenu[o.key].banner || this.asideMenu[o.key].banners;
     } else {
       // 沒有的話可能是同頁重整，使用預設值
-      this.secTitle = localStorage.getItem("secTitle") || "bed";
+      this.secTitle = localStorage.getItem("secTitle");
       this.selected_menu_text = menuStore[this.secTitle].text;
       this.asideMenu = menuStore[this.secTitle].asideMenu;
+      this.products_obj = menuStore[this.secTitle].products_obj;
       this.selectMenu({
         title: this.secTitle,
         index: 0,

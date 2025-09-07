@@ -1,13 +1,15 @@
 <template lang="pug">
   .col-lg-5.col-md-12.item_detail
     h3 {{ item.name }}
-    .hardness_degree.d-flex
+    .hardness_degree.d-flex(v-if="item.hardness_degree")
       h4 床墊硬度
       .degree.d-flex.align-items-center
         .item(
           v-for="degree in 7"
           :class="{'active': degree <= item.hardness_degree}"
         )
+    .hardness_degree.d-flex.mb-2(v-else)
+
     .desc
       p(v-html="item.desc")
     span.discount_price NT$ {{ addComma(selected_size.discount_price) }}
