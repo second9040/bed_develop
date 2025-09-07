@@ -53,21 +53,45 @@
                     a(href="javascript: void(0)") 獨立筒型彈簧
 
           li(
-              @click="goto('product_list', null, 'bedstead')" 
-              @mouseenter="showSubmenu('bedstead')" 
+              @click="goto('product_list', null, 'bed_stead')"
+              @mouseenter="showSubmenu('bed_stead')"
               @mouseleave="hideSubmenu"
           )
             a.submenu-toggle(href="javascript: void(0)") 床架/床頭櫃
-            div.submenu(v-show="currentMenu === 'bedstead'")
-              ul
-                li(@click="goto('product_list', 'bedstead')") 
-                  a(href="javascript: void(0)") 所有床墊
-                li(@click="goto('product_list', 'bedstead')") 
-                  a(href="javascript: void(0)") 家庭用床墊
-                li(@click="goto('product_list', 'bedstead')") 
-                  a(href="javascript: void(0)") 租屋用床墊
-                li(@click="goto('product_list', 'bedstead')") 
-                  a(href="javascript: void(0)") 嫁妝用床墊
+            div.submenu.multi-column
+              .submenu-column
+                div.submenu-header
+                  img.submenu-icon(src="/assets/images/index/bed_cabinet.png")
+                  p 床頭片/櫃
+                ul
+                  li(@click="goto('product_list', null, null, 'bed_stead', 0, 0)")
+                    a(href="javascript: void(0)") 木質床頭片
+                  li(@click="goto('product_list', null, null, 'bed_stead', 0, 1)")
+                    a(href="javascript: void(0)") 軟墊床頭片
+                  li(@click="goto('product_list', null, null, 'bed_stead', 0, 2)")
+                    a(href="javascript: void(0)") 書架型床頭
+                  li(@click="goto('product_list', null, null, 'bed_stead', 0, 3)")
+                    a(href="javascript: void(0)") 收納床頭櫃
+              .submenu-column.left-bar
+                div.submenu-header
+                  img.submenu-icon(src="/assets/images/index/bed_stead.png")
+                  p 床架
+                ul
+                  li(@click="goto('product_list', null, null, 'bed_stead', 1, 0 )")
+                    a(href="javascript: void(0)") 油壓式掀床架
+                  li(@click="goto('product_list', null, null, 'bed_stead', 1, 1 )")
+                    a(href="javascript: void(0)") 雙拼式床架
+                  li(@click="goto('product_list', null, null, 'bed_stead', 1, 2 )")
+                    a(href="javascript: void(0)") 日式木腳床架
+              .submenu-column.left-bar
+                div.submenu-header
+                  img.submenu-icon(src="/assets/images/index/bed_set.png")
+                  p 床組(含床頭)
+                ul
+                  li(@click="goto('product_list', null, null, 'bed_stead', 2, 0)")
+                    a(href="javascript: void(0)") 皮革實木鋼構床組
+                  li(@click="goto('product_list', null, null, 'bed_stead', 2, 1)")
+                    a(href="javascript: void(0)") 皮革收納鋼構床組
           li(
               @click="goto('product_list', null, 'others')" 
               @mouseenter="showSubmenu('others')" 

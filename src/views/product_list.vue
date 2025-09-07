@@ -10,7 +10,8 @@
               li(@click="goto('home')")
                 a(href='javascript: void(0)') 首頁
               li 所有商品
-              li {{ selected_menu_text }}分類
+              li {{ selected_menu_text }}
+                span.font-bold(v-if="selected_menu_text == '床墊'") 分類
           .row
             menu-aside(
               :asideMenu="asideMenu"
@@ -154,13 +155,16 @@ export default {
     // header 選單觸發
     selected_menu_obj() {
       let obj = this.selected_menu_obj;
+      this.secTitle = obj.title;
+      localStorage.setItem("secTitle", this.secTitle);
+
+      this.selected_menu_text = menuStore[obj.title].text;
+      this.asideMenu = menuStore[obj.title].asideMenu;
 
       let highlightItem = this.asideMenu[obj.key].items[obj.index];
       highlightItem.title = this.asideMenu[obj.key].title;
       this.selected = highlightItem;
 
-      this.selected_menu_text = menuStore[obj.title].text;
-      this.asideMenu = menuStore[obj.title].asideMenu;
       this.activeTab = highlightItem.tabs[0].key;
       // 軟硬度的格式跟別人不一樣＝＝
       if (this.selected.title == "軟硬度") {
@@ -300,13 +304,10 @@ export default {
     },
   },
   mounted() {
-    console.log(this.selected);
-    // this.secTitle 還沒寫怎麼指定 目前只有床墊，有其他商品大分類之後
-    // 再來補寫這段邏輯
-
     if (this.selected_menu_obj && this.selected_menu_obj.title) {
       // 從 header 傳來的
       let o = this.selected_menu_obj;
+      this.secTitle = o.title;
       this.selected_menu_text = menuStore[o.title].text;
       this.asideMenu = menuStore[o.title].asideMenu;
       this.selectMenu({
@@ -318,7 +319,8 @@ export default {
       this.banner = this.asideMenu[o.key].banner || this.asideMenu[o.key].banners;
     } else {
       // 沒有的話可能是同頁重整，使用預設值
-      this.selected_menu_text = "床墊";
+      this.secTitle = localStorage.getItem("secTitle") || "bed";
+      this.selected_menu_text = menuStore[this.secTitle].text;
       this.asideMenu = menuStore[this.secTitle].asideMenu;
       this.selectMenu({
         title: this.secTitle,

@@ -1,0 +1,1 @@
+export { default as stead1 } from './bed_stead1.js';

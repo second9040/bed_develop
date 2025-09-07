@@ -3,7 +3,8 @@
   aside.sidebar_widget.pc
     .widget_inner
       .widget_list.widget_categories
-        h2.text-center {{ selectedMenuText }}分類
+        h2.text-center(v-if="selectedMenuText == '床墊'") {{ selectedMenuText }}分類
+        h2.text-center(v-else) {{ selectedMenuText }}
         hr
         nav.sidebar-filters
           ul.section-list
