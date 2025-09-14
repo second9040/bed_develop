@@ -85,7 +85,7 @@ export default {
   data() {
     return {
       firstLoad: true,
-      secTitle: "bed", // 預設床墊
+      secTitle: "mattresses", // 預設床墊
       asideMenu: null,
       selected_menu_text: "",
 
@@ -199,9 +199,16 @@ export default {
         index: o.index,
       });
     } else {
+      // product_id 才是導覽商品的 可是他們現在這樣改沒辦法讓 id 出現在 url
+      // 現在是 localStorage 帶 product_id 過來, 但為了避免出錯, 載入後就會清除
+      // 有空再想這個頁面重整了怎麼辦, 目前先回到上一頁 product_list
+      this.$router.go(-1);
+      return;
+
       // 沒有的話可能是同頁重整，使用預設值
       this.secTitle = this.$route.params.category;
-      this.selected_menu_text = "床墊";
+      this.selected_menu_text =
+        this.this.secTitle == "mattresses" ? "床墊" : "床架/床頭櫃";
       this.asideMenu = menuStore[this.secTitle].asideMenu;
       this.selectMenu({
         title: this.secTitle,
@@ -214,12 +221,16 @@ export default {
     // 載入後再選＝使用者要開其他商品，改成 route
     this.firstLoad = false;
 
+    // 清除前面操作留下的 localStorage
+    localStorage.removeItem("selected_menu_obj");
+
     // 有空再想一想使用者亂打id的話怎麼重新回到列表頁
   },
   watch: {
     "$route.params.category": {
       immediate: true, // 初次載入時也觸發
       handler(newId) {
+        console.log(`watch: $route.params.category`, newId);
         if (newId && productStore[`${this.$route.params.category}${newId}`]) {
           this.item = productStore[`${this.$route.params.category}${newId}`];
           // 根據新商品重設選擇狀態
@@ -230,17 +241,19 @@ export default {
         console.log("productStore", productStore);
       },
     },
-    "$route.params.product_id": {
+    "$route.params.product_type": {
       immediate: true, // 初次載入時也觸發
       handler(newId) {
-        if (newId && productStore[`${this.$route.params.category}${newId}`]) {
-          this.item = productStore[`${this.$route.params.category}${newId}`];
+        let product_id = localStorage.getItem("product_id");
+        if (newId && productStore[`${this.$route.params.category}${product_id}`]) {
+          this.item = productStore[`${this.$route.params.category}${product_id}`];
           // 根據新商品重設選擇狀態
         } else {
           // fallback
           this.item = productStore[`${this.$route.params.category}1`]; // 預設床墊
         }
         console.log("productStore", productStore);
+        localStorage.removeItem("product_id");
       },
     },
   },

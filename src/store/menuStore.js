@@ -8,8 +8,10 @@ const bed_hardness_tabs = [
   { key: "hard", label: "偏硬" },
 ];
 
+// product_id: 商品 id, 根據這個 id 決定在 list 顯示的順序
+// product_hash: 同一個商品的不同規格版本, user 之後可能會改成英文
 export default {
-  bed: {
+  mattresses: {
     text: "床墊",
     asideMenu: [
       {
@@ -133,7 +135,9 @@ export default {
     ],
     products_obj: [
       {
+        product_type: "hard_spring",
         product_id: 1,
+        product_hash: 1,
         img: "/assets/images/index/hot_item_1.png",
         name: "淺波舒眠床墊",
         price: 6800,
@@ -141,7 +145,9 @@ export default {
         hardness_degree: 6,
       },
       {
+        product_type: "pocket_spring",
         product_id: 2,
+        product_hash: 1,
         img: "/assets/images/index/hot_item_1.png",
         name: "綿雲舒壓床墊",
         price: 6800,
@@ -149,7 +155,9 @@ export default {
         hardness_degree: 3,
       },
       {
+        product_type: "elastic_spring",
         product_id: 3,
+        product_hash: 1,
         img: "/assets/images/index/hot_item_1.png",
         name: "綿Q托付床墊",
         price: 9000,
@@ -157,17 +165,29 @@ export default {
         hardness_degree: 3,
       },
       {
+        product_type: "alternating_spring",
         product_id: 4,
+        product_hash: 1,
         img: "/assets/images/index/hot_item_1.png",
         name: "涼感魔力彈韌床墊",
         price: 13800,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
         hardness_degree: 3,
       },
+      {
+        product_type: "pocket_spring",
+        product_id: 5,
+        product_hash: 1,
+        img: "/assets/images/index/hot_item_1.png",
+        name: "夢幻之星床墊",
+        price: 14800,
+        desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        hardness_degree: 3,
+      },
     ],
   },
 
-  bed_stead: {
+  bedframe: {
     text: "床架/床頭櫃",
     asideMenu: [
       {
@@ -264,21 +284,27 @@ export default {
     ],
     products_obj: [
       {
+        product_type: "lifted_storage_bed",
         product_id: 1,
+        product_hash: 1,
         img: "/assets/images/product/bed_set/1/card.jpg",
         name: "原廠油壓式掀床-有框版",
         price: 6800,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
       },
       {
+        product_type: "cabinet_storage_bed",
         product_id: 2,
+        product_hash: 1,
         img: "/assets/images/product/bed_set/2/card.jpg",
         name: "雙拼木心板床架-有抽屜",
         price: 4000,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
       },
       {
+        product_type: "japanese_style_bed",
         product_id: 3,
+        product_hash: 1,
         img: "/assets/images/product/bed_set/3/card.jpg",
         name: "日式實木腳底床架",
         price: 5000,

@@ -12,10 +12,14 @@ const router = createRouter({
     {
       path: '/product_list',
       name: 'product_list',
-      component: () => import('../views/product_list.vue')
+      component: () => import('../views/product_list.vue'),
+      alias: [
+        '/product_list_mattresses',
+        '/product_list_bedframe'
+      ]
     },
     {
-      path: '/product_detail/:category/:product_id',
+      path: '/product_detail/:category/:product_type/:product_hash',
       name: 'product_detail',
       component: () => import('../views/product_detail.vue'),
     },
@@ -88,8 +92,8 @@ const router = createRouter({
       component: () => import('../views/AboutView_2_feature.vue')
     },
     {
-      path: '/about_buy_note',
-      name: 'about_buy_note',
+      path: '/about_shopping_notes',
+      name: 'about_shopping_notes',
       component: () => import('../views/AboutView_3_buy_note.vue')
     }
   ],

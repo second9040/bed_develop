@@ -181,7 +181,7 @@ export default {
     return {
       modules: [Autoplay, Navigation, Pagination],
 
-      secTitle: "bed", // 預設床墊
+      secTitle: "mattresses", // 預設床墊
       selected_menu_text: "",
 
       openMap: {
@@ -214,10 +214,12 @@ export default {
       this.$router.push({
         name: "product_detail",
         params: {
-          product_id: item.product_id,
           category: this.secTitle,
+          product_type: item.product_type,
+          product_hash: item.product_hash,
         },
       });
+      localStorage.setItem("product_id", item.product_id);
     },
     goto(page, hash = null) {
       this.$router.push({
@@ -278,6 +280,12 @@ export default {
     },
   },
   mounted() {
+    const item = localStorage.getItem("selected_menu_obj");
+    if (item) {
+      this.selectedMenu(JSON.parse(item)); // 呼叫 Vuex action
+      localStorage.removeItem("selectedItem"); // 用完就清掉
+    }
+
     if (this.selected_menu_obj && this.selected_menu_obj.title) {
       // 從 header 傳來的
       let o = this.selected_menu_obj;
@@ -294,7 +302,7 @@ export default {
       this.banner = this.asideMenu[o.key].banner || this.asideMenu[o.key].banners;
     } else {
       // 沒有的話可能是同頁重整，使用預設值
-      this.secTitle = localStorage.getItem("secTitle");
+      this.secTitle = location.href.split("product_list_")[1];
       this.selected_menu_text = menuStore[this.secTitle].text;
       this.asideMenu = menuStore[this.secTitle].asideMenu;
       this.products_obj = menuStore[this.secTitle].products_obj;

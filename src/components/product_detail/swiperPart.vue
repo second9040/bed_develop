@@ -51,25 +51,25 @@ const require = (imgPath) => {
   try {
     let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
     const handlePath = imgPath.replace("@", "../.." + check_url);
-    return new URL(handlePath, import.meta.url).href
+    return new URL(handlePath, import.meta.url).href;
   } catch (err) {
-    console.warn(err)
+    console.warn(err);
   }
-}
+};
 
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import 'swiper/swiper-bundle.css'
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/swiper-bundle.css";
 
 // Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 // import required modules
-import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 export default {
-  name: 'SwiperPart',
+  name: "SwiperPart",
   components: {
     Swiper,
     SwiperSlide,
@@ -80,7 +80,7 @@ export default {
       select_amount: 1,
       mainSwiper: null,
       modules: [Autoplay, Navigation, Pagination],
-    }
+    };
   },
   props: {
     item: {
@@ -89,66 +89,70 @@ export default {
   },
   methods: {
     getImagePath(img) {
-      return require(`@/${img}`)
+      return require(`@/${img}`);
     },
     calcSlideToShow() {
       if (this.screenWidth > 1199) {
-        return 5
+        return 5;
       }
-      return 3
+      return 3;
     },
     calcSlideSpace() {
       // if (this.screenWidth > 576) {
       //   return 30
       // }
-      return 10
+      return 10;
     },
     updateSwiperSetting() {
-      const screenWidth = window.innerWidth
+      const screenWidth = window.innerWidth;
 
-      this.screenWidth = screenWidth
+      this.screenWidth = screenWidth;
 
       if (screenWidth < 1200) {
-        let slideImg = document.querySelector('.small_swiper img');
+        let slideImg = document.querySelector(".small_swiper img");
         let slideImgHeight = 0;
         if (slideImg) {
-          slideImgHeight = slideImg.offsetHeight
+          slideImgHeight = slideImg.offsetHeight;
         } else {
           return;
         }
 
         if (slideImgHeight) {
-          document.querySelector('.small_swiper .swiper-button-prev').style.height = `${slideImgHeight + 5}px`
-          document.querySelector('.small_swiper .swiper-button-next').style.height = `${slideImgHeight + 5}px`
+          document.querySelector(".small_swiper .swiper-button-prev").style.height = `${
+            slideImgHeight + 5
+          }px`;
+          document.querySelector(".small_swiper .swiper-button-next").style.height = `${
+            slideImgHeight + 5
+          }px`;
         } else {
           // 沒取到高度表示 swiper 還沒加載完成
           setTimeout(() => {
-            this.updateSwiperSetting()
+            this.updateSwiperSetting();
           }, 100);
         }
       }
     },
     smallSwiperClick(slide) {
-      this.mainSwiper.slideTo(slide.clickedIndex)
+      this.mainSwiper.slideTo(slide.clickedIndex);
     },
     onSwiper(swiper) {
-      this.mainSwiper = swiper
+      this.mainSwiper = swiper;
     },
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.updateSwiperSetting)
+    window.removeEventListener("resize", this.updateSwiperSetting);
   },
   mounted() {
-    this.updateSwiperSetting()
-    window.addEventListener('resize', this.updateSwiperSetting)
+    this.updateSwiperSetting();
+    window.addEventListener("resize", this.updateSwiperSetting);
   },
-}
+};
 </script>
 
 <style scoped>
-@import '/assets/scss/common.scss';
-@import '/assets/css/product_temp/style.css';
-@import '/assets/scss/product/product.scss';
-@import '/assets/scss/product/product_list.scss';
-@import '/assets/scss/product/detail/swiper_and_brief_desc.scss';
+@import "/assets/scss/common.scss";
+@import "/assets/css/product_temp/style.css";
+@import "/assets/scss/product/product.scss";
+@import "/assets/scss/product/product_list.scss";
+@import "/assets/scss/product/detail/swiper_and_brief_desc.scss";
 </style>

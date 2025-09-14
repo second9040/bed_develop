@@ -7,54 +7,54 @@
       nav#navmenu.navmenu
         ul
           li(
-              @click="goto('product_list', null, 'bed')" 
-              @mouseenter="showSubmenu('bed')" 
+              @click="goto('product_list', null, 'mattresses')" 
+              @mouseenter="showSubmenu('mattresses')" 
               @mouseleave="hideSubmenu"
               
           )
             a.submenu-toggle(href="javascript: void(0)") 床墊
-            //- div.submenu.multi-column(v-show="currentMenu === 'bed'")
+            //- div.submenu.multi-column(v-show="currentMenu === 'mattresses'")
             div.submenu.multi-column
               .submenu-column
                 div.submenu-header
                   img.submenu-icon(src="/assets/images/index/headerIcon_hardness.png")
                   p 軟硬度
                 ul
-                  li(@click="goto('product_list', null, null, 'bed', 0, 0)") 
+                  li(@click="goto('product_list', null, null, 'mattresses', 0, 0)") 
                     a(href="javascript: void(0)") 偏軟
-                  li(@click="goto('product_list', null, null, 'bed', 0, 1)") 
+                  li(@click="goto('product_list', null, null, 'mattresses', 0, 1)") 
                     a(href="javascript: void(0)") 軟有支撐
-                  li(@click="goto('product_list', null, null, 'bed', 0, 2)") 
+                  li(@click="goto('product_list', null, null, 'mattresses', 0, 2)") 
                     a(href="javascript: void(0)") 軟硬適中
-                  li(@click="goto('product_list', null, null, 'bed', 0, 3)") 
+                  li(@click="goto('product_list', null, null, 'mattresses', 0, 3)") 
                     a(href="javascript: void(0)") 硬有服貼
-                  li(@click="goto('product_list', null, null, 'bed', 0, 4)") 
+                  li(@click="goto('product_list', null, null, 'mattresses', 0, 4)") 
                     a(href="javascript: void(0)") 偏硬
               .submenu-column.left-bar
                 div.submenu-header
                   img.submenu-icon(src="/assets/images/index/headerIcon_users.png")
                   p 使用族群
                 ul
-                  li(@click="goto('product_list', null, null, 'bed', 1, 0 )") 
+                  li(@click="goto('product_list', null, null, 'mattresses', 1, 0 )") 
                     a(href="javascript: void(0)") 家用型
-                  li(@click="goto('product_list', null, null, 'bed', 1, 1 )") 
+                  li(@click="goto('product_list', null, null, 'mattresses', 1, 1 )") 
                     a(href="javascript: void(0)") 出租型
-                  li(@click="goto('product_list', null, null, 'bed', 1, 2 )") 
+                  li(@click="goto('product_list', null, null, 'mattresses', 1, 2 )") 
                     a(href="javascript: void(0)") 客製(軟硬/尺寸/表布)
               .submenu-column.left-bar
                 div.submenu-header
                   img.submenu-icon(src="/assets/images/index/headerIcon_structure.png")
                   p 床墊結構
                 ul
-                  li(@click="goto('product_list', null, null, 'bed', 2, 0)") 
+                  li(@click="goto('product_list', null, null, 'mattresses', 2, 0)") 
                     img.new_icon(src="/assets/images/index/headerIcon_new.png")
                     a(href="javascript: void(0)") 高強度*串聯式設計
-                  li(@click="goto('product_list', null, null, 'bed', 2, 1)") 
+                  li(@click="goto('product_list', null, null, 'mattresses', 2, 1)") 
                     a(href="javascript: void(0)") 獨立筒型彈簧
 
           li(
-              @click="goto('product_list', null, 'bed_stead')"
-              @mouseenter="showSubmenu('bed_stead')"
+              @click="goto('product_list', null, 'bedframe')"
+              @mouseenter="showSubmenu('bedframe')"
               @mouseleave="hideSubmenu"
           )
             a.submenu-toggle(href="javascript: void(0)") 床架/床頭櫃
@@ -64,33 +64,33 @@
                   img.submenu-icon(src="/assets/images/index/bed_cabinet.png")
                   p 床頭片/櫃
                 ul
-                  li(@click="goto('product_list', null, null, 'bed_stead', 0, 0)")
+                  li(@click="goto('product_list', null, null, 'bedframe', 0, 0)")
                     a(href="javascript: void(0)") 木質床頭片
-                  li(@click="goto('product_list', null, null, 'bed_stead', 0, 1)")
+                  li(@click="goto('product_list', null, null, 'bedframe', 0, 1)")
                     a(href="javascript: void(0)") 軟墊床頭片
-                  li(@click="goto('product_list', null, null, 'bed_stead', 0, 2)")
+                  li(@click="goto('product_list', null, null, 'bedframe', 0, 2)")
                     a(href="javascript: void(0)") 書架型床頭
-                  li(@click="goto('product_list', null, null, 'bed_stead', 0, 3)")
+                  li(@click="goto('product_list', null, null, 'bedframe', 0, 3)")
                     a(href="javascript: void(0)") 收納床頭櫃
               .submenu-column.left-bar
                 div.submenu-header
                   img.submenu-icon(src="/assets/images/index/bed_stead.png")
                   p 床架
                 ul
-                  li(@click="goto('product_list', null, null, 'bed_stead', 1, 0 )")
+                  li(@click="goto('product_list', null, null, 'bedframe', 1, 0 )")
                     a(href="javascript: void(0)") 油壓式掀床架
-                  li(@click="goto('product_list', null, null, 'bed_stead', 1, 1 )")
+                  li(@click="goto('product_list', null, null, 'bedframe', 1, 1 )")
                     a(href="javascript: void(0)") 雙拼式床架
-                  li(@click="goto('product_list', null, null, 'bed_stead', 1, 2 )")
+                  li(@click="goto('product_list', null, null, 'bedframe', 1, 2 )")
                     a(href="javascript: void(0)") 日式木腳床架
               .submenu-column.left-bar
                 div.submenu-header
                   img.submenu-icon(src="/assets/images/index/bed_set.png")
                   p 床組(含床頭)
                 ul
-                  li(@click="goto('product_list', null, null, 'bed_stead', 2, 0)")
+                  li(@click="goto('product_list', null, null, 'bedframe', 2, 0)")
                     a(href="javascript: void(0)") 皮革實木鋼構床組
-                  li(@click="goto('product_list', null, null, 'bed_stead', 2, 1)")
+                  li(@click="goto('product_list', null, null, 'bedframe', 2, 1)")
                     a(href="javascript: void(0)") 皮革收納鋼構床組
           li(
               @click="goto('product_list', null, 'others')" 
@@ -100,11 +100,11 @@
             a.submenu-toggle(href="javascript: void(0)") 其他配件
             div.submenu(v-show="currentMenu === 'others'")
               ul
-                li(@click="goto('product_list', 'others')") 
+                li(@click="goto('home')") 
                   a(href="javascript: void(0)") 所有配件
-                li(@click="goto('product_list', 'others')") 
+                li(@click="goto('home')") 
                   a(href="javascript: void(0)") 其他配件1
-                li(@click="goto('product_list', 'others')") 
+                li(@click="goto('home')") 
                   a(href="javascript: void(0)") 其他配件2
           //- 目錄高亮的功能只有關於有做，因為其他頁面都還沒真的實作
           li.hasSub(
@@ -189,6 +189,10 @@ export default {
     this.loadExternalScript(check_url + "/js/index/bs_main.js").catch((err) => {
       console.error("Failed to load external script:", err);
     });
+
+    // 清除前面操作留下的 localStorage
+    localStorage.removeItem("secTitle");
+    localStorage.removeItem("selected_menu_obj");
   },
   methods: {
     ...mapActions(["toggleCart", "selectedMenu"]),
@@ -255,7 +259,36 @@ export default {
             key: selected_key,
           });
         }
-        this.$router.push({ name: page, hash: hash });
+
+        let path = page;
+
+        if (selected) {
+          path = `/product_list_${selected}`;
+
+          // 如果目前就在 product_list_xxx
+          const current = this.$route.path;
+          if (this.$route.path.startsWith("/product_list")) {
+            // 如果當前分類和目標分類不同 → 強制整頁刷新
+            if (current !== path) {
+              localStorage.setItem(
+                "selected_menu_obj",
+                JSON.stringify({
+                  title: selected,
+                  index: selected_index,
+                  key: selected_key,
+                })
+              );
+              window.location.href = path + (hash || "");
+            } else {
+              // 同分類內切換 → 用 router.push
+              this.$router.push({ path, hash });
+            }
+          } else {
+            this.$router.push({ path, hash });
+          }
+        } else {
+          this.$router.push({ name: page, hash: hash });
+        }
       }
     },
   },

@@ -1,13 +1,14 @@
 // src/store/productStore.js
-import { bed1, bed2, bed3, bed4 } from '@/data/products/bed';
-import { bed_stead1, bed_stead2, bed_stead3 } from '@/data/products/bed_set';
+import { mattresses1, mattresses2, mattresses3, mattresses4, mattresses5 } from '@/data/products/bed';
+import { bedframe1, bedframe2, bedframe3 } from '@/data/products/bed_set';
 
 export default {
-  bed1,
-  bed2,
-  bed3,
-  bed4,
-  bed_stead1,
-  bed_stead2,
-  bed_stead3,
+  mattresses1,
+  mattresses2,
+  mattresses3,
+  mattresses4,
+  mattresses5,
+  bedframe1,
+  bedframe2,
+  bedframe3,
 }
