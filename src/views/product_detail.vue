@@ -227,20 +227,6 @@ export default {
     // 有空再想一想使用者亂打id的話怎麼重新回到列表頁
   },
   watch: {
-    "$route.params.category": {
-      immediate: true, // 初次載入時也觸發
-      handler(newId) {
-        console.log(`watch: $route.params.category`, newId);
-        if (newId && productStore[`${this.$route.params.category}${newId}`]) {
-          this.item = productStore[`${this.$route.params.category}${newId}`];
-          // 根據新商品重設選擇狀態
-        } else {
-          // fallback
-          this.item = productStore[`${this.$route.params.category}1`]; // 預設床墊
-        }
-        console.log("productStore", productStore);
-      },
-    },
     "$route.params.product_type": {
       immediate: true, // 初次載入時也觸發
       handler(newId) {
@@ -250,9 +236,8 @@ export default {
           // 根據新商品重設選擇狀態
         } else {
           // fallback
-          this.item = productStore[`${this.$route.params.category}1`]; // 預設床墊
+          this.item = productStore[`${this.$route.params.category}1`]; // 預設商品
         }
-        console.log("productStore", productStore);
         localStorage.removeItem("product_id");
       },
     },
