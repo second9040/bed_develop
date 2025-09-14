@@ -28,13 +28,12 @@ export default {
 邊角柔和處理，給家人多一層安全守護</p>
 
 <p> <span class="font-bold">🔹鋼珠滑軌抽屜設計 (可依空間需求客製※抽屜價格另計) </span><br>
-可依居家格局打造抽屜方向，符合每個空間需求<br>
-另有側掀可選購 </p>
+可依居家格局打造抽屜方向，符合每個空間需求</p>
 
 <p> <span class="font-bold">🔹匠心手作X防腐防潮處理</span><br>
 專業防腐防潮處理，延長床體壽命</p>
 `,
-    
+    starting_at: true,
     size_obj: [
       { size: '單人加大3.5*6.2尺(106*188cm)', ori_price: 4500, discount_price: 4000 },
       { size: '標準雙人5*6.2尺(152*188cm)', ori_price: 6800, discount_price: 5800 },

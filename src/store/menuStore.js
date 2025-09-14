@@ -173,8 +173,8 @@ export default {
       {
         key: "hardness",
         title: "床頭片/櫃",
-        icon: "/assets/images/index/headerIcon_hardness.png",
-        banner: "/assets/images/product/list/hardness.png",
+        icon: "/assets/images/index/bed_cabinet.png",
+        banner: "/assets/images/product/bed_set/banner_bed_cabinet.jpg",
         items: [
           {
             text: "木質床頭片",
@@ -196,9 +196,9 @@ export default {
       },
       {
         key: "users",
-        title: "使用族群",
-        icon: "/assets/images/index/headerIcon_users.png",
-        banner: "/assets/images/product/list/users.png",
+        title: "床架",
+        icon: "/assets/images/index/bed_stead.png",
+        banner: "/assets/images/product/bed_set/banner_bed_stead.jpg",
         items: [
           {
             text: "油壓式掀床架",
@@ -216,12 +216,12 @@ export default {
       },
       {
         key: "structure",
-        title: "床墊結構",
-        icon: "/assets/images/index/headerIcon_structure.png",
-        banners: ['/assets/images/product/list/structure1.png', '/assets/images/product/list/structure2.png'],
+        title: "床組(含床頭)",
+        icon: "/assets/images/index/bed_set.png",
+        banner: "/assets/images/product/bed_set/banner_bed_set.jpg",
         items: [
           {
-            text: "高強度*皮革實木鋼構床組",
+            text: "皮革實木鋼構床組",
             key: "sgrid",
             banners: [
               {

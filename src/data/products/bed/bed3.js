@@ -26,9 +26,9 @@ export default {
 <p> <span class="font-bold">🔹 高強度串聯式設計™</span><br>(S - Grid 串聯專利)改革創新提高彈簧密度，達到低干擾特性</p>
 <p> <span class="font-bold">🔹 雙層抗干擾張力棉襯</span><br>內層搭載雙倍厚度抗干擾層，吸收翻身震動、強化床墊彈性與耐用性</p>
 <p> <span class="font-bold">🔹 95 % 高純度乳膠 X 天然抗菌</span><br>採用1 英吋(2.54cm)乳膠層，更貼合符合人體工學</p>
-<p> <span class="font-bold">🔹 3絲棉表布層
-柔軟親膚、不悶不熱，</span><br>柔軟親膚、不悶不熱，四季舒眠，敏感肌首選。</p>
-<p> <span class="font-bold">360° M 字型床緣加固設計</span><br>強化邊緣支撐力，坐、靠、躺都不會傾斜或塌陷，全床穩定無死角，安全感與耐用度全面升級。</p>
+<p> <span class="font-bold">🔹 天絲棉表布層
+</span><br>柔軟親膚、不悶不熱，四季舒眠，敏感肌首選</p>
+<p> <span class="font-bold">360° M 字型床緣加固設計</span><br>強化邊緣支撐力，坐、靠、躺都不會傾斜或塌陷</p>
 `,
     size_obj: [
       { size: '單人3*6.2尺(91*188cm)', ori_price: 11000, discount_price: 9000 },

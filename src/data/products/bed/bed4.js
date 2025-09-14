@@ -23,7 +23,7 @@ deliverService: {
   ],
   desc: `
 <p> <span class="font-bold">🔹飯店級奢華 × 高回彈X 航太睡眠</span><br>外柔內剛、穩中帶彈，撐得住重壓，也接得住疲憊</p>
-<p> <span class="font-bold">🔹 含鈦彈簧核心｜航太科技首選</span><br採用航太科技鈦合金彈簧，堅韌輕盈，比碳鋼系列彈簧更具續航力</p>
+<p> <span class="font-bold">🔹 含鈦彈簧核心｜航太科技首選</span><br>採用航太科技鈦合金彈簧，堅韌輕盈，更具續航力</p>
 <p> <span class="font-bold">🔹 高強度串聯式設計™</span><br>使用此專利結構，讓床體躺具有星空漂浮感，延展性更佳</p>
 <p> <span class="font-bold">🔹 3重抗壓保護網</span><br>多重防護設計，減少單點壓迫，達到100%衝擊隔離效果，提高床墊耐用性</p>
 <p> <span class="font-bold">🔹 95%高純度天然乳膠</span><br>1 吋(2.54CM)厚，深入每一吋釋壓點，層層呵護柔彈包覆</p>
