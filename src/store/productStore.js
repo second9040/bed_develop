@@ -1,6 +1,6 @@
 // src/store/productStore.js
 import { mattresses1, mattresses2, mattresses3, mattresses4, mattresses5 } from '@/data/products/bed';
-import { bedframe1, bedframe2, bedframe3 } from '@/data/products/bed_set';
+import { bedframe1, bedframe2, bedframe3, bedframe4, bedframe5, bedframe6 } from '@/data/products/bed_set';
 
 export default {
   mattresses1,
@@ -11,4 +11,7 @@ export default {
   bedframe1,
   bedframe2,
   bedframe3,
+  bedframe4,
+  bedframe5,
+  bedframe6,
 }

@@ -1,5 +1,5 @@
 export default {
-  name: '日式實木腳底床架',
+  name: '福氣系列床頭片-(木心板)',
 
   tag_ch: [],
   tag_en: [],
@@ -13,37 +13,28 @@ export default {
 
   },
     img: [
-      '/assets/images/product/bed_set/3/1.jpg?250921',
-      '/assets/images/product/bed_set/3/2.jpg?250921',
-      '/assets/images/product/bed_set/3/3.jpg?250921',
+      '/assets/images/product/bed_set/6/1.jpg?250921',
+      '/assets/images/product/bed_set/6/2.jpg?250921',
     ],
   desc: `
-<p> <span class="font-bold">🔹日式靜謐居家美學</span><br>
-簡約而純粹，去除繁複裝飾，回歸材質本質之美。</p>
-
-<p> <span class="font-bold">🔹全木芯板｜紮實用料，經得起時間考驗</span><br>
-採用全木芯板打造，不僅提升整體穩固性，更擁有極佳的耐重與耐用表現</p>
-
-<p> <span class="font-bold">🔹 四周封邊X防撞壓條設計</span><br>
-邊角柔和處理，給家人多一層安全守護</p>
-
-<p> <span class="font-bold">🔹日式實木腳底X架高設計</span><br>
-兼顧日式質感與現代便利，高度友善掃地機器人，清潔無死角</p>
-
-<p> <span class="font-bold">🔹匠心手作X防腐防潮處理</span><br>
-專業防腐防潮處理，延長床體壽命</p>
+<p> <span class="font-bold">A款-菱格奢華床頭片 </span><br>
+🔹簡約造型，百搭任何臥室風格<br>
+🔹溫潤木質，營造舒適氛圍<br>
+🔹木心板結構：穩固、耐用度高，不易變形<br>
+🔹厚度：2cm 高度：90cm<br>
+🔹多款顏色可客製挑選<br>
+</p>
 `,
     
+    starting_at: true,
     size_obj: [
-      { size: '單人加大3.5*6.2尺(106*188cm)', ori_price: 5500, discount_price: 5000 },
-      { size: '標準雙人5*6.2尺(152*188cm)', ori_price: 7000, discount_price: 6800 },
-      { size: '雙人加大6*6.2尺(182*188cm)', ori_price: 8800, discount_price: 7800 },
-      { size: 'King size6*7尺(182*212cm)', ori_price: 10800, discount_price: 9800 },
+      {
+        size: '限時聊聊驚喜價', ori_price: 2500, discount_price: 1299 },
     ],
     image_intro: [
-      '/assets/images/product/bed_set/3/intro.jpg?250921',
-      '/assets/images/product/bed_set/3/feature.jpg?250921',
-      '/assets/images/product/bed_set/3/size.jpg'
+      '/assets/images/product/bed_set/6/intro.jpg',
+      '/assets/images/product/bed_set/6/feature.jpg',
+      '/assets/images/product/bed_set/6/size.jpg'
     ],
     tab_behavior: 'scroll',
     tab_content: [
@@ -170,7 +161,6 @@ export default {
         question: '床墊保固時間多久呢?',
         ans: '請點擊查看保固內容<span class="font-bold">「製床所10年保固計畫」，詳情可至購買須知查看 </span>',
       },
-    ],
+    ]
 
   }
-  

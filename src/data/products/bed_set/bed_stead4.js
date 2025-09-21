@@ -1,5 +1,5 @@
 export default {
-  name: '日式實木腳底床架',
+  name: '質感皮面床架(A/B/C款)',
 
   tag_ch: [],
   tag_en: [],
@@ -13,37 +13,55 @@ export default {
 
   },
     img: [
-      '/assets/images/product/bed_set/3/1.jpg?250921',
-      '/assets/images/product/bed_set/3/2.jpg?250921',
-      '/assets/images/product/bed_set/3/3.jpg?250921',
+      '/assets/images/product/bed_set/4/1.jpg?250921',
+      '/assets/images/product/bed_set/4/2.jpg?250921',
     ],
   desc: `
-<p> <span class="font-bold">🔹日式靜謐居家美學</span><br>
-簡約而純粹，去除繁複裝飾，回歸材質本質之美。</p>
+<p> <span class="font-bold">A款-低調奢華實木系列 (腳高5cm)</span><br>
+🔹 低調簡約，適合小宅或極簡風格<br>
+🔹 材質：布面/皮革/貓抓皮，多元選擇<br>
+🔹 全實木骨條床板，穩固耐用<br>
+</p>
 
-<p> <span class="font-bold">🔹全木芯板｜紮實用料，經得起時間考驗</span><br>
-採用全木芯板打造，不僅提升整體穩固性，更擁有極佳的耐重與耐用表現</p>
+<p> <span class="font-bold">B款-細節精緻實木系列(腳高13cm)</span><br>
+🔹 質感升級，兼顧美觀與實用<br>
+🔹 材質：布面/皮革/貓抓皮，多元選擇<br>
+🔹 全實木骨條床板，工藝更精緻<br>
+🔹 腳高設計，掃地機器人輕鬆進入<br>
+</p>
 
-<p> <span class="font-bold">🔹 四周封邊X防撞壓條設計</span><br>
-邊角柔和處理，給家人多一層安全守護</p>
-
-<p> <span class="font-bold">🔹日式實木腳底X架高設計</span><br>
-兼顧日式質感與現代便利，高度友善掃地機器人，清潔無死角</p>
-
-<p> <span class="font-bold">🔹匠心手作X防腐防潮處理</span><br>
-專業防腐防潮處理，延長床體壽命</p>
+<p> <span class="font-bold">C款-尊爵貴族系列(腳高12cm)</span><br>
+🔹 俐落大氣，凸顯居家格調<br>
+🔹 材質：布面/皮革/貓抓皮，多元選擇<br>
+🔹 全木心板，穩固承重佳<br>
+🔹 腳高設計，掃地機器人輕鬆進入<br>
+</p>
 `,
     
     size_obj: [
-      { size: '單人加大3.5*6.2尺(106*188cm)', ori_price: 5500, discount_price: 5000 },
-      { size: '標準雙人5*6.2尺(152*188cm)', ori_price: 7000, discount_price: 6800 },
-      { size: '雙人加大6*6.2尺(182*188cm)', ori_price: 8800, discount_price: 7800 },
-      { size: 'King size6*7尺(182*212cm)', ori_price: 10800, discount_price: 9800 },
+      { size: 'A款(布面)標準雙人5*6.2尺(152*188cm)', ori_price: 9500, discount_price: 8500 },
+      { size: 'A款(布面)雙人加大6*6.2尺(182*188cm)', ori_price: 11800, discount_price: 9800 },
+      { size: 'A款(皮革)標準雙人5*6.2尺(152*188cm)', ori_price: 9500, discount_price: 8500 },
+      { size: 'A款(皮革)雙人加大6*6.2尺(182*188cm)', ori_price: 11800, discount_price: 9800 },
+      { size: 'A款(貓抓皮)標準雙人5*6.2尺(152*188cm)', ori_price: 10500, discount_price: 9500 },
+      { size: 'A款(貓抓皮)雙人加大6*6.2尺(182*188cm)', ori_price: 12800, discount_price: 10800 },
+      { size: 'B款(布面)標準雙人5*6.2尺(152*188cm)', ori_price: 9500, discount_price: 8500 },
+      { size: 'B款(布面)雙人加大6*6.2尺(182*188cm)', ori_price: 11800, discount_price: 9800 },
+      { size: 'B款(皮革)標準雙人5*6.2尺(152*188cm)', ori_price: 9500, discount_price: 8500 },
+      { size: 'B款(皮革)雙人加大6*6.2尺(182*188cm)', ori_price: 11800, discount_price: 9800 },
+      { size: 'B款(貓抓皮)標準雙人5*6.2尺(152*188cm)', ori_price: 10500, discount_price: 9500 },
+      { size: 'B款(貓抓皮)雙人加大6*6.2尺(182*188cm)', ori_price: 12800, discount_price: 10800 },
+      { size: 'C款(布面)標準雙人5*6.2尺(152*188cm)', ori_price: 9500, discount_price: 8500 },
+      { size: 'C款(布面)雙人加大6*6.2尺(182*188cm)', ori_price: 11800, discount_price: 9800 },
+      { size: 'C款(皮革)標準雙人5*6.2尺(152*188cm)', ori_price: 9500, discount_price: 8500 },
+      { size: 'C款(皮革)雙人加大6*6.2尺(182*188cm)', ori_price: 11800, discount_price: 9800 },
+      { size: 'C款(貓抓皮)標準雙人5*6.2尺(152*188cm)', ori_price: 10500, discount_price: 9500 },
+      { size: 'C款(貓抓皮)雙人加大6*6.2尺(182*188cm)', ori_price: 12800, discount_price: 10800 },
     ],
     image_intro: [
-      '/assets/images/product/bed_set/3/intro.jpg?250921',
-      '/assets/images/product/bed_set/3/feature.jpg?250921',
-      '/assets/images/product/bed_set/3/size.jpg'
+      '/assets/images/product/bed_set/4/intro.jpg',
+      '/assets/images/product/bed_set/4/feature.jpg',
+      '/assets/images/product/bed_set/4/size.jpg'
     ],
     tab_behavior: 'scroll',
     tab_content: [
@@ -170,7 +188,6 @@ export default {
         question: '床墊保固時間多久呢?',
         ans: '請點擊查看保固內容<span class="font-bold">「製床所10年保固計畫」，詳情可至購買須知查看 </span>',
       },
-    ],
+    ]
 
   }
-  

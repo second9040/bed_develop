@@ -1,5 +1,5 @@
 export default {
-  name: '日式實木腳底床架',
+  name: '質感皮面床頭片(A/B款)',
 
   tag_ch: [],
   tag_en: [],
@@ -13,37 +13,45 @@ export default {
 
   },
     img: [
-      '/assets/images/product/bed_set/3/1.jpg?250921',
-      '/assets/images/product/bed_set/3/2.jpg?250921',
-      '/assets/images/product/bed_set/3/3.jpg?250921',
+      '/assets/images/product/bed_set/5/1.jpg?250921',
+      '/assets/images/product/bed_set/5/2.jpg?250921',
     ],
   desc: `
-<p> <span class="font-bold">🔹日式靜謐居家美學</span><br>
-簡約而純粹，去除繁複裝飾，回歸材質本質之美。</p>
+<p> <span class="font-bold">A款-菱格奢華床頭片 </span><br>
+🔹 包覆型床頭，低調質感風格<br>
+🔹 菱格車線，簡約大方<br>
+🔹 貼鑽Ｘ拉扣設計，細節滿分<br>
+🔹 厚度：9~10cm 、高度105cm<br>
+🔹 材質：布面/皮革/貓抓皮，多元選擇<br>
+</p>
 
-<p> <span class="font-bold">🔹全木芯板｜紮實用料，經得起時間考驗</span><br>
-採用全木芯板打造，不僅提升整體穩固性，更擁有極佳的耐重與耐用表現</p>
-
-<p> <span class="font-bold">🔹 四周封邊X防撞壓條設計</span><br>
-邊角柔和處理，給家人多一層安全守護</p>
-
-<p> <span class="font-bold">🔹日式實木腳底X架高設計</span><br>
-兼顧日式質感與現代便利，高度友善掃地機器人，清潔無死角</p>
-
-<p> <span class="font-bold">🔹匠心手作X防腐防潮處理</span><br>
-專業防腐防潮處理，延長床體壽命</p>
+<p> <span class="font-bold">B款-格紋奢華床頭片</span><br>
+🔹 包覆型床頭，氣質非凡<br>
+🔹 格紋車線，經典再現<br>
+🔹 貼鑽Ｘ拉扣設計，質感加分<br>
+🔹 厚度:：9~10cm 、高度105cm<br>
+🔹 材質：布面/皮革/貓抓皮，多元選擇<br>
+</p>
 `,
     
     size_obj: [
-      { size: '單人加大3.5*6.2尺(106*188cm)', ori_price: 5500, discount_price: 5000 },
-      { size: '標準雙人5*6.2尺(152*188cm)', ori_price: 7000, discount_price: 6800 },
-      { size: '雙人加大6*6.2尺(182*188cm)', ori_price: 8800, discount_price: 7800 },
-      { size: 'King size6*7尺(182*212cm)', ori_price: 10800, discount_price: 9800 },
+      { size: 'A款 (布面) 標準雙人5尺', ori_price: 6000, discount_price: 4500 },
+      { size: 'A款 (布面) 雙人加大6尺', ori_price: 7500, discount_price: 5500 },
+      { size: 'A款 (皮革) 標準雙人5尺', ori_price: 6500, discount_price: 4500 },
+      { size: 'A款 (皮革) 雙人加大6尺', ori_price: 7500, discount_price: 5500 },
+      { size: 'A款 (貓抓皮) 標準雙人5尺', ori_price: 7500, discount_price: 5500 },
+      { size: 'A款 (貓抓皮) 標準雙人6尺', ori_price: 8500, discount_price: 6500 },
+      { size: 'B款 (布面) 標準雙人5尺', ori_price: 6000, discount_price: 4500 },
+      { size: 'B款 (布面) 雙人加大6尺', ori_price: 7500, discount_price: 5500 },
+      { size: 'B款 (皮革) 標準雙人5尺', ori_price: 6500, discount_price: 4500 },
+      { size: 'B款 (皮革面) 雙人加大6尺', ori_price: 7500, discount_price: 5500 },
+      { size: 'B款 (貓抓皮) 標準雙人5尺', ori_price: 7500, discount_price: 5500 },
+      { size: 'B款 (貓抓皮) 標準雙人6尺', ori_price: 8500, discount_price: 6500 },
     ],
     image_intro: [
-      '/assets/images/product/bed_set/3/intro.jpg?250921',
-      '/assets/images/product/bed_set/3/feature.jpg?250921',
-      '/assets/images/product/bed_set/3/size.jpg'
+      '/assets/images/product/bed_set/5/intro.jpg',
+      '/assets/images/product/bed_set/5/feature.jpg',
+      '/assets/images/product/bed_set/5/size.jpg'
     ],
     tab_behavior: 'scroll',
     tab_content: [
@@ -170,7 +178,6 @@ export default {
         question: '床墊保固時間多久呢?',
         ans: '請點擊查看保固內容<span class="font-bold">「製床所10年保固計畫」，詳情可至購買須知查看 </span>',
       },
-    ],
+    ]
 
   }
-  
