@@ -54,7 +54,7 @@ div.container.cart_order_info
             )
             .comment
               span 若為中彰投以外地區，請透過官方Line（LINE ID：
-              a(href="https://lin.ee/MO8qYZ9" target="_blank") @MO8qYZ9
+              a(href="https://lin.ee/121povpz" target="_blank") @121povpz
               span ）聊聊詢問
             .comment 線上客服服務時間：週一 ~ 週日 10:00 ~ 22:00
 
@@ -97,52 +97,63 @@ div.container.cart_order_info
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
-import Multiselect from 'vue-multiselect';
+import { mapState, mapActions } from "vuex";
+import Multiselect from "vue-multiselect";
 
 export default {
-  name: 'order_info',
+  name: "order_info",
   components: {
     Multiselect,
   },
   data() {
     return {
       selectedCity: null,
-      selectedDelivery: '[中彰投] 宅配到府免運',
+      selectedDelivery: "[中彰投] 宅配到府免運",
       selectedPayment: null,
-      deliveryOptions: ['[中彰投] 宅配到府免運'],
-      paymentOptions: ['銀行轉帳', '貨到付款', '信用卡'],
+      deliveryOptions: ["[中彰投] 宅配到府免運"],
+      paymentOptions: ["銀行轉帳", "貨到付款", "信用卡"],
       delivery_fee: 0,
-
-    }
+    };
   },
   computed: {
-    ...mapState(['clickShowCart', 'showCartAside', 'cart_items', 'tw_city_name', 'cart_price_total']),
+    ...mapState([
+      "clickShowCart",
+      "showCartAside",
+      "cart_items",
+      "tw_city_name",
+      "cart_price_total",
+    ]),
   },
   methods: {
-    ...mapActions(['toggleCart', 'countItem', 'removeItem', 'validateAmount', 'changeCartItemAmount', 'emptyCart']),
+    ...mapActions([
+      "toggleCart",
+      "countItem",
+      "removeItem",
+      "validateAmount",
+      "changeCartItemAmount",
+      "emptyCart",
+    ]),
     addComma(num) {
       return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     },
     placeOrder() {
-      this.$emit('place-order');
+      this.$emit("place-order");
     },
   },
 
   mounted() {
     // let twzipcode = new TWzipcode();
   },
-
-}
+};
 </script>
 
 <style>
-@import 'vue-multiselect/dist/vue-multiselect.css';
+@import "vue-multiselect/dist/vue-multiselect.css";
 </style>
 <style scoped>
-@import '/assets/scss/common.scss';
-@import '/assets/scss/cart/cart.scss';
-@import '/assets/scss/cart/step2/order_info.scss';
+@import "/assets/scss/common.scss";
+@import "/assets/scss/cart/cart.scss";
+@import "/assets/scss/cart/step2/order_info.scss";
 </style>
 <style lang="scss">
 .cart_order_info {
@@ -187,5 +198,4 @@ export default {
     }
   }
 }
-  
 </style>

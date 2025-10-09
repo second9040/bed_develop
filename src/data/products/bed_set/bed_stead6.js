@@ -17,7 +17,7 @@ export default {
       '/assets/images/product/bed_set/6/2.jpg?250921',
     ],
   desc: `
-<p> <span class="font-bold">A款-菱格奢華床頭片 </span><br>
+<p>
 🔹簡約造型，百搭任何臥室風格<br>
 🔹溫潤木質，營造舒適氛圍<br>
 🔹木心板結構：穩固、耐用度高，不易變形<br>

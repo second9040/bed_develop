@@ -1,48 +1,58 @@
 export default {
-  name: '淺波舒眠床墊',
 
-  tag_ch: ['高碳鋼', '家用款', '高強度串聯', '偏硬', '1cm乳膠'],
+  name: '輕雲繚繞薄床墊',
+
+  tag_ch: ['飯店合金', '家用款', '高強度串聯', '軟硬適中', '2.54cm乳膠'],
   tag_en: [],
-  deliverService: {
-    img: [
-      '/assets/images/product/bed/1/deliver1.png',
-      '/assets/images/product/bed/1/deliver2.png',
-      '/assets/images/product/bed/1/deliver3.png',
-    ],
+deliverService: {
+  img: [
+    '/assets/images/product/bed/1/deliver1.png',
+    '/assets/images/product/bed/1/deliver2.png',
+    '/assets/images/product/bed/1/deliver3.png',
+  ],
     desc: '<span class="font-bold">一張床，一段傳承，一個靈魂。製床所提供的不是商品，而是一種責任。</span><br>1. 專業聆聽：每一張床墊都是獨一無，擁有獨特的靈魂。<br> 2. 60年製床師：製作出專屬於您的靈魂床墊。<br> 3. 搬運計畫：制訂詳細搬運計畫，並由製床所團隊替您安置新床。',
 
   },
     img: [
-      '/assets/images/product/bed/1/1.jpg?251009',
-      '/assets/images/product/bed/1/2.jpg',
-      '/assets/images/product/bed/1/3.jpg',
-      '/assets/images/product/bed/1/4.jpg',
-      '/assets/images/product/bed/1/5.jpg',
-      '/assets/images/product/bed/1/6.jpg',
-    ],
+      '/assets/images/product/bed/6/1.jpg',
+      '/assets/images/product/bed/6/2.jpg',
+      '/assets/images/product/bed/6/3.jpg',
+  ],
   desc: `
-<p> <span class="font-bold">🔹 高支撐 × 高穩定 × 高耐用</span><br>紮實結構精準承托脊椎，穩定減壓釋放腰背負擔。</p>
-<p> <span class="font-bold">🔹 高碳鋼 Bonnell 彈簧 × SGS 認證</span><br>高碳鋼彈簧耐壓不變形，通過萬次翻身壓測。</p>
-<p> <span class="font-bold">🔹 高強度串聯式設計™</span><br><span class="font-bold">(S-Grid 串聯專利)</span>改革創新提高彈簧密度，達到低干擾特性</p>
-<p> <span class="font-bold">🔹 雙層抗干擾張力棉襯</span><br>雙倍厚度吸壓棉，減少翻身震動並延長床墊壽命。</p>
-<p> <span class="font-bold">🔹 進口天絲棉 × 四季恆溫</span><br>絲滑觸感，最天然的恆溫計，敏感肌首選</p>
-<p> <span class="font-bold">🔹 360° M字型床緣加固</span><br>床緣強化設計，坐臥穩固防滑落，安全感滿分。</p>
+<p> <span class="font-bold">🔹 手工小彈簧 × 靈活支撐 × 耐久舒適</span><br>
+製床所魔法師，把厚重化為輕盈<br><br>
+
+<p> <span class="font-bold">🔹 手工製小彈簧</span><br>
+張力均勻、彈性穩定，是機器無法取代的精準工藝<br><br>
+
+<p> <span class="font-bold">🔹 高強度串聯設計</span><br>
+小彈簧細膩支撐，貼合身體曲線，10年如一的耐用<br><br>
+
+<p> <span class="font-bold">🔹 95%高純度乳膠 雙規格(2.54/5.08cm)</span><br>
+軟而不塌<br><br>，細緻貼合穩定支城
+
+<p> <span class="font-bold">🔹 進口天絲棉 ，滑順觸感</span><br>
+高透氣X恆溫，從身到心都能好好放鬆深層入眠<br><br>
+
+<p> <span class="font-bold">🔹可客製軟硬度 × 高度 × 尺寸 </span><br>
+厚型、薄型、偏硬或偏軟，都能量身打造，為你調出最合適的「魔法床墊」<br><br>
+
+</p>
+
 `,
-    
     size_obj: [
-      { size: '單人3*6.2尺(91*188cm)', ori_price: 8800, discount_price: 6800 },
-      { size: '單人加大3.5*6.2尺(106*188cm)', ori_price: 8980, discount_price: 6980 },
-      { size: '標準雙人5*6.2尺(152*188cm)', ori_price: 11800, discount_price: 9800 },
-      { size: '雙人加大6*6.2尺(182*188cm)', ori_price: 16800, discount_price: 14800 },
-      { size: 'King size6*7尺(182*212cm)', ori_price: 20800, discount_price: 18800 },
+      { size: '單人3*6.2尺(91*188cm)', ori_price: 10800, discount_price: 9800 },
+      { size: '單人加大3.5*6.2尺(106*188cm)', ori_price: 10980, discount_price: 9980 },
+      { size: '標準雙人5*6.2尺(152*188cm)', ori_price: 16800, discount_price: 15800 },
+      { size: '雙人加大6*6.2尺(182*188cm)', ori_price: 19800, discount_price: 18800 },
+      { size: 'King size6*7尺(182*212cm)', ori_price: 25800, discount_price: 24800 },
     ],
-    hardness_degree: 6,
+    hardness_degree: 3,
     image_intro: [
-      '/assets/images/product/bed/1/structure.jpg',
-      '/assets/images/product/bed/1/feature.jpg',
-      '/assets/images/product/bed/1/size.jpg'
+      '/assets/images/product/bed/6/structure.jpg',
+      '/assets/images/product/bed/6/feature.jpg',
+      '/assets/images/product/bed/6/size.jpg'
     ],
-    tab_behavior: 'scroll',
     tab_content: [
       {
         name: 'structure',
@@ -152,22 +162,21 @@ export default {
         img: '/assets/images/index/photo_test3.png',
       },
     ],
-    qa_obj: [
-      {
-        question: '訂購多久後會幫我配送？',
-        ans: '下單後支付完訂金，<span class="font-bold">約7-10個工作日後配送，</span>如遇特殊尺寸需較長製作時間。<span class="font-bold">詳情可點擊下方來聊聊與客服團隊線上聯繫</span>。',
-      },
-      {
-        question: '買了新床墊，舊床可以幫忙回收嗎? ',
-        ans: `<span class="font-bold">舊床回收有2種方式 (免付費&付費)，方式如下</span><br>
+  qa_obj: [
+    {
+      question: '訂購多久後會幫我配送？',
+      ans: '下單後支付完訂金，<span class="font-bold">約7-10個工作日後配送，</span>如遇特殊尺寸需較長製作時間。<span class="font-bold">詳情可點擊下方來聊聊與客服團隊線上聯繫</span>。',
+    },
+    {
+      question: '買了新床墊，舊床可以幫忙回收嗎? ',
+      ans: `<span class="font-bold">舊床回收有2種方式 (免付費&付費)，方式如下</span><br>
         1.<span class="font-bold"> 免付費</span>：您可預約政府清潔隊，協助將您的舊床搬到指定回收地方放置<br>
         2.<span class="font-bold">需收清運費</span>($700~1500)：由御品協助清運至合法回收廠商，將依舊床尺寸酌收清運費`,
-      },
-      {
-        question: '床墊保固時間多久呢?',
-        ans: '請點擊查看保固內容<span class="font-bold">「製床所10年保固計畫」，詳情可至購買須知查看 </span>',
-      },
-    ],
+    },
+    {
+      question: '床墊保固時間多久呢?',
+      ans: '請點擊查看保固內容<span class="font-bold">「製床所10年保固計畫」，詳情可至購買須知查看 </span>',
+    },
+  ],
 
-  }
-  
+}

@@ -4,3 +4,7 @@ export { default as bedframe3 } from './bed_stead3.js';
 export { default as bedframe4 } from './bed_stead4.js';
 export { default as bedframe5 } from './bed_stead5.js';
 export { default as bedframe6 } from './bed_stead6.js';
+export { default as bedframe7 } from './bed_stead7.js';
+export { default as bedframe8 } from './bed_stead8.js';
+export { default as bedframe9 } from './bed_stead9.js';
+export { default as bedframe10 } from './bed_stead10.js';

@@ -1,7 +1,7 @@
 export default {
-  name: '淺波舒眠床墊',
+  name: '星芒系列床頭片-(木心板)',
 
-  tag_ch: ['高碳鋼', '家用款', '高強度串聯', '偏硬', '1cm乳膠'],
+  tag_ch: [],
   tag_en: [],
   deliverService: {
     img: [
@@ -13,40 +13,34 @@ export default {
 
   },
     img: [
-      '/assets/images/product/bed/1/1.jpg?251009',
-      '/assets/images/product/bed/1/2.jpg',
-      '/assets/images/product/bed/1/3.jpg',
-      '/assets/images/product/bed/1/4.jpg',
-      '/assets/images/product/bed/1/5.jpg',
-      '/assets/images/product/bed/1/6.jpg',
+      '/assets/images/product/bed_set/7/1.jpg?250921',
     ],
   desc: `
-<p> <span class="font-bold">🔹 高支撐 × 高穩定 × 高耐用</span><br>紮實結構精準承托脊椎，穩定減壓釋放腰背負擔。</p>
-<p> <span class="font-bold">🔹 高碳鋼 Bonnell 彈簧 × SGS 認證</span><br>高碳鋼彈簧耐壓不變形，通過萬次翻身壓測。</p>
-<p> <span class="font-bold">🔹 高強度串聯式設計™</span><br><span class="font-bold">(S-Grid 串聯專利)</span>改革創新提高彈簧密度，達到低干擾特性</p>
-<p> <span class="font-bold">🔹 雙層抗干擾張力棉襯</span><br>雙倍厚度吸壓棉，減少翻身震動並延長床墊壽命。</p>
-<p> <span class="font-bold">🔹 進口天絲棉 × 四季恆溫</span><br>絲滑觸感，最天然的恆溫計，敏感肌首選</p>
-<p> <span class="font-bold">🔹 360° M字型床緣加固</span><br>床緣強化設計，坐臥穩固防滑落，安全感滿分。</p>
+<p>
+🔹多元居家風格，提升臥室質感<br>
+🔹柔軟皮革包覆，舒適倚靠<br>
+🔹木心板結構：穩固、耐用度高，不易變形<br>
+🔹木質溫潤 × 皮革時尚雙重享受<br>
+🔹厚度：3cm 高度：93cm<br>
+🔹布面/皮革/貓抓皮，多元選擇<br>
+</p>
 `,
     
+    starting_at: true,
     size_obj: [
-      { size: '單人3*6.2尺(91*188cm)', ori_price: 8800, discount_price: 6800 },
-      { size: '單人加大3.5*6.2尺(106*188cm)', ori_price: 8980, discount_price: 6980 },
-      { size: '標準雙人5*6.2尺(152*188cm)', ori_price: 11800, discount_price: 9800 },
-      { size: '雙人加大6*6.2尺(182*188cm)', ori_price: 16800, discount_price: 14800 },
-      { size: 'King size6*7尺(182*212cm)', ori_price: 20800, discount_price: 18800 },
+      {
+        size: '限時聊聊驚喜價', ori_price: 3500, discount_price: 2599 },
     ],
-    hardness_degree: 6,
     image_intro: [
-      '/assets/images/product/bed/1/structure.jpg',
-      '/assets/images/product/bed/1/feature.jpg',
-      '/assets/images/product/bed/1/size.jpg'
+      '/assets/images/product/bed_set/7/intro.jpg',
+      '/assets/images/product/bed_set/7/feature.jpg',
+      '/assets/images/product/bed_set/7/size.jpg'
     ],
     tab_behavior: 'scroll',
     tab_content: [
       {
-        name: 'structure',
-        tab: '床墊結構',
+        name: 'intro',
+        tab: '產品介紹',
         main: '連結式床墊，使用高碳鋼硬彈簧與厚實的內襯，充分支撐身體不容易凹陷，高耐用不易壞。',
         mainImg: '/assets/images/product/tab2-main.jpg',
         feature: [
@@ -79,7 +73,7 @@ export default {
       },
       {
         name: 'feature',
-        tab: '床墊特色',
+        tab: '特色說明',
         main: '床墊結合4倍NASA技術，讓你涼爽舒適一整夜，支撐身體充分放鬆<br>1. Outlast Space Tech®PCM 恆溫纖維 採用NASA太空服的技術，可智慧調節溫度，讓睡覺時體溫能保持穩定。<br> 2. 零壓力冷凝記憶層 NASA為太空人設計的減壓記憶棉，能夠完美支撐身體，享受無壓力的睡眠。<br> 3. Hexagrid Pro 六角蜂巢原理 靈感來自太空船結構，增強床墊的穩定性和支撐力。，分散體重壓力。<br>4. Diamond Fusion 石墨烯科技 石墨烯高效導熱，保持床墊涼爽，有效排出多餘熱量，保持床墊涼爽。',
         secondary: [
           {
@@ -167,7 +161,6 @@ export default {
         question: '床墊保固時間多久呢?',
         ans: '請點擊查看保固內容<span class="font-bold">「製床所10年保固計畫」，詳情可至購買須知查看 </span>',
       },
-    ],
+    ]
 
   }
-  

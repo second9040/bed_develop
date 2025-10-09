@@ -12,7 +12,7 @@ export default {
     desc: '<span class="font-bold">一張床，一段傳承，一個靈魂。製床所提供的不是商品，而是一種責任。</span><br>1. 專業聆聽：每一張床墊都是獨一無，擁有獨特的靈魂。<br> 2. 60年製床師：製作出專屬於您的靈魂床墊。<br> 3. 搬運計畫：制訂詳細搬運計畫，並由製床所團隊替您安置新床。',
   },
     img: [
-      '/assets/images/product/bed/3/1.jpg',
+      '/assets/images/product/bed/3/1.jpg?251009',
       '/assets/images/product/bed/3/2.jpg',
       '/assets/images/product/bed/3/3.jpg',
       '/assets/images/product/bed/3/4.jpg',

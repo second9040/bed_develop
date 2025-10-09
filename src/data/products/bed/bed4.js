@@ -14,7 +14,7 @@ deliverService: {
 
   },
     img: [
-      '/assets/images/product/bed/4/1.jpg',
+      '/assets/images/product/bed/4/1.jpg?251009',
       '/assets/images/product/bed/4/2.jpg',
       '/assets/images/product/bed/4/3.jpg',
       '/assets/images/product/bed/4/4.jpg',
