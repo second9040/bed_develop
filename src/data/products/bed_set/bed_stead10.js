@@ -1,8 +1,8 @@
 export default {
   name: '義式皮革式床組(抽屜)',
 
-  tag_ch: [],
-  tag_en: [],
+  tag_ch: ['皮革收納鋼構床組'],
+  tag_en: ['leather_storage_steel_bed_set'],
   deliverService: {
     img: [
       '/assets/images/product/bed/1/deliver1.png',

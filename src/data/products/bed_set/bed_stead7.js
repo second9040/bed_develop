@@ -1,8 +1,8 @@
 export default {
   name: '星芒系列床頭片-(木心板)',
 
-  tag_ch: [],
-  tag_en: [],
+  tag_ch: ['軟墊床頭片'],
+  tag_en: ['upholstered_headboard'],
   deliverService: {
     img: [
       '/assets/images/product/bed/1/deliver1.png',

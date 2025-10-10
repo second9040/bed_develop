@@ -2,8 +2,8 @@ export default {
 
   name: '夢幻之星床墊',
 
-  tag_ch: ['飯店合金', '家用款', '高強度串聯', '軟硬適中', '2.54cm乳膠'],
-  tag_en: [],
+  tag_ch: ['偏軟', '家用型', '獨立筒', '5.08cm乳膠', '蜂巢式',],
+  tag_en: ['soft', 'home_use', 'individual_spring', '5.08cm_latex', 'honeycomb_style'],
 deliverService: {
   img: [
     '/assets/images/product/bed/5/deliver1.png',

@@ -22,22 +22,22 @@ export default {
         items: [
           {
             text: "偏軟",
-            key: "hard-soft",
+            key: "soft",
             tabs: bed_hardness_tabs,
           },
           {
             text: "軟有支撐",
-            key: "soft-support",
+            key: "soft_with_support",
             tabs: bed_hardness_tabs,
           },
           {
             text: "軟硬適中",
-            key: "medium",
+            key: "medium_hardness",
             tabs: bed_hardness_tabs,
           },
           {
             text: "硬有服貼",
-            key: "hard-fit",
+            key: "hard_and_sticky",
             tabs: bed_hardness_tabs,
           },
           {
@@ -55,13 +55,13 @@ export default {
         items: [
           {
             text: "家用型",
-            key: "home",
+            key: "home_use",
             tabs: [
               { key: "all", label: "全部" },
-              { key: "A", label: "厚實棉襯" },
-              { key: "B", label: "1cm乳膠" },
-              { key: "C", label: "2.54cm乳膠" },
-              { key: "D", label: "5.08cm乳膠" },
+              { key: "thick_cotton_lining", label: "厚實棉襯" },
+              { key: "1cm_latex", label: "1cm乳膠" },
+              { key: "2.54cm_latex", label: "2.54cm乳膠" },
+              { key: "5.08cm_latex", label: "5.08cm乳膠" },
             ],
           },
           {
@@ -69,17 +69,17 @@ export default {
             key: "rental",
             tabs: [
               { key: "all", label: "全部" },
-              { key: "A", label: "上班套房" },
-              { key: "B", label: "學生套房" },
+              { key: "office_suite", label: "上班套房" },
+              { key: "student_suite", label: "學生套房" },
             ],
           },
           {
             text: "客製(軟硬/尺寸/表布)",
-            key: "custom",
+            key: "customized_h_s_f", // hardness_size_fabric
             tabs: [
               { key: "all", label: "全部" },
-              { key: "A", label: "房東仲介" },
-              { key: "B", label: "設計師" },
+              { key: "landlord_agent", label: "房東仲介" },
+              { key: "designer", label: "設計師" },
             ],
           },
         ],
@@ -92,7 +92,7 @@ export default {
         items: [
           {
             text: "高強度*串聯式設計",
-            key: "sgrid",
+            key: "high_strength_series",
             new: true,
             banners: [
               {
@@ -114,20 +114,20 @@ export default {
             ],
             tabs: [
               { key: "all", label: "全部" },
-              { key: "A", label: "高碳鋼" },
-              { key: "B", label: "Q彈簧" },
-              { key: "C", label: "飯店合金" },
-              { key: "D", label: "特殊合金" },
+              { key: "high_carbon_steel", label: "高碳鋼" },
+              { key: "Q_spring", label: "Q彈簧" },
+              { key: "hotel_alloy", label: "飯店合金" },
+              { key: "special_alloy", label: "特殊合金" },
             ],
           },
           {
             text: "獨立筒型彈簧",
-            key: "pocket",
+            key: "individual_spring",
             tabs: [
               { key: "all", label: "全部" },
-              { key: "A", label: "直排式" },
-              { key: "B", label: "蜂巢式" },
-              { key: "C", label: "硬式獨立筒" },
+              { key: "straight_through_type", label: "直排式" },
+              { key: "honeycomb_style", label: "蜂巢式" },
+              { key: "hard_independent_cylinder", label: "硬式獨立筒" },
             ],
           },
         ],

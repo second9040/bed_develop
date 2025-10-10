@@ -1,8 +1,8 @@
 export default {
   name: '日式實木腳底床架',
 
-  tag_ch: [],
-  tag_en: [],
+  tag_ch: ['日式木腳床架'],
+  tag_en: ['Japanese_style_wooden_leg_bed_frame'],
   deliverService: {
     img: [
       '/assets/images/product/bed/1/deliver1.png',

@@ -1,8 +1,8 @@
 export default {
 
   name: '綿Q托付床墊',
-  tag_ch: ['Q彈簧', '家用款', '高強度串聯', '軟硬適中', '2.54cm乳膠'],
-  tag_en: [],
+  tag_ch: ['軟硬適中', '家用型', '高強度串聯', '2.54cm乳膠', 'Q彈簧'],
+  tag_en: ['medium_hardness', 'home_use', 'high_strength_series', '2.54cm_latex', 'Q_spring'],
   deliverService: {
     img: [
       '/assets/images/product/bed/3/deliver1.png',

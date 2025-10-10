@@ -1,8 +1,8 @@
 export default {
   name: '原廠油壓式掀床-有框版',
 
-  tag_ch: [],
-  tag_en: [],
+  tag_ch: ['油壓式掀床架'],
+  tag_en: ['hydraulic_bed_lift'],
   deliverService: {
     img: [
       '/assets/images/product/bed/1/deliver1.png',

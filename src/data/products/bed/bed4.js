@@ -2,8 +2,8 @@ export default {
 
   name: '涼感魔力彈韌床墊',
 
-  tag_ch: ['飯店合金', '家用款', '高強度串聯', '軟硬適中', '2.54cm乳膠'],
-  tag_en: [],
+  tag_ch: ['軟有支撐', '家用型', '高強度串聯', '2.54cm乳膠', '飯店合金',],
+  tag_en: ['soft_with_support', 'home_use', 'high_strength_series', '2.54cm_latex', 'hotel_alloy',],
 deliverService: {
   img: [
     '/assets/images/product/bed/4/deliver1.png',

@@ -1,8 +1,8 @@
 export default {
   name: '軟墊書櫃床頭-(木心板)',
 
-  tag_ch: [],
-  tag_en: [],
+  tag_ch: ['書架型床頭'],
+  tag_en: ['bookshelf_shaped_bedside'],
   deliverService: {
     img: [
       '/assets/images/product/bed/1/deliver1.png',

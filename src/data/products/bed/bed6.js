@@ -2,8 +2,8 @@ export default {
 
   name: '輕雲繚繞薄床墊',
 
-  tag_ch: ['飯店合金', '家用款', '高強度串聯', '軟硬適中', '2.54cm乳膠'],
-  tag_en: [],
+  tag_ch: ['軟硬適中', '客製', '高強度串聯', '2.54cm乳膠', '高碳鋼'],
+  tag_en: ['medium_hardness', 'customized', 'high_strength_series', '2.54cm_latex', 'high_carbon_steel'],
 deliverService: {
   img: [
     '/assets/images/product/bed/1/deliver1.png',

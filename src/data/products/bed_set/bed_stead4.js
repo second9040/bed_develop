@@ -1,8 +1,8 @@
 export default {
   name: '質感皮面床架(A/B/C款)',
 
-  tag_ch: [],
-  tag_en: [],
+  tag_ch: ['雙拼式床架'],
+  tag_en: ['double_bed_frame'],
   deliverService: {
     img: [
       '/assets/images/product/bed/1/deliver1.png',

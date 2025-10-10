@@ -1,8 +1,8 @@
 export default {
   name: '福氣系列床頭片-(木心板)',
 
-  tag_ch: [],
-  tag_en: [],
+  tag_ch: ['木質床頭片'],
+  tag_en: ['wooden_headboard'],
   deliverService: {
     img: [
       '/assets/images/product/bed/1/deliver1.png',
