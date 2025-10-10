@@ -242,6 +242,7 @@ export default {
       return !!this.openMap[key];
     },
     isActive(key, item) {
+      console.log(this.selected.text === item.text);
       return this.selected.text === item.text;
     },
     selectMenu(obj) {
@@ -303,7 +304,7 @@ export default {
     } else {
       // 沒有的話可能是同頁重整，使用預設值
       this.secTitle = location.href.split("product_list_")[1];
-      this.selected_menu_text = menuStore[this.secTitle].text;
+      this.selected_menu_text = menuStore[this.secTitle].text; // ex. 床墊
       this.asideMenu = menuStore[this.secTitle].asideMenu;
       this.products_obj = menuStore[this.secTitle].products_obj;
       this.selectMenu({

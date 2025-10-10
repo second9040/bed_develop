@@ -1,10 +1,10 @@
 // src/store/menuStore.js
 const bed_hardness_tabs = [
   { key: "all", label: "全部" },
-  { key: "hard-soft", label: "偏軟" },
-  { key: "soft-support", label: "軟有支撐" },
-  { key: "medium", label: "軟硬適中" },
-  { key: "hard-fit", label: "硬有服貼" },
+  { key: "soft", label: "偏軟" },
+  { key: "soft_with_support", label: "軟有支撐" },
+  { key: "medium_hardness", label: "軟硬適中" },
+  { key: "hard_and_sticky", label: "硬有服貼" },
   { key: "hard", label: "偏硬" },
 ];
 
@@ -360,7 +360,7 @@ export default {
         product_type: "storage_headboard",
         product_id: 8,
         product_hash: 1,
-        img: "/assets/images/product/bed_set/7/card.jpg",
+        img: "/assets/images/product/bed_set/8/card.jpg",
         name: "輕巧書櫃床頭-(木心板)",
         price: 4999,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
@@ -369,7 +369,7 @@ export default {
         product_type: "storage_headboard",
         product_id: 9,
         product_hash: 2,
-        img: "/assets/images/product/bed_set/7/card.jpg",
+        img: "/assets/images/product/bed_set/9/card.jpg",
         name: "軟墊書櫃床頭-(木心板)",
         price: 5999,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
@@ -378,7 +378,7 @@ export default {
         product_type: "leather_storage_bed",
         product_id: 10,
         product_hash: 1,
-        img: "/assets/images/product/bed_set/7/card.jpg",
+        img: "/assets/images/product/bed_set/10/card.jpg",
         name: "義式皮革式床組(抽屜)",
         price: 5999,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
