@@ -147,7 +147,24 @@ export default {
   },
   watch: {
     // 在 product_list 點擊 header 選單時觸發
-    selected_menu_obj() {},
+    selected_menu_obj() {
+      console.log("watch");
+      if (this.selected_menu_obj && this.selected_menu_obj.main_cat) {
+        // 從 header 傳來的 vuex 狀態
+        let obj = this.selected_menu_obj;
+
+        this.main_cat_en = obj.main_cat; // ex. mattresses
+        this.main_cat_ch = menuStore[obj.main_cat].text;
+        this.cat_en = obj.cat; // ex. hardness
+        this.aside_menu = menuStore[obj.main_cat].aside_menu;
+        // 設定側欄高亮
+        this.selectMenu({
+          main_cat: obj.main_cat,
+          cat: obj.cat,
+          sub_cat: obj.sub_cat,
+        });
+      }
+    },
     active_tab() {},
   },
   data() {
