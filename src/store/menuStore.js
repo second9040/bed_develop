@@ -1,11 +1,24 @@
 // src/store/menuStore.js
-const bed_hardness_tabs = [
-  { key: "all", label: "全部" },
-  { key: "soft", label: "偏軟" },
-  { key: "soft_with_support", label: "軟有支撐" },
-  { key: "medium_hardness", label: "軟硬適中" },
-  { key: "hard_and_sticky", label: "硬有服貼" },
-  { key: "hard", label: "偏硬" },
+const hardness_options = [
+  { key: "all", label: "全部", isActive: false },
+  { key: "soft", label: "偏軟", isActive: false },
+  { key: "soft_with_support", label: "軟有支撐", isActive: false },
+  { key: "medium_hardness", label: "軟硬適中", isActive: false },
+  { key: "hard_and_sticky", label: "硬有服貼", isActive: false },
+  { key: "hard", label: "偏硬", isActive: false },
+];
+
+const user_options = [
+  { key: "all", label: "全部", isActive: false },
+  { key: "home_use", label: "家用型", isActive: false },
+  { key: "rental", label: "出租型", isActive: false },
+  { key: "customized_h_s_f", label: "客製", isActive: false }, // hardness_size_fabric
+];
+
+const structure_options = [
+  { key: "all", label: "全部", isActive: false },
+  { key: "high_strength_series", label: "串聯式設計", isActive: false },
+  { key: "individual_spring", label: "獨立筒型彈簧", isActive: false },
 ];
 
 // product_id: 商品 id, 根據這個 id 決定在 list 顯示的順序
@@ -13,7 +26,7 @@ const bed_hardness_tabs = [
 export default {
   mattresses: {
     text: "床墊",
-    asideMenu: [
+    aside_menu: [
       {
         key: "hardness",
         title: "軟硬度",
@@ -23,27 +36,32 @@ export default {
           {
             text: "偏軟",
             key: "soft",
-            tabs: bed_hardness_tabs,
+            tabs: hardness_options,
+            isActive: false,
           },
           {
             text: "軟有支撐",
             key: "soft_with_support",
-            tabs: bed_hardness_tabs,
+            tabs: hardness_options,
+            isActive: false,
           },
           {
             text: "軟硬適中",
             key: "medium_hardness",
-            tabs: bed_hardness_tabs,
+            tabs: hardness_options,
+            isActive: false,
           },
           {
             text: "硬有服貼",
             key: "hard_and_sticky",
-            tabs: bed_hardness_tabs,
+            tabs: hardness_options,
+            isActive: false,
           },
           {
             text: "偏硬",
             key: "hard",
-            tabs: bed_hardness_tabs,
+            tabs: hardness_options,
+            isActive: false,
           },
         ],
       },
@@ -57,30 +75,33 @@ export default {
             text: "家用型",
             key: "home_use",
             tabs: [
-              { key: "all", label: "全部" },
-              { key: "thick_cotton_lining", label: "厚實棉襯" },
-              { key: "1cm_latex", label: "1cm乳膠" },
-              { key: "2.54cm_latex", label: "2.54cm乳膠" },
-              { key: "5.08cm_latex", label: "5.08cm乳膠" },
+              { key: "all", label: "全部", isActive: false },
+              { key: "thick_cotton_lining", label: "厚實棉襯", isActive: false },
+              { key: "1cm_latex", label: "1cm乳膠", isActive: false },
+              { key: "2.54cm_latex", label: "2.54cm乳膠", isActive: false },
+              { key: "5.08cm_latex", label: "5.08cm乳膠", isActive: false },
             ],
+            isActive: false,
           },
           {
             text: "出租型",
             key: "rental",
             tabs: [
-              { key: "all", label: "全部" },
-              { key: "office_suite", label: "上班套房" },
-              { key: "student_suite", label: "學生套房" },
+              { key: "all", label: "全部", isActive: false },
+              { key: "office_suite", label: "上班套房", isActive: false },
+              { key: "student_suite", label: "學生套房", isActive: false },
             ],
+            isActive: false,
           },
           {
             text: "客製(軟硬/尺寸/表布)",
             key: "customized_h_s_f", // hardness_size_fabric
             tabs: [
-              { key: "all", label: "全部" },
-              { key: "landlord_agent", label: "房東仲介" },
-              { key: "designer", label: "設計師" },
+              { key: "all", label: "全部", isActive: false },
+              { key: "landlord_agent", label: "房東仲介", isActive: false },
+              { key: "designer", label: "設計師", isActive: false },
             ],
+            isActive: false,
           },
         ],
       },
@@ -113,22 +134,24 @@ export default {
               },
             ],
             tabs: [
-              { key: "all", label: "全部" },
-              { key: "high_carbon_steel", label: "高碳鋼" },
-              { key: "Q_spring", label: "Q彈簧" },
-              { key: "hotel_alloy", label: "飯店合金" },
-              { key: "special_alloy", label: "特殊合金" },
+              { key: "all", label: "全部", isActive: false },
+              { key: "high_carbon_steel", label: "高碳鋼", isActive: false },
+              { key: "Q_spring", label: "Q彈簧", isActive: false },
+              { key: "hotel_alloy", label: "飯店合金", isActive: false },
+              { key: "special_alloy", label: "特殊合金", isActive: false },
             ],
+            isActive: false,
           },
           {
             text: "獨立筒型彈簧",
             key: "individual_spring",
             tabs: [
-              { key: "all", label: "全部" },
-              { key: "straight_through_type", label: "直排式" },
-              { key: "honeycomb_style", label: "蜂巢式" },
-              { key: "hard_independent_cylinder", label: "硬式獨立筒" },
+              { key: "all", label: "全部", isActive: false },
+              { key: "straight_through_type", label: "直排式", isActive: false },
+              { key: "honeycomb_style", label: "蜂巢式", isActive: false },
+              { key: "hard_independent_cylinder", label: "硬式獨立筒", isActive: false },
             ],
+            isActive: false,
           },
         ],
       },
@@ -143,6 +166,7 @@ export default {
         price: 6800,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
         hardness_degree: 6,
+        tag_en: ['hard_and_sticky', 'home_use', 'high_strength_series', '1cm_latex', 'high_carbon_steel'],
       },
       {
         product_type: "pocket_spring",
@@ -153,6 +177,7 @@ export default {
         price: 6800,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
         hardness_degree: 3,
+        tag_en: ['soft','home_use',	'individual_spring', '1cm_latex'],
       },
       {
         product_type: "elastic_spring",
@@ -163,6 +188,7 @@ export default {
         price: 9000,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
         hardness_degree: 3,
+        tag_en: ['medium_hardness', 'home_use', 'high_strength_series', '2.54cm_latex', 'Q_spring'],
       },
       {
         product_type: "titanium_spring",
@@ -173,6 +199,7 @@ export default {
         price: 13800,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
         hardness_degree: 3,
+        tag_en: ['soft_with_support', 'home_use', 'high_strength_series', '2.54cm_latex', 'hotel_alloy'],
       },
       {
         product_type: "alternating_spring",
@@ -183,6 +210,7 @@ export default {
         price: 14800,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
         hardness_degree: 3,
+        tag_en: ['soft', 'home_use', 'individual_spring', '5.08cm_latex', 'honeycomb_style'],
       },
       {
         product_type: "handmade_spring",
@@ -193,66 +221,74 @@ export default {
         price: 9800,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
         hardness_degree: 4,
+        tag_en: ['medium_hardness', 'customized', 'high_strength_series', '2.54cm_latex', 'high_carbon_steel'],
       },
     ],
   },
 
   bedframe: {
     text: "床架/床頭櫃",
-    asideMenu: [
+    aside_menu: [
       {
-        key: "hardness",
+        key: "bedside_table_cabinet",
         title: "床頭片/櫃",
         icon: "/assets/images/index/bed_cabinet.png",
         banner: "/assets/images/product/bed_set/banner_bed_cabinet.jpg",
         items: [
           {
             text: "木質床頭片",
-            key: "hard-soft",
+            key: "wooden_headboard",
+            isActive: false,
           },
           {
             text: "軟墊床頭片",
-            key: "soft-support",
+            key: "upholstered_headboard",
+            isActive: false,
           },
           {
             text: "書架型床頭",
-            key: "medium",
+            key: "bookshelf_shaped_bedside",
+            isActive: false,
           },
           {
             text: "收納床頭櫃",
-            key: "hard-fit",
+            key: "storage_bedside_table",
+            isActive: false,
           },
         ],
       },
       {
-        key: "users",
+        key: "bedstead",
         title: "床架",
         icon: "/assets/images/index/bed_stead.png",
         banner: "/assets/images/product/bed_set/banner_bed_stead.jpg",
         items: [
           {
             text: "油壓式掀床架",
-            key: "home",
+            key: "hydraulic_bed_lift",
+            isActive: false,
           },
           {
             text: "雙拼式床架",
-            key: "rental",
+            key: "double_bed_frame",
+            isActive: false,
           },
           {
             text: "日式木腳床架",
-            key: "custom",
+            key: "Japanese_style_wooden_leg_bed_frame",
+            isActive: false,
           },
         ],
       },
       {
-        key: "structure",
+        key: "bed_set",
         title: "床組(含床頭)",
         icon: "/assets/images/index/bed_set.png",
         banner: "/assets/images/product/bed_set/banner_bed_set.jpg",
         items: [
           {
             text: "皮革實木鋼構床組",
-            key: "sgrid",
+            key: "leather_solid_wood_steel_structure_bed_set",
             banners: [
               {
                 img_pc: "/assets/images/index/banner_kari02_pc.jpg",
@@ -272,22 +308,24 @@ export default {
               },
             ],
             tabs: [
-              { key: "all", label: "全部" },
-              { key: "A", label: "高碳鋼" },
-              { key: "B", label: "Q彈簧" },
-              { key: "C", label: "飯店合金" },
-              { key: "D", label: "特殊合金" },
+              { key: "all", label: "全部", isActive: false },
+              { key: "high_carbon_steel", label: "高碳鋼", isActive: false },
+              { key: "Q_spring", label: "Q彈簧", isActive: false },
+              { key: "hotel_alloy", label: "飯店合金", isActive: false },
+              { key: "special_alloy", label: "特殊合金", isActive: false },
             ],
+            isActive: false,
           },
           {
             text: "皮革收納鋼構床組",
-            key: "pocket",
+            key: "leather_storage_steel_bed_set",
             tabs: [
-              { key: "all", label: "全部" },
-              { key: "A", label: "直排式" },
-              { key: "B", label: "蜂巢式" },
-              { key: "C", label: "硬式獨立筒" },
+              { key: "all", label: "全部", isActive: false },
+              { key: "straight_through_type", label: "直排式", isActive: false },
+              { key: "honeycomb_style", label: "蜂巢式", isActive: false },
+              { key: "hard_independent_cylinder", label: "硬式獨立筒", isActive: false },
             ],
+            isActive: false,
           },
         ],
       },
@@ -301,6 +339,7 @@ export default {
         name: "原廠油壓式掀床-有框版",
         price: 6800,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        tag_en: ['hydraulic_bed_lift'],
       },
       {
         product_type: "cabinet_storage_bed",
@@ -310,6 +349,7 @@ export default {
         name: "雙拼木心板床架-有抽屜",
         price: 4000,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        tag_en: ['double_bed_frame'],
       },
       {
         product_type: "japanese_style_bed",
@@ -319,6 +359,7 @@ export default {
         name: "日式實木腳底床架",
         price: 5000,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        tag_en: ['Japanese_style_wooden_leg_bed_frame'],
       },
       {
         product_type: "leather_bed",
@@ -328,6 +369,7 @@ export default {
         name: "質感皮面床架(A/B/C款)",
         price: 8500,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        tag_en: ['double_bed_frame'],
       },
       {
         product_type: "leather_headboard",
@@ -337,6 +379,7 @@ export default {
         name: "質感皮面床頭片(A/B款)",
         price: 4500,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        tag_en: ['upholstered_headboard'],
       },
       {
         product_type: "wooden_headboard",
@@ -346,6 +389,7 @@ export default {
         name: "福氣系列床頭片-(木心板)",
         price: 1299,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        tag_en: ['wooden_headboard'],
       },
       {
         product_type: "wooden_headboard",
@@ -355,6 +399,7 @@ export default {
         name: "星芒系列床頭片-(木心板)",
         price: 2599,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        tag_en: ['upholstered_headboard'],
       },
       {
         product_type: "storage_headboard",
@@ -364,6 +409,7 @@ export default {
         name: "輕巧書櫃床頭-(木心板)",
         price: 4999,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        tag_en: ['bookshelf_shaped_bedside'],
       },
       {
         product_type: "storage_headboard",
@@ -373,6 +419,7 @@ export default {
         name: "軟墊書櫃床頭-(木心板)",
         price: 5999,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        tag_en: ['bookshelf_shaped_bedside'],
       },
       {
         product_type: "leather_storage_bed",
@@ -382,6 +429,7 @@ export default {
         name: "義式皮革式床組(抽屜)",
         price: 5999,
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        tag_en: ['leather_storage_steel_bed_set'],
       },
     ],
   }

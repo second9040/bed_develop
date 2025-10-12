@@ -54,14 +54,10 @@ export default createStore({
     ],
     tw_city_name: [ "臺北市", "基隆市", "新北市", "連江縣", "宜蘭縣", "釣魚臺", "新竹市", "新竹縣", "桃園市", "苗栗縣", "臺中市", "彰化縣", "南投縣", "嘉義市", "嘉義縣", "雲林縣", "臺南市", "高雄市", "南海島", "澎湖縣", "金門縣", "屏東縣", "臺東縣", "花蓮縣"],
     cart_price_total: 0,
-    selected_menu: "",
-    selected_menu_index: 0,
-    selected_menu_key: "",
     selected_menu_obj: { // ex: bed > 軟硬度(0) > 軟有支撐(2)
-      title: "", // bed
-      key: "",  // 0
-      index: 0, // 2
-
+      main_cat: "", // bed
+      cat: "",  // 軟硬度 hardness
+      sub_cat: "", // 軟有支撐 soft_with_support
     },
   },
   mutations: {
@@ -93,13 +89,10 @@ export default createStore({
       state.cart_item_total += para.action;
     },
     selectedMenu(state, menu) { 
-      state.selected_menu = menu.title
-      state.selected_menu_index = menu.index
-      state.selected_menu_key = menu.key
       state.selected_menu_obj = {
-        title: menu.title,
-        index: menu.index,
-        key: menu.key,
+        main_cat: menu.main_cat,
+        cat: menu.cat,
+        sub_cat: menu.sub_cat,
       }
       console.log("state.selected_menu_obj:", state.selected_menu_obj);
     },
@@ -155,9 +148,6 @@ export default createStore({
     cart_items: (state) => state.cart_items,
     cart_price_total: (state) => state.cart_items,
     tw_city_name: (state) => state.cart_items,
-    selected_menu: (state) => state.selected_menu,
-    selected_menu_index: (state) => state.selected_menu_index,
-    selected_menu_key: (state) => state.selected_menu_key,
     selected_menu_obj: (state) => state.selected_menu_obj,
   },
 });

@@ -95,7 +95,11 @@ const router = createRouter({
       path: '/about_shopping_notes',
       name: 'about_shopping_notes',
       component: () => import('../views/AboutView_3_buy_note.vue')
-    }
+    }, 
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/'
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     return new Promise((resolve) => {

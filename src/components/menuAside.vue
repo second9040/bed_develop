@@ -25,8 +25,8 @@
                     )
                     a.item-link(
                       href="javascript:void(0)"
-                      @click.prevent="$emit('select', { title: sec.title, key: sec.key, index: idx })"
-                      :class="{ active: isActive(sec.key, it) }"
+                      @click.prevent="$emit('select', { cat: sec.key, sub_cat: it.key })"
+                      :class="{ active: it.isActive }"
                     ) {{ it.text }}
 </template>
 

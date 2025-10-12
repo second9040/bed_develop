@@ -10,21 +10,20 @@
               li(@click="goto('home')")
                 a(href='javascript: void(0)') 首頁
               li 所有商品
-              li {{ selected_menu_text }}
-                span.font-bold(v-if="selected_menu_text == '床墊'") 分類
+              li {{ main_cat_ch }}
+                span.font-bold(v-if="main_cat_ch == '床墊'") 分類
           .row
             menu-aside(
-              :asideMenu="asideMenu"
-              :selectedMenuText="selected_menu_text"
+              :asideMenu="aside_menu"
+              :selectedMenuText="main_cat_ch"
               :isOpen="isOpen"
-              :isActive="isActive"
               :getImagePath="getImagePath"
               @toggle="toggle"
               @select="selectMenu"
             )
             .col-lg-9.col-md-12
               .divider_for_h2
-                h2.selected_item_h2.text-center(v-if="selected") {{ selected.title }}
+                h2.selected_item_h2.text-center(v-if="show_list") {{ show_list.cat_ch }}
 
               // shop wrapper start
               .shop_banner
@@ -53,14 +52,14 @@
                   alt="product_banner"
                 )
               // shop toolbar end
-              h3.selected_text(v-if="selected.title != '軟硬度'") {{ selected.text }}
-              .tabs(v-if="selected.tabs")
+              h3.selected_text(v-if="show_list.cat_title != '軟硬度'") {{ show_list.text }}
+              .tabs(v-if="show_list.tabs")
                 button.tab(
-                  v-for="t in selected.tabs"
+                  v-for="t in show_list.tabs"
                   :key="t.key"
                   type="button"
-                  :class="{ active: activeTab === t.key }"
-                  @click="activeTab = t.key"
+                  :class="{ active: t.isActive }"
+                  @click="changeHighlightTab({ main_cat: main_cat_en ,cat: show_list.cat, sub_cat: t.key })"
                 ) {{ t.label }}
 
               //- .product_count(v-if="selected && selected.tabs && selected.tabs.length && products_obj") 共 {{ products_obj.length }} 樣商品
@@ -145,59 +144,36 @@ export default {
   },
   computed: {
     ...mapState(["selected_menu_obj"]),
-
-    currentItem() {
-      if (!this.selected.itemKey) return null;
-      const sec = this.asideMenu.find((s) => s.key === this.selected.section);
-      return sec?.items.find((i) => i.key === this.selected.itemKey) || null;
-    },
   },
   watch: {
-    // header 選單觸發
-    selected_menu_obj() {
-      let obj = this.selected_menu_obj;
-      this.secTitle = obj.title;
-      localStorage.setItem("secTitle", this.secTitle);
-      this.products_obj = menuStore[this.secTitle].products_obj;
-
-      this.selected_menu_text = menuStore[obj.title].text;
-      this.asideMenu = menuStore[obj.title].asideMenu;
-
-      let highlightItem = this.asideMenu[obj.key].items[obj.index];
-      highlightItem.title = this.asideMenu[obj.key].title;
-      this.selected = highlightItem;
-
-      if (highlightItem.tabs) {
-        this.activeTab = highlightItem.tabs[0].key;
-      }
-      // 軟硬度的格式跟別人不一樣＝＝
-      if (this.selected.title == "軟硬度") {
-        this.activeTab = this.selected.key;
-      }
-      this.banner = this.asideMenu[obj.key].banner || this.asideMenu[obj.key].banners;
-    },
+    // 在 product_list 點擊 header 選單時觸發
+    selected_menu_obj() {},
+    active_tab() {},
   },
   data() {
     return {
       modules: [Autoplay, Navigation, Pagination],
 
-      secTitle: "mattresses", // 預設床墊
-      selected_menu_text: "",
+      main_cat_en: "", // ex. mattresses
+      main_cat_ch: "", // ex. 床墊
+      cat_en: "", // ex. hardness
 
       openMap: {
         hardness: true,
         users: true,
         structure: true,
+        bedside_table_cabinet: true,
+        bedstead: true,
+        bed_set: true,
       },
-      // 當前選中的清單項目（用於高亮）
-      selected: { key: "", text: "", itemKey: "" },
+      // 當前選中的清單項目
+      show_list: { main_cat: "", cat: "", sub_cat: "" },
 
-      asideMenu: null,
-      activeTab: "",
+      aside_menu: null,
+      active_tab: "",
 
       banner: null,
 
-      expandedCat: null, // 一次只能顯示一個分類
       products_obj: null,
     };
   },
@@ -214,7 +190,7 @@ export default {
       this.$router.push({
         name: "product_detail",
         params: {
-          category: this.secTitle,
+          category: this.main_cat_en,
           product_type: item.product_type,
           product_hash: item.product_hash,
         },
@@ -227,93 +203,154 @@ export default {
         hash: hash,
       });
     },
-    toggleSubCat(name, event) {
-      event.stopPropagation();
-      if (this.expandedCat === name) {
-        this.expandedCat = null;
-      } else {
-        this.expandedCat = name;
-      }
-    },
     toggle(key) {
       this.openMap[key] = !this.openMap[key];
     },
     isOpen(key) {
       return !!this.openMap[key];
     },
-    isActive(key, item) {
-      console.log(this.selected.text === item.text);
-      return this.selected.text === item.text;
-    },
+
+    // 點擊側欄選單時觸發 (或 header 進來後設定高亮)
     selectMenu(obj) {
-      // 設定選取的 aside item 高亮
-      if (isNaN(obj.key)) {
-        // mounted 預設選擇的話 key 是數字
-        // 不過直接點選的話 key 是英文 ex: hardness
-        // 所以要找對應的 index
-        this.asideMenu.forEach((element, idx) => {
-          if (element.key === obj.key) {
-            obj.key = idx;
+      this.cat_en = obj.cat;
+
+      let index_cat = this.show_list.index_cat; // 軟硬度/使用族群/結構
+      let index_sub_cat = this.show_list.index_sub_cat; // 選單的 index
+      this.aside_menu.forEach((cat, idx) => {
+        if (cat.key === obj.cat) {
+          index_cat = idx;
+          for (let i = 0; i < cat.items.length; i++) {
+            if (cat.items[i].key === obj.sub_cat) {
+              index_sub_cat = i;
+              break;
+            }
+          }
+        }
+      });
+
+      this.banner =
+        this.aside_menu[index_cat].banner || this.aside_menu[index_cat].banners;
+
+      // 雖然 obj 裡面有 main_cat, cat, sub_cat
+      // 但這邊還需要取 中文名稱跟選擇的 sub_cat 的其他資訊 ex. tabs
+      let highlightItem = { ...this.aside_menu[index_cat].items[index_sub_cat] };
+
+      highlightItem.cat_ch = this.aside_menu[index_cat].title;
+      highlightItem.key = this.aside_menu[index_cat].items[index_sub_cat].key;
+      highlightItem.cat = obj.cat;
+      highlightItem.sub_cat = obj.sub_cat;
+      highlightItem.index_cat = index_cat;
+      highlightItem.index_sub_cat = index_sub_cat;
+
+      this.show_list = highlightItem;
+
+      // aside 高亮
+      this.aside_menu.forEach((cat, c_idx) => {
+        cat.items.forEach((item, s_c_idx) => {
+          // 每個項目都先清除 active 標記
+          item.isActive = false;
+          // 找到選中的那個項目 → 設為 true
+          if (
+            c_idx === index_cat &&
+            s_c_idx === index_sub_cat &&
+            !(
+              this.main_cat_en == "mattresses" &&
+              obj.cat == "hardness" &&
+              obj.sub_cat == "all"
+            ) // 除了 mattresses 軟硬度 的 all (格式跟大家不一樣！)
+          ) {
+            item.isActive = true;
+          } else if (
+            this.main_cat_en == "mattresses" &&
+            obj.cat == "hardness" &&
+            obj.sub_cat == "all"
+          ) {
+            this.show_list.text = "全部";
           }
         });
-      }
-      let highlightItem = this.asideMenu[obj.key].items[obj.index];
-      highlightItem.title = this.asideMenu[obj.key].title;
-      this.selected = highlightItem;
-
-      // tab 高亮
-      if (highlightItem.tabs) {
-        this.activeTab = highlightItem.tabs[0].key;
-      }
-
-      // 軟硬度的格式跟別人不一樣＝＝
-      if (this.selected.title == "軟硬度") {
-        this.activeTab = this.selected.key;
-      }
-      this.banner = this.asideMenu[obj.key].banner || this.asideMenu[obj.key].banners;
-
-      // 把選擇的項目存到 vuex 裡
-      this.selectedMenu({
-        title: this.secTitle,
-        key: obj.key,
-        index: obj.index,
       });
+
+      // 右側 tab 高亮設定
+      if (this.aside_menu[index_cat].items[index_sub_cat].tabs) {
+        if (this.main_cat_en == "mattresses" && obj.cat == "hardness") {
+          this.aside_menu[index_cat].items[index_sub_cat].tabs.forEach((t) => {
+            t.isActive = false;
+            if (t.key === obj.sub_cat) {
+              t.isActive = true;
+            }
+          });
+        } else {
+          this.changeHighlightTab({
+            main_cat: obj.main_cat,
+            cat: obj.cat,
+            sub_cat: this.aside_menu[index_cat].items[index_sub_cat].tabs[0].key,
+          });
+        }
+      }
+
+      // 篩選商品
+      let product_all = menuStore[this.main_cat_en].products_obj;
+
+      // 根據 tag 篩選產品
+      if (
+        (this.main_cat_en == "mattresses" &&
+          obj.cat == "hardness" &&
+          obj.sub_cat != "all") ||
+        obj.cat != "hardness"
+      ) {
+        product_all = product_all.filter((p) => p.tag_en.includes(obj.sub_cat));
+      }
+      this.products_obj = product_all;
+    },
+    changeHighlightTab(obj) {
+      // 床墊軟硬度格式跟別人不一樣＝＝
+      if (obj.main_cat == "mattresses" && obj.cat == "hardness") {
+        this.selectMenu(obj);
+      } else {
+        this.aside_menu[this.show_list.index_cat].items[
+          this.show_list.index_sub_cat
+        ].tabs.forEach((t) => {
+          t.isActive = false;
+          if (t.key === obj.sub_cat) {
+            t.isActive = true;
+          }
+        });
+
+        // 篩選商品
+        let product_all = menuStore[this.main_cat_en].products_obj;
+        product_all = product_all.filter((p) => p.tag_en.includes(obj.sub_cat));
+        this.products_obj = product_all;
+      }
     },
   },
   mounted() {
-    const item = localStorage.getItem("selected_menu_obj");
-    if (item) {
-      this.selectedMenu(JSON.parse(item)); // 呼叫 Vuex action
-      localStorage.removeItem("selectedItem"); // 用完就清掉
-    }
+    if (this.selected_menu_obj && this.selected_menu_obj.main_cat) {
+      // 從 header 傳來的 vuex 狀態
+      let obj = this.selected_menu_obj;
 
-    if (this.selected_menu_obj && this.selected_menu_obj.title) {
-      // 從 header 傳來的
-      let o = this.selected_menu_obj;
-      this.secTitle = o.title;
-      this.selected_menu_text = menuStore[o.title].text;
-      this.asideMenu = menuStore[o.title].asideMenu;
-      this.products_obj = menuStore[o.title].products_obj;
+      this.main_cat_en = obj.main_cat; // ex. mattresses
+      this.main_cat_ch = menuStore[obj.main_cat].text;
+      this.cat_en = obj.cat; // ex. hardness
+      this.aside_menu = menuStore[obj.main_cat].aside_menu;
+      // 設定側欄高亮
       this.selectMenu({
-        title: o.title,
-        key: o.key,
-        index: o.index,
+        main_cat: obj.main_cat,
+        cat: obj.cat,
+        sub_cat: obj.sub_cat,
       });
-
-      this.banner = this.asideMenu[o.key].banner || this.asideMenu[o.key].banners;
     } else {
       // 沒有的話可能是同頁重整，使用預設值
-      this.secTitle = location.href.split("product_list_")[1];
-      this.selected_menu_text = menuStore[this.secTitle].text; // ex. 床墊
-      this.asideMenu = menuStore[this.secTitle].asideMenu;
-      this.products_obj = menuStore[this.secTitle].products_obj;
-      this.selectMenu({
-        title: this.secTitle,
-        index: 0,
-        key: 0,
-      });
+      this.main_cat_en = location.href.split("product_list_")[1];
+      this.main_cat_ch = menuStore[this.main_cat_en].text; // ex. 床墊
+      this.aside_menu = menuStore[this.main_cat_en].aside_menu;
+      this.cat_en = this.aside_menu[0].key; // ex. hardness
 
-      this.banner = this.asideMenu[0].banner || this.asideMenu[0].banners;
+      let menu_o = {
+        main_cat: this.main_cat_en,
+        cat: this.aside_menu[0].key,
+        sub_cat: this.aside_menu[0].items[0].key,
+      };
+      this.selectMenu(menu_o);
     }
   },
 };
