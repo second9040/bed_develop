@@ -11,7 +11,16 @@
     )
       swiper-slide.swiper-slide(v-for='(banner, index) in banners' :key='index')
         .position-relative
-          .banner_container.position-relative
+          .banner_container.position-relative(v-if="banner.youtube_id_pc" style="max-width: 1400px; margin: 0 auto;")
+            .video-wrapper(:id="`youtube-player-${index}`" :style="'position: relative; padding-top: ' + video_padding_top()")
+              iframe(
+                :src="`https://www.youtube.com/embed/${getVideoId(banner)}?rel=0&autoplay=0&mute=1&playsinline=1&enablejsapi=1`"
+                frameborder="0"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              )
+          .banner_container.position-relative(v-else style="max-width: 100%;")
             img.banner-slide(:src='getImagePath(banner.img_pc, banner.img_mo)' :alt='banner.name')
             //- img.slide_text(v-if="banner.img_text" :src='getImagePath(banner.img_text, banner.img_mo)' :alt='banner.name')
             .text_div.position-absolute
@@ -22,7 +31,7 @@
                   type="button"
               ) {{ banner.btn_text}}
 
-      .swiper-pagination
+      .swiper-pagination(:style="pagination_bottom()")
       .swiper-button-next
       .swiper-button-prev
 
@@ -66,6 +75,14 @@ export default {
       modules: [Autoplay, Navigation, Pagination],
       banners: [
         {
+          youtube_id_pc: "6rrhuPhoOwc",
+          youtube_id_mo: "wyDPmCm7qdw",
+          name: "video_251019",
+          title: ".",
+          desc: ".",
+          btn_link: "",
+        },
+        {
           img_pc: "/assets/images/index/banner_kari01_pc.png",
           img_mo: "/assets/images/index/banner_kari01_mo.png",
           name: "banner_kari01",
@@ -94,6 +111,7 @@ export default {
       ],
     };
   },
+  computed: {},
   mounted() {},
   methods: {
     getImagePath(img_pc, img_mo) {
@@ -103,10 +121,80 @@ export default {
         return require(`@/${img_mo}`);
       }
     },
+    getVideoId(banner) {
+      if (window.innerWidth > 567) {
+        return banner.youtube_id_pc;
+      } else {
+        return banner.youtube_id_mo;
+      }
+    },
+
+    video_padding_top() {
+      if (window.innerWidth > 567) {
+        return "56.25%";
+      } else {
+        return "177.78%";
+      }
+    },
+    pagination_bottom() {
+      if (window.innerWidth > 567) {
+        return "bottom: 60px;";
+      } else {
+        return "";
+      }
+    },
   },
 };
 </script>
 
 <style scoped>
 @import "/assets/scss/index/bed_banner.scss";
+</style>
+<style lang="css">
+#bed.section {
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    background: #000;
+    overflow: hidden;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0; /* 確保沒有邊框影響 */
+      pointer-events: auto; /* 確保可以點擊 */
+    }
+  }
+
+  /* 確保 banner_container 有固定結構 */
+  .banner_container {
+    height: 0;
+    padding-bottom: 56.25%; /* 保持 16:9 比例 */
+    position: relative; /* 確保 iframe 可以絕對定位於此 */
+  }
+
+  .video-wrapper {
+    /* 移除原本的 padding-bottom */
+    padding-bottom: 0;
+    /* 讓 video-wrapper 佔滿 banner_container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+  }
+
+  .video-wrapper iframe {
+    /* 保持不變 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
 </style>
