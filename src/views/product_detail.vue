@@ -220,53 +220,41 @@ export default {
       }
       Swal.showLoading();
 
-      try {
-        const response = await fetch(
-          "https://script.google.com/macros/s/AKfycbweEwgPz1bVAS-6XK6fNcpJhfe_p_uMU9OjHThW9aL5wgA0eWRwAGoPBAJ-5Bcl3rIWCA/exec",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(this.form),
-          }
-        );
+      const formUrl =
+        "https://docs.google.com/forms/d/e/1FAIpQLSfnB4JmG1VEFV2OnYetV5LEBeg_hV1h62s5hAty3vquFhbzuw/formResponse?usp=header";
 
-        const result = await response.json();
+      const formData = new URLSearchParams();
+      formData.append("entry.1907070061", this.form.name); // 請替換 entry ID
+      formData.append("entry.1433068134", this.form.phone);
+      formData.append("entry.1525697653", this.form.note);
 
-        if (result.result === "success") {
+      fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData,
+      })
+        .then(() => {
           this.form.name = "";
           this.form.phone = "";
           this.form.note = "";
           Swal.hideLoading();
           this.toggle_modal(false);
-
           Swal.fire({
             title: "已收到回應",
             text: "我們會盡快與您聯絡",
             icon: "success",
             confirmButtonText: "確認",
           });
-          this.form = { name: "", phone: "", note: "" };
-        } else {
+        })
+        .catch(() => {
           Swal.hideLoading();
           Swal.fire({
-            title: "送出失敗",
+            title: "發生錯誤",
             text: "請稍後再試",
             icon: "error",
             confirmButtonText: "確認",
           });
-        }
-      } catch (error) {
-        console.error(error);
-        Swal.hideLoading();
-        Swal.fire({
-          title: "發生錯誤",
-          text: "請稍後再試",
-          icon: "error",
-          confirmButtonText: "確認",
         });
-      } finally {
-        Swal.hideLoading();
-      }
     },
   },
   mounted() {
