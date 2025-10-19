@@ -148,7 +148,6 @@ export default {
   watch: {
     // 在 product_list 點擊 header 選單時觸發
     selected_menu_obj() {
-      console.log("watch");
       if (this.selected_menu_obj && this.selected_menu_obj.main_cat) {
         // 從 header 傳來的 vuex 狀態
         let obj = this.selected_menu_obj;
@@ -335,7 +334,11 @@ export default {
 
         // 篩選商品
         let product_all = menuStore[this.main_cat_en].products_obj;
-        product_all = product_all.filter((p) => p.tag_en.includes(obj.sub_cat));
+        if (obj.sub_cat !== "all") {
+          product_all = product_all.filter((p) => p.tag_en.includes(obj.sub_cat));
+        } else {
+          product_all = product_all.filter((p) => p.tag_en.includes(this.show_list.key));
+        }
         this.products_obj = product_all;
       }
     },

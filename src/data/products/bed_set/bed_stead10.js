@@ -14,10 +14,11 @@ export default {
   },
     img: [
       '/assets/images/product/bed_set/10/1.jpg',
+      '/assets/images/product/bed_set/10/2.jpg',
+      '/assets/images/product/bed_set/10/3.jpg',
     ],
   desc: `
 <p>
-<span class="font-bold">頂級異國系列床頭</span><br>
 <span class="font-bold">🔹真皮包覆，柔軟舒適</span><br>
 高質感真皮皮料，觸感細膩，睡感更放鬆<br>
 <span class="font-bold">🔹床頭泡棉填充，靠感升級</span><br>

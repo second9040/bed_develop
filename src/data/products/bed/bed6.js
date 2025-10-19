@@ -2,8 +2,8 @@ export default {
 
   name: '輕雲繚繞薄床墊',
 
-  tag_ch: ['軟硬適中', '客製', '高強度串聯', '2.54cm乳膠', '高碳鋼'],
-  tag_en: ['medium_hardness', 'customized', 'high_strength_series', '2.54cm_latex', 'high_carbon_steel'],
+  tag_ch: ['軟硬適中', '客製(軟硬/尺寸/表布)', '高強度串聯', '2.54cm乳膠', '高碳鋼'],
+  tag_en: ['medium_hardness', 'customized_h_s_f', 'high_strength_series', '2.54cm_latex', 'high_carbon_steel'],
 deliverService: {
   img: [
     '/assets/images/product/bed/1/deliver1.png',
@@ -20,22 +20,17 @@ deliverService: {
   ],
   desc: `
 <p> <span class="font-bold">🔹 手工小彈簧 × 靈活支撐 × 耐久舒適</span><br>
-製床所魔法師，把厚重化為輕盈<br><br>
-
-<p> <span class="font-bold">🔹 手工製小彈簧</span><br>
-張力均勻、彈性穩定，是機器無法取代的精準工藝<br><br>
-
-<p> <span class="font-bold">🔹 高強度串聯設計</span><br>
-小彈簧細膩支撐，貼合身體曲線，10年如一的耐用<br><br>
-
-<p> <span class="font-bold">🔹 95%高純度乳膠 雙規格(2.54/5.08cm)</span><br>
-軟而不塌<br><br>，細緻貼合穩定支城
-
-<p> <span class="font-bold">🔹 進口天絲棉 ，滑順觸感</span><br>
-高透氣X恆溫，從身到心都能好好放鬆深層入眠<br><br>
-
-<p> <span class="font-bold">🔹可客製軟硬度 × 高度 × 尺寸 </span><br>
-厚型、薄型、偏硬或偏軟，都能量身打造，為你調出最合適的「魔法床墊」<br><br>
+製床所魔法師，把厚重化為輕盈<br>
+<span class="font-bold">🔹 手工製小彈簧</span><br>
+張力均勻、彈性穩定，是機器無法取代的精準工藝<br>
+<span class="font-bold">🔹 高強度串聯設計</span><br>
+小彈簧細膩支撐，貼合身體曲線，10年如一的耐用<br>
+<span class="font-bold">🔹 95%高純度乳膠 雙規格(2.54/5.08cm)</span><br>
+軟而不塌，細緻貼合穩定支城<br>
+<span class="font-bold">🔹 進口天絲棉 ，滑順觸感</span><br>
+高透氣X恆溫，從身到心都能好好放鬆深層入眠<br>
+<span class="font-bold">🔹可客製軟硬度 × 高度 × 尺寸 </span><br>
+厚型、薄型、偏硬或偏軟，都能量身打造，為你調出最合適的「魔法床墊」
 
 </p>
 

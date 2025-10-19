@@ -1,53 +1,54 @@
-
 export default {
-  name: '綿雲舒壓床墊',
-  tag_ch: ['偏軟', '家用型', '獨立筒', '1cm乳膠', '直排式'],
-  tag_en: ['soft', 'home_use', 'individual_spring', '1cm_latex', 'straight_through_type'],
+  name: '羊絨雲朵皮革床組',
+
+  tag_ch: ['皮革實木鋼構床組'],
+  tag_en: ['leather_solid_wood_steel_structure_bed_set'],
   deliverService: {
     img: [
-      '/assets/images/product/bed/2/deliver1.png',
-      '/assets/images/product/bed/2/deliver2.png',
-      '/assets/images/product/bed/2/deliver3.png',
+      '/assets/images/product/bed/1/deliver1.png',
+      '/assets/images/product/bed/1/deliver2.png',
+      '/assets/images/product/bed/1/deliver3.png',
     ],
     desc: '<span class="font-bold">一張床，一段傳承，一個靈魂。製床所提供的不是商品，而是一種責任。</span><br>1. 專業聆聽：每一張床墊都是獨一無，擁有獨特的靈魂。<br> 2. 60年製床師：製作出專屬於您的靈魂床墊。<br> 3. 搬運計畫：制訂詳細搬運計畫，並由製床所團隊替您安置新床。',
 
   },
     img: [
-      '/assets/images/product/bed/2/1.jpg?251009',
-      '/assets/images/product/bed/2/2.jpg',
-      '/assets/images/product/bed/2/3.jpg',
-      '/assets/images/product/bed/2/4.jpg',
-      '/assets/images/product/bed/2/5.jpg',
-      '/assets/images/product/bed/2/6.jpg',
+      '/assets/images/product/bed_set/11/1.jpg',
+      '/assets/images/product/bed_set/11/2.jpg',
+      '/assets/images/product/bed_set/11/3.jpg',
     ],
-
   desc: `
-<p> <span class="font-bold">🔹 獨立支撐 × 靜音分無壓</span><br>有效平均釋壓、維持脊椎自然曲線，給予全身星空漂浮感</p>
-<p> <span class="font-bold">🔹  獨立筒 Pocket Spring 彈簧</span><br>使用高強度無紡布包裝、受壓不互擾</p>
-<p> <span class="font-bold">🔹  H-Flow 精密分區支撐系統™</span><br>符合人體工學，精準釋壓，享受零壓力的睡眠。</p>
-<p> <span class="font-bold">🔹 雙層減震吸壓棉襯</span><br>雙層強回彈吸壓材質，有效吸收翻身震動，舒適度。</p>
-<p> <span class="font-bold">🔹 1cm 天然乳膠，貼合身體曲線</span><br>有效舒緩肩頸與腰臀的肌肉壓力，一覺醒來放鬆又不痠痛。</p>
-<p> <span class="font-bold">🔹 進口天絲棉 ，滑順觸感</span><br>高透氣X恆溫，從身到心都能好好放鬆深層入眠</p>
-<p>  <span class="font-bold">360° 高密度M型床緣強化結構</span><br>使用高密度M型護邊設計，從邊到角皆能穩穩支撐，久坐不傾、不陷，讓你每一寸落座都安心。</p>
-
+<p>
+<span class="font-bold">🔹真皮包覆，柔軟舒適</span><br>
+高質感真皮皮料，觸感細膩<br>
+<span class="font-bold">🔹羊絨異材質拼接</span><br>
+柔軟舒適觸感，就如躺在雲朵上<br>
+<span class="font-bold">🔹雲朵造型床頭，高密度泡棉填充</span><br>
+舒適時尚兼具，讓倚靠符合人體工學<br>
+<span class="font-bold">🔹實木鋼構結構，穩固耐用</span><br>
+實木與鋼構設計，整體扎實穩固，壽命更長。<br>
+<span class="font-bold">🔹不鏽鋼腳架(13cm高)</span><br>
+ 腳高設計，掃地機器人清潔0死角<br>
+<span class="font-bold">🔹多色皮料任你挑選</span><br>
+ 提供多款真皮顏色，輕鬆搭配各種居家風格<br>
+</p>
 `,
+    
+    starting_at: true,
     size_obj: [
-      { size: '單人3*6.2尺(91*188cm)', ori_price: 8800, discount_price: 6800 },
-      { size: '單人加大3.5*6.2尺(106*188cm)', ori_price: 8980, discount_price: 6980 },
-      { size: '標準雙人5*6.2尺(152*188cm)', ori_price: 11800, discount_price: 9800 },
-      { size: '雙人加大6*6.2尺(182*188cm)', ori_price: 16800, discount_price: 14800 },
-      { size: 'King size6*7尺(182*212cm)', ori_price: 18800, discount_price: 20800 },
+      { size: '標準雙人5*6.2尺(152*215cm)', ori_price: 21800, discount_price: 19800 },
+      { size: '雙人加大6*6.2尺(182*215cm)', ori_price: 25800, discount_price: 23800 },
     ],
-    hardness_degree: 6,
     image_intro: [
-      '/assets/images/product/bed/2/structure.jpg',
-      '/assets/images/product/bed/2/feature.jpg',
-      '/assets/images/product/bed/2/size.jpg'
+      '/assets/images/product/bed_set/11/intro.jpg',
+      '/assets/images/product/bed_set/11/feature.jpg',
+      '/assets/images/product/bed_set/11/size.jpg'
     ],
+    tab_behavior: 'scroll',
     tab_content: [
       {
-        name: 'structure',
-        tab: '床墊結構',
+        name: 'intro',
+        tab: '產品介紹',
         main: '連結式床墊，使用高碳鋼硬彈簧與厚實的內襯，充分支撐身體不容易凹陷，高耐用不易壞。',
         mainImg: '/assets/images/product/tab2-main.jpg',
         feature: [
@@ -80,7 +81,7 @@ export default {
       },
       {
         name: 'feature',
-        tab: '床墊特色',
+        tab: '特色說明',
         main: '床墊結合4倍NASA技術，讓你涼爽舒適一整夜，支撐身體充分放鬆<br>1. Outlast Space Tech®PCM 恆溫纖維 採用NASA太空服的技術，可智慧調節溫度，讓睡覺時體溫能保持穩定。<br> 2. 零壓力冷凝記憶層 NASA為太空人設計的減壓記憶棉，能夠完美支撐身體，享受無壓力的睡眠。<br> 3. Hexagrid Pro 六角蜂巢原理 靈感來自太空船結構，增強床墊的穩定性和支撐力。，分散體重壓力。<br>4. Diamond Fusion 石墨烯科技 石墨烯高效導熱，保持床墊涼爽，有效排出多餘熱量，保持床墊涼爽。',
         secondary: [
           {
@@ -153,22 +154,21 @@ export default {
         img: '/assets/images/index/photo_test3.png',
       },
     ],
-  qa_obj: [
-    {
-      question: '訂購多久後會幫我配送？',
-      ans: '下單後支付完訂金，<span class="font-bold">約7-10個工作日後配送，</span>如遇特殊尺寸需較長製作時間。<span class="font-bold">詳情可點擊下方來聊聊與客服團隊線上聯繫</span>。',
-    },
-    {
-      question: '買了新床墊，舊床可以幫忙回收嗎? ',
-      ans: `<span class="font-bold">舊床回收有2種方式 (免付費&付費)，方式如下</span><br>
+    qa_obj: [
+      {
+        question: '訂購多久後會幫我配送？',
+        ans: '下單後支付完訂金，<span class="font-bold">約7-10個工作日後配送，</span>如遇特殊尺寸需較長製作時間。<span class="font-bold">詳情可點擊下方來聊聊與客服團隊線上聯繫</span>。',
+      },
+      {
+        question: '買了新床墊，舊床可以幫忙回收嗎? ',
+        ans: `<span class="font-bold">舊床回收有2種方式 (免付費&付費)，方式如下</span><br>
         1.<span class="font-bold"> 免付費</span>：您可預約政府清潔隊，協助將您的舊床搬到指定回收地方放置<br>
         2.<span class="font-bold">需收清運費</span>($700~1500)：由御品協助清運至合法回收廠商，將依舊床尺寸酌收清運費`,
-    },
-    {
-      question: '床墊保固時間多久呢?',
-      ans: '請點擊查看保固內容<span class="font-bold">「製床所10年保固計畫」，詳情可至購買須知查看 </span>',
-    },
-  ],
+      },
+      {
+        question: '床墊保固時間多久呢?',
+        ans: '請點擊查看保固內容<span class="font-bold">「製床所10年保固計畫」，詳情可至購買須知查看 </span>',
+      },
+    ]
 
   }
-  
