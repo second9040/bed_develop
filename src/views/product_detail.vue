@@ -29,7 +29,7 @@
             )
 
             swiper-part(v-if="item" :item="item")
-            brief-desc(v-if="item" :item="item")
+            brief-desc(v-if="item" :item="item" @show-modal="toggle_modal")
 
           .row
             .col-lg-3.col-md-12
@@ -43,6 +43,30 @@
             .col-lg-3.col-md-12
             common-qa(v-if="item" :item="item")
 
+      // 半透明遮罩
+      div(v-if="show_modal")
+        div.modal-overlay(@click="toggle_modal(false)")
+
+        // 彈窗本體
+        div.modal-box
+          .close-btn(type="button" @click="toggle_modal(false)")
+            i.bi.bi-x-lg
+          h4.text-center.font-bold 聯絡製床所
+          form(@submit.prevent="submitForm")
+            .row
+              .col-lg-6.col-md-12.mb-2
+                label 姓名
+                input(type="text" v-model="form.name" placeholder="請輸入姓名")
+              .col-lg-6.col-md-12
+                label 聯絡電話
+                input(type="text" v-model="form.phone" placeholder="請輸入電話")
+
+            .row
+              .col-lg-12.col-md-12
+                label 備註
+                textarea(v-model="form.note" placeholder="請留下您的訊息，若是詢問特定商品，請留下商品名稱或是商品需求，後續將派諮詢顧問致電與您聯繫瞭解，謝謝！" rows="4")
+
+            button(type="submit") 發送
 </template>
 
 <script>
@@ -66,6 +90,7 @@ import commonQa from "@/components/product_detail/commonQa.vue";
 import productStore from "@/store/productStore.js";
 
 import menuAside from "@/components/menuAside.vue";
+import Swal from "sweetalert2";
 
 import { mapState, mapActions } from "vuex";
 import menuStore from "@/store/menuStore.js";
@@ -79,6 +104,7 @@ export default {
     tabIntro,
     goodComment,
     commonQa,
+    Swal,
     menuAside,
   },
   data() {
@@ -107,6 +133,12 @@ export default {
       // 之後接 API 這邊就整個直接放收到的東西 （可能根據產品 ID）
 
       item: null, // 修改內容要改 productStore.js
+      show_modal: false,
+      form: {
+        name: "",
+        phone: "",
+        note: "",
+      },
     };
   },
   computed: {
@@ -171,6 +203,69 @@ export default {
             return;
           }
         }
+      }
+    },
+    toggle_modal(flag = true) {
+      this.show_modal = flag;
+    },
+    async submitForm() {
+      if (!this.form.name || !this.form.phone) {
+        Swal.fire({
+          title: "資料不完整",
+          text: "請填寫姓名與電話",
+          icon: "error",
+          confirmButtonText: "確認",
+        });
+        return;
+      }
+      Swal.showLoading();
+
+      try {
+        const response = await fetch(
+          "https://script.google.com/macros/s/AKfycbweEwgPz1bVAS-6XK6fNcpJhfe_p_uMU9OjHThW9aL5wgA0eWRwAGoPBAJ-5Bcl3rIWCA/exec",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(this.form),
+          }
+        );
+
+        const result = await response.json();
+
+        if (result.result === "success") {
+          this.form.name = "";
+          this.form.phone = "";
+          this.form.note = "";
+          Swal.hideLoading();
+          this.toggle_modal(false);
+
+          Swal.fire({
+            title: "已收到回應",
+            text: "我們會盡快與您聯絡",
+            icon: "success",
+            confirmButtonText: "確認",
+          });
+          this.form = { name: "", phone: "", note: "" };
+        } else {
+          Swal.hideLoading();
+          Swal.fire({
+            title: "送出失敗",
+            text: "請稍後再試",
+            icon: "error",
+            confirmButtonText: "確認",
+          });
+        }
+      } catch (error) {
+        console.error(error);
+        Swal.hideLoading();
+        Swal.fire({
+          title: "發生錯誤",
+          text: "請稍後再試",
+          icon: "error",
+          confirmButtonText: "確認",
+        });
+      } finally {
+        Swal.hideLoading();
       }
     },
   },
@@ -243,4 +338,123 @@ export default {
 @import "/assets/css/product_temp/style.css";
 @import "/assets/scss/product/product.scss";
 @import "/assets/scss/product/product_list.scss";
+</style>
+
+<style scoped>
+/* 半透明遮罩 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* 彈窗 */
+.modal-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 3px;
+  padding: 24px 80px 60px;
+  width: 700px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+@media (max-width: 992px) {
+  .modal-box {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 575px) {
+  .modal-box {
+    padding: 24px 40px 40px;
+    width: 90vw;
+  }
+}
+
+@media (max-width: 992px) {
+  textarea {
+    padding: 8px;
+  }
+}
+/* 表單樣式 */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+textarea {
+  padding: 30px 30px 15px;
+}
+
+@media (max-width: 575px) {
+  textarea {
+    padding: 8px;
+  }
+}
+button {
+  margin-top: 8px;
+  padding: 8px;
+  border: solid 1px var(--color2-green);
+  border-radius: 35px;
+  cursor: pointer;
+  background: var(--color2-green);
+  color: white;
+}
+button:hover {
+  background: transparent;
+  color: var(--color2-green);
+}
+
+.close-btn {
+  position: absolute;
+  top: -25px;
+  right: -20px;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid var(--color2-green);
+  color: var(--color2-green);
+  background: var(--color2-green);
+}
+
+.close-btn i {
+  font-size: 24px;
+  color: #fff;
+}
+
+@media (max-width: 575px) {
+  .close-btn {
+    transform: scale(0.6);
+  }
+}
+
+.close-btn :hover {
+  opacity: 0.7;
+}
+.close-btn:hover i {
+}
 </style>

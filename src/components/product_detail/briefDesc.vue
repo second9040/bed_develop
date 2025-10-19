@@ -53,7 +53,7 @@
             i.bi.bi-chevron-right
 
     .button_div.d-flex.align-items-center
-      button.add_cart.button.btn.btn-outline-primary(type="button" @click="viewMore(item)") 加入購物車
+      button.add_cart.button.btn.btn-outline-primary(type="button" @click="showModal(item)") 加入購物車
       button.line_btn.button.btn.btn-outline-primary(type="button" @click="viewMore(item)") LINE即時了解
 
 </template>
@@ -99,6 +99,9 @@ export default {
       }
     },
     viewMore(item) {},
+    showModal() {
+      this.$emit("show-modal");
+    },
   },
   mounted() {
     if (this.item.size_obj.length > 0) {
