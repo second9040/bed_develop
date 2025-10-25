@@ -264,6 +264,8 @@ export default {
     let product_type = data_str.split("/")[2];
     let product_hash = data_str.split("/")[3];
 
+    console.log("secTitle", this.secTitle);
+    console.log("menuStore", menuStore);
     if (!menuStore[this.secTitle]) {
       this.$router.push("/"); // 參數不完整就回首頁
       return;

@@ -6,7 +6,7 @@
         :pagination="{ el: '.swiper-pagination', clickable: true }"
         :slides-per-view='1' 
         :space-between='10' 
-        :autoplay='{ delay: 5000, disableOnInteraction: false }'
+        :autoplay='{ delay: 10000, disableOnInteraction: false }'
         :navigation='{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }'
     )
       swiper-slide.swiper-slide(v-for='(banner, index) in banners' :key='index')

@@ -9,3 +9,5 @@ export { default as storage_headboard_1 } from './bed_stead8.js';
 export { default as storage_headboard_2 } from './bed_stead9.js';
 export { default as leather_storage_bed_1 } from './bed_stead10.js';
 export { default as leather_bed_2 } from './bed_stead11.js';
+export { default as leather_bed_3 } from './bed_stead12.js';
+export { default as leather_bed_4 } from './bed_stead13.js';

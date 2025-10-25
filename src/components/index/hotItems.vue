@@ -49,6 +49,8 @@
             .swiper-button-prev
 </template>
 <script>
+import { mapState, mapActions } from "vuex";
+import menuStore from "@/store/menuStore.js";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper-bundle.css";
 
@@ -92,81 +94,132 @@ export default {
       hot_items: {
         item_1: [
           {
-            img: "/assets/images/index/hot_item_1.png",
+            img: "/assets/images/product/bed/1/card.jpg",
             name: "淺波舒眠床墊",
-            price: 5800,
+            price: 6800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
             product_id: 1,
+            main_cat_en: "mattresses",
+            product_type: "hard_spring",
+            product_hash: 1,
+            cat: "hardness",
+            sub_cat: "hard_and_sticky",
           },
           {
-            img: "/assets/images/index/hot_item_1.png",
+            img: "/assets/images/product/bed/2/card.jpg",
             name: "綿雲舒壓床墊",
             price: 6800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 3,
             product_id: 2,
+            main_cat_en: "mattresses",
+            product_type: "pocket_spring",
+            product_hash: 1,
+            cat: "hardness",
+            sub_cat: "soft",
           },
           {
-            img: "/assets/images/index/hot_item_1.png",
+            img: "/assets/images/product/bed/3/card.jpg",
             name: "綿Q托付床墊",
-            price: 10800,
+            price: 9000,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
             product_id: 3,
+            main_cat_en: "mattresses",
+            product_type: "elastic_spring",
+            product_hash: 1,
+            cat: "hardness",
+            sub_cat: "medium_hardness",
           },
           {
-            img: "/assets/images/index/hot_item_1.png",
+            img: "/assets/images/product/bed/4/card.jpg",
             name: "涼感魔力彈韌床墊",
-            price: 9800,
+            price: 13800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 3,
             product_id: 4,
+            main_cat_en: "mattresses",
+            product_type: "titanium_spring",
+            product_hash: 1,
+            cat: "hardness",
+            sub_cat: "soft_with_support",
           },
-          {
-            img: "/assets/images/index/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 75800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 2,
-          },
+          // {
+          //   img: "/assets/images/product/bed/1/card.jpg",
+          //   name: "淺波舒眠床墊",
+          //   price: 6800,
+          //   desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+          //   hardness_degree: 4,
+          //   product_id: 1,
+          //   main_cat_en: "mattresses",
+          //   product_type: "hard_spring",
+          //   product_hash: 1,
+          //   cat: "hardness",
+          //   sub_cat: "hard_and_sticky",
+          // },
         ],
         item_2: [
           {
-            img: "/assets/images/index/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 27800,
+            img: "/assets/images/product/bed_set/1/card.jpg",
+            name: "原廠油壓式掀床-有框版",
+            price: 6800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
+            main_cat_en: "bedframe",
+            product_type: "lifted_storage_bed",
+            product_hash: 1,
+            cat: "bedstead",
+            sub_cat: "hydraulic_bed_lift",
           },
           {
-            img: "/assets/images/index/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 37800,
+            img: "/assets/images/product/bed_set/2/card.jpg",
+            name: "雙拼木心板床架-有抽屜",
+            price: 4000,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 3,
+            main_cat_en: "bedframe",
+            product_type: "cabinet_storage_bed",
+            product_hash: 1,
+            cat: "bedstead",
+            sub_cat: "Japanese_style_wooden_leg_bed_frame",
           },
           {
-            img: "/assets/images/index/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 7800,
+            img: "/assets/images/product/bed_set/11/card.jpg",
+            name: "羊絨雲朵皮革床組",
+            price: 19800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 2,
+            main_cat_en: "bedframe",
+            product_type: "leather_bed",
+            product_hash: 2,
+            cat: "bed_set",
+            sub_cat: "leather_solid_wood_steel_structure_bed_set",
           },
           {
             img: "/assets/images/index/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 17800,
+            name: "義式皮革式床組(抽屜)",
+            price: 15800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 1,
+            main_cat_en: "bedframe",
+            product_type: "leather_storage_bed",
+            product_hash: 1,
+            cat: "bed_set",
+            sub_cat: "leather_solid_wood_steel_structure_bed_set",
           },
-          {
-            img: "/assets/images/index/hot_item_1.png",
-            name: "波浪舒眠床墊",
-            price: 7800,
-            desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
-            hardness_degree: 4,
-          },
+          // {
+          //   img: "/assets/images/product/bed_set/1/card.jpg",
+          //   name: "原廠油壓式掀床-有框版",
+          //   price: 6800,
+          //   desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+          //   hardness_degree: 4,
+          //   main_cat_en: "bedframe",
+          //   product_type: "lifted_storage_bed",
+          //   product_hash: 1,
+          //   cat: "bedframe",
+          //   sub_cat: "bedstead",
+          // },
         ],
         item_3: [
           {
@@ -175,6 +228,7 @@ export default {
             price: 3330,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 7,
+            main_cat_en: "mattresses",
           },
           {
             img: "/assets/images/index/hot_item_1.png",
@@ -182,6 +236,7 @@ export default {
             price: 7800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 6,
+            main_cat_en: "mattresses",
           },
           {
             img: "/assets/images/index/hot_item_1.png",
@@ -189,6 +244,7 @@ export default {
             price: 800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
+            main_cat_en: "mattresses",
           },
           {
             img: "/assets/images/index/hot_item_1.png",
@@ -196,6 +252,7 @@ export default {
             price: 47800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 5,
+            main_cat_en: "mattresses",
           },
           {
             img: "/assets/images/index/hot_item_1.png",
@@ -203,6 +260,7 @@ export default {
             price: 7800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 2,
+            main_cat_en: "mattresses",
           },
         ],
       },
@@ -210,17 +268,32 @@ export default {
   },
   mounted() {},
   methods: {
+    ...mapActions(["toggleCart", "selectedMenu"]),
     getImagePath(img) {
       return require(`@/${img}`);
     },
     viewMore(item) {
-      // this.$emit('view-more', item);
-      // this.$router.push({
-      //   name: 'product_detail',
-      //   params: {
-      //     product_id: item.product_id,
-      //   },
-      // });
+      this.selectedMenu({
+        main_cat: item.main_cat_en,
+        cat: item.cat,
+        sub_cat: item.sub_cat,
+      });
+
+      // 把之前設定過的 aside 高亮都取消
+      menuStore[item.main_cat_en].aside_menu.forEach((cat) => {
+        cat.items.forEach((sub) => {
+          sub.isActive = false;
+        });
+      });
+
+      this.$router.push({
+        name: "product_detail",
+        params: {
+          category: item.main_cat_en,
+          product_type: item.product_type,
+          product_hash: item.product_hash,
+        },
+      });
     },
     click_show_qa(index) {
       this.show_qa = this.show_qa == index ? 0 : index;
