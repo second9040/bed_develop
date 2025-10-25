@@ -15,7 +15,18 @@
           v-for='(item, index) in item.img'
           :key='index'
         )
-          img(:src='getImagePath(item)' :alt="'產品圖' + (index + 1)")
+          // 判斷是不是 YouTube ID（沒有副檔名）
+          template(v-if="!item.match(/\.jpg|\.png|\.jpeg|\.webp|\.gif/i)")
+            .video-wrapper
+              iframe(
+                :src="`https://www.youtube.com/embed/${item}?rel=0`"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              )
+
+          // 否則就是圖片
+          img(v-else :src='getImagePath(item)' :alt="'產品圖' + (index + 1)")
         
         .swiper-button-prev
         .swiper-button-next
@@ -34,7 +45,18 @@
         v-for='(img, index) in item.img'
         :key='index'
         )
-          img(:src='getImagePath(img)' :alt="'產品圖' + (index + 1)")
+          // 判斷是不是 YouTube ID（沒有副檔名）
+          template(v-if="!img.match(/\.jpg|\.png|\.jpeg|\.webp|\.gif/i)")
+            .video-wrapper
+              iframe(
+                :src="`https://www.youtube.com/embed/${img}?rel=0`"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              )
+
+          // 否則就是圖片
+          img(v-else :src='getImagePath(img)' :alt="'產品圖' + (index + 1)")
       
         .swiper-button-prev
           .d-flex.align-item-center.justify-content-center
@@ -155,4 +177,22 @@ export default {
 @import "/assets/scss/product/product.scss";
 @import "/assets/scss/product/product_list.scss";
 @import "/assets/scss/product/detail/swiper_and_brief_desc.scss";
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* 🟢 強制容器為 1:1 */
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000; /* 避免未載入時閃白 */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 177.78%; /* 🟢 16 / 9 = 1.7778，這樣能剛好填滿1:1容器 */
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
 </style>

@@ -13,6 +13,7 @@ export default {
 
   },
     img: [
+      'jV29tdn4MiE',
       '/assets/images/product/bed/1/1.jpg?251009',
       '/assets/images/product/bed/1/2.jpg',
       '/assets/images/product/bed/1/3.jpg',
