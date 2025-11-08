@@ -13,10 +13,12 @@ export default {
 
   },
     img: [
+      'tjgAs6yMUYk',
       '/assets/images/product/bed_set/2/1.jpg',
       '/assets/images/product/bed_set/2/2.jpg',
       '/assets/images/product/bed_set/2/3.jpg',
     ],
+  swiperDelay: 10500,
   desc: `
 <p> <span class="font-bold">🔹小宅空間升級，收納免煩惱</span><br>
 小空間也能大利用，收納井然有序，居家生活更自在</p>

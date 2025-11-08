@@ -7,7 +7,7 @@
         :modules='modules'
         slides-per-view="1"
         :space-between='35'
-        :autoplay='{ delay: 5000, disableOnInteraction: false }'
+        :autoplay='{ delay: delay, disableOnInteraction: false }'
         :navigation='{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }'
         @swiper="onSwiper"
       )
@@ -19,7 +19,7 @@
           template(v-if="!item.match(/\.jpg|\.png|\.jpeg|\.webp|\.gif/i)")
             .video-wrapper
               iframe(
-                :src="`https://www.youtube.com/embed/${item}?rel=0`"
+                :src="`https://www.youtube.com/embed/${item}?rel=0&autoplay=1&mute=1&loop=1&playlist=${item}`"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
@@ -37,7 +37,7 @@
         :modules='modules'
         :slides-per-view="calcSlideToShow()"
         :space-between='calcSlideSpace()'
-        :autoplay='{ delay: 5000, disableOnInteraction: false }'
+        :autoplay='{ delay: delay, disableOnInteraction: false }'
         :navigation='{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }'
         @click="smallSwiperClick"
       )
@@ -49,7 +49,7 @@
           template(v-if="!img.match(/\.jpg|\.png|\.jpeg|\.webp|\.gif/i)")
             .video-wrapper
               iframe(
-                :src="`https://www.youtube.com/embed/${img}?rel=0`"
+                :src="`https://www.youtube.com/embed/${img}?rel=0&autoplay=1&mute=1&loop=1&playlist=${img}`"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
@@ -102,6 +102,7 @@ export default {
       select_amount: 1,
       mainSwiper: null,
       modules: [Autoplay, Navigation, Pagination],
+      delay: this.item.swiperDelay || 5000,
     };
   },
   props: {

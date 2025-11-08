@@ -461,6 +461,16 @@ export default {
         desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
         tag_en: ['leather_solid_wood_steel_structure_bed_set'],
       },
+      {
+        product_type: "japanese_style_bed",
+        product_id: 14,
+        product_hash: 2,
+        img: "/assets/images/product/bed_set/14/card.jpg",
+        name: "日式木屐式床架",
+        price: 5800,
+        desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
+        tag_en: ['Japanese_style_wooden_leg_bed_frame'],
+      },
     ],
   }
 }

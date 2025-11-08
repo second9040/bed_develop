@@ -1,6 +1,6 @@
 // src/store/productStore.js
 import { hard_spring_1, pocket_spring_1, elastic_spring_1, titanium_spring_1, alternating_spring_1, handmade_spring_1 } from '@/data/products/bed';
-import { lifted_storage_bed_1, cabinet_storage_bed_1, japanese_style_bed_1, leather_bed_1, leather_headboard_1, wooden_headboard_1, wooden_headboard_2, storage_headboard_1, storage_headboard_2, leather_storage_bed_1, leather_bed_2, leather_bed_3, leather_bed_4 } from '@/data/products/bed_set';
+import { lifted_storage_bed_1, cabinet_storage_bed_1, japanese_style_bed_1, leather_bed_1, leather_headboard_1, wooden_headboard_1, wooden_headboard_2, storage_headboard_1, storage_headboard_2, leather_storage_bed_1, leather_bed_2, leather_bed_3, leather_bed_4, japanese_style_bed_2 } from '@/data/products/bed_set';
 
 export default {
   hard_spring_1, // 淺波舒眠床墊, tag: ['硬有服貼', '家用型', '高強度串聯', '1cm乳膠', '高碳鋼'], ['hard_and_sticky', 'home_use', 'high_strength_series', '1cm_latex', 'high_carbon_steel']
@@ -23,5 +23,5 @@ export default {
   leather_bed_2, // 羊絨雲朵皮革床組, tag: [皮革實木鋼構床組],[leather_solid_wood_steel_structure_bed_set]
   leather_bed_3, // 智慧夜燈澎澎皮革床組, tag: [皮革實木鋼構床組],[leather_solid_wood_steel_structure_bed_set]
   leather_bed_4, // 極簡法式皮革床組, tag: [皮革實木鋼構床組],[leather_solid_wood_steel_structure_bed_set]
-
+  japanese_style_bed_2, // 日式木屐式床架, tag: [日式木腳床架],[Japanese_style_wooden_leg_bed_frame]
 }
