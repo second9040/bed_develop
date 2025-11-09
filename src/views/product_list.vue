@@ -362,8 +362,9 @@ export default {
       menu_from_storage
     ) {
       // 從 header 傳來的 vuex 狀態
-      let obj = this.selected_menu_obj?.main_cat || menu_from_storage;
-
+      let obj = menu_from_storage || this.selected_menu_obj;
+      console.log("obj", obj);
+      console.log("menu_from_storage", menu_from_storage);
       this.main_cat_en = obj.main_cat; // ex. mattresses
       this.main_cat_ch = menuStore[obj.main_cat].text;
       this.cat_en = obj.cat; // ex. hardness
