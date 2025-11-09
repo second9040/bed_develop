@@ -236,6 +236,16 @@ export default {
     selectMenu(obj) {
       this.cat_en = obj.cat;
 
+      // 改網址 hash
+      console.log("hash:", obj.hash);
+      if (obj.hash) {
+        this.$router.replace({
+          path: this.$route.path, // 保持當前路徑(包括 alias)
+          query: this.$route.query, // 保持當前 query
+          hash: obj.hash,
+        });
+      }
+
       let index_cat = this.show_list.index_cat; // 軟硬度/使用族群/結構
       let index_sub_cat = this.show_list.index_sub_cat; // 選單的 index
       this.aside_menu.forEach((cat, idx) => {
@@ -357,6 +367,10 @@ export default {
       menu_from_storage = JSON.parse(saved);
       localStorage.removeItem("selected_menu");
     }
+
+    let tmp = window.location.hash.replace("#", "");
+    let hash = tmp ? `#${tmp}` : ""; // e.g. #s_1 或 #m_2
+
     if (
       (this.selected_menu_obj && this.selected_menu_obj.main_cat) ||
       menu_from_storage
@@ -374,6 +388,7 @@ export default {
         main_cat: obj.main_cat,
         cat: obj.cat,
         sub_cat: obj.sub_cat,
+        hash: hash,
       });
     } else {
       // 沒有的話可能是同頁重整，使用預設值
@@ -383,7 +398,6 @@ export default {
       this.cat_en = this.aside_menu[0].key; // ex. hardness
 
       // 取得網址 hash（#後的部分）
-      let hash = window.location.hash.replace("#", ""); // e.g. s_1 或 m_2
       let menu_o = {};
       let finded = false;
       if (hash) {
@@ -404,6 +418,7 @@ export default {
 
         if (!finded) {
           // 找不到就是亂打 → 重整把 hash 清掉
+          console.log("?");
           window.location.href = window.location.href.split("#")[0];
         }
       } else {

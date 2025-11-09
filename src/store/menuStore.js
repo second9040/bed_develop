@@ -36,35 +36,35 @@ export default {
           {
             text: "偏軟",
             key: "soft",
-            hash: "s_1",
+            hash: "#s_1",
             tabs: hardness_options,
             isActive: false,
           },
           {
             text: "軟有支撐",
             key: "soft_with_support",
-            hash: "s_2",
+            hash: "#s_2",
             tabs: hardness_options,
             isActive: false,
           },
           {
             text: "軟硬適中",
             key: "medium_hardness",
-            hash: "m_1",
+            hash: "#m_1",
             tabs: hardness_options,
             isActive: false,
           },
           {
             text: "硬有服貼",
             key: "hard_and_sticky",
-            hash: "h_1",
+            hash: "#h_1",
             tabs: hardness_options,
             isActive: false,
           },
           {
             text: "偏硬",
             key: "hard",
-            hash: "h_2",
+            hash: "#h_2",
             tabs: hardness_options,
             isActive: false,
           },
@@ -79,7 +79,7 @@ export default {
           {
             text: "家用型",
             key: "home_use",
-            hash: "c_1",
+            hash: "#c_1",
             tabs: [
               { key: "all", label: "全部", isActive: false },
               { key: "thick_cotton_lining", label: "厚實棉襯", isActive: false },
@@ -92,7 +92,7 @@ export default {
           {
             text: "出租型",
             key: "rental",
-            hash: "c_2",
+            hash: "#c_2",
             tabs: [
               { key: "all", label: "全部", isActive: false },
               { key: "office_suite", label: "上班套房", isActive: false },
@@ -103,7 +103,7 @@ export default {
           {
             text: "客製(軟硬/尺寸/表布)",
             key: "customized_h_s_f", // hardness_size_fabric
-            hash: "c_3",
+            hash: "#c_3",
             tabs: [
               { key: "all", label: "全部", isActive: false },
               { key: "landlord_agent", label: "房東仲介", isActive: false },
@@ -122,7 +122,7 @@ export default {
           {
             text: "高強度*串聯式設計",
             key: "high_strength_series",
-            hash: "cs",
+            hash: "#cs",
             new: true,
             banners: [
               {
@@ -154,7 +154,7 @@ export default {
           {
             text: "獨立筒型彈簧",
             key: "individual_spring",
-            hash: "ps",
+            hash: "#ps",
             tabs: [
               { key: "all", label: "全部", isActive: false },
               { key: "straight_through_type", label: "直排式", isActive: false },
@@ -248,25 +248,25 @@ export default {
           {
             text: "木質床頭片",
             key: "wooden_headboard",
-            hash: "wd_1",
+            hash: "#wd_1",
             isActive: false,
           },
           {
             text: "軟墊床頭片",
             key: "upholstered_headboard",
-            hash: "wd_2",
+            hash: "#wd_2",
             isActive: false,
           },
           {
             text: "書架型床頭",
             key: "bookshelf_shaped_bedside",
-            hash: "wd_3",
+            hash: "#wd_3",
             isActive: false,
           },
           {
             text: "收納床頭櫃",
             key: "storage_bedside_table",
-            hash: "wd_4",
+            hash: "#wd_4",
             isActive: false,
           },
         ],
@@ -280,19 +280,19 @@ export default {
           {
             text: "油壓式掀床架",
             key: "hydraulic_bed_lift",
-            hash: "wd_5",
+            hash: "#wd_5",
             isActive: false,
           },
           {
             text: "雙拼式床架",
             key: "double_bed_frame",
-            hash: "wd_6",
+            hash: "#wd_6",
             isActive: false,
           },
           {
             text: "日式木腳床架",
             key: "Japanese_style_wooden_leg_bed_frame",
-            hash: "wd_7",
+            hash: "#wd_7",
             isActive: false,
           },
         ],
@@ -306,7 +306,7 @@ export default {
           {
             text: "皮革實木鋼構床組",
             key: "leather_solid_wood_steel_structure_bed_set",
-            hash: "lt_1",
+            hash: "#lt_1",
             banners: [
               {
                 img_pc: "/assets/images/index/banner_kari02_pc.jpg",
@@ -337,7 +337,7 @@ export default {
           {
             text: "皮革收納鋼構床組",
             key: "leather_storage_steel_bed_set",
-            hash: "lt_2",
+            hash: "#lt_2",
             tabs: [
               { key: "all", label: "全部", isActive: false },
               { key: "straight_through_type", label: "直排式", isActive: false },

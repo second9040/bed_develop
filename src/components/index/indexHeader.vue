@@ -20,36 +20,36 @@
                   img.submenu-icon(src="/assets/images/index/headerIcon_hardness.png")
                   p 軟硬度
                 ul
-                  li(@click="goto('product_list', null, null, 'mattresses', 'hardness', 'soft')") 
+                  li(@click="goto('product_list', '#s_1', null, 'mattresses', 'hardness', 'soft')") 
                     a(href="javascript: void(0)") 偏軟
-                  li(@click="goto('product_list', null, null, 'mattresses', 'hardness', 'soft_with_support')") 
+                  li(@click="goto('product_list', '#s_2', null, 'mattresses', 'hardness', 'soft_with_support')") 
                     a(href="javascript: void(0)") 軟有支撐
-                  li(@click="goto('product_list', null, null, 'mattresses', 'hardness', 'medium_hardness')") 
+                  li(@click="goto('product_list', '#m_1', null, 'mattresses', 'hardness', 'medium_hardness')") 
                     a(href="javascript: void(0)") 軟硬適中
-                  li(@click="goto('product_list', null, null, 'mattresses', 'hardness', 'hard_and_sticky')") 
+                  li(@click="goto('product_list', '#h_1', null, 'mattresses', 'hardness', 'hard_and_sticky')") 
                     a(href="javascript: void(0)") 硬有服貼
-                  li(@click="goto('product_list', null, null, 'mattresses', 'hardness', 'hard')") 
+                  li(@click="goto('product_list', '#h_2', null, 'mattresses', 'hardness', 'hard')") 
                     a(href="javascript: void(0)") 偏硬
               .submenu-column.left-bar
                 div.submenu-header
                   img.submenu-icon(src="/assets/images/index/headerIcon_users.png")
                   p 使用族群
                 ul
-                  li(@click="goto('product_list', null, null, 'mattresses', 'users', 'home_use' )") 
+                  li(@click="goto('product_list', '#c_1', null, 'mattresses', 'users', 'home_use' )") 
                     a(href="javascript: void(0)") 家用型
-                  li(@click="goto('product_list', null, null, 'mattresses', 'users', 'rental' )") 
+                  li(@click="goto('product_list', '#c_2', null, 'mattresses', 'users', 'rental' )") 
                     a(href="javascript: void(0)") 出租型
-                  li(@click="goto('product_list', null, null, 'mattresses', 'users', 'customized_h_s_f' )") 
+                  li(@click="goto('product_list', '#c_3', null, 'mattresses', 'users', 'customized_h_s_f' )") 
                     a(href="javascript: void(0)") 客製(軟硬/尺寸/表布)
               .submenu-column.left-bar
                 div.submenu-header
                   img.submenu-icon(src="/assets/images/index/headerIcon_structure.png")
                   p 床墊結構
                 ul
-                  li(@click="goto('product_list', null, null, 'mattresses', 'structure', 'high_strength_series')") 
+                  li(@click="goto('product_list', '#cs', null, 'mattresses', 'structure', 'high_strength_series')") 
                     img.new_icon(src="/assets/images/index/headerIcon_new.png")
                     a(href="javascript: void(0)") 高強度*串聯式設計
-                  li(@click="goto('product_list', null, null, 'mattresses', 'structure', 'individual_spring')") 
+                  li(@click="goto('product_list', '#ps', null, 'mattresses', 'structure', 'individual_spring')") 
                     a(href="javascript: void(0)") 獨立筒型彈簧
 
           li(
@@ -64,33 +64,33 @@
                   img.submenu-icon(src="/assets/images/index/bed_cabinet.png")
                   p 床頭片/櫃
                 ul
-                  li(@click="goto('product_list', null, null, 'bedframe', 'bedside_table_cabinet', 'wooden_headboard')")
+                  li(@click="goto('product_list', '#wd_1', null, 'bedframe', 'bedside_table_cabinet', 'wooden_headboard')")
                     a(href="javascript: void(0)") 木質床頭片
-                  li(@click="goto('product_list', null, null, 'bedframe', 'bedside_table_cabinet', 'upholstered_headboard')")
+                  li(@click="goto('product_list', '#wd_2', null, 'bedframe', 'bedside_table_cabinet', 'upholstered_headboard')")
                     a(href="javascript: void(0)") 軟墊床頭片
-                  li(@click="goto('product_list', null, null, 'bedframe', 'bedside_table_cabinet', 'bookshelf_shaped_bedside')")
+                  li(@click="goto('product_list', '#wd_3', null, 'bedframe', 'bedside_table_cabinet', 'bookshelf_shaped_bedside')")
                     a(href="javascript: void(0)") 書架型床頭
-                  li(@click="goto('product_list', null, null, 'bedframe', 'bedside_table_cabinet', 'storage_bedside_table')")
+                  li(@click="goto('product_list', '#wd_4', null, 'bedframe', 'bedside_table_cabinet', 'storage_bedside_table')")
                     a(href="javascript: void(0)") 收納床頭櫃
               .submenu-column.left-bar
                 div.submenu-header
                   img.submenu-icon(src="/assets/images/index/bed_stead.png")
                   p 床架
                 ul
-                  li(@click="goto('product_list', null, null, 'bedframe', 'bedstead', 'hydraulic_bed_lift' )")
+                  li(@click="goto('product_list', '#wd_5', null, 'bedframe', 'bedstead', 'hydraulic_bed_lift' )")
                     a(href="javascript: void(0)") 油壓式掀床架
-                  li(@click="goto('product_list', null, null, 'bedframe', 'bedstead', 'double_bed_frame' )")
+                  li(@click="goto('product_list', '#wd_6', null, 'bedframe', 'bedstead', 'double_bed_frame' )")
                     a(href="javascript: void(0)") 雙拼式床架
-                  li(@click="goto('product_list', null, null, 'bedframe', 'bedstead', 'Japanese_style_wooden_leg_bed_frame' )")
+                  li(@click="goto('product_list', '#wd_7', null, 'bedframe', 'bedstead', 'Japanese_style_wooden_leg_bed_frame' )")
                     a(href="javascript: void(0)") 日式木腳床架
               .submenu-column.left-bar
                 div.submenu-header
                   img.submenu-icon(src="/assets/images/index/bed_set.png")
                   p 床組(含床頭)
                 ul
-                  li(@click="goto('product_list', null, null, 'bedframe', 'bed_set', 'leather_solid_wood_steel_structure_bed_set')")
+                  li(@click="goto('product_list', '#lt_1', null, 'bedframe', 'bed_set', 'leather_solid_wood_steel_structure_bed_set')")
                     a(href="javascript: void(0)") 皮革實木鋼構床組
-                  li(@click="goto('product_list', null, null, 'bedframe', 'bed_set', 'leather_storage_steel_bed_set')")
+                  li(@click="goto('product_list', '#lt_2', null, 'bedframe', 'bed_set', 'leather_storage_steel_bed_set')")
                     a(href="javascript: void(0)") 皮革收納鋼構床組
           li(
               @click="goto('product_list', null, 'others')" 
@@ -273,9 +273,10 @@ export default {
                   main_cat: main_cat,
                   cat: cat,
                   sub_cat: sub_cat,
+                  hash: hash,
                 })
               );
-              window.location.href = path + (hash || "");
+              window.location.href = `${path}${hash ? hash : ""}`;
             } else {
               // 同分類內切換 → 用 router.push
               this.$router.push({ path, hash });
