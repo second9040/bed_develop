@@ -266,14 +266,15 @@ export default {
           if (this.$route.path.startsWith("/product_list")) {
             // 如果當前分類和目標分類不同 → 強制整頁刷新
             if (current !== path) {
-              // localStorage.setItem(
-              //   "selected_menu_obj",
-              //   JSON.stringify({
-              //     main_cat: main_cat,
-              //     cat: cat,
-              //     sub_cat: sub_cat,
-              //   })
-              // );
+              // 重刷頁 vuex 狀態會消失，所以用 localStorage 暫存
+              localStorage.setItem(
+                "selected_menu",
+                JSON.stringify({
+                  main_cat: main_cat,
+                  cat: cat,
+                  sub_cat: sub_cat,
+                })
+              );
               window.location.href = path + (hash || "");
             } else {
               // 同分類內切換 → 用 router.push

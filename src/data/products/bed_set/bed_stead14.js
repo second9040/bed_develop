@@ -20,17 +20,17 @@ export default {
   desc: `
 <p>
 <span class="font-bold">🔹 日式靜謐居家美學</span><br>
-純粹木質調，回歸生活本質之美<br>
+純粹木質調，回歸生活本質之美<br><br>
 <span class="font-bold">🔹 全木芯板｜穩固耐用</span><br>
-結構紮實，承重大，長年使用也安心<br>
+結構紮實，承重大，長年使用也安心<br><br>
 <span class="font-bold">🔹左右雙拚設計｜穩同床墊</span><br>
-平整支撐結構，讓床墊服貼不位移<br>
+平整支撐結構，讓床墊服貼不位移<br><br>
 <span class="font-bold">🔹防撞封邊保護｜安心不碰腳</span><br>
-柔和邊角處理，降低碰撞受傷風險<br>
+柔和邊角處理，降低碰撞受傷風險<br><br>
 <span class="font-bold">🔹 實木腳高設計｜清掃更輕鬆</span><br>
- 底部留空，掃地機器人輕鬆進出<br>
+ 底部留空，掃地機器人輕鬆進出<br><br>
 <span class="font-bold">🔹 多樣木質色調可選｜百搭居家</span><br>
- 溫潤木紋，呈現日系沉靜質感<br>
+ 溫潤木紋，呈現日系沉靜質感<br><br>
 </p>
 `,
     

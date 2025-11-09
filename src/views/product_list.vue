@@ -165,6 +165,12 @@ export default {
       }
     },
     active_tab() {},
+    $route(to, from) {
+      if (to.hash !== from.hash) {
+        // 方式一：整頁 reload
+        window.location.reload();
+      }
+    },
   },
   data() {
     return {
@@ -344,9 +350,19 @@ export default {
     },
   },
   mounted() {
-    if (this.selected_menu_obj && this.selected_menu_obj.main_cat) {
+    // 從床墊到床組這類不同項目時會重刷, 檢查有沒有存在的選單狀態
+    const saved = localStorage.getItem("selected_menu");
+    let menu_from_storage = null;
+    if (saved) {
+      menu_from_storage = JSON.parse(saved);
+      localStorage.removeItem("selected_menu");
+    }
+    if (
+      (this.selected_menu_obj && this.selected_menu_obj.main_cat) ||
+      menu_from_storage
+    ) {
       // 從 header 傳來的 vuex 狀態
-      let obj = this.selected_menu_obj;
+      let obj = this.selected_menu_obj?.main_cat || menu_from_storage;
 
       this.main_cat_en = obj.main_cat; // ex. mattresses
       this.main_cat_ch = menuStore[obj.main_cat].text;
@@ -360,16 +376,42 @@ export default {
       });
     } else {
       // 沒有的話可能是同頁重整，使用預設值
-      this.main_cat_en = location.href.split("product_list_")[1];
+      this.main_cat_en = location.href.split("product_list_")[1].split("#")[0];
       this.main_cat_ch = menuStore[this.main_cat_en].text; // ex. 床墊
       this.aside_menu = menuStore[this.main_cat_en].aside_menu;
       this.cat_en = this.aside_menu[0].key; // ex. hardness
 
-      let menu_o = {
-        main_cat: this.main_cat_en,
-        cat: this.aside_menu[0].key,
-        sub_cat: this.aside_menu[0].items[0].key,
-      };
+      // 取得網址 hash（#後的部分）
+      let hash = window.location.hash.replace("#", ""); // e.g. s_1 或 m_2
+      let menu_o = {};
+      let finded = false;
+      if (hash) {
+        // 嘗試在 aside_menu 中找到符合的項目
+        for (let cat of this.aside_menu) {
+          for (let item of cat.items) {
+            // 先檢查自己
+            if (item.hash === hash) {
+              menu_o = {
+                main_cat: this.main_cat_en,
+                cat: cat.key,
+                sub_cat: item.key,
+              };
+              finded = true;
+            }
+          }
+        }
+
+        if (!finded) {
+          // 找不到就是亂打 → 重整把 hash 清掉
+          window.location.href = window.location.href.split("#")[0];
+        }
+      } else {
+        menu_o = {
+          main_cat: this.main_cat_en,
+          cat: this.aside_menu[0].key,
+          sub_cat: this.aside_menu[0].items[0].key,
+        };
+      }
       this.selectMenu(menu_o);
     }
   },
