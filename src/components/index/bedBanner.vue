@@ -75,9 +75,9 @@ export default {
       modules: [Autoplay, Navigation, Pagination],
       banners: [
         {
-          youtube_id_pc: "6rrhuPhoOwc",
-          youtube_id_mo: "wyDPmCm7qdw",
-          name: "video_251019",
+          youtube_id_pc: "KXyCuBcg65I",
+          youtube_id_mo: "XRvggWLHX4E",
+          name: "video_251204",
           title: ".",
           desc: ".",
           btn_link: "",
