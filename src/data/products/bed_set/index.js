@@ -12,3 +12,4 @@ export { default as leather_bed_2 } from './bed_stead11.js';
 export { default as leather_bed_3 } from './bed_stead12.js';
 export { default as leather_bed_4 } from './bed_stead13.js';
 export { default as japanese_style_bed_2 } from './bed_stead14.js';
+export { default as storage_headboard_3 } from './bed_stead15.js';

@@ -1,6 +1,6 @@
 // src/store/productStore.js
-import { hard_spring_1, pocket_spring_1, elastic_spring_1, titanium_spring_1, alternating_spring_1, handmade_spring_1 } from '@/data/products/bed';
-import { lifted_storage_bed_1, cabinet_storage_bed_1, japanese_style_bed_1, leather_bed_1, leather_headboard_1, wooden_headboard_1, wooden_headboard_2, storage_headboard_1, storage_headboard_2, leather_storage_bed_1, leather_bed_2, leather_bed_3, leather_bed_4, japanese_style_bed_2 } from '@/data/products/bed_set';
+import { hard_spring_1, pocket_spring_1, elastic_spring_1, titanium_spring_1, alternating_spring_1, handmade_spring_1, hard_spring_2, hard_spring_3, hard_spring_4, pocket_spring_2, pocket_spring_3, pocket_spring_4 } from '@/data/products/bed';
+import { lifted_storage_bed_1, cabinet_storage_bed_1, japanese_style_bed_1, leather_bed_1, leather_headboard_1, wooden_headboard_1, wooden_headboard_2, storage_headboard_1, storage_headboard_2, leather_storage_bed_1, leather_bed_2, leather_bed_3, leather_bed_4, japanese_style_bed_2, storage_headboard_3 } from '@/data/products/bed_set';
 
 export default {
   hard_spring_1, // 淺波舒眠床墊, tag: ['硬有服貼', '家用型', '高強度串聯', '1cm乳膠', '高碳鋼'], ['hard_and_sticky', 'home_use', 'high_strength_series', '1cm_latex', 'high_carbon_steel']
@@ -9,6 +9,12 @@ export default {
   titanium_spring_1, // 涼感魔力彈韌床墊, tag: ['軟有支撐', '家用型', '高強度串聯', '2.54cm乳膠', '飯店合金'], ['soft_with_support', 'home_use', 'high_strength_series', '2.54cm_latex', 'hotel_alloy']
   alternating_spring_1, // 夢幻之星床墊, tag: ['偏軟', '家用型', '獨立筒', '5.08cm乳膠', '蜂巢式'], ['soft', 'home_use', 'individual_spring', '5.08cm_latex', 'honeycomb_style']
   handmade_spring_1, // 輕雲繚繞薄床墊, tag: ['軟硬適中', '客製(軟硬/尺寸/表布)', '高強度串聯', '2.54cm乳膠', '高碳鋼'], ['medium_hardness', 'customized_h_s_f', 'high_strength_series', '2.54cm_latex', 'high_carbon_steel']
+  hard_spring_2, // 國民舒眠床墊-厚棉襯, tag: ['偏硬', '家用型', '高強度串聯', '厚實棉襯', '高碳鋼'], ['hard', 'home_use', 'high_strength_series', 'thick_cotton_lining', 'high_carbon_steel']
+  hard_spring_3, // 波浪舒眠床墊-2.54乳膠, tag: ['軟硬適中', '家用型', '高強度串聯', '2.54cm乳膠', '高碳鋼'], ['medium_hardness', 'home_use', 'high_strength_series', '2.54cm_latex', 'high_carbon_steel']
+  hard_spring_4, // 波浪舒眠床墊-2.54乳膠, tag: ['軟有支撐', '家用型', '高強度串聯', '5.08cm乳膠', '高碳鋼'], ['soft_with_support', 'home_use', 'high_strength_series', '5.08cm_latex', 'high_carbon_steel']
+  pocket_spring_2, // 國民雲朵床墊-厚棉襯, tag: ['軟硬適中','家用型',	'獨立筒',	'厚實棉襯', '直排式'], ['medium_hardness','home_use',	'individual_spring', 'thick_cotton_lining', 'straight_through_type']
+  pocket_spring_3, // 雲朵舒壓床墊2.54乳膠, tag: ['偏軟','家用型',	'獨立筒',	'2.54cm乳膠', '直排式'], ['soft','home_use',	'individual_spring', '2.54cm_latex', 'straight_through_type']
+  pocket_spring_4, // 柔雲舒壓床墊-5.08乳膠, tag: ['偏軟','家用型',	'獨立筒',	'5.08cm乳膠', '直排式'], ['soft','home_use',	'individual_spring', '5.08cm_latex', 'straight_through_type']
 
   lifted_storage_bed_1, // 原廠油壓式掀床-有框版, tag: [油壓式掀床架],[hydraulic_bed_lift]
   cabinet_storage_bed_1, // 雙拼木心板床架-有抽屜, tag: [雙拼式床架],[double_bed_frame]
@@ -24,4 +30,5 @@ export default {
   leather_bed_3, // 智慧夜燈澎澎皮革床組, tag: [皮革實木鋼構床組],[leather_solid_wood_steel_structure_bed_set]
   leather_bed_4, // 極簡法式皮革床組, tag: [皮革實木鋼構床組],[leather_solid_wood_steel_structure_bed_set]
   japanese_style_bed_2, // 日式木屐式床架, tag: [日式木腳床架],[Japanese_style_wooden_leg_bed_frame]
+  storage_headboard_3, // 貓抓皮收納床頭箱(櫃), tag: [收納床頭櫃],[bookshelf_shaped_bedside]
 }
