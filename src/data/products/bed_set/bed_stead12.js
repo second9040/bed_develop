@@ -13,11 +13,13 @@ export default {
 
   },
     img: [
+      'ueCUuUs0mgU',
       '/assets/images/product/bed_set/12/1.jpg',
       '/assets/images/product/bed_set/12/2.jpg',
       '/assets/images/product/bed_set/12/3.jpg',
       '/assets/images/product/bed_set/12/4.jpg',
     ],
+    swiperDelay: 16000,
   desc: `
 <p>
 <span class="font-bold">🔹真皮包覆，柔軟舒適</span><br>

@@ -1,6 +1,6 @@
 export default {
 
-  name: '柔波舒眠床墊-5.08乳膠',
+  name: '柔波舒眠床墊-5.08cm乳膠',
   tag_ch: ['軟有支撐', '家用型', '高強度串聯', '5.08cm乳膠', '高碳鋼'],
   tag_en: ['soft_with_support', 'home_use', 'high_strength_series', '5.08cm_latex', 'high_carbon_steel'],
 deliverService: {

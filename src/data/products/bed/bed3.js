@@ -1,6 +1,6 @@
 export default {
 
-  name: '綿Q托付床墊',
+  name: '綿Q托付床墊-2.54cm乳膠',
   tag_ch: ['軟硬適中', '家用型', '高強度串聯', '2.54cm乳膠', 'Q彈簧'],
   tag_en: ['medium_hardness', 'home_use', 'high_strength_series', '2.54cm_latex', 'Q_spring'],
   deliverService: {
@@ -12,6 +12,8 @@ export default {
     desc: '<span class="font-bold">一張床，一段傳承，一個靈魂。製床所提供的不是商品，而是一種責任。</span><br>1. 專業聆聽：每一張床墊都是獨一無，擁有獨特的靈魂。<br> 2. 60年製床師：製作出專屬於您的靈魂床墊。<br> 3. 搬運計畫：制訂詳細搬運計畫，並由製床所團隊替您安置新床。',
   },
     img: [
+      'vPgK71qnAL4',
+      'n8NJe8928b8',
       '/assets/images/product/bed/3/1.jpg?251009',
       '/assets/images/product/bed/3/2.jpg',
       '/assets/images/product/bed/3/3.jpg',
@@ -19,6 +21,7 @@ export default {
       '/assets/images/product/bed/3/5.jpg',
       '/assets/images/product/bed/3/6.jpg',
     ],
+  swiperDelay: 16000,
 
   desc: `
 <p> <span class="font-bold">🔹 軟硬適中X高支撐X低干擾</span><br>帶有微彈的支撐性，讓身軀自然釋壓無負擔</p>

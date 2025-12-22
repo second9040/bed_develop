@@ -1,6 +1,6 @@
 
 export default {
-  name: '綿雲舒壓床墊',
+  name: '綿雲舒壓床墊-1cm乳膠',
   tag_ch: ['偏軟', '家用型', '獨立筒', '1cm乳膠', '直排式'],
   tag_en: ['soft', 'home_use', 'individual_spring', '1cm_latex', 'straight_through_type'],
   deliverService: {
@@ -17,7 +17,7 @@ export default {
       '/assets/images/product/bed/2/2.jpg',
       '/assets/images/product/bed/2/3.jpg',
       '/assets/images/product/bed/2/4.jpg',
-      '/assets/images/product/bed/2/5.jpg',
+      '/assets/images/product/bed/2/5.jpg?251222',
       '/assets/images/product/bed/2/6.jpg',
     ],
 

@@ -13,10 +13,14 @@ export default {
 
   },
     img: [
+      'hZA2sUeBtWA',
+      '6mgkfvGsNQQ',
+      'DE43Ido2-3Q',
       '/assets/images/product/bed_set/1/1.jpg',
       '/assets/images/product/bed_set/1/2.jpg',
       '/assets/images/product/bed_set/1/3.jpg',
     ],
+    swiperDelay: 16000,
   desc: `
 <p> <span class="font-bold">🔹 空間升級術，一張床搞定收納煩惱</span><br>
 原廠油壓掀床床組，給你安全、省力、又有型的機能好床架</p>

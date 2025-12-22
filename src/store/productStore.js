@@ -3,15 +3,15 @@ import { hard_spring_1, pocket_spring_1, elastic_spring_1, titanium_spring_1, al
 import { lifted_storage_bed_1, cabinet_storage_bed_1, japanese_style_bed_1, leather_bed_1, leather_headboard_1, wooden_headboard_1, wooden_headboard_2, storage_headboard_1, storage_headboard_2, leather_storage_bed_1, leather_bed_2, leather_bed_3, leather_bed_4, japanese_style_bed_2, storage_headboard_3 } from '@/data/products/bed_set';
 
 export default {
-  hard_spring_1, // 淺波舒眠床墊, tag: ['硬有服貼', '家用型', '高強度串聯', '1cm乳膠', '高碳鋼'], ['hard_and_sticky', 'home_use', 'high_strength_series', '1cm_latex', 'high_carbon_steel']
-  pocket_spring_1, // 綿雲舒壓床墊, tag: ['偏軟','家用型',	'獨立筒',	'1cm乳膠', '直排式'], ['soft','home_use',	'individual_spring', '1cm_latex', 'straight_through_type]
-  elastic_spring_1, // 綿Q托付床墊, tag: ['軟硬適中', '家用型', '高強度串聯', '2.54cm乳膠', 'Q彈簧'], ['medium_hardness', 'home_use', 'high_strength_series', '2.54cm_latex', 'Q_spring']
-  titanium_spring_1, // 涼感魔力彈韌床墊, tag: ['軟有支撐', '家用型', '高強度串聯', '2.54cm乳膠', '飯店合金'], ['soft_with_support', 'home_use', 'high_strength_series', '2.54cm_latex', 'hotel_alloy']
-  alternating_spring_1, // 夢幻之星床墊, tag: ['偏軟', '家用型', '獨立筒', '5.08cm乳膠', '蜂巢式'], ['soft', 'home_use', 'individual_spring', '5.08cm_latex', 'honeycomb_style']
+  hard_spring_1, // [bed1] 淺波舒眠床墊-1cm乳膠, tag: ['硬有服貼', '家用型', '高強度串聯', '1cm乳膠', '高碳鋼'], ['hard_and_sticky', 'home_use', 'high_strength_series', '1cm_latex', 'high_carbon_steel']
+  pocket_spring_1, // [bed2] 綿雲舒壓床墊-1cm乳膠, tag: ['偏軟','家用型',	'獨立筒',	'1cm乳膠', '直排式'], ['soft','home_use',	'individual_spring', '1cm_latex', 'straight_through_type]
+  elastic_spring_1, // [bed3] 綿Q托付床墊-2.54cm乳膠, tag: ['軟硬適中', '家用型', '高強度串聯', '2.54cm乳膠', 'Q彈簧'], ['medium_hardness', 'home_use', 'high_strength_series', '2.54cm_latex', 'Q_spring']
+  titanium_spring_1, // [bed4] 涼感魔力彈韌床墊-2.54cm乳膠, tag: ['軟有支撐', '家用型', '高強度串聯', '2.54cm乳膠', '飯店合金'], ['soft_with_support', 'home_use', 'high_strength_series', '2.54cm_latex', 'hotel_alloy']
+  alternating_spring_1, // [bed5] 夢幻之星床墊-5.08cm乳膠, tag: ['偏軟', '家用型', '獨立筒', '5.08cm乳膠', '蜂巢式'], ['soft', 'home_use', 'individual_spring', '5.08cm_latex', 'honeycomb_style']
   handmade_spring_1, // 輕雲繚繞薄床墊, tag: ['軟硬適中', '客製(軟硬/尺寸/表布)', '高強度串聯', '2.54cm乳膠', '高碳鋼'], ['medium_hardness', 'customized_h_s_f', 'high_strength_series', '2.54cm_latex', 'high_carbon_steel']
   hard_spring_2, // 國民舒眠床墊-厚棉襯, tag: ['偏硬', '家用型', '高強度串聯', '厚實棉襯', '高碳鋼'], ['hard', 'home_use', 'high_strength_series', 'thick_cotton_lining', 'high_carbon_steel']
   hard_spring_3, // 波浪舒眠床墊-2.54乳膠, tag: ['軟硬適中', '家用型', '高強度串聯', '2.54cm乳膠', '高碳鋼'], ['medium_hardness', 'home_use', 'high_strength_series', '2.54cm_latex', 'high_carbon_steel']
-  hard_spring_4, // 波浪舒眠床墊-2.54乳膠, tag: ['軟有支撐', '家用型', '高強度串聯', '5.08cm乳膠', '高碳鋼'], ['soft_with_support', 'home_use', 'high_strength_series', '5.08cm_latex', 'high_carbon_steel']
+  hard_spring_4, // [bed9] 波浪舒眠床墊-2.54乳膠, tag: ['軟有支撐', '家用型', '高強度串聯', '5.08cm乳膠', '高碳鋼'], ['soft_with_support', 'home_use',	'high_strength_series'	'5.08cm_latex'	'high_carbon_steel']
   pocket_spring_2, // 國民雲朵床墊-厚棉襯, tag: ['軟硬適中','家用型',	'獨立筒',	'厚實棉襯', '直排式'], ['medium_hardness','home_use',	'individual_spring', 'thick_cotton_lining', 'straight_through_type']
   pocket_spring_3, // 雲朵舒壓床墊2.54乳膠, tag: ['偏軟','家用型',	'獨立筒',	'2.54cm乳膠', '直排式'], ['soft','home_use',	'individual_spring', '2.54cm_latex', 'straight_through_type']
   pocket_spring_4, // 柔雲舒壓床墊-5.08乳膠, tag: ['偏軟','家用型',	'獨立筒',	'5.08cm乳膠', '直排式'], ['soft','home_use',	'individual_spring', '5.08cm_latex', 'straight_through_type']

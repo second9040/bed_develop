@@ -1,5 +1,5 @@
 export default {
-  name: '淺波舒眠床墊',
+  name: '淺波舒眠床墊-1cm乳膠',
 
   tag_ch: ['硬有服貼', '家用型', '高強度串聯', '1cm乳膠', '高碳鋼'],
   tag_en: ['hard_and_sticky', 'home_use', 'high_strength_series', '1cm_latex', 'high_carbon_steel'],
@@ -18,7 +18,7 @@ export default {
       '/assets/images/product/bed/1/2.jpg',
       '/assets/images/product/bed/1/3.jpg',
       '/assets/images/product/bed/1/4.jpg',
-      '/assets/images/product/bed/1/5.jpg',
+      '/assets/images/product/bed/1/5.png?251222',
       '/assets/images/product/bed/1/6.jpg',
     ],
   swiperDelay: 10500,

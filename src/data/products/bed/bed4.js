@@ -1,6 +1,6 @@
 export default {
 
-  name: '涼感魔力彈韌床墊',
+  name: '涼感魔力彈韌床墊-2.54cm',
 
   tag_ch: ['軟有支撐', '家用型', '高強度串聯', '2.54cm乳膠', '飯店合金',],
   tag_en: ['soft_with_support', 'home_use', 'high_strength_series', '2.54cm_latex', 'hotel_alloy',],
@@ -14,6 +14,7 @@ deliverService: {
 
   },
     img: [
+      '0PI9KTcAs7I',
       '/assets/images/product/bed/4/1.jpg?251009',
       '/assets/images/product/bed/4/2.jpg',
       '/assets/images/product/bed/4/3.jpg',
@@ -21,6 +22,7 @@ deliverService: {
       '/assets/images/product/bed/4/5.jpg',
       '/assets/images/product/bed/4/6.jpg',
   ],
+  swiperDelay: 10500,
   desc: `
 <p> <span class="font-bold">🔹飯店級奢華 × 高回彈X 航太睡眠</span><br>外柔內剛、穩中帶彈，撐得住重壓，也接得住疲憊</p>
 <p> <span class="font-bold">🔹 含鈦彈簧核心｜航太科技首選</span><br>採用航太科技鈦合金彈簧，堅韌輕盈，更具續航力</p>

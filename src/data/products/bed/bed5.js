@@ -1,6 +1,6 @@
 export default {
 
-  name: '夢幻之星床墊',
+  name: '夢幻之星床墊-5.08cm乳膠',
 
   tag_ch: ['偏軟', '家用型', '獨立筒', '5.08cm乳膠', '蜂巢式',],
   tag_en: ['soft', 'home_use', 'individual_spring', '5.08cm_latex', 'honeycomb_style'],

@@ -1,6 +1,6 @@
 export default {
 
-  name: '波浪舒眠床墊-2.54乳膠',
+  name: '波浪舒眠床墊-2.54cm乳膠',
 
   tag_ch: ['軟硬適中', '家用型', '高強度串聯', '2.54cm乳膠', '高碳鋼'],
   tag_en: ['medium_hardness', 'home_use', 'high_strength_series', '2.54cm_latex', 'high_carbon_steel'],

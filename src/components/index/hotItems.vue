@@ -95,7 +95,7 @@ export default {
         item_1: [
           {
             img: "/assets/images/product/bed/1/card.jpg",
-            name: "淺波舒眠床墊",
+            name: "淺波舒眠床墊-1cm乳膠",
             price: 6800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
@@ -108,7 +108,7 @@ export default {
           },
           {
             img: "/assets/images/product/bed/2/card.jpg",
-            name: "綿雲舒壓床墊",
+            name: "綿雲舒壓床墊-1cm乳膠",
             price: 6800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 3,
@@ -121,7 +121,7 @@ export default {
           },
           {
             img: "/assets/images/product/bed/3/card.jpg",
-            name: "綿Q托付床墊",
+            name: "綿Q托付床墊-2.54cm乳膠",
             price: 9000,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 4,
@@ -134,7 +134,7 @@ export default {
           },
           {
             img: "/assets/images/product/bed/4/card.jpg",
-            name: "涼感魔力彈韌床墊",
+            name: "涼感魔力彈韌床墊-2.54cm乳膠",
             price: 13800,
             desc: "適合容易腰酸者，擁有高支撐力，波浪般服貼腰際，享受扎實睡感...",
             hardness_degree: 3,

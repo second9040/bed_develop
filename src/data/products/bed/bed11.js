@@ -1,6 +1,6 @@
 export default {
 
-  name: '雲朵舒壓床墊-2.54乳膠',
+  name: '雲朵舒壓床墊-2.54cm乳膠',
   tag_ch: ['偏軟', '家用型', '獨立筒', '2.54cm乳膠', '直排式'],
   tag_en: ['soft', 'home_use', 'individual_spring', '2.54cm_latex', 'straight_through_type'],
 deliverService: {
