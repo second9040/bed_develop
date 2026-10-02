@@ -37,52 +37,52 @@ const require = (imgPath) => {
   try {
     let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
     const handlePath = imgPath.replace("@", "../.." + check_url);
-    return new URL(handlePath, import.meta.url).href
+    return new URL(handlePath, import.meta.url).href;
   } catch (err) {
-    console.warn(err)
+    console.warn(err);
   }
-}
+};
 
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from "vuex";
 
 export default {
-  name: 'cartAside',
+  name: "cartAside",
   data() {
     return {
       waitAmoment: false,
-    }
+    };
   },
   computed: {
-    ...mapState(['clickShowCart', 'showCartAside', 'cart_items', 'cart_price_total']),
+    ...mapState(["clickShowCart", "showCartAside", "cart_items", "cart_price_total"]),
   },
   methods: {
-    ...mapActions(['toggleCart', 'countItem', 'removeItem', 'updateCart']),
+    ...mapActions(["toggleCart", "countItem", "removeItem", "updateCart"]),
     showCart(action) {
-      this.toggleCart(action)
+      this.toggleCart(action);
     },
     addComma(num) {
-      return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
+      return String(num).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     },
     getImagePath(img) {
-      return require(`@/${img}`)
+      return require(`@/${img}`);
     },
     go_to_pay() {
       // 配合動畫效果，這邊等待的數字要跟 cart_aside.scss 的 transition 數字一起改
-      this.toggleCart(0)
+      this.toggleCart(0);
       setTimeout(() => {
         this.$router.push({
-          name: 'cart'
-        })
+          name: "cart",
+        });
       }, 700);
     },
   },
   mounted() {
     this.updateCart();
   },
-}
+};
 </script>
 <style></style>
 
 <style scoped>
-@import '/assets/scss/cart_aside.scss';
+@import "/assets/scss/cart_aside.scss";
 </style>

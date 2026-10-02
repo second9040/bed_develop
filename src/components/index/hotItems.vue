@@ -32,7 +32,7 @@
                 img.hot_item_img(:src='getImagePath(item.img)'  :alt="item.name")
                 .px-3.pb-4
                   h4 {{ item.name }}
-                  p.price NT$ {{ addComma(item.price) }} 起
+                  //- p.price NT$ {{ addComma(item.price) }} 起
                   p {{ item.desc }}
                   .hardness_degree_div.d-flex
                     .text_circle 軟

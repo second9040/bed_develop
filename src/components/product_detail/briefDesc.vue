@@ -12,9 +12,9 @@
 
     .desc
       p(v-html="item.desc")
-    span.discount_price NT$ {{ addComma(selected_size.discount_price) }}
-    span.discount_price.starting_at(v-if="item.starting_at") 起
-    span.price NT$ {{ addComma(selected_size.ori_price) }}
+    //- span.discount_price NT$ {{ addComma(selected_size.discount_price) }}
+    //- span.discount_price.starting_at(v-if="item.starting_at") 起
+    //- span.price NT$ {{ addComma(selected_size.ori_price) }}
     .sizeDiv.d-flex.align-items-center
       h5 選擇尺寸
       multiselect.w-100(

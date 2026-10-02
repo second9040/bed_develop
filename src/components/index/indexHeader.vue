@@ -2,7 +2,7 @@
   header#header.header.fixed-top
     .container.d-flex.align-items-center
       a.logo(@click="goto('home')")
-        img.logo_header(src="/assets/images/logo_header.png")
+        img.logo_header(src="/assets/images/logo_header.png?261002")
 
       nav#navmenu.navmenu
         ul
@@ -57,7 +57,7 @@
               @mouseenter="showSubmenu('bedframe')"
               @mouseleave="hideSubmenu"
           )
-            a.submenu-toggle(href="javascript: void(0)") 床架/床頭櫃
+            a.submenu-toggle(href="javascript: void(0)") 床架|床頭櫃
             div.submenu.multi-column
               .submenu-column
                 div.submenu-header
@@ -106,6 +106,11 @@
                   a(href="javascript: void(0)") 其他配件1
                 li(@click="goto('home')") 
                   a(href="javascript: void(0)") 其他配件2
+          li(
+            @click="goto('latestDiscount')"
+            :class="{'active': $route.name == 'latestDiscount'}"
+          )
+            a(href="javascript: void(0)") 限時優惠
           //- 目錄高亮的功能只有關於有做，因為其他頁面都還沒真的實作
           li.hasSub(
               @click="goto('about_us', null, 'about')" 
@@ -113,7 +118,7 @@
               @mouseleave="hideSubmenu"
               :class="{'active': check_main_active($route.name, 'about')}"
           )
-            a.submenu-toggle(href="javascript: void(0)") 關於
+            a.submenu-toggle(href="javascript: void(0)") 關於我們
             div.submenu(v-show="currentMenu === 'about'")
               ul
                 li(
@@ -132,15 +137,10 @@
                 ) 
                   a(href="javascript: void(0)") 購物須知
           li(
-            @click="goto('latestDiscount')"
-            :class="{'active': $route.name == 'latestDiscount'}"
-          )
-            a(href="javascript: void(0)") 限時優惠
-          li(
             @click="goto('bed_knowledge')"
             :class="{'active': $route.name == 'bed_knowledge'}"
           )
-            a(href="javascript: void(0)") 床墊知識
+            a(href="javascript: void(0)") 好眠知識
           li(
             @click="goto('home', '#good_comment')"
           )
@@ -149,7 +149,7 @@
             @click="goto('experience_site')"
             :class="{'active': $route.name == 'experience_site'}"
           )
-            a(href="javascript: void(0)") 體驗據點
+            a(href="javascript: void(0)") 門市試躺
         i.mobile-nav-toggle.d-xl-none.bi.bi-list
         .cart_div.mobile(@click="showCart(1)")
           img.cart_icon(src="/assets/images/cart_icon.png")

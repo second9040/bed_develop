@@ -3,7 +3,7 @@
         .container
           h2.text-center(data-aos='fade-up') 床墊怎麼選？
           .title_desc.text-center(data-aos='fade-up') 靈魂好床墊三大關鍵
-          div.how_to_select_div
+          div.how_to_select_div.pc-only
             .key_factor_div
               .factor_obj(
                 v-for="(item, index) in key_factor_obj"
@@ -20,9 +20,48 @@
                   h3 {{ item.name }}
                   p {{ item.desc }}
                   button.button.btn.btn-outline-primary(type="button" @click="viewMore(item)") 了解更多
+
+          .how_to_select_div.mobile-only
+            swiper.factor_swiper(
+              :modules="modules"
+              :loop='true' 
+              :slides-per-view="1"
+              :space-between="20"
+              :navigation='{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }'
+              :pagination="{ el: '.swiper-pagination', clickable: true }"
+            )
+              swiper-slide(
+                v-for="(item, index) in key_factor_obj"
+                :key="item.page_name"
+              )
+                .key_factor_div
+                  .factor_obj
+                    .img_container.position-relative
+                      img(
+                        :src="getImagePath(item.img)"
+                        :class="{ 'first_img': index === 0 }"
+                      )
+                      .factor_color_container
+                        .factor_body(:class="'index_' + (index % 2)")
+
+                    .desc_div
+                      h3 {{ item.name }}
+                      p {{ item.desc }}
+                      button.button.btn.btn-outline-primary(
+                        type="button"
+                        @click="viewMore(item)"
+                      ) 了解更多
+
+              .swiper-button-next
+              .swiper-button-prev
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/pagination";
+
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 const require = (imgPath) => {
   try {
     let check_url = location.href.includes("bed_develop") ? "/bed_develop/" : "/..";
@@ -35,12 +74,18 @@ const require = (imgPath) => {
 export default {
   name: "qaView",
   props: {},
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+
   data() {
     return {
+      modules: [Autoplay, Navigation, Pagination],
       show_qa: 1,
       key_factor_obj: [
         {
-          img: "/assets/images/index/choose01.jpg",
+          img: "/assets/images/index/choose01.png?261002",
           name: "支撐力",
           desc: "由彈簧的軟硬度和排列與數量影響，製床所有各種軟硬客製選擇。",
           href: "",
@@ -48,7 +93,7 @@ export default {
           page_name: "mattress_support_introduce",
         },
         {
-          img: "/assets/images/index/choose02.jpg",
+          img: "/assets/images/index/choose02.png?261002",
           name: "舒適度",
           desc: "符合人體工學，屁股腰椎交接處不懸空，使躺感更服貼舒服。",
           href: "",
@@ -56,9 +101,9 @@ export default {
           page_name: "mattress_comfort_introduce",
         },
         {
-          img: "/assets/images/index/choose03.jpg",
+          img: "/assets/images/index/choose03.png?261002",
           name: "感受性",
-          desc: "不同材質的表步，透氣、排汗及涼爽程度不同，皆可自選。",
+          desc: "不同材質的表布，透氣、排汗及涼爽程度不同，皆可自選。",
           href: "",
           color: "#53BDD7",
           page_name: "mattress_ticking_introduce",

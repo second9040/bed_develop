@@ -6,51 +6,51 @@ export default createStore({
     showCartAside: false,
     cart_item_total: 0,
     cart_items: [
-      {
-        img: '/assets/images/index/hot_item_1.png',
-        title: '波浪舒眠床墊',
-        desc: '單人加大 (106 x 188 x 25 cm) ',
-        amount: 1,
-        price: 11899,
-      },
-      {
-        img: '/assets/images/index/hot_item_1.png',
-        title:
-          '波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊',
-        desc: '單人加大 (106 x 188 x 25 cm) 單人加大單人加大單人加大單人加大',
-        amount: 10,
-        price: 11899,
-      },
-      {
-        img: '/assets/images/index/hot_item_1.png',
-        title: '波浪舒眠床墊3',
-        desc: '單人加大 (106 x 188 x 25 cm) ',
-        amount: 1,
-        price: 11899,
-      },
-      {
-        img: '/assets/images/index/hot_item_1.png',
-        title:
-          '4波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊',
-        desc: '單人加大 (106 x 188 x 25 cm) 單人加大單人加大單人加大單人加大',
-        amount: 10,
-        price: 11899,
-      },
-      {
-        img: '/assets/images/index/hot_item_1.png',
-        title: '5波浪舒眠床墊',
-        desc: '單人加大 (106 x 188 x 25 cm) ',
-        amount: 1,
-        price: 11899,
-      },
-      {
-        img: '/assets/images/index/hot_item_1.png',
-        title:
-          '6波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊',
-        desc: '單人加大 (106 x 188 x 25 cm) 單人加大單人加大單人加大單人加大',
-        amount: 10,
-        price: 11899,
-      },
+      // {
+      //   img: '/assets/images/index/hot_item_1.png',
+      //   title: '波浪舒眠床墊',
+      //   desc: '單人加大 (106 x 188 x 25 cm) ',
+      //   amount: 1,
+      //   price: 11899,
+      // },
+      // {
+      //   img: '/assets/images/index/hot_item_1.png',
+      //   title:
+      //     '波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊',
+      //   desc: '單人加大 (106 x 188 x 25 cm) 單人加大單人加大單人加大單人加大',
+      //   amount: 10,
+      //   price: 11899,
+      // },
+      // {
+      //   img: '/assets/images/index/hot_item_1.png',
+      //   title: '波浪舒眠床墊3',
+      //   desc: '單人加大 (106 x 188 x 25 cm) ',
+      //   amount: 1,
+      //   price: 11899,
+      // },
+      // {
+      //   img: '/assets/images/index/hot_item_1.png',
+      //   title:
+      //     '4波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊',
+      //   desc: '單人加大 (106 x 188 x 25 cm) 單人加大單人加大單人加大單人加大',
+      //   amount: 10,
+      //   price: 11899,
+      // },
+      // {
+      //   img: '/assets/images/index/hot_item_1.png',
+      //   title: '5波浪舒眠床墊',
+      //   desc: '單人加大 (106 x 188 x 25 cm) ',
+      //   amount: 1,
+      //   price: 11899,
+      // },
+      // {
+      //   img: '/assets/images/index/hot_item_1.png',
+      //   title:
+      //     '6波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊波浪舒眠床墊',
+      //   desc: '單人加大 (106 x 188 x 25 cm) 單人加大單人加大單人加大單人加大',
+      //   amount: 10,
+      //   price: 11899,
+      // },
     ],
     tw_city_name: [ "臺北市", "基隆市", "新北市", "連江縣", "宜蘭縣", "釣魚臺", "新竹市", "新竹縣", "桃園市", "苗栗縣", "臺中市", "彰化縣", "南投縣", "嘉義市", "嘉義縣", "雲林縣", "臺南市", "高雄市", "南海島", "澎湖縣", "金門縣", "屏東縣", "臺東縣", "花蓮縣"],
     cart_price_total: 0,

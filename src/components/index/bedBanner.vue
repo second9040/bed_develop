@@ -75,13 +75,21 @@ export default {
       modules: [Autoplay, Navigation, Pagination],
       banners: [
         {
-          youtube_id_pc: "KXyCuBcg65I",
-          youtube_id_mo: "XRvggWLHX4E",
-          name: "video_251204",
+          img_pc: "/assets/images/index/banner_260916_pc.jpg",
+          img_mo: "/assets/images/index/banner_260916_mo.jpg?0917",
+          name: "banner_260916",
           title: ".",
           desc: ".",
           btn_link: "",
         },
+        // {
+        //   img_pc: "/assets/images/index/banner_260624_pc.png",
+        //   img_mo: "/assets/images/index/banner_260624_mo.png",
+        //   name: "banner_260624",
+        //   title: ".",
+        //   desc: ".",
+        //   btn_link: "",
+        // },
         {
           img_pc: "/assets/images/index/banner_kari01_pc.png",
           img_mo: "/assets/images/index/banner_kari01_mo.png",
