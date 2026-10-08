@@ -91,8 +91,9 @@ export default {
         //   btn_link: "",
         // },
         {
-          img_pc: "/assets/images/index/banner_kari01_pc.png",
-          img_mo: "/assets/images/index/banner_kari01_mo.png",
+          // 60 年匠心
+          img_pc: "/assets/images/index/banner_kari01_pc.jpg?261008",
+          img_mo: "/assets/images/index/banner_kari01_mo.jpg?261008",
           name: "banner_kari01",
           title: ".",
           desc: ".",
@@ -100,8 +101,9 @@ export default {
           btn_link: "",
         },
         {
-          img_pc: "/assets/images/index/banner_kari02_pc.png",
-          img_mo: "/assets/images/index/banner_kari02_mo.png",
+          // 零壓串聯設計
+          img_pc: "/assets/images/index/banner_kari02_pc.jpg?261008",
+          img_mo: "/assets/images/index/banner_kari02_mo.jpg?261008",
           name: "banner_kari02",
           title: "",
           desc: "",
@@ -109,8 +111,8 @@ export default {
           btn_link: "",
         },
         {
-          img_pc: "/assets/images/index/banner_kari03_pc.png",
-          img_mo: "/assets/images/index/banner_kari03_mo.png",
+          img_pc: "/assets/images/index/banner_kari03_pc.jpg?261008",
+          img_mo: "/assets/images/index/banner_kari03_mo.jpg?261008",
           // img_text: "/assets/images/index/banner_kari03_pc_text.png",
           name: "banner_kari03",
           title: "",

@@ -5,7 +5,7 @@
 				margin-top: -40px;
 				margin-bottom: -40px;
 				background-color: var(--color6-white);
-				background-image: url('/assets/images/index/bg_eng_text.png');
+				// background-image: url('/assets/images/index/bg_eng_text.png');
 				background-position: bottom left;
 				background-size: auto 160px;
 				background-repeat: no-repeat;
@@ -26,6 +26,12 @@
 				& .left {
 					width: 35%;
 					padding: 0px 30px;
+					.bg-pc-only {
+						margin: 60px 0 20px 0;
+						@media (max-width: 991px) {
+							display: none;
+						}
+					}
 					@media (max-width: 1200px) {
 						margin: 0 auto 40px;
 						width: 90%;
